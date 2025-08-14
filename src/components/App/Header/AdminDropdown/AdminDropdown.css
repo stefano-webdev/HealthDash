@@ -1,0 +1,81 @@
+/* Impostazioni generali */
+:root {
+    --mainRed: #AA3326;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Tahoma', 'Verdana', 'Arial', 'Helvetica', sans-serif;
+}
+
+button, li {
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    -webkit-user-select: none;
+    cursor: pointer;
+}
+
+body {
+    min-width: 320px;
+    max-width: 1550px;
+    background-color: white;
+    margin: 0px auto;
+}
+
+html {
+    text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+}
+
+/* Bottone */
+#adminButton {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 16px;
+    border: none;
+    padding: 0px;
+    color: white;
+    position: relative;
+    background-color: transparent;
+}
+
+/* SVG freccetta */
+#adminButton svg {
+    width: 11px;
+    stroke: white;
+    transition: transform 0.2s ease;
+    will-change: transform;
+}
+
+.rotate180Admin {
+    transform: rotate(180deg) translateY(-5px);
+}
+
+/* Dropdown */
+.adminSettingsUl {
+    list-style-type: none;
+    background-color: #cacaca;
+    border-radius: 7px;
+    margin: 0px;
+    padding: 7px;
+    position: absolute;
+    top: calc(100% + 13px);
+    right: 13px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-15px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.adminSettingsUl li {
+    padding: 3px;
+    font-size: 14px;
+}
+
+.fadeDownAdmin {
+    opacity: 1;
+    transform: translateY(0px);
+    pointer-events: auto;
+}

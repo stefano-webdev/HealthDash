@@ -1,0 +1,7 @@
+#logoComponent {
+    width: 90px;
+    fill: white;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
