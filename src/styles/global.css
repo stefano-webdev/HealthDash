@@ -1,0 +1,95 @@
+/* Global styles */
+:root {
+    --mainRed: #AE3626;
+    --backgroundBox: #f0f0f060;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Tahoma', 'Verdana', 'Arial', 'Helvetica', sans-serif;
+}
+
+button {
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    -webkit-user-select: none;
+    cursor: pointer;
+}
+
+html {
+    text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+}
+
+body {
+    min-width: 320px;
+    max-width: 1550px;
+    background-color: white;
+    margin: 0px auto;
+}
+
+#mainContainer {
+    margin: 0px 15px;
+}
+
+/* Reusable classes for boxes in sections/routes */
+/* Globals */
+#routeBoxesCont {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+/* Home */
+div.boxStyle {
+    margin: auto;
+    padding: 23px;
+    width: fit-content;
+    background-color: var(--backgroundBox);
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.28);
+}
+
+div.patientsANDstaff {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+}
+
+div.patientsANDstaff p {
+    margin: 0px;
+}
+
+div.patientsANDstaff div p {
+    font-size: 16px;
+    color: black;
+}
+
+div.patientsANDstaff small {
+    color: rgb(72, 72, 72);
+}
+
+div.patientsANDstaff p:last-child {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+div.patientsANDstaff div:first-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+div#updateCont {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+div#updateCont svg {
+    fill: rgb(72, 72, 72);
+    width: 18px;
+}

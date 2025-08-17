@@ -1,0 +1,19 @@
+#healthDashCont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin: 21px 0px 3rem 0px;
+}
+
+#healthDashCont svg {
+    fill: #E63946;
+    width: 45px;
+}
+
+#healthDashCont h1 {
+    letter-spacing: 1px;
+    font-style: italic;
+    color: rgb(88, 88, 88);
+    margin: 0px;
+}

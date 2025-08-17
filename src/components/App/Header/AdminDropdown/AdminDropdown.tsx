@@ -1,12 +1,14 @@
-import { useState } from "react";
 import "./AdminDropdown.css"
 
-function AdminDropdown() {
-    const [open, setOpen] = useState(false);
+type AdminDropdownProps = {
+  open: boolean;
+  onToggle: () => void;
+};
 
+function AdminDropdown({ open, onToggle }: AdminDropdownProps) {
     return (
         <>
-            <button onClick={() => setOpen(!open)} id="adminButton">
+            <button onClick={onToggle} id="adminButton">
                 Admin
                 <svg viewBox="0 0 200 200" className={`${open ? 'rotate180Admin' : ''}`}>
                     <polyline
