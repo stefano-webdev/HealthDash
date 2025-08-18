@@ -1,0 +1,50 @@
+div#appointmentsCont {
+    min-height: 523px;
+    margin: auto;
+    padding: 25px 32px;
+    width: fit-content;
+    background-color: var(--backgroundBox);
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.28);
+}
+
+div#appointmentsCont div#appointmentsTitleCont {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 5px;
+    width: fit-content;
+    margin: 0px auto 6px auto;
+}
+
+div#appointmentsCont div#appointmentsTitleCont svg {
+    width: clamp(25px, 4vw, 37px);
+    fill: var(--mainRed);
+}
+
+div#updateCont small {
+    color: rgb(72, 72, 72);
+}
+
+div#appointmentsCont h3 {
+    margin: 0px;
+}
+
+div#appointmentsCont #allDeparmentsCont {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+div#appointmentsCont h4 {
+    margin: 0px;
+}
+
+div#appointmentsCont #appointmentsUl {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    list-style-type: square;
+    margin: 5px 0px 0px 0px;
+    padding: 0px 0px 0px 30px;
+}

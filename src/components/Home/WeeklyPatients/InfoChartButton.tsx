@@ -20,8 +20,8 @@ function InfoChartButton() {
                 <p>
                     Questo grafico mostra il tasso di guarigione dei pazienti
                     negli ultimi 7 giorni. Il tasso è calcolato come percentuale
-                    di pazienti guariti con successo rispetto al numero totale
-                    di pazienti presenti nell'ospedale in quel specifico giorno.
+                    di pazienti guariti con successo, rispetto al numero totale di
+                    pazienti presenti nell'ospedale in quel giorno specifico.
                 </p>
             )}
         </div>

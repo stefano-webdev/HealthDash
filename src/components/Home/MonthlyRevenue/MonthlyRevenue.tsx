@@ -150,7 +150,6 @@ function MonthlyRevenueChart() {
             />
             <Bar
               dataKey="revenue"
-              name="Entrate Mensili"
               fill={visibleChart ? "#AE3626" : "transparent"}
               radius={[8, 8, 0, 0]}
               isAnimationActive={visibleChart}
@@ -159,6 +158,7 @@ function MonthlyRevenueChart() {
           </BarChart>
         </ResponsiveContainer>
       </div>
+      <small id="lastMonths">(Ultimi 6 mesi)</small>
     </div>
   );
 }

@@ -1,3 +1,20 @@
 div#revenueCont svg {
     outline: none;
 }
+
+small#lastMonths {
+    display: block;
+    width: fit-content;
+    margin: auto;
+    position: relative;
+    bottom: 11px;
+    left: 16px;
+}
+
+g.recharts-cartesian-grid line {
+  pointer-events: all; /* permette hover e click */
+}
+
+g.recharts-cartesian-grid line:hover {
+  cursor: pointer;
+}
