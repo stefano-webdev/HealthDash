@@ -3,12 +3,14 @@ import appointmentsData from "./AppointmentsData.json";
 import "./Appointments.css";
 
 type Appointment = {
+    id: number;
     patient: string;
     time: string;
     room: string;
 };
 
 type Department = {
+    id: number;
     name: string;
     appointments: Appointment[];
 };
@@ -17,7 +19,7 @@ type DailyAppointments = Department[];
 
 function Appointments() {
     const [dailyAppointments, setDailyAppointments] = useState<DailyAppointments>([]);
-
+    
     useEffect(() => {
         // Today's date (YYYY-MM-DD)
         const today: string = new Date().toISOString().split("T")[0];
@@ -74,7 +76,7 @@ function Appointments() {
                 </svg>
                 <h3>Appuntamenti</h3>
             </div>
-            <div id="updateCont">
+            <div id="updateAppointmentsCont">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
                     <path d="M129.9 292.5C143.2 199.5 223.3 128 320 128C373 128 
                             421 149.5 455.8 184.2C456 184.4 456.2 184.6 456.4 184.8L464 
@@ -93,13 +95,13 @@ function Appointments() {
                 </svg>
                 <small>24 ore</small>
             </div>
-            <div id="allDeparmentsCont">
-                {dailyAppointments.map((dept, idx) => (
-                    <div key={idx} id="departmentCont">
+            <div id="allAppointmentsCont">
+                {dailyAppointments.map((dept: Department) => (
+                    <div key={dept.id}>
                         <h4>{dept.name}</h4>
-                        <ul id="appointmentsUl">
-                            {dept.appointments.map((appt, i) => (
-                                <li key={i}>
+                        <ul className="appointmentsUl">
+                            {dept.appointments.map((appt) => (
+                                <li key={appt.id}>
                                     {appt.time} <br /> {appt.patient} - {appt.room}
                                 </li>
                             ))}
@@ -107,7 +109,7 @@ function Appointments() {
                     </div>
                 ))}
             </div>
-        </div>
+        </div >
     );
 }
 

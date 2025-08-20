@@ -1,0 +1,93 @@
+[
+    {
+    "id": 1,
+    "name": "Personale",
+    "notifications": [
+            { "message": "Nuovo turno assegnato per reparto cardiologia" },
+            { "message": "Cambio di orario per l'ambulatorio pediatria" },
+            { "message": "Nuova procedura di sicurezza per le emergenze disponibile" },
+            { "message": "Riunione del team amministrativo domani" },
+            { "message": "Aggiornamento sul protocollo di igiene" },
+            { "message": "Formazione obbligatoria online disponibile" },
+            { "message": "Compilazione dei registri giornalieri mancante" }
+        ]
+    },
+    {
+    "id": 2,
+    "name": "Medici",
+    "notifications": [
+            { "message": "Nuovo appuntamento per il dott. Baccelli" },
+            { "message": "Riunione con il team di ricerca mercoledì" },
+            { "message": "Formazione su nuove tecniche chirurgiche disponibile" },
+            { "message": "Aggiornamento sui protocolli di trattamento oncologico" },
+            { "message": "Disponibilità modificata per visite ambulatoriali" },
+            { "message": "Nuove linee guida per prescrizione farmaci" },
+            { "message": "Partecipazione richiesta al congresso medico annuale" }
+        ]
+    },
+    {
+    "id": 3,
+    "name": "Infermieristica",
+    "notifications": [
+            { "message": "Nuovo protocollo per la somministrazione di farmaci" },
+            { "message": "Nuove indicazioni per il supporto al paziente post-operazione" },
+            { "message": "Formazione su tecniche di assistenza al paziente disponibile" },
+            { "message": "Riunione del team infermieristico venerdì" },
+            { "message": "Disponibilità per turni di emergenza richiesta" },
+            { "message": "Nuove procedure per la gestione delle infezioni" },
+            { "message": "Compilazione dei report di assistenza giornaliera necessaria" }
+        ]
+    },
+    {
+    "id": 4,
+    "name": "Amministrazione",
+    "notifications": [
+            { "message": "Aggiornamento delle linee guida interne richiesto" },
+            { "message": "Nuove politiche per la gestione delle risorse umane" },
+            { "message": "Riunione con il consiglio di amministrazione martedì" },
+            { "message": "Aggiornamento necessario sui budget dei reparti" },
+            { "message": "Formazione su software gestionale disponibile" },
+            { "message": "Compilazione dei moduli di richiesta fondi necessaria" },
+            { "message": "Nuove procedure per la gestione delle fatture" }
+        ]
+    },
+    {
+    "id": 5,
+    "name": "Pazienti",
+    "notifications": [
+            { "message": "Nuovo paziente registrato in reparto cardiologia" },
+            { "message": "Visita di controllo oggi in reparto pediatria" },
+            { "message": "Cartella cliniche aggiornate in reparto geriatria" },
+            { "message": "Dimissione programmata in reparto urologia" },
+            { "message": "Richiesta di esami diagnostici in reparto dermatologia" },
+            { "message": "Nuova terapia iniziata in reparto geriatria" },
+            { "message": "Appuntamento di follow-up in reparto cardiologia" }
+        ]
+    },
+    {
+    "id": 6,
+    "name": "Emergenze",
+    "notifications": [
+            { "message": "Allerta per emergenza in reparto pronto soccorso" },
+            { "message": "Nuovo protocollo di allerta attivo" },
+            { "message": "Riunione del team di emergenza programmata" },
+            { "message": "Formazione su gestione delle emergenze disponibile" },
+            { "message": "Aggiornamento sulle procedure di evacuazione" },
+            { "message": "Disponibilità per turni di emergenza richiesta" },
+            { "message": "Compilazione dei report di emergenza necessaria" }
+        ]
+    },
+    {
+    "id": 7,
+    "name": "Sistema",
+    "notifications": [
+            { "message": "Aggiornamento del sistema operativo disponibile" },
+            { "message": "Manutenzione programmata del server" },
+            { "message": "Formazione sulle nuove tecnologie informatiche disponibile" },
+            { "message": "Risoluzione di bug critici necessaria" },
+            { "message": "Backup dei dati completato con successo" },
+            { "message": "Controllo dello stato di sicurezza della rete necessario" },
+            { "message": "Monitoraggio delle performance del server in corso" }
+        ]
+    }
+]

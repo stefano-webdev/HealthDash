@@ -1,7 +1,7 @@
-div#appointmentsCont {
+div#notificationsCont {
     width: 80%;
     max-width: 320px;
-    min-height: 554.5px;
+    min-height: 377.5px;
     margin: auto;
     padding: 25px 17px;
     background-color: var(--backgroundBox);
@@ -9,25 +9,25 @@ div#appointmentsCont {
     border: 1px solid rgba(0, 0, 0, 0.28);
 }
 
-div#appointmentsCont div#appointmentsTitleCont {
+div#notificationsCont div#notificationsTitleCont {
     display: flex;
     align-items: center;
     gap: 10px;
+    margin-bottom: 5px;
     width: fit-content;
     margin: 0px auto 6px auto;
 }
 
-div#appointmentsCont div#appointmentsTitleCont svg {
+div#notificationsCont div#notificationsTitleCont svg {
     width: clamp(25px, 4vw, 37px);
     fill: var(--mainRed);
 }
 
-div#appointmentsCont h3 {
-    font-size: clamp(19px, 3vw, 24px);
+div#notificationsCont h3 {
     margin: 0px;
 }
 
-div#updateAppointmentsCont {
+div#updateNotificationsCont {
     display: flex;
     gap: 5px;
     align-items: center;
@@ -36,30 +36,25 @@ div#updateAppointmentsCont {
     margin-bottom: 25px;
 }
 
-div#updateAppointmentsCont svg {
+div#updateNotificationsCont svg {
     fill: rgb(72, 72, 72);
     width: 18px;
 }
 
-div#updateAppointmentsCont small {
+div#updateNotificationsCont small {
     color: rgb(72, 72, 72);
 }
 
-div#appointmentsCont #allAppointmentsCont {
+div#allNotificationsCont {
     display: flex;
     flex-direction: column;
     gap: 35px;
 }
 
-div#appointmentsCont h4 {
-    margin: 0px;
+div#allNotificationsCont h4 {
+    margin: 0px 0px 2px 0px;
 }
 
-div#appointmentsCont .appointmentsUl {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    list-style-type: square;
-    margin: 7px 0px 0px 0px;
-    padding: 0px 0px 0px 30px;
+div#allNotificationsCont p {
+    margin: 0px;
 }

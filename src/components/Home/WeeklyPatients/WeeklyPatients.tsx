@@ -101,8 +101,8 @@ function RecoveryChart() {
                 name="Tasso di guarigione pazienti"
                 stroke={visibleChart ? "#AE3626" : "transparent"}
                 strokeWidth={3}
-                dot={visibleChart ? { r: 5 } : false}
-                activeDot={visibleChart ? { r: 8 } : false}
+                dot={{r: 5}}
+                activeDot={{ r: 8 }}
                 isAnimationActive={visibleChart}
                 animationDuration={2100}
               />
