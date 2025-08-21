@@ -1,10 +1,9 @@
-import "./Home.css";
-import PatientsToday from "../PatientsToday.tsx";
-import StaffToday from "../StaffToday.tsx";
-import WeeklyPatients from "../WeeklyPatients/WeeklyPatients.tsx";
-import MonthlyRevenueChart from "../MonthlyRevenue/MonthlyRevenue.tsx";
-import Appointments from "../Appointments/Appointments.tsx";
-import Notifications from "../Notifications/Notifications.tsx";
+import PatientsToday from "./PatientsToday.tsx";
+import StaffToday from "./StaffToday.tsx";
+import WeeklyPatients from "./WeeklyPatients/WeeklyPatients.tsx";
+import MonthlyRevenueChart from "./MonthlyRevenue/MonthlyRevenue.tsx";
+import Appointments from "./Appointments/Appointments.tsx";
+import Notifications from "./Notifications/Notifications.tsx";
 
 function Home() {
     return (

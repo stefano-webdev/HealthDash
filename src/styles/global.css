@@ -2,6 +2,7 @@
 :root {
     --mainRed: #AE3626;
     --backgroundBox: #f0f0f067;
+    --scale-font: clamp(19px, 4vw, 30px);
 }
 
 * {
@@ -9,7 +10,8 @@
     font-family: 'Tahoma', 'Verdana', 'Arial', 'Helvetica', sans-serif;
 }
 
-button {
+button,
+a {
     -webkit-tap-highlight-color: transparent;
     user-select: none;
     -webkit-user-select: none;
@@ -35,6 +37,24 @@ body {
 
 /* Reusable classes for boxes in sections/routes */
 /* Globals */
+div.currentRoute {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 35px;
+}
+
+div.currentRoute svg {
+    fill: var(--mainRed);
+    width: clamp(30px, 4vw, 34px);
+}
+
+div.currentRoute h2 {
+    font-size: clamp(25px, 4vw, 33px);
+    font-family: Arial, 'Helvetica Neue', Helvetica, 'Liberation Sans', sans-serif;
+    margin: 5px 0px 0px 0px;
+    letter-spacing: 2px;
+}
+
 #routeBoxesCont {
     display: flex;
     flex-direction: column;
@@ -62,16 +82,18 @@ div.patientsANDstaff p {
 }
 
 div.patientsANDstaff div p {
-    font-size: 16px;
+    font-size: clamp(16px, 2vw, 20px);
     color: black;
+    margin: 0px;
 }
 
 div.patientsANDstaff small {
     color: rgb(72, 72, 72);
+    font-size: clamp(13px , 1.5vw, 15px);
 }
 
 div.patientsANDstaff p:last-child {
-    font-size: 22px;
+    font-size: clamp(22px, 2.5vw, 25px);
     font-weight: bold;
 }
 
@@ -93,5 +115,5 @@ div#updateCont {
 
 div#updateCont svg {
     fill: rgb(72, 72, 72);
-    width: 18px;
+    width: clamp(18px, 2vw, 20px);
 }

@@ -1,7 +1,7 @@
 div#notificationsCont {
     width: 80%;
     max-width: 320px;
-    min-height: 377.5px;
+    min-height: 379px;
     margin: auto;
     padding: 25px 17px;
     background-color: var(--backgroundBox);
@@ -19,11 +19,12 @@ div#notificationsCont div#notificationsTitleCont {
 }
 
 div#notificationsCont div#notificationsTitleCont svg {
-    width: clamp(25px, 4vw, 37px);
+    width: clamp(25px, 4vw, 30px);
     fill: var(--mainRed);
 }
 
 div#notificationsCont h3 {
+    font-size: clamp(20px, 3.5vw, 25px);
     margin: 0px;
 }
 
@@ -38,11 +39,12 @@ div#updateNotificationsCont {
 
 div#updateNotificationsCont svg {
     fill: rgb(72, 72, 72);
-    width: 18px;
+    width: clamp(18px, 3vw, 20px);
 }
 
 div#updateNotificationsCont small {
     color: rgb(72, 72, 72);
+    font-size: clamp(13px , 2.5vw, 15px);
 }
 
 div#allNotificationsCont {
@@ -52,9 +54,11 @@ div#allNotificationsCont {
 }
 
 div#allNotificationsCont h4 {
+     font-size: clamp(17px, 3vw, 19px);
     margin: 0px 0px 2px 0px;
 }
 
 div#allNotificationsCont p {
+    font-size: clamp(16px, 3vw, 17px);
     margin: 0px;
 }

@@ -9,6 +9,7 @@ small#lastMonths {
     position: relative;
     bottom: 11px;
     left: 16px;
+    z-index: 0;
 }
 
 g.recharts-cartesian-grid line {

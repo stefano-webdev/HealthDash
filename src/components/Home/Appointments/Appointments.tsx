@@ -1,15 +1,16 @@
 import { useEffect, useState } from "react";
 import appointmentsData from "./AppointmentsData.json";
+import type { hospitalShape } from "../PatientsToday.tsx";
 import "./Appointments.css";
 
-type Appointment = {
+interface Appointment {
     id: number;
     patient: string;
     time: string;
     room: string;
 };
 
-type Department = {
+interface Department {
     id: number;
     name: string;
     appointments: Appointment[];
@@ -19,26 +20,32 @@ type DailyAppointments = Department[];
 
 function Appointments() {
     const [dailyAppointments, setDailyAppointments] = useState<DailyAppointments>([]);
-    
+
     useEffect(() => {
         // Today's date (YYYY-MM-DD)
         const today: string = new Date().toISOString().split("T")[0];
 
         // Check if we have today's appointments in localStorage
-        const stored: string | null = localStorage.getItem("dailyAppointments");
-        const storedDate: string | null = localStorage.getItem("dailyAppointmentsDate");
+        const unknownData: string | null = localStorage.getItem("hospitalData");
+        const savedData: hospitalShape = unknownData ? JSON.parse(unknownData) : {};
 
-        if (stored && storedDate === today) {
+        if (savedData.appointmentsToday && savedData.date === today) {
             // If we have today's data, we use it
-            setDailyAppointments(JSON.parse(stored));
+            setDailyAppointments(savedData.appointmentsToday);
         } else {
             // Otherwise, we generate new data
             const newData: DailyAppointments = generateDailyAppointments(appointmentsData as DailyAppointments);
-            setDailyAppointments(newData);
+
+            const updatedData: hospitalShape = {
+                ...savedData,
+                date: today,
+                appointmentsToday: newData
+            };
 
             // Save the new data in localStorage
-            localStorage.setItem("dailyAppointments", JSON.stringify(newData));
-            localStorage.setItem("dailyAppointmentsDate", today);
+            localStorage.setItem("hospitalData", JSON.stringify(updatedData));
+
+            setDailyAppointments(newData);
         }
     }, []);
 
@@ -114,3 +121,4 @@ function Appointments() {
 }
 
 export default Appointments;
+export type { DailyAppointments };

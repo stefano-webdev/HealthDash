@@ -1,0 +1,114 @@
+[
+  {
+    "id": 1,
+    "name": "Cardiologia",
+    "staff": [
+      {"id": 2, "employee": "Luca Bianchi", "shortRole": "Cardiologo", "longRole": "Specialista in diagnosi e trattamento delle malattie del cuore.", "ward": "Cardiologia", "number": "3345687656", "mail": "luca.bianchi@email.com"},
+      {"id": 3, "employee": "Martina Rossi", "shortRole": "Infermiera", "longRole": "Infermiera specializzata in terapia intensiva.", "ward": "Cardiologia", "number": "3331554751", "mail": "martina.rossi@email.com"},
+      {"id": 4, "employee": "Giorgio Esposito", "shortRole": "Infermiere", "longRole": "Infermiere per unità coronarica.", "ward": "Cardiologia", "number": "3329018534", "mail": "giorgio.verdi@email.com"},
+      {"id": 5, "employee": "Elena Ferri", "shortRole": "Tecnico", "longRole": "Tecnico di laboratorio, esegue esami come ECG.", "ward": "Cardiologia", "number": "3383804568", "mail": "elena.ferri@email.com"},
+      {"id": 6, "employee": "Marco Galli", "shortRole": "Tecnico", "longRole": "Tecnico di ecocardiografia, effettua ecocardiogrammi.", "ward": "Cardiologia", "number": "3353347107", "mail": "marco.galli@email.com"},
+      {"id": 7, "employee": "Francesca Fontana", "shortRole": "Fisioterapista", "longRole": "Fisioterapista, esegue riabilitazioni post-infarto.", "ward": "Cardiologia", "number": "3338744032", "mail": "francesca.fontana@email.com"},
+      {"id": 8, "employee": "Andrea Colombo", "shortRole": "Assistente", "longRole": "Supporta i medici nelle visite e nella gestione dei pazienti.", "ward": "Cardiologia", "number": "3312753233", "mail": "andrea.colombo@email.com"},
+      {"id": 9, "employee": "Chiara Rinaldi", "shortRole": "Infermiere", "longRole": "Infermiere di sala, assiste durante angioplastiche.", "ward": "Cardiologia", "number": "3335773931", "mail": "chiara.rinaldi@email.com"},
+      {"id": 10, "employee": "Alessandro Bruno", "shortRole": "Dietista", "longRole": "Dietista, pianifica diete per pazienti con patologie cardiache.", "ward": "Cardiologia", "number": "3339437923", "mail": "alessandro.deluca@email.com"},
+      {"id": 11, "employee": "Valentina Romano", "shortRole": "Coordinatore", "longRole": "Gestisce personale, reparto e organizza i turni.", "ward": "Cardiologia", "number": "3364492400", "mail": "valentina.romano@email.com"}
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Ortopedia",
+    "staff": [
+      {"id": 13, "employee": "Giovanni Marini", "shortRole": "Ortopedico", "longRole": "Specialista nelle patologie dell'apparato muscolo-scheletrico.", "ward": "Ortopedia", "number": "3345678901", "mail": "giovanni.marini@email.com"},
+      {"id": 14, "employee": "Sara Conti", "shortRole": "Infermiera", "longRole": "Infermiera specializzata in assistenza post-operatoria.", "ward": "Ortopedia", "number": "3331234567", "mail": "sara.conti@email.com"},
+      {"id": 15, "employee": "Paolo Santoro", "shortRole": "Fisioterapista", "longRole": "Fisioterapista specializzato in riabilitazione motoria.", "ward": "Ortopedia", "number": "3329876543", "mail": "paolo.santoro@email.com"},
+      {"id": 16, "employee": "Elisabetta Moretti", "shortRole": "Tecnico", "longRole": "Tecnico ortopedico, esegue lastre e risonanze.", "ward": "Ortopedia", "number": "3387654321", "mail": "elisabetta.moretti@email.com"},
+      {"id": 17, "employee": "Riccardo Lombardi", "shortRole": "Chirurgo", "longRole": "Chirurgo specializzato in protesi articolari.", "ward": "Ortopedia", "number": "3356789012", "mail": "riccardo.lombardi@email.com"},
+      {"id": 18, "employee": "Beatrice Rizzo", "shortRole": "Assistente", "longRole": "Assistente di supporto nelle attività quotidiane.", "ward": "Ortopedia", "number": "3334567890", "mail": "beatrice.rizzo@email.com"},
+      {"id": 19, "employee": "Davide Ferrari", "shortRole": "Infermiere", "longRole": "Infermiere specializzato in terapia del dolore.", "ward": "Ortopedia", "number": "3312345678", "mail": "davide.ferrari@email.com"},
+      {"id": 20, "employee": "Giulia Barbieri", "shortRole": "Tecnico", "longRole": "Tecnico specializzato nell'applicazione di tutori e gessi.", "ward": "Ortopedia", "number": "3339876543", "mail": "giulia.barbieri@email.com"},
+      {"id": 21, "employee": "Simone Greco", "shortRole": "Dietista", "longRole": "Dietista, pianifica alimentazione per i pazienti.", "ward": "Ortopedia", "number": "3338765432", "mail": "simone.greco@email.com"},
+      {"id": 22, "employee": "Alessia Marino", "shortRole": "Coordinatore", "longRole": "Gestisce il personale e organizza le attività di reparto.", "ward": "Ortopedia", "number": "3365432109", "mail": "alessia.marino@email.com"}
+    ]
+  },
+  {
+    "id": 23,
+    "name": "Pediatria",
+    "staff": [
+      {"id": 24, "employee": "Anna Romano", "shortRole": "Pediatra", "longRole": "Specialista nella cura delle malattie infantili.", "ward": "Pediatria", "number": "3345123456", "mail": "anna.romano@email.com"},
+      {"id": 25, "employee": "Marco Esposito", "shortRole": "Infermiere", "longRole": "Infermiere specializzato in neonatologia.", "ward": "Pediatria", "number": "3331122334", "mail": "marco.esposito@email.com"},
+      {"id": 26, "employee": "Chiara Moretti", "shortRole": "Assistente", "longRole": "Specialista nell'assistenza ai neonati.", "ward": "Pediatria", "number": "3329988776", "mail": "chiara.deangelis@email.com"},
+      {"id": 27, "employee": "Francesco Ricci", "shortRole": "Psichiatra", "longRole": "Specialista in neuropsichiatria infantile.", "ward": "Pediatria", "number": "3387766554", "mail": "francesco.ricci@email.com"},
+      {"id": 28, "employee": "Elena Costa", "shortRole": "Psicologa", "longRole": "Psicologa infantile, supporto emotivo per bambini.", "ward": "Pediatria", "number": "3354433221", "mail": "elena.costa@email.com"},
+      {"id": 29, "employee": "Matteo Giordano", "shortRole": "Pediatra", "longRole": "Pediatra specializzato in allergologie infantili.", "ward": "Pediatria", "number": "3335544332", "mail": "matteo.giordano@email.com"},
+      {"id": 30, "employee": "Sofia Mancini", "shortRole": "Infermiera", "longRole": "Infermiera pediatrica per reparto di degenza.", "ward": "Pediatria", "number": "3312233445", "mail": "sofia.mancini@email.com"},
+      {"id": 31, "employee": "Antonio Serra", "shortRole": "Logopedista", "longRole": "Logopedista per disturbi del linguaggio infantile.", "ward": "Pediatria", "number": "3336655443", "mail": "antonio.serra@email.com"},
+      {"id": 32, "employee": "Greta Valentini", "shortRole": "Pedagogista", "longRole": "Specializzata nelle attività educative per i bambini.", "ward": "Pediatria", "number": "3339871234", "mail": "greta.valentini@email.com"},
+      {"id": 33, "employee": "Lorenzo Morelli", "shortRole": "Coordinatore", "longRole": "Coordina le attività e il personale del reparto di pediatria.", "ward": "Pediatria", "number": "3361122334", "mail": "lorenzo.morelli@email.com"}
+    ]
+  },
+  {
+    "id": 34,
+    "name": "Oncologia",
+    "staff": [
+      {"id": 35, "employee": "Roberto Bruno", "shortRole": "Oncologo", "longRole": "Specialista nella diagnosi e trattamento dei tumori.", "ward": "Oncologia", "number": "3345566778", "mail": "roberto.bruno@email.com"},
+      {"id": 36, "employee": "Laura Gentile", "shortRole": "Infermiera", "longRole": "Infermiera specializzata in oncologia.", "ward": "Oncologia", "number": "3334455667", "mail": "laura.gentile@email.com"},
+      {"id": 37, "employee": "Stefano Fiore", "shortRole": "Terapista", "longRole": "Specialista in radioterapia oncologica.", "ward": "Oncologia", "number": "3323344556", "mail": "stefano.fiore@email.com"},
+      {"id": 38, "employee": "Valeria Martini", "shortRole": "Psicologa", "longRole": "Psicologa per pazienti oncologici.", "ward": "Oncologia", "number": "3389988776", "mail": "valeria.martini@email.com"},
+      {"id": 39, "employee": "Gabriele Rinaldi", "shortRole": "Ricercatore", "longRole": "Ricercatore in oncologia molecolare.", "ward": "Oncologia", "number": "3356677889", "mail": "gabriele.rinaldi@email.com"},
+      {"id": 40, "employee": "Silvia Villa", "shortRole": "Dietista", "longRole": "Dietista specializzata in alimentazione per pazienti oncologici.", "ward": "Oncologia", "number": "3337766554", "mail": "silvia.villa@email.com"},
+      {"id": 41, "employee": "Michele Palmieri", "shortRole": "Infermiere", "longRole": "Infermiere per terapia del dolore oncologico.", "ward": "Oncologia", "number": "3318877665", "mail": "michele.palmieri@email.com"},
+      {"id": 42, "employee": "Eva Sanna", "shortRole": "Assistente", "longRole": "Assistente per day hospital oncologico.", "ward": "Oncologia", "number": "3334433221", "mail": "eva.sanna@email.com"},
+      {"id": 43, "employee": "Daniele Turco", "shortRole": "Tecnico", "longRole": "Tecnico di laboratorio analisi oncologiche.", "ward": "Oncologia", "number": "3332211334", "mail": "daniele.turco@email.com"},
+      {"id": 44, "employee": "Camilla Cattaneo", "shortRole": "Coordinatore", "longRole": "Coordina le attività del reparto di oncologia.", "ward": "Oncologia", "number": "3365544667", "mail": "camilla.cattaneo@email.com"}
+    ]
+  },
+  {
+    "id": 45,
+    "name": "Neurologia",
+    "staff": [
+      {"id": 46, "employee": "Federico Gallo", "shortRole": "Neurologo", "longRole": "Specialista nel trattamento delle malattie del sistema nervoso.", "ward": "Neurologia", "number": "3345671234", "mail": "federico.gallo@email.com"},
+      {"id": 47, "employee": "Eleonora Parise", "shortRole": "Infermiera", "longRole": "Infermiera specializzata in neurologia.", "ward": "Neurologia", "number": "3339871234", "mail": "eleonora.parise@email.com"},
+      {"id": 48, "employee": "Massimo Longo", "shortRole": "Neurofisiologo", "longRole": "Specialista in esami neurofisiologici (EEG, EMG).", "ward": "Neurologia", "number": "3328765432", "mail": "massimo.longo@email.com"},
+      {"id": 49, "employee": "Aurora Conte", "shortRole": "Psicologa", "longRole": "Psicologa specializzata in riabilitazione cognitiva.", "ward": "Neurologia", "number": "3387654321", "mail": "aurora.conte@email.com"},
+      {"id": 50, "employee": "Christian Leone", "shortRole": "Neuroradiologo", "longRole": "Specialista in diagnostica per immagini del sistema nervoso.", "ward": "Neurologia", "number": "3356789123", "mail": "christian.leone@email.com"},
+      {"id": 51, "employee": "Ginevra Ferretti", "shortRole": "Logopedista", "longRole": "Logopedista per disturbi della comunicazione.", "ward": "Neurologia", "number": "3334567891", "mail": "ginevra.ferretti@email.com"},
+      {"id": 52, "employee": "Dario Mariani", "shortRole": "Fisioterapista", "longRole": "Fisioterapista specializzato in riabilitazione.", "ward": "Neurologia", "number": "3312345679", "mail": "dario.mariani@email.com"},
+      {"id": 53, "employee": "Noemi Testa", "shortRole": "Tecnico", "longRole": "Tecnico di neurofisiopatologia.", "ward": "Neurologia", "number": "3333216549", "mail": "noemi.testa@email.com"},
+      {"id": 54, "employee": "Omar Coppola", "shortRole": "Neurochirurgo", "longRole": "Specialista in interventi chirurgici.", "ward": "Neurologia", "number": "3339876541", "mail": "omar.coppola@email.com"},
+      {"id": 55, "employee": "Serena Pellegrini", "shortRole": "Coordinatore", "longRole": "Coordina le attività del reparto di neurologia.", "ward": "Neurologia", "number": "3365432198", "mail": "serena.pellegrini@email.com"}
+    ]
+  },
+  {
+    "id": 56,
+    "name": "Pronto Soccorso",
+    "staff": [
+      {"id": 57, "employee": "Andrea Messina", "shortRole": "Medico", "longRole": "Medico specializzato in emergenza-urgenza.", "ward": "Pronto Soccorso", "number": "3345812345", "mail": "andrea.messina@email.com"},
+      {"id": 58, "employee": "Barbara Rossetti", "shortRole": "Infermiera", "longRole": "Infermiera di triage e accettazione.", "ward": "Pronto Soccorso", "number": "3336723456", "mail": "barbara.rossetti@email.com"},
+      {"id": 59, "employee": "Simone Basile", "shortRole": "Infermiere", "longRole": "Infermiere per area critica e trauma center.", "ward": "Pronto Soccorso", "number": "3327634567", "mail": "simone.basile@email.com"},
+      {"id": 60, "employee": "Claudia Orlando", "shortRole": "Medico", "longRole": "Medico per area medica e osservazione breve.", "ward": "Pronto Soccorso", "number": "3388545678", "mail": "claudia.orlando@email.com"},
+      {"id": 61, "employee": "Enrico Pagano", "shortRole": "Ortopedico", "longRole": "Specialista ortopedico per traumi e fratture.", "ward": "Pronto Soccorso", "number": "3359456789", "mail": "enrico.pagano@email.com"},
+      {"id": 62, "employee": "Veronica Silvestri", "shortRole": "Assistente", "longRole": "Assistente per gestione documentale e accettazione.", "ward": "Pronto Soccorso", "number": "3331367890", "mail": "veronica.silvestri@email.com"},
+      {"id": 63, "employee": "Alex Marchetti", "shortRole": "Tecnico", "longRole": "Tecnico di laboratorio per analisi urgenti.", "ward": "Pronto Soccorso", "number": "3312278901", "mail": "alex.marchetti@email.com"},
+      {"id": 64, "employee": "Linda Santangelo", "shortRole": "Psicologa", "longRole": "Psicologa per supporto emergenze e crisi.", "ward": "Pronto Soccorso", "number": "3333189012", "mail": "linda.santangelo@email.com"},
+      {"id": 65, "employee": "Rocco Lombardo", "shortRole": "Coordinatore", "longRole": "Coordina il personale e le attività di pronto soccorso.", "ward": "Pronto Soccorso", "number": "3334090123", "mail": "rocco.lombardo@email.com"},
+      {"id": 66, "employee": "Angela Giuliani", "shortRole": "Caposala", "longRole": "Responsabile organizzativo del pronto soccorso.", "ward": "Pronto Soccorso", "number": "3365901234", "mail": "angela.giuliani@email.com"}
+    ]
+  },
+  {
+    "id": 67,
+    "name": "Chirurgia",
+    "staff": [
+      {"id": 68, "employee": "Vincenzo Grassi", "shortRole": "Chirurgo", "longRole": "Chirurgo specializzato in interventi addominali.", "ward": "Chirurgia", "number": "3345123789", "mail": "vincenzo.desantis@email.com"},
+      {"id": 69, "employee": "Monica Ferrara", "shortRole": "Anestesista", "longRole": "Medico anestesista-rianimatore.", "ward": "Chirurgia", "number": "3336234890", "mail": "monica.ferrara@email.com"},
+      {"id": 70, "employee": "Giuseppe Marini", "shortRole": "Infermiere", "longRole": "Infermiere di sala operatoria.", "ward": "Chirurgia", "number": "3327345901", "mail": "giuseppe.marini@email.com"},
+      {"id": 71, "employee": "Teresa Coppola", "shortRole": "Instrumentista", "longRole": "Infermiere instrumentista per interventi chirurgici.", "ward": "Chirurgia", "number": "3388456012", "mail": "teresa.coppola@email.com"},
+      {"id": 72, "employee": "Antonio Parisi", "shortRole": "Chirurgo", "longRole": "Chirurgo specializzato in chirurgia laparoscopica.", "ward": "Chirurgia", "number": "3359567123", "mail": "antonio.parisi@email.com"},
+      {"id": 73, "employee": "Lucia Amato", "shortRole": "Infermiera", "longRole": "Infermiera per degenza post-operatoria.", "ward": "Chirurgia", "number": "3331478234", "mail": "lucia.amato@email.com"},
+      {"id": 74, "employee": "Salvatore Barbieri", "shortRole": "Fisioterapista", "longRole": "Fisioterapista per riabilitazione post-chirurgica.", "ward": "Chirurgia", "number": "3312389345", "mail": "salvatore.barbieri@email.com"},
+      {"id": 75, "employee": "Elisabetta Gatti", "shortRole": "Dietista", "longRole": "Dietista per nutrizione post-operatoria.", "ward": "Chirurgia", "number": "3333290456", "mail": "elisabetta.gatti@email.com"},
+      {"id": 76, "employee": "Domenico Vitale", "shortRole": "Coordinatore", "longRole": "Coordina le attività di reparto chirurgico.", "ward": "Chirurgia", "number": "3334101567", "mail": "domenico.vitale@email.com"},
+      {"id": 77, "employee": "Stefania Palmieri", "shortRole": "Caposala", "longRole": "Responsabile organizzativo della chirurgia generale.", "ward": "Chirurgia", "number": "3365012678", "mail": "stefania.palmieri@email.com"}
+    ]
+  }
+]

@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
-
-interface StaffShiftDate {
-    day: string;   // like "2025-08-16"
-    shift: string; // "morning" | "afternoon" | "night"
-    staff: number;
-}
+import type { hospitalShape } from "./PatientsToday.tsx";
 
 type shiftDay = "morning" | "afternoon" | "night"
+
+interface StaffShift {
+    staff: number;
+    shift: string; // "morning" | "afternoon" | "night"
+}
 
 function StaffToday() {
     const [staff, setStaff] = useState<number | null>(null);
@@ -24,23 +24,26 @@ function StaffToday() {
         const today: string = new Date().toISOString().split("T")[0];
         const currentShift = getShift();
 
-        const savedData = localStorage.getItem("staffToday");
-        const parsed: StaffShiftDate | null = savedData ? JSON.parse(savedData) : null;
+        const unknownData: string | null = localStorage.getItem("hospitalData");
+        const savedData: hospitalShape = unknownData ? JSON.parse(unknownData) : {};
 
-        if (parsed && parsed.day === today && parsed.shift === currentShift) {
+        if (savedData.staffToday && savedData.date === today && savedData.staffToday.shift === currentShift) {
             // If it already exists for today and for this shift, use again
-            setStaff(parsed.staff);
+            setStaff(savedData.staffToday.staff);
         } else {
             // Generate a new realistic staff number from 300 to 550
             const staffToday = Math.floor(Math.random() * (550 - 300 + 1) + 300);
 
-            const newData: StaffShiftDate = {
-                day: today,
-                shift: currentShift,
-                staff: staffToday,
+            const updatedData: hospitalShape = {
+                ...savedData,
+                date: today,
+                staffToday: {
+                    staff: staffToday,
+                    shift: currentShift
+                }
             };
 
-            localStorage.setItem("staffToday", JSON.stringify(newData));
+            localStorage.setItem("hospitalData", JSON.stringify(updatedData));
             setStaff(staffToday);
         }
     }, []);
@@ -75,3 +78,4 @@ function StaffToday() {
 }
 
 export default StaffToday;
+export type { StaffShift };

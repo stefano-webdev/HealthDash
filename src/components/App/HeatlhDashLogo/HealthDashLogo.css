@@ -8,11 +8,12 @@
 
 #healthDashCont svg {
     fill: #E63946;
-    width: 45px;
+    width: clamp(44px, 6.5vw, 52px);
 }
 
 #healthDashCont h1 {
     letter-spacing: 1px;
+    font-size: clamp(32px, 5vw, 40px);
     font-style: italic;
     color: rgb(88, 88, 88);
     margin: 0px;

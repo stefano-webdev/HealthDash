@@ -1,12 +1,21 @@
 import { NavLink } from "react-router-dom";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import "./Sidebar.css"
 
 type SidebarProps = {
-  open: boolean;
-  onToggle: () => void;
+    open: boolean;
+    onToggle: () => void;
 };
 
 function Sidebar({ open, onToggle }: SidebarProps) {
+    const location = useLocation();
+
+    useEffect(() => {
+        // Every time the location changes, close the sidebar/menu
+        onToggle();
+    }, [location]);
+
     return (
         <>
             <button

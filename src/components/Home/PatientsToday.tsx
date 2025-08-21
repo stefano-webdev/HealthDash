@@ -1,28 +1,42 @@
 import { useState, useEffect } from "react";
+import type { StaffShift } from "./StaffToday.tsx";
+import type { DailyAppointments } from "./Appointments/Appointments.tsx";
+import type { DailyNotifications } from "./Notifications/Notifications.tsx";
+import type {StaffListType} from "../Staff/StaffList/StaffList.tsx";
 
-interface patientsDate {
-    date: string,
-    patients: number
+interface hospitalShape {
+    date?: string,
+    patientsToday?: number,
+    staffToday?: StaffShift,
+    appointmentsToday?: DailyAppointments,
+    notificationsToday?: DailyNotifications,
+    staffList?: StaffListType
 }
 
 function PatientsToday() {
     const [patients, setPatients] = useState<null | number>(null);
 
     useEffect(() => {
-        const today: string = new Date().toDateString();
-        const unknownData: string | null = localStorage.getItem("patientsToday");
-        const savedData: patientsDate | null = unknownData ? JSON.parse(unknownData) : null;
+        const today: string = new Date().toISOString().split("T")[0];
+        const unknownData: string | null = localStorage.getItem("hospitalData");
+        const savedData: hospitalShape = unknownData ? JSON.parse(unknownData) : {};
 
-        if (savedData && savedData.date === today) {
+        if (savedData.patientsToday && savedData.date === today) {
             // Use the existing data
-            setPatients(savedData.patients);
+            setPatients(savedData.patientsToday);
         }
         else {
             // Generate a realistic number of patients from 600 to 1100 patients
             const newPatients: number = Math.floor(Math.random() * (1100 - 600 + 1) + 600);
 
+            const updatedData: hospitalShape = {
+                ...savedData,
+                date: today,
+                patientsToday: newPatients
+            };
+
             // Save in localStorage with today's date
-            localStorage.setItem("patientsToday", JSON.stringify({ date: today, patients: newPatients }));
+            localStorage.setItem("hospitalData", JSON.stringify(updatedData));
 
             setPatients(newPatients);
         }
@@ -59,3 +73,4 @@ function PatientsToday() {
 }
 
 export default PatientsToday;
+export type { hospitalShape };

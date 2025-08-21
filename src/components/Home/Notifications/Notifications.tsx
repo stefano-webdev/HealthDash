@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 import notificationsData from "./NotificationsData.json";
+import type { hospitalShape } from "../PatientsToday.tsx";
 import "./Notifications.css";
 
-type Message = {
+interface Message {
     message: string;
 };
 
-type Notifications = {
+interface Notifications {
     id: number;
     name: string;
     notifications: Message[];
@@ -18,22 +19,30 @@ function Notifications() {
     const [notifications, setNotifications] = useState<DailyNotifications>([]);
 
     useEffect(() => {
-        // Check if we have notifications in localStorage
-        const storedNotifications: string | null = localStorage.getItem("notifications");
-        const storedDate: string | null = localStorage.getItem("notificationsDate");
+        // Today's date (YYYY-MM-DD)
         const today: string = new Date().toISOString().split("T")[0];
 
-        if (storedNotifications && storedDate === today) {
+        // Check if we have today's notifications in localStorage
+        const unknownData: string | null = localStorage.getItem("hospitalData");
+        const savedData: hospitalShape = unknownData ? JSON.parse(unknownData) : {};
+
+        if (savedData.notificationsToday && savedData.date === today) {
             // If we have today's notifications, we use them
-            setNotifications(JSON.parse(storedNotifications));
+            setNotifications(savedData.notificationsToday);
         } else {
             // Otherwise we generate new notifications
-            const newNotifications: DailyNotifications = generateNotifications(notificationsData as DailyNotifications);
-            setNotifications(newNotifications);
+            const newData: DailyNotifications = generateNotifications(notificationsData as DailyNotifications);
+
+            const updatedData: hospitalShape = {
+                ...savedData,
+                date: today,
+                notificationsToday: newData
+            };
 
             // Save the new notifications in localStorage
-            localStorage.setItem("notifications", JSON.stringify(newNotifications));
-            localStorage.setItem("notificationsDate", today);
+            localStorage.setItem("hospitalData", JSON.stringify(updatedData));
+
+            setNotifications(newData);
         }
     }, []);
 
@@ -103,3 +112,4 @@ function Notifications() {
 }
 
 export default Notifications;
+export type { DailyNotifications };
