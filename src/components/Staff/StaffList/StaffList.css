@@ -13,29 +13,73 @@ div.boxStyleStaff {
 }
 
 #staffListCont h3 {
-    font-size: clamp(20px, 2.5vw, 24px);
+    font-size: clamp(20px, 3vw, 22px);
     margin: 0px 0px 5px 0px;
 }
 
 #staffListCont p {
-    font-size: clamp(16px, 2vw, 20px);
+    font-size: clamp(16px, 3vw, 18px);
 }
 
 #staffListCont p:nth-of-type(1) {
+    padding: 0px 5px;
     margin: 10px auto 3px auto;
 }
 
 #staffListCont p:nth-of-type(2) {
-    margin: 0px auto 37px auto;
+    margin: 0px auto 28px auto;
+}
+
+small#filterFor {
+    display: inline-block;
+    font-size: clamp(13px, 3vw, 15px);
+    color: rgba(0, 0, 0, 0.7);
+    margin-bottom: 5px;
+}
+
+#staffFilterCont {
+    width: fit-content;
+    margin: auto;
+    position: relative;
+    margin-bottom: 18px;
+}
+
+#staffFilterCont svg {
+    fill: black;
+    position: absolute;
+    left: 7px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: clamp(20px, 3vw, 22px);
+    pointer-events: none;
+}
+
+#staffListCont input#staffFilterInput {
+    width: 267px;
+    padding: 8px 12px 8px 33px;
+    font-size: clamp(16px, 2.6vw, 18px);
+    border: 2px solid rgba(0, 0, 0, 0.28);
+    border-radius: 5px;
+}
+
+#staffListCont input#staffFilterInput:focus {
+    outline: none;
+    border-color: #2e7cd0;
+}
+
+#staffListCont p#noEmployeeFound {
+    margin: 0px;
 }
 
 #staffListCont table {
+    width: 100%;
+    margin: auto;
     border-collapse: collapse;
 }
 
 #staffListCont #tableWrapper {
     height: 210px;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 #staffListCont table thead th {
@@ -43,7 +87,11 @@ div.boxStyleStaff {
     top: 0;
     background-color: var(--mainRed);
     color: white;
-    font-size: clamp(16px, 2vw, 20px);
+    font-size: clamp(16px, 3vw, 19px);
+}
+
+#staffListCont table tbody {
+    cursor: pointer;
 }
 
 #staffListCont table th,
@@ -57,6 +105,12 @@ div.boxStyleStaff {
 
 #staffListCont table tbody tr td {
     padding-top: 28px;
-    font-size: clamp(14px, 1.5vw, 16px);
+    font-size: clamp(14px, 2.6vw, 16px);
     border-bottom: 1px solid rgba(0, 0, 0, 0.227);
+}
+
+#staffListCont tr.selectedEmployee {
+    background-color: #cce5ff;
+    font-style: italic;
+    transition: background-color 0.3s ease-in-out; 
 }

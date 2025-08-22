@@ -3,17 +3,18 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import "./Sidebar.css"
 
-type SidebarProps = {
-    open: boolean;
-    onToggle: () => void;
+interface SidebarProps {
+    open: boolean,
+    onToggle: () => void,
+    changeRoute: React.Dispatch<React.SetStateAction<boolean>>,
 };
 
-function Sidebar({ open, onToggle }: SidebarProps) {
+function Sidebar({ open, onToggle, changeRoute}: SidebarProps) {
     const location = useLocation();
 
     useEffect(() => {
-        // Every time the location changes, close the sidebar/menu
-        onToggle();
+        // Every time the location changes, close the sidebar
+        changeRoute(false);
     }, [location]);
 
     return (

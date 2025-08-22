@@ -1,6 +1,12 @@
 import StaffList from '../StaffList/StaffList.tsx';
+import { useEffect } from 'react';
 
 function Staff() {
+    // Scroll to top on component mount
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <>
             <div className="currentRoute">
@@ -22,11 +28,11 @@ function Staff() {
                 </svg>
                 <h2>PERSONALE</h2>
             </div>
-            <div id="routeBoxesCont">
+            <div id="staffRouteCont">
                 <StaffList />
             </div>
         </>
     );
 }
 
-export default Staff
+export default Staff;

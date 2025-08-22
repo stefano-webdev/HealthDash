@@ -4,8 +4,14 @@ import WeeklyPatients from "./WeeklyPatients/WeeklyPatients.tsx";
 import MonthlyRevenueChart from "./MonthlyRevenue/MonthlyRevenue.tsx";
 import Appointments from "./Appointments/Appointments.tsx";
 import Notifications from "./Notifications/Notifications.tsx";
+import { useEffect } from "react";
 
 function Home() {
+    // Scroll to top on component mount
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <>
             <div className="currentRoute">
@@ -21,7 +27,7 @@ function Home() {
                 </svg>
                 <h2>HOME</h2>
             </div>
-            <div id="routeBoxesCont">
+            <div id="homeRouteCont">
                 <PatientsToday />
                 <StaffToday />
                 <WeeklyPatients />

@@ -25,7 +25,7 @@ function Header() {
     return (
         <header>
             <div id="headerContainer">
-                <Sidebar open={sidebarOpen} onToggle={handleSidebarClick} />
+                <Sidebar open={sidebarOpen} onToggle={handleSidebarClick} changeRoute={setSidebarOpen} />
                 <LogoComponent />
                 <AdminDropdown open={adminOpen} onToggle={handleAdminClick} />
             </div>
