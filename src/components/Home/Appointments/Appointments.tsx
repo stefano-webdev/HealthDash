@@ -72,19 +72,19 @@ function Appointments() {
     }
 
     return (
-        <div id="appointmentsCont">
-            <div id="appointmentsTitleCont">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+        <div id="appointmentsCont" className="boxStyle">
+            <div className="titleBox">
+                <svg className="box" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
                     <path d="M320 64C461.4 64 576 178.6 576 320C576 461.4 461.4 576 
                         320 576C178.6 576 64 461.4 64 320C64 178.6 178.6 64 320 64zM296 
                         184L296 320C296 328 300 335.5 306.7 340L402.7 404C413.7 411.4 428.6 
                         408.4 436 397.3C443.4 386.2 440.4 371.4 429.3 364L344 307.2L344 
                         184C344 170.7 333.3 160 320 160C306.7 160 296 170.7 296 184z" />
                 </svg>
-                <h3>Appuntamenti</h3>
+                <h3 className="box">Appuntamenti</h3>
             </div>
-            <div id="updateAppointmentsCont">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+            <div className="updateCont">
+                <svg className="updateSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
                     <path d="M129.9 292.5C143.2 199.5 223.3 128 320 128C373 128 
                             421 149.5 455.8 184.2C456 184.4 456.2 184.6 456.4 184.8L464 
                             192L416.1 192C398.4 192 384.1 206.3 384.1 224C384.1 241.7 398.4 

@@ -1,0 +1,26 @@
+#staffScheduleCont {
+    width: 100%;
+    max-width: 335px;
+    min-height: 377px;
+}
+
+p#employeeSchedule {
+    text-align: center;
+    margin: 10px auto 30px auto;
+    min-height: 38px;
+}
+
+#staffScheduleCont #employeeSchedulesCont {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 75%;
+    margin: auto;
+}
+
+#staffScheduleCont .dayShiftCont {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    border-bottom: 1px solid #ae362691;
+}

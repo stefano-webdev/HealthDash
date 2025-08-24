@@ -18,6 +18,26 @@ a {
     cursor: pointer;
 }
 
+p {
+    font-size: 16px;
+    margin: 0px;
+    color: black;
+}
+
+input, label, button {
+    font-size: 16px;
+}
+
+small {
+    font-size: 13px;
+    color: rgb(72, 72, 72);
+}
+
+svg.updateSvg {
+    fill: rgb(72, 72, 72);
+    width: 18px;
+}
+
 html {
     text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
@@ -55,7 +75,6 @@ div.currentRoute h2 {
     letter-spacing: 2px;
 }
 
-/* Routes containers */
 #homeRouteCont {
     display: flex;
     flex-direction: column;
@@ -68,10 +87,20 @@ div.currentRoute h2 {
     gap: 3.5rem;
 }
 
+svg.box {
+    width: 25px;
+    fill: var(--mainRed);
+}
+
+h3.box {
+    font-size: 20px;
+    margin: 0px;
+}
+
 /* Home */
 div.boxStyle {
     margin: auto;
-    padding: 22px;
+    padding: 23px 13px;
     background-color: var(--backgroundBox);
     border-radius: 5px;
     border: 1px solid rgba(0, 0, 0, 0.28);
@@ -81,25 +110,11 @@ div.patientsANDstaff {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-div.patientsANDstaff p {
-    margin: 0px;
-}
-
-div.patientsANDstaff div p {
-    font-size: clamp(16px, 2vw, 20px);
-    color: black;
-    margin: 0px;
-}
-
-div#updateCont small {
-    color: rgb(72, 72, 72);
-    font-size: clamp(13px , 1.5vw, 15px);
+    min-height: 138px;
 }
 
 div.patientsANDstaff p:last-child {
-    font-size: clamp(22px, 2.5vw, 25px);
+    font-size: 22px;
     font-weight: bold;
 }
 
@@ -110,7 +125,15 @@ div.patientsANDstaff div:first-child {
     gap: 6px;
 }
 
-div#updateCont {
+div.titleBox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;
+    margin: 0px auto 6px auto;
+}
+
+div.updateCont {
     display: flex;
     gap: 5px;
     align-items: center;
@@ -119,7 +142,6 @@ div#updateCont {
     margin-bottom: 22px;
 }
 
-div#updateCont svg {
-    fill: rgb(72, 72, 72);
-    width: clamp(18px, 2vw, 20px);
+div.crudShowCont h4 {
+    font-size: 18px;
 }

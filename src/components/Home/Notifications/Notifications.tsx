@@ -66,9 +66,9 @@ function Notifications() {
     }
 
     return (
-        <div id="notificationsCont">
-            <div id="notificationsTitleCont">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+        <div id="notificationsCont" className="boxStyle">
+            <div className="titleBox">
+                <svg className="box" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
                     <path d="M320 64C302.3 64 288 78.3 288 96L288 99.2C215 114 
                         160 178.6 160 256L160 277.7C160 325.8 143.6 372.5 113.6 
                         410.1L103.8 422.3C98.7 428.6 96 436.4 96 444.5C96 464.1 111.9 
@@ -78,10 +78,10 @@ function Notifications() {
                         64 320 64zM258 528C265.1 555.6 290.2 576 320 576C349.8 576 374.9 
                         555.6 382 528L258 528z" />
                 </svg>
-                <h3>Notifiche</h3>
+                <h3 className="box">Notifiche</h3>
             </div>
             <div id="updateNotificationsCont">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                <svg className="updateSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
                     <path d="M129.9 292.5C143.2 199.5 223.3 128 320 128C373 128 
                             421 149.5 455.8 184.2C456 184.4 456.2 184.6 456.4 184.8L464 
                             192L416.1 192C398.4 192 384.1 206.3 384.1 224C384.1 241.7 398.4 

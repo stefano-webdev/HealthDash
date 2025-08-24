@@ -47,8 +47,8 @@ function PatientsToday() {
         <div className="boxStyle patientsANDstaff">
             <div>
                 <p>Pazienti in ospedale</p>
-                <div id="updateCont">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                <div className="updateCont">
+                    <svg className="updateSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
                         <path d="M129.9 292.5C143.2 199.5 223.3 128 320 128C373 128 
                             421 149.5 455.8 184.2C456 184.4 456.2 184.6 456.4 184.8L464 
                             192L416.1 192C398.4 192 384.1 206.3 384.1 224C384.1 241.7 398.4 
@@ -67,7 +67,7 @@ function PatientsToday() {
                     <small>24 ore</small>
                 </div>
             </div>
-            <p>{patients !== null ? patients : "..."}</p>
+            <p>{patients}</p>
         </div>
     );
 }

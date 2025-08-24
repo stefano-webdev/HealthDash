@@ -1,11 +1,7 @@
 #staffDetailsCont {
-    width: 96%;
-}
-
-#staffDetailsCont h3 {
-    font-size: clamp(20px, 3vw, 22px);
-    width: fit-content;
-    margin: 0px auto;
+    width: 100%;
+    max-width: 335px;
+    min-height: 278px;
 }
 
 div#employeeDetailsCont {
@@ -13,21 +9,20 @@ div#employeeDetailsCont {
     display: flex;
     flex-direction: column;
     gap: 2px;
+    min-height: 49px;
 }
 
 small#employeeWard {
     font-style: italic;
-    margin-bottom: 4px;
 }
 
 p#employeeDetails {
-    font-size: clamp(26px, 3vw, 28px);
-    margin: 0px;
+    font-size: 26px;
 }
 
 p#roleDetails {
-    font-size: clamp(16px, 3vw, 18px);
-    margin: 25px 0px 13px 0px;
+    min-height: 38px;
+    margin: 30px 0px 10px 0px;
 }
 
 div#employeeContactsCont {
@@ -40,17 +35,11 @@ div#employeeMailCont,
 div#employeePhoneCont {
     display: flex;
     align-items: center;
-}
-
-div#employeeMailCont p,
-div#employeePhoneCont p {
-    font-size: clamp(16px, 3vw, 18px);
-    margin: 0px;
+    gap: 8px;
 }
 
 div#employeeMailCont svg,
 div#employeePhoneCont svg {
     fill: var(--mainRed);
-    width: clamp(23px, 3vw, 25px);
-    margin-right: 8px;
+    width: 22px;
 }
