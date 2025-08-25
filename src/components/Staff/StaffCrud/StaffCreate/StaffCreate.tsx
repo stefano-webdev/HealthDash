@@ -97,7 +97,7 @@ function StaffCreate({ close, props }: StaffCreateProps) {
     }
 
     return (
-        <div id="createEmployeeCont" className='crudShowCont boxStyle'>
+        <div id="createEmployeeCont" className='boxStyle'>
             <div className='titleBox'>
                 <svg className='box' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
                     <path d="M352 128C352 110.3 337.7 96 320 96C302.3 96 288 

@@ -61,6 +61,8 @@ function StaffList() {
     }, []);
 
     // Select 3-6 random staff members from each ward
+    // In a real application this data would be fetched from a real database with an API,
+    // but here I generate it randomly each day to simulate recent activity
     function randomStaff(staffData: StaffListType): StaffListType {
         return staffData.map((ward: AllStaffList): AllStaffList => {
             const shuffledStaff = [...ward.staff].sort(() => 0.5 - Math.random());
