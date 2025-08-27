@@ -1,7 +1,5 @@
 import { useState, useRef } from 'react';
 import './StaffCrud.css';
-import staffData from '../Staff/Staff.json';
-import type { StaffMember } from '../StaffList/StaffList.tsx';
 import type { StaffListType } from '../StaffList/StaffList.tsx';
 import StaffCreate from './StaffCreate/StaffCreate.tsx';
 import StaffUpdate from './StaffUpdate/StaffUpdate.tsx';
