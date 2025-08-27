@@ -19,7 +19,6 @@ type CrudType = "create" | "update" | "delete" | null;
 function StaffCrud({ id, ...rest }: StaffCrudProps) {
     const newCrudCont = useRef<HTMLDivElement>(null);
     // staffMember is undefined for the created employees
-    const staffMember: StaffMember | undefined = staffData.flatMap(ward => ward.staff).find(member => member.id === id);
     const [activeCrud, setActiveCrud] = useState<CrudType>(null);
 
     return (

@@ -1,10 +1,4 @@
-import { useState } from 'react';
 import './StaffDelete.css';
-import staffDataJSON from '../../Staff/Staff.json';
-import type { StaffMember } from '../../StaffList/StaffList.tsx';
-import type { hospitalShape } from '../../../Home/PatientsToday.tsx';
-import type { StaffListType } from '../../StaffList/StaffList.tsx';
-import type { AllStaffList } from "../../StaffList/StaffList.tsx";
 
 function StaffDelete() {
     return (
