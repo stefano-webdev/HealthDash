@@ -3,7 +3,8 @@
     justify-content: center;
     align-items: center;
     gap: 5px;
-    margin: 21px 0px 3rem 0px;
+    margin: 21px 0px 5px 0px;
+    /* margin: 21px 0px 2rem 0px; */
 }
 
 #healthDashCont svg {
@@ -17,4 +18,12 @@
     font-style: italic;
     color: rgb(88, 88, 88);
     margin: 0px;
+}
+
+h2#inDevelopment {
+    margin: 0px 0px 70px 0px;
+    text-align: center;
+    font-weight: normal;
+    color: gray;
+    font-size: 23px;
 }

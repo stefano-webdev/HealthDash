@@ -9,7 +9,7 @@ interface SidebarProps {
     changeRoute: React.Dispatch<React.SetStateAction<boolean>>,
 };
 
-function Sidebar({ open, onToggle, changeRoute}: SidebarProps) {
+function Sidebar({ open, onToggle, changeRoute }: SidebarProps) {
     const location = useLocation();
 
     useEffect(() => {
@@ -27,13 +27,14 @@ function Sidebar({ open, onToggle, changeRoute}: SidebarProps) {
                 <span></span>
             </button>
 
-            <ul className={`menuUl ${open ? "show" : ""}`}>
-                {/* Home */}
-                <div>
-                    <NavLink to="/" className={({ isActive }) =>
-                        isActive ? "activeLink" : "regularLink"}>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
-                            <path d="M341.8 72.6C329.5 61.2 310.5 
+            <nav aria-label="Main navigation">
+                <ul className={`menuUl ${open ? "show" : ""}`}>
+                    {/* Home */}
+                    <li>
+                        <NavLink to="/" className={({ isActive }) =>
+                            isActive ? "activeLink" : "regularLink"}>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                                <path d="M341.8 72.6C329.5 61.2 310.5 
                                 61.2 298.3 72.6L74.3 280.6C64.7 289.6 61.5 303.5 66.3 
                                 315.7C71.1 327.9 82.8 336 96 336L112 336L112 512C112 
                                 547.3 140.7 576 176 576L464 576C499.3 576 528 547.3 
@@ -41,17 +42,17 @@ function Sidebar({ open, onToggle, changeRoute}: SidebarProps) {
                                 315.7C578.6 303.5 575.4 289.5 565.8 280.6L341.8 72.6zM304 
                                 384L336 384C362.5 384 384 405.5 384 432L384 528L256 528L256 
                                 432C256 405.5 277.5 384 304 384z"/>
-                        </svg>
-                        Home
-                    </NavLink>
-                </div>
+                            </svg>
+                            Home
+                        </NavLink>
+                    </li>
 
-                {/* Staff */}
-                <div>
-                    <NavLink to="/staff" className={({ isActive }) =>
-                        isActive ? "activeLink" : "regularLink"}>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
-                            <path d="M320 80C377.4 80 424 126.6 424 184C424 241.4 377.4 
+                    {/* Staff */}
+                    <li>
+                        <NavLink to="/staff" className={({ isActive }) =>
+                            isActive ? "activeLink" : "regularLink"}>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                                <path d="M320 80C377.4 80 424 126.6 424 184C424 241.4 377.4 
                                 288 320 288C262.6 288 216 241.4 216 184C216 126.6 262.6 80 
                                 320 80zM96 152C135.8 152 168 184.2 168 224C168 263.8 135.8 
                                 296 96 296C56.2 296 24 263.8 24 224C24 184.2 56.2 152 96 
@@ -65,33 +66,33 @@ function Sidebar({ open, onToggle, changeRoute}: SidebarProps) {
                                 263.8 583.8 296 544 296C504.2 296 472 263.8 472 224zM160 496C160 
                                 407.6 231.6 336 320 336C408.4 336 480 407.6 480 496L480 512C480 529.7 465.7 
                                 544 448 544L192 544C174.3 544 160 529.7 160 512L160 496z" />
-                        </svg>
-                        Personale
-                    </NavLink>
-                </div>
+                            </svg>
+                            Personale
+                        </NavLink>
+                    </li>
 
-                {/* Patients */}
-                <div>
-                    <NavLink to="/patients" className={({ isActive }) =>
-                        isActive ? "activeLink" : "regularLink"}>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
-                            <path d="M64 96C81.7 96 96 110.3 96 128L96 352L320 352L320 224C320 206.3 334.3 
+                    {/* Patients */}
+                    <li>
+                        <NavLink to="/patients" className={({ isActive }) =>
+                            isActive ? "activeLink" : "regularLink"}>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                                <path d="M64 96C81.7 96 96 110.3 96 128L96 352L320 352L320 224C320 206.3 334.3 
                                 192 352 192L512 192C565 192 608 235 608 288L608 512C608 529.7 593.7 544 576 
                                 544C558.3 544 544 529.7 544 512L544 448L96 448L96 512C96 529.7 81.7 544 64 
                                 544C46.3 544 32 529.7 32 512L32 128C32 110.3 46.3 96 64 96zM144 256C144 220.7 
                                 172.7 192 208 192C243.3 192 272 220.7 272 256C272 291.3 243.3 320 208 320C172.7 
                                 320 144 291.3 144 256z"/>
-                        </svg>
-                        Pazienti
-                    </NavLink>
-                </div>
+                            </svg>
+                            Pazienti
+                        </NavLink>
+                    </li>
 
-                {/* Finance */}
-                <div>
-                    <NavLink to="/finance" className={({ isActive }) =>
-                        isActive ? "activeLink" : "regularLink"}>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
-                            <path d="M392 176L248 176L210.7 101.5C208.9 97.9 208 93.9 208 89.9C208 75.6 219.6 64 
+                    {/* Finance */}
+                    <li>
+                        <NavLink to="/finance" className={({ isActive }) =>
+                            isActive ? "activeLink" : "regularLink"}>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                                <path d="M392 176L248 176L210.7 101.5C208.9 97.9 208 93.9 208 89.9C208 75.6 219.6 64 
                                 233.9 64L406.1 64C420.4 64 432 75.6 432 89.9C432 93.9 431.1 97.9 429.3 101.5L392 
                                 176zM233.6 224L406.4 224L455.1 264.6C521.6 320 560 402 560 488.5C560 536.8 520.8 576 
                                 472.5 576L167.4 576C119.2 576 80 536.8 80 488.5C80 402 118.4 320 184.9 264.6L233.6 
@@ -102,17 +103,17 @@ function Sidebar({ open, onToggle, changeRoute}: SidebarProps) {
                                 461.6 388 435.5C388 409.8 369.5 387.9 344.1 383.7L302.4 376.7C296.4 375.7 292 370.5 
                                 292 364.4C292 357.5 297.6 351.9 304.5 351.9L352 351.9C363 351.9 372 342.9 372 331.9C372 
                                 320.9 363 311.9 352 311.9L344 311.9L344 307.9C344 296.9 335 287.9 324 287.9z" />
-                        </svg>
-                        Finanze
-                    </NavLink>
-                </div>
+                            </svg>
+                            Finanze
+                        </NavLink>
+                    </li>
 
-                {/* Reports */}
-                <div>
-                    <NavLink to="/reports" className={({ isActive }) =>
-                        isActive ? "activeLink" : "regularLink"}>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
-                            <path d="M96 96C113.7 96 128 110.3 128 128L128 464C128 472.8 
+                    {/* Reports */}
+                    <li>
+                        <NavLink to="/reports" className={({ isActive }) =>
+                            isActive ? "activeLink" : "regularLink"}>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                                <path d="M96 96C113.7 96 128 110.3 128 128L128 464C128 472.8 
                                 135.2 480 144 480L544 480C561.7 480 576 494.3 576 512C576 529.7 
                                 561.7 544 544 544L144 544C99.8 544 64 508.2 64 464L64 128C64 
                                 110.3 78.3 96 96 96zM208 288C225.7 288 240 302.3 240 320L240 384C240 
@@ -123,17 +124,17 @@ function Sidebar({ open, onToggle, changeRoute}: SidebarProps) {
                                 432 416C414.3 416 400 401.7 400 384L400 288C400 270.3 414.3 256 432 
                                 256zM576 160L576 384C576 401.7 561.7 416 544 416C526.3 416 512 401.7 512 
                                 384L512 160C512 142.3 526.3 128 544 128C561.7 128 576 142.3 576 160z"/>
-                        </svg>
-                        Report
-                    </NavLink>
-                </div>
+                            </svg>
+                            Report
+                        </NavLink>
+                    </li>
 
-                {/* Settings */}
-                <div>
-                    <NavLink to="/settings" className={({ isActive }) =>
-                        isActive ? "activeLink" : "regularLink"}>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
-                            <path d="M259.1 73.5C262.1 58.7 275.2 48 290.4 48L350.2 48C365.4 48 378.5 
+                    {/* Settings */}
+                    <li>
+                        <NavLink to="/settings" className={({ isActive }) =>
+                            isActive ? "activeLink" : "regularLink"}>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                                <path d="M259.1 73.5C262.1 58.7 275.2 48 290.4 48L350.2 48C365.4 48 378.5 
                                 58.7 381.5 73.5L396 143.5C410.1 149.5 423.3 157.2 435.3 166.3L503.1 143.8C517.5 
                                 139 533.3 145 540.9 158.2L570.8 210C578.4 223.2 575.7 239.8 564.3 249.9L511 
                                 297.3C511.9 304.7 512.3 312.3 512.3 320C512.3 327.7 511.8 335.3 511 342.7L564.4 
@@ -146,11 +147,12 @@ function Sidebar({ open, onToggle, changeRoute}: SidebarProps) {
                                 158.1C107.3 144.9 123.1 138.9 137.5 143.7L205.3 166.2C217.4 157.1 230.6 149.5 244.6 
                                 143.4L259.1 73.5zM320.3 400C364.5 399.8 400.2 363.9 400 319.7C399.8 275.5 363.9 239.8 319.7 
                                 240C275.5 240.2 239.8 276.1 240 320.3C240.2 364.5 276.1 400.2 320.3 400z"/>
-                        </svg>
-                        Impostazioni
-                    </NavLink>
-                </div>
-            </ul>
+                            </svg>
+                            Impostazioni
+                        </NavLink>
+                    </li>
+                </ul>
+            </nav>
         </>
     );
 }

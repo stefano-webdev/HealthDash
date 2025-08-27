@@ -37,6 +37,7 @@
 
 #createEmployeeCont form #employeeShiftsTitle,
 #createEmployeeCont form #employeeContactsTitle {
+    font-size: 17px;
     width: fit-content;
     margin: 45px auto 5px auto;
 }

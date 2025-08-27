@@ -49,7 +49,7 @@ function StaffToday() {
     }, []);
 
     return (
-        <div className="boxStyle patientsANDstaff">
+        <div id="staffTodayCont" className="boxStyle">
             <div>
                 <p>Personale nel turno attuale</p>
                 <div className="updateCont">

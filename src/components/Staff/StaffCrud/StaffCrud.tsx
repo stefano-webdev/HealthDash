@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import './StaffCrud.css';
 import staffData from '../Staff/Staff.json';
 import type { StaffMember } from '../StaffList/StaffList.tsx';
@@ -9,7 +9,7 @@ import StaffDelete from './StaffDelete/StaffDelete.tsx';
 
 interface StaffCrudProps {
     id: number | null;
-    changeStaffList: React.Dispatch<React.SetStateAction<StaffListType>>;
+    changeStaffList: React.Dispatch<React.SetStateAction<StaffListType | null>>;
     changeId: React.Dispatch<React.SetStateAction<number | null>>;
     changeOriginalList: React.Dispatch<React.SetStateAction<StaffListType>>;
 };
@@ -17,19 +17,10 @@ interface StaffCrudProps {
 type CrudType = "create" | "update" | "delete" | null;
 
 function StaffCrud({ id, ...rest }: StaffCrudProps) {
+    const newCrudCont = useRef<HTMLDivElement>(null);
     // staffMember is undefined for the created employees
     const staffMember: StaffMember | undefined = staffData.flatMap(ward => ward.staff).find(member => member.id === id);
     const [activeCrud, setActiveCrud] = useState<CrudType>(null);
-
-    function handleShowCrud(crud: CrudType) {
-        // If you click on the already opened button, close everything
-        if (activeCrud === crud) {
-            setActiveCrud(null);
-        } else {
-            // Otherwise open the clicked one
-            setActiveCrud(crud);
-        }
-    }
 
     return (
         <>
@@ -50,13 +41,13 @@ function StaffCrud({ id, ...rest }: StaffCrudProps) {
                         305.8 542.2 305.8 520.1 327.9L491.3 356.7L571.3 436.7L600.1 
                         407.9z" />
                     </svg>
-                    <h3 className='box'>Gestione del personale</h3>
+                    <h3 className='box'>Gestione personale</h3>
                 </div>
                 <p id='staffCrudDescription'>Puoi gestire il personale in modo semplice e veloce: <em>aggiungi</em>, <em>modifica</em> o <em>rimuovi</em> i dipendenti.</p>
                 <p id='staffCrudFeatures'>Funzionalità CRUD</p>
 
                 <div id='staffCrudActionsCont'>
-                    <button type="button" aria-label="Add employee" onClick={() => handleShowCrud("create")}>
+                    <button type="button" aria-label="Add employee" onClick={() => setActiveCrud("create")}>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
                             <path d="M352 128C352 110.3 337.7 96 320 96C302.3 96 288 
                                 110.3 288 128L288 288L128 288C110.3 288 96 302.3 96 320C96 
@@ -67,7 +58,7 @@ function StaffCrud({ id, ...rest }: StaffCrudProps) {
                         </svg>
                     </button>
 
-                    <button type="button" aria-label="Edit employee" onClick={() => handleShowCrud("update")}>
+                    <button type="button" aria-label="Edit employee" onClick={() => setActiveCrud("update")}>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
                             <path d="M100.4 417.2C104.5 402.6 112.2 389.3 123 378.5L304.2 
                                 197.3L338.1 163.4C354.7 180 389.4 214.7 442.1 267.4L476 
@@ -83,7 +74,7 @@ function StaffCrud({ id, ...rest }: StaffCrudProps) {
                         </svg>
                     </button>
 
-                    <button type="button" aria-label="Delete employee" onClick={() => handleShowCrud("delete")}>
+                    <button type="button" aria-label="Delete employee" onClick={() => setActiveCrud("delete")}>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
                             <path d="M232.7 69.9L224 96L128 96C110.3 96 96 110.3 96 
                                 128C96 145.7 110.3 160 128 160L512 160C529.7 160 544 145.7 
@@ -96,7 +87,7 @@ function StaffCrud({ id, ...rest }: StaffCrudProps) {
                 </div>
             </div>
 
-            {activeCrud === 'create' && <StaffCreate close={() => handleShowCrud(null)} props={rest} />}
+            {activeCrud === 'create' && <StaffCreate close={() => setActiveCrud(null)} props={rest} scrollRef={newCrudCont} />}
             {activeCrud === 'update' && <StaffUpdate />}
             {activeCrud === 'delete' && <StaffDelete />}
         </>

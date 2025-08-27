@@ -44,7 +44,7 @@ function PatientsToday() {
     }, []);
 
     return (
-        <div className="boxStyle patientsANDstaff">
+        <div id="patientsTodayCont" className="boxStyle">
             <div>
                 <p>Pazienti in ospedale</p>
                 <div className="updateCont">

@@ -1,0 +1,321 @@
+/* For devices like iPhone SE */
+@media (max-width: 350px) {
+
+    /* Route: /staff */
+    body #staffDetailsCont,
+    body #staffScheduleCont,
+    body #staffCrudCont,
+    body #createEmployeeCont,
+    body #editEmployeeCont,
+    body #deleteEmployeeCont {
+        max-width: 275px;
+    }
+}
+
+/* For mobile devices in landscape mode */
+@media (orientation: landscape) and (pointer: coarse) and (max-width: 1000px) {
+
+    /* Route: /app */
+    body .menuUl {
+        max-height: 62svh;
+    }
+}
+
+/* For tablets */
+@media (min-width: 600px) and (min-height: 600px) {
+
+    /* Route: /app */
+    body .menuUl li a {
+        font-size: 21px;
+    }
+
+    body .menuUl svg {
+        width: 37px;
+    }
+
+    body #adminButton {
+        font-size: 18px;
+    }
+
+    body #adminButton svg {
+        width: 13px;
+    }
+
+    body .adminSettingsUl li {
+        font-size: 16px;
+    }
+
+    body #logoComponent {
+        width: 110px;
+    }
+
+    body #headerContainer {
+        padding: 33px 15px;
+    }
+
+    body footer p,
+    body footer a {
+        font-size: 18px;
+    }
+
+    body footer svg {
+        width: 29px;
+    }
+
+    /* Route: /home */
+    body #patientsTodayCont {
+        min-height: 146px;
+        max-width: 240px;
+    }
+
+    body #staffTodayCont {
+        min-height: 146px;
+        max-width: 300px;
+    }
+
+    body div#appointmentsCont,
+    body div#notificationsCont {
+        max-width: 420px;
+    }
+
+    body div#appointmentsCont {
+        min-height: 592px;
+    }
+
+    body p {
+        font-size: 18px;
+    }
+
+    body svg.updateSvg {
+        width: 19px;
+    }
+
+    body small {
+        font-size: 15px;
+    }
+
+    body div#patientsTodayCont p:last-child,
+    body div#staffTodayCont p:last-child {
+        font-size: 24px;
+    }
+
+    body svg.box {
+        width: 28px;
+    }
+
+    body h3.box {
+        font-size: 23px;
+    }
+
+    body div#recoveryInfoCont svg {
+        width: 30px;
+    }
+
+    body div#appointmentsCont h4 {
+        font-size: 19px;
+    }
+
+    body div#appointmentsCont .appointmentsUl li {
+        font-size: 18px;
+    }
+
+    body div#allNotificationsCont h4 {
+        font-size: 19px;
+    }
+
+    /* Route: /staff */
+    body #staffListCont,
+    body #staffDetailsCont,
+    body #staffScheduleCont,
+    body #staffCrudCont,
+    body #createEmployeeCont {
+        max-width: 420px;
+    }
+
+    body #staffListCont {
+        min-height: 454px;
+    }
+
+    body #staffDetailsCont {
+        min-height: 290px;
+    }
+
+    body #staffScheduleCont {
+        min-height: 405px;
+    }
+
+    body #staffFilterCont svg {
+        width: 22px;
+    }
+
+    body input,
+    body label,
+    body button {
+        font-size: 18px;
+    }
+
+    body #staffListCont input#staffFilterInput {
+        width: 300px;
+    }
+
+    body #staffListCont table thead th {
+        font-size: 18px;
+    }
+
+    body #staffListCont table tbody tr td {
+        font-size: 16px;
+    }
+
+    body p#employeeDetails {
+        font-size: 28px;
+    }
+
+    body div#employeeMailCont svg,
+    body div#employeePhoneCont svg {
+        width: 24px;
+    }
+
+    body #staffCrudCont p#staffCrudFeatures {
+        font-size: 20px;
+    }
+
+    body #staffCrudCont #staffCrudActionsCont button {
+        width: 45px;
+        height: 45px;
+    }
+
+    body #staffCrudCont #staffCrudActionsCont svg {
+        width: 30px;
+    }
+
+    body #createEmployeeCont form #employeeShiftsTitle,
+    body #createEmployeeCont form #employeeContactsTitle {
+        font-size: 19px;
+    }
+}
+
+/* For desktop mode */
+@media (min-width: 1200px) {
+
+    /* Home */
+    body div.currentRoute {
+        margin-left: 30px;
+        justify-content: flex-start;
+    }
+
+    body button.hamburger {
+        display: none;
+    }
+
+    body .menuUl {
+        transform: scaleY(1);
+        height: 100vh;
+        gap: 20px;
+        pointer-events: auto;
+    }
+
+    body header {
+        position: fixed;
+        width: 230px;
+        left: max(0px, calc((100vw - 2100px) / 2));
+        height: 100vh;
+    }
+
+    body #logoComponent {
+        margin-top: 4rem;
+    }
+
+    body .menuUl li:first-child {
+        margin-top: 100px;
+    }
+
+    body #adminButton {
+        position: fixed;
+        right: max(23px, calc((100vw - 2100px) / 2 + 30px));
+        top: 23px;
+        background-color: var(--mainRed);
+        padding: 8px 12px;
+        border-radius: 8px;
+        border: 1px solid white;
+    }
+
+    body #adminWrapper {
+        position: fixed;
+        right: max(23px, calc((100vw - 2100px) / 2 + 30px));
+        top: 27px;
+    }
+
+    body main {
+        width: calc(100% - 230px);
+        position: relative;
+        left: 230px;
+    }
+
+    body #mainContainer {
+        margin: 0px;
+    }
+
+    body .flexGroupDesktop {
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 3rem;
+    }
+
+    body div#appointmentsCont,
+    body div#notificationsCont {
+        max-width: 330px;
+    }
+
+    body div.boxStyle {
+        margin: 0px;
+    }
+
+    body #recoveryMainCont,
+    body #revenueMainCont {
+        width: clamp(420px, 34vw, 500px);
+    }
+
+    /* Staff */
+    body #staffListCont {
+        height: 380px;
+        margin: 0px;
+    }
+
+    body #staffListCont,
+    body #staffDetailsCont,
+    body #staffScheduleCont,
+    body #staffCrudCont {
+        max-width: clamp(390px, 31vw, 400px);
+    }
+
+    body #staffScheduleCont {
+        min-height: 0px;
+        height: 400px;
+    }
+
+    body p#employeeSchedule {
+        margin: 10px auto 15px auto;
+    }
+
+    body .flexGroupDesktop2Row {
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 3rem;
+        flex-wrap: wrap;
+        margin: auto;
+    }
+
+    body #staffListCont #tableWrapper {
+        height: 215px;
+    }
+
+    /* Footer */
+    body footer {
+        width: calc(100% - 230px);
+        position: relative;
+        left: 230px;
+        margin: 5rem 0px 2.2rem 0px;
+    }
+}

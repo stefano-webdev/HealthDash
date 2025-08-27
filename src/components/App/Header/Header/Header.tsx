@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import AdminDropdown from "../AdminDropdown/AdminDropdown.tsx";
 import LogoComponent from "../Logo/LogoComponent.tsx";
 import Sidebar from "../Sidebar/Sidebar.tsx";
@@ -7,6 +7,15 @@ import "./Header.css"
 function Header() {
     const [sidebarOpen, setSidebarOpen] = useState(false);
     const [adminOpen, setAdminOpen] = useState(false);
+
+    useEffect(() => {
+        document.body.style.overflow = sidebarOpen ? "hidden" : "auto";
+
+        // Add cleanup function for better control
+        return () => {
+            document.body.style.overflow = "auto";
+        };
+    }, [sidebarOpen]);
 
     function handleSidebarClick(): void {
         if (adminOpen) {

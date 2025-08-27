@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './StaffCreate.css';
 import staffDataJSON from '../../Staff/Staff.json';
 import type { StaffMember } from '../../StaffList/StaffList.tsx';
@@ -9,13 +9,24 @@ import type { AllStaffList } from "../../StaffList/StaffList.tsx";
 interface StaffCreateProps {
     close: () => void;
     props: {
-        changeStaffList: React.Dispatch<React.SetStateAction<StaffListType>>;
+        changeStaffList: React.Dispatch<React.SetStateAction<StaffListType | null>>;
         changeId: React.Dispatch<React.SetStateAction<number | null>>;
         changeOriginalList: React.Dispatch<React.SetStateAction<StaffListType>>;
     };
+    scrollRef: React.RefObject<HTMLDivElement | null>;
 }
 
-function StaffCreate({ close, props }: StaffCreateProps) {
+function StaffCreate({ close, props, scrollRef }: StaffCreateProps) {
+
+    useEffect(() => {
+        if (scrollRef?.current && window.innerWidth >= 1200 && window.matchMedia("(pointer: fine)").matches) {
+            window.scrollTo({
+                top: scrollRef.current.offsetTop - 2,
+                behavior: 'smooth',
+            });
+        }
+    }, []);
+
     const { changeStaffList, changeId, changeOriginalList } = props;
     const [formData, setFormData] = useState({
         name: '',
@@ -97,7 +108,7 @@ function StaffCreate({ close, props }: StaffCreateProps) {
     }
 
     return (
-        <div id="createEmployeeCont" className='boxStyle'>
+        <div id="createEmployeeCont" className='boxStyle' ref={scrollRef}>
             <div className='titleBox'>
                 <svg className='box' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
                     <path d="M352 128C352 110.3 337.7 96 320 96C302.3 96 288 

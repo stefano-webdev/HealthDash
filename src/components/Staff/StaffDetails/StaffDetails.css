@@ -18,6 +18,7 @@ small#employeeWard {
 
 p#employeeDetails {
     font-size: 26px;
+    min-height: 34px;
 }
 
 p#roleDetails {

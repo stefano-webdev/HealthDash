@@ -2,9 +2,10 @@ import "./HealthDashLogo.css";
 
 function HealthDashLogo() {
     return (
-        <div id="healthDashCont">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
-                <path d="M320 171.9L305 151.1C280 116.5 239.9 96 197.1 96C123.6 
+        <>
+            <div id="healthDashCont">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                    <path d="M320 171.9L305 151.1C280 116.5 239.9 96 197.1 96C123.6 
                     96 64 155.6 64 229.1L64 231.7C64 255.3 70.2 279.7 80.6 304L186.6 
                     304C189.8 304 192.7 302.1 194 299.1L225.8 222.8C229.5 214 238.1 208.2 
                     247.6 208C257.1 207.8 265.9 213.4 269.8 222.1L321.1 336L362.5 253.2C366.6 
@@ -15,9 +16,11 @@ function HealthDashLogo() {
                     416.2 319.5 416C310.2 415.8 301.9 410.3 298.1 401.9L248.8 292.4L238.3 317.6C229.6 338.5 
                     209.2 352.1 186.6 352.1L106.4 352.1C153.6 425.9 229.4 493.8 276.8 530C289.2 539.4 304.4 
                     544.1 319.9 544.1C335.4 544.1 350.7 539.5 363 530C410.6 493.7 486.4 425.8 533.6 352z"/>
-            </svg>
-            <h1>HealthDash</h1>
-        </div>
+                </svg>
+                <h1>HealthDash</h1>
+            </div>
+            <h2 id="inDevelopment">(ATTUALMENTE IN SVILUPPO)</h2>
+        </>
     );
 }
 

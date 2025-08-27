@@ -7,8 +7,11 @@
     border: none;
     padding: 0px;
     color: white;
-    position: relative;
     background-color: transparent;
+}
+
+#adminWrapper {
+    position: relative;
 }
 
 /* SVG freccetta */
@@ -17,6 +20,7 @@
     stroke: white;
     transition: transform 0.2s ease;
     will-change: transform;
+    padding-bottom: 3px;
 }
 
 .rotate180Admin {
@@ -31,8 +35,8 @@
     margin: 0px;
     padding: 7px;
     position: absolute;
-    top: calc(100% + 13px);
-    right: 13px;
+    top: calc(100% + 47px);
+    right: 0px;
     opacity: 0;
     pointer-events: none;
     transform: translateY(-15px);
@@ -42,6 +46,7 @@
 }
 
 .adminSettingsUl li {
+    cursor: pointer;
     color: white;
     padding: 3px;
     font-size: 14px;

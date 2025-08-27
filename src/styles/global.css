@@ -29,7 +29,7 @@ input, label, button {
 }
 
 small {
-    font-size: 13px;
+    font-size: 14px;
     color: rgb(72, 72, 72);
 }
 
@@ -81,10 +81,22 @@ div.currentRoute h2 {
     gap: 3.5rem;
 }
 
-#staffRouteCont {
+.flexGroupDesktop {
     display: flex;
     flex-direction: column;
     gap: 3.5rem;
+}
+
+.flexGroupDesktop2Row {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+}
+
+#staffRouteCont {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
 }
 
 svg.box {
@@ -106,19 +118,31 @@ div.boxStyle {
     border: 1px solid rgba(0, 0, 0, 0.28);
 }
 
-div.patientsANDstaff {
+div#patientsTodayCont,
+div#staffTodayCont {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 138px;
+    min-height: 143px;
+    width: 100%;
 }
 
-div.patientsANDstaff p:last-child {
+div#patientsTodayCont {
+    max-width: 203px;
+}
+
+div#staffTodayCont {
+    max-width: 260px;
+}
+
+div#patientsTodayCont p:last-child,
+div#staffTodayCont p:last-child {
     font-size: 22px;
     font-weight: bold;
 }
 
-div.patientsANDstaff div:first-child {
+div#patientsTodayCont div:first-child,
+div#staffTodayCont div:first-child {
     display: flex;
     flex-direction: column;
     align-items: center;

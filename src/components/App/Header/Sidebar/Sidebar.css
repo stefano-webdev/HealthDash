@@ -39,19 +39,21 @@ button.hamburger.open span:nth-of-type(1) {
     top: 100%;
     left: 0px;
     width: 100%;
-    height: fit-content;
     transform: scaleY(0);
     transform-origin: top;
     transition: transform 0.5s ease;
     display: flex;
     flex-direction: column;
     gap: 5px;
-    padding: 0px 0px 0px 18px;
+    padding: 0px 0px 0px 15px;
     margin: 0px;
     pointer-events: none;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    list-style-type: none;
 }
 
-.menuUl div a {
+.menuUl li a {
     display: flex;
     align-items: center;
     gap: 15px;
@@ -63,17 +65,17 @@ button.hamburger.open span:nth-of-type(1) {
     font-size: 20px;
 }
 
-.menuUl div a.activeLink {
+.menuUl li a.activeLink {
     background-color: rgba(255, 255, 255, 0.291);
     border-radius: 11px;
 }
 
-.menuUl div:first-child {
+.menuUl li:first-child {
     margin-top: 25px;
 }
 
-.menuUl div:last-child {
-    margin-bottom: 25px;
+.menuUl li:last-child {
+    margin-bottom: 10px;
 }
 
 .menuUl svg {

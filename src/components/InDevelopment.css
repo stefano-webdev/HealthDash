@@ -1,0 +1,14 @@
+#inDevelopmentCont {
+    margin: 0px 10px;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+#inDevelopmentCont p:nth-of-type(1) {
+    margin-bottom: 30px;
+}
+
+#inDevelopmentCont svg {
+    width: clamp(50px, 7.5vw, 60px);
+    fill: var(--mainRed);
+}

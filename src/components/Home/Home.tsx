@@ -28,12 +28,20 @@ function Home() {
                 <h2>HOME</h2>
             </div>
             <div id="homeRouteCont">
-                <PatientsToday />
-                <StaffToday />
-                <WeeklyPatients />
-                <MonthlyRevenueChart />
-                <Appointments />
-                <Notifications />
+                <div className="flexGroupDesktop">
+                    <PatientsToday />
+                    <StaffToday />
+                </div>
+
+                <div className="flexGroupDesktop">
+                    <WeeklyPatients />
+                    <MonthlyRevenueChart />
+                </div>
+                
+                <div className="flexGroupDesktop">
+                    <Appointments />
+                    <Notifications />
+                </div>
             </div>
         </>
     );

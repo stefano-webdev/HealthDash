@@ -19,6 +19,7 @@ div#recoveryInfoCont svg {
 div#recoveryInfoCont p {
     margin: 8px 0px 0px 0px;
     width: 80%;
+    max-width: 330px;
     text-align: center;
     border: 2px solid black;
     padding: 10px;
