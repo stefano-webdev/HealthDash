@@ -86,6 +86,10 @@
         font-size: 18px;
     }
 
+    body a#torna_portfolio {
+        font-size: 18px;
+    }
+
     body svg.updateSvg {
         width: 19px;
     }
@@ -252,7 +256,7 @@
     }
 
     body #mainContainer {
-        margin: 0px;
+        margin: 55px 0px 0px 0px;
     }
 
     body .flexGroupDesktop {
