@@ -23,9 +23,9 @@
 
 Durante lo sviluppo sono stati seguiti i principi fondamentali di React:
 
-- Creazione di **componenti puri, modulari e riutilizzabili**
+- Creazione di **componenti puri, modulari e riutilizzabili**.
 - **Aggiornamento dello stato** tramite Hook `useState` come unico mezzo per riflettere i cambiamenti nel DOM.
-- Navigazione SPA con **React Router**
+- Navigazione SPA con **React Router**.
 - Persistenza con **LocalStorage**, resettando i dati in determinati momenti per simulare dinamicità tra un giorno e l'altro.
 
 ## 📁 Struttura del progetto

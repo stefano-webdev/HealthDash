@@ -10,8 +10,8 @@ function App() {
     <>
       <Header />
       <main>
-        <HealthDashLogo />
         <a id="torna_portfolio" href="https://stefanodev.it/">Torna al portfolio</a>
+        <HealthDashLogo />
         <div id="mainContainer">
           <Outlet />
         </div>

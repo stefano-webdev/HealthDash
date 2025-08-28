@@ -1,6 +1,7 @@
-import { useState, useEffect } from 'react';
-import staffData from '../Staff/Staff.json';
+import { useEffect } from 'react';
+import staffDataJSON from '../Staff/Staff.json';
 import type { hospitalShape } from "../../Home/PatientsToday.tsx";
+import type { StaffData } from '../Staff/Staff.tsx';
 import StaffDetails from '../StaffDetails/StaffDetails.tsx';
 import StaffSchedule from '../StaffSchedule/StaffSchedule.tsx';
 import StaffCrud from '../StaffCrud/StaffCrud.tsx';
@@ -25,10 +26,8 @@ interface AllStaffList {
 
 type StaffListType = AllStaffList[];
 
-function StaffList() {
-    const [originalStaffList, setOriginalStaffList] = useState<StaffListType>([]);
-    const [staffList, setStaffList] = useState<StaffListType | null>(null);
-    const [selectedId, setSelectedId] = useState<number | null>(null);
+function StaffList({ staffData }: { staffData: StaffData }) {
+    const { staffList, originalStaffList, selectedId, setStaffList, setOriginalStaffList, setSelectedId, setActiveCrud } = staffData;
 
     useEffect(() => {
         // "YYYY-MM-DD"
@@ -44,7 +43,7 @@ function StaffList() {
             setSelectedId(savedData.staffList[0]?.staff[0]?.id);
         } else {
             // Generate a new staff list
-            const newStaffList: StaffListType = randomStaff(staffData);
+            const newStaffList: StaffListType = randomStaff(staffDataJSON);
 
             const updatedData: hospitalShape = {
                 ...savedData,
@@ -95,7 +94,7 @@ function StaffList() {
     return (
         <>
             <div className='flexGroupDesktop'>
-                <div id='staffListCont' className='boxStyleStaff'>
+                <div id='staffListCont' className='boxStyle'>
                     <div className='titleBox'>
                         <svg className='box' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
                             <path d="M104 112C90.7 112 80 122.7 80 136L80 184C80 197.3 
@@ -188,11 +187,7 @@ function StaffList() {
 
             <div className='flexGroupDesktop2Row'>
                 <StaffSchedule id={selectedId} />
-                <StaffCrud
-                    id={selectedId}
-                    changeStaffList={setStaffList}
-                    changeId={setSelectedId}
-                    changeOriginalList={setOriginalStaffList} />
+                <StaffCrud setCrud={setActiveCrud} />
             </div>
         </>
     );

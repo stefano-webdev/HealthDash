@@ -19,7 +19,7 @@ function HealthDashLogo() {
                 </svg>
                 <h1>HealthDash</h1>
             </div>
-            <h2 id="inDevelopment">(ATTUALMENTE IN SVILUPPO)</h2>
+            <h2 id="h2inDevelopment">(ATTUALMENTE IN SVILUPPO)</h2>
         </>
     );
 }

@@ -1,14 +1,23 @@
 /* For devices like iPhone SE */
-@media (max-width: 350px) {
+@media (max-width: 370px) {
+
+    /* General */
+    body div.boxStyle {
+        max-width: 280px;
+    }
 
     /* Route: /staff */
-    body #staffDetailsCont,
-    body #staffScheduleCont,
-    body #staffCrudCont,
-    body #createEmployeeCont,
-    body #editEmployeeCont,
-    body #deleteEmployeeCont {
-        max-width: 275px;
+    body #staffListCont table tbody tr td {
+        font-size: 12px;
+    }
+
+    body #staffListCont table th,
+    body #staffListCont table td {
+        padding: 0px 4px 3px 4px;
+    }
+
+    body #staffListCont input#staffFilterInput {
+        width: 190px;
     }
 }
 
@@ -73,11 +82,6 @@
         max-width: 300px;
     }
 
-    body div#appointmentsCont,
-    body div#notificationsCont {
-        max-width: 420px;
-    }
-
     body div#appointmentsCont {
         min-height: 592px;
     }
@@ -128,20 +132,9 @@
     }
 
     /* Route: /staff */
-    body #staffListCont,
-    body #staffDetailsCont,
-    body #staffScheduleCont,
-    body #staffCrudCont,
-    body #createEmployeeCont {
-        max-width: 420px;
-    }
 
     body #staffListCont {
         min-height: 454px;
-    }
-
-    body #staffDetailsCont {
-        min-height: 290px;
     }
 
     body #staffScheduleCont {
@@ -167,7 +160,7 @@
     }
 
     body #staffListCont table tbody tr td {
-        font-size: 16px;
+        font-size: 15px;
     }
 
     body p#employeeDetails {
@@ -200,6 +193,16 @@
 
 /* For desktop mode */
 @media (min-width: 1200px) {
+
+    /* General */
+    body a#torna_portfolio {
+        position: absolute;
+        margin: 15px 0px 40px 15px;
+    }
+
+    body #healthDashCont {
+        padding-top: 20px;
+    }
 
     /* Home */
     body div.currentRoute {
@@ -235,8 +238,8 @@
 
     body #adminButton {
         position: fixed;
-        right: max(23px, calc((100vw - 2100px) / 2 + 30px));
-        top: 23px;
+        right: max(15px, calc((100vw - 2100px) / 2 + 15px));
+        top: 15px;
         background-color: var(--mainRed);
         padding: 8px 12px;
         border-radius: 8px;
@@ -245,8 +248,8 @@
 
     body #adminWrapper {
         position: fixed;
-        right: max(23px, calc((100vw - 2100px) / 2 + 30px));
-        top: 27px;
+        right: max(15px, calc((100vw - 2100px) / 2 + 15px));
+        top: 15px;
     }
 
     body main {
@@ -266,36 +269,25 @@
         gap: 3rem;
     }
 
-    body div#appointmentsCont,
-    body div#notificationsCont {
-        max-width: 330px;
-    }
-
     body div.boxStyle {
+        width: clamp(390px, 33vw, 470px);
         margin: 0px;
     }
 
     body #recoveryMainCont,
     body #revenueMainCont {
-        width: clamp(420px, 34vw, 500px);
+        width: clamp(390px, 33vw, 500px);
     }
 
     /* Staff */
-    body #staffListCont {
-        height: 380px;
-        margin: 0px;
-    }
 
-    body #staffListCont,
-    body #staffDetailsCont,
-    body #staffScheduleCont,
-    body #staffCrudCont {
-        max-width: clamp(390px, 31vw, 400px);
+    body #staffListCont {
+        min-height: auto;
+        height: 450px;
     }
 
     body #staffScheduleCont {
-        min-height: 0px;
-        height: 400px;
+        min-height: 400px;
     }
 
     body p#employeeSchedule {
@@ -307,8 +299,6 @@
         justify-content: center;
         align-items: flex-start;
         gap: 3rem;
-        flex-wrap: wrap;
-        margin: auto;
     }
 
     body #staffListCont #tableWrapper {
@@ -321,5 +311,11 @@
         position: relative;
         left: 230px;
         margin: 5rem 0px 2.2rem 0px;
+    }
+}
+
+@media (min-width: 1300px) {
+    body #staffListCont table tbody tr td {
+        font-size: 16px;
     }
 }

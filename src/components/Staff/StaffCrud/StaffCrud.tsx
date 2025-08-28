@@ -1,24 +1,7 @@
-import { useState, useRef } from 'react';
+import type { CrudType } from '../Staff/Staff.tsx';
 import './StaffCrud.css';
-import type { StaffListType } from '../StaffList/StaffList.tsx';
-import StaffCreate from './StaffCreate/StaffCreate.tsx';
-import StaffUpdate from './StaffUpdate/StaffUpdate.tsx';
-import StaffDelete from './StaffDelete/StaffDelete.tsx';
 
-interface StaffCrudProps {
-    id: number | null;
-    changeStaffList: React.Dispatch<React.SetStateAction<StaffListType | null>>;
-    changeId: React.Dispatch<React.SetStateAction<number | null>>;
-    changeOriginalList: React.Dispatch<React.SetStateAction<StaffListType>>;
-};
-
-type CrudType = "create" | "update" | "delete" | null;
-
-function StaffCrud({ id, ...rest }: StaffCrudProps) {
-    const newCrudCont = useRef<HTMLDivElement>(null);
-    // staffMember is undefined for the created employees
-    const [activeCrud, setActiveCrud] = useState<CrudType>(null);
-
+function StaffCrud({ setCrud }: { setCrud: React.Dispatch<React.SetStateAction<CrudType>> }) {
     return (
         <>
             <div id='staffCrudCont' className='boxStyle'>
@@ -44,7 +27,7 @@ function StaffCrud({ id, ...rest }: StaffCrudProps) {
                 <p id='staffCrudFeatures'>Funzionalità CRUD</p>
 
                 <div id='staffCrudActionsCont'>
-                    <button type="button" aria-label="Add employee" onClick={() => setActiveCrud("create")}>
+                    <button type="button" aria-label="Add employee" onClick={() => setCrud("create")}>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
                             <path d="M352 128C352 110.3 337.7 96 320 96C302.3 96 288 
                                 110.3 288 128L288 288L128 288C110.3 288 96 302.3 96 320C96 
@@ -55,7 +38,7 @@ function StaffCrud({ id, ...rest }: StaffCrudProps) {
                         </svg>
                     </button>
 
-                    <button type="button" aria-label="Edit employee" onClick={() => setActiveCrud("update")}>
+                    <button type="button" aria-label="Edit employee" onClick={() => setCrud("update")}>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
                             <path d="M100.4 417.2C104.5 402.6 112.2 389.3 123 378.5L304.2 
                                 197.3L338.1 163.4C354.7 180 389.4 214.7 442.1 267.4L476 
@@ -71,7 +54,7 @@ function StaffCrud({ id, ...rest }: StaffCrudProps) {
                         </svg>
                     </button>
 
-                    <button type="button" aria-label="Delete employee" onClick={() => setActiveCrud("delete")}>
+                    <button type="button" aria-label="Delete employee" onClick={() => setCrud("delete")}>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
                             <path d="M232.7 69.9L224 96L128 96C110.3 96 96 110.3 96 
                                 128C96 145.7 110.3 160 128 160L512 160C529.7 160 544 145.7 
@@ -83,10 +66,6 @@ function StaffCrud({ id, ...rest }: StaffCrudProps) {
                     </button>
                 </div>
             </div>
-
-            {activeCrud === 'create' && <StaffCreate close={() => setActiveCrud(null)} props={rest} scrollRef={newCrudCont} />}
-            {activeCrud === 'update' && <StaffUpdate />}
-            {activeCrud === 'delete' && <StaffDelete />}
         </>
     );
 }

@@ -1,7 +1,38 @@
 import StaffList from '../StaffList/StaffList.tsx';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import StaffCreate from '../StaffCrud/StaffCreate/StaffCreate.tsx';
+import StaffUpdate from '../StaffCrud/StaffUpdate/StaffUpdate.tsx';
+import StaffDelete from '../StaffCrud/StaffDelete/StaffDelete.tsx';
+import type { StaffListType } from '../StaffList/StaffList.tsx';
+
+type CrudType = "create" | "update" | "delete" | null;
+
+type StaffData = {
+    staffList: StaffListType | null;
+    originalStaffList: StaffListType;
+    selectedId: number | null;
+    setOriginalStaffList: React.Dispatch<React.SetStateAction<StaffListType>>;
+    setStaffList: React.Dispatch<React.SetStateAction<StaffListType | null>>;
+    setSelectedId: React.Dispatch<React.SetStateAction<number | null>>;
+    setActiveCrud: React.Dispatch<React.SetStateAction<CrudType>>;
+};
 
 function Staff() {
+    const [activeCrud, setActiveCrud] = useState<CrudType>(null);
+    const [staffList, setStaffList] = useState<StaffListType | null>(null);
+    const [originalStaffList, setOriginalStaffList] = useState<StaffListType>([]);
+    const [selectedId, setSelectedId] = useState<number | null>(null);
+
+    const staffData: StaffData = {
+        staffList,
+        originalStaffList,
+        selectedId,
+        setStaffList,
+        setOriginalStaffList,
+        setSelectedId,
+        setActiveCrud
+    };
+
     // Scroll to top on component mount
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -29,10 +60,14 @@ function Staff() {
                 <h2>PERSONALE</h2>
             </div>
             <div id="staffRouteCont">
-                <StaffList />
+                <StaffList staffData={staffData} />
+                {activeCrud === 'create' && <StaffCreate close={() => setActiveCrud(null)} staffData={staffData} />}
+                {activeCrud === 'update' && <StaffUpdate />}
+                {activeCrud === 'delete' && <StaffDelete />}
             </div>
         </>
     );
 }
 
 export default Staff;
+export type { CrudType, StaffData };

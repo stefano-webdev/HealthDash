@@ -1,6 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import './StaffCreate.css';
 import staffDataJSON from '../../Staff/Staff.json';
+import type { StaffData } from '../../Staff/Staff.tsx';
 import type { StaffMember } from '../../StaffList/StaffList.tsx';
 import type { hospitalShape } from '../../../Home/PatientsToday.tsx';
 import type { StaffListType } from '../../StaffList/StaffList.tsx';
@@ -8,26 +9,22 @@ import type { AllStaffList } from "../../StaffList/StaffList.tsx";
 
 interface StaffCreateProps {
     close: () => void;
-    props: {
-        changeStaffList: React.Dispatch<React.SetStateAction<StaffListType | null>>;
-        changeId: React.Dispatch<React.SetStateAction<number | null>>;
-        changeOriginalList: React.Dispatch<React.SetStateAction<StaffListType>>;
-    };
-    scrollRef: React.RefObject<HTMLDivElement | null>;
+    staffData: StaffData;
 }
 
-function StaffCreate({ close, props, scrollRef }: StaffCreateProps) {
+function StaffCreate({ close, staffData }: StaffCreateProps) {
+    const { setStaffList, setOriginalStaffList, setSelectedId } = staffData;
+    const scrollRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         if (scrollRef?.current && window.innerWidth >= 1200 && window.matchMedia("(pointer: fine)").matches) {
             window.scrollTo({
-                top: scrollRef.current.offsetTop - 2,
+                top: scrollRef.current.offsetTop - 20,
                 behavior: 'smooth',
             });
         }
     }, []);
 
-    const { changeStaffList, changeId, changeOriginalList } = props;
     const [formData, setFormData] = useState({
         name: '',
         surname: '',
@@ -101,9 +98,9 @@ function StaffCreate({ close, props, scrollRef }: StaffCreateProps) {
         // Save the new employee data
         const updatedStaffData = staffData ? [newStructure, ...staffData] : [newStructure];
         localStorage.setItem("hospitalData", JSON.stringify({ ...savedData, staffList: updatedStaffData }));
-        changeStaffList(updatedStaffData);
-        changeId(newEmployee.id);
-        changeOriginalList(updatedStaffData);
+        setStaffList(updatedStaffData);
+        setSelectedId(newEmployee.id);
+        setOriginalStaffList(updatedStaffData);
         close();
     }
 
