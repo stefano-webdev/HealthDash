@@ -1,69 +1,40 @@
-# React + TypeScript + Vite
+# HealthDash 🏥
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**HealthDash** è una dashboard ospedaliera simulata sviluppata in **React** e **TypeScript**, con supporto alla navigazione tramite **React Router**. Simula il comportamento di una dashboard ospedaliera reale, includendo la gestione di personale, pazienti, finanze, report e impostazioni. I dati provengono da un JSON locale, con persistenza temporanea tramite LocalStorage il quale viene resettato in automatico ogni 24 ore, o ogni 6 ore per i turni del personale.
 
-Currently, two official plugins are available:
+## 🔧 Tecnologie utilizzate
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React** con Hooks come `useState`, `useEffect`, `useRef` e `useLocation`.
+- **React Router** e <NavLink /> per la navigazione tra le pagine.
+- **TypeScript** per la tipizzazione, sicurezza e robustezza del codice.
+- **Vite** come build tool.
+- **Recharts** per la visualizzazione dei dati tramite grafici.
 
-## Expanding the ESLint configuration
+## Funzionalità principali
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Home** con panoramica generale: numero di pazienti attivi, personale in servizio e incassi mensili con grafici.
+- **Personale** con lista dipendenti, dettagli anagrafici, professionali e operazioni CRUD, ovvero aggiungere, modificare o eliminare dipendenti. Reset automatico dei turni ogni 6 ore (ricaricare la pagina per vedere le modifiche).
+- **Pazienti** con dati anagrafici e clinici simulati, operazioni CRUD per manipolare i dati.
+- **Finanze** con saldo attuale, transazioni simulate, incassi mensili e simulazione creazione fattura.
+- **Report** basati sui dati con statistiche e grafici interattivi.
+- **Impostazioni** con alcune opzioni simulate.
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Principi seguiti
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+Durante lo sviluppo sono stati seguiti i principi fondamentali di React:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- Creazione di **componenti puri, modulari e riutilizzabili**
+- **Aggiornamento dello stato** tramite Hook `useState` come unico mezzo per riflettere i cambiamenti nel DOM.
+- Navigazione SPA con **React Router**
+- Persistenza con **LocalStorage**, resettando i dati in determinati momenti per simulare dinamicità tra un giorno e l'altro.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 📁 Struttura del progetto
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+La struttura segue uno stile modulare, suddividendo componenti, pagine, logica e dati in cartelle dedicate come `src`, `components`, `assets`, `public` ecc...
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Bundler / Build tool
+Il progetto è gestito tramite Vite.
+
+---
+
+> ⚠️ Questo progetto è stato sviluppato solo a scopo dimostrativo per dimostrare le competenze tecniche. Non utilizza un backend reale e non è destinato all’uso in contesti sanitari reali, pertanto alcuni bottoni o funzionalità non sono volutamente funzionanti.
