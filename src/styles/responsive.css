@@ -177,12 +177,12 @@
     }
 
     body #staffCrudCont #staffCrudActionsCont button {
-        width: 45px;
-        height: 45px;
+        width: 47px;
+        height: 47px;
     }
 
     body #staffCrudCont #staffCrudActionsCont svg {
-        width: 30px;
+        width: 36px;
     }
 
     body #createEmployeeCont form #employeeShiftsTitle,
