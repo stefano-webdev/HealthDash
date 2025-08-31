@@ -6,6 +6,10 @@
         max-width: 280px;
     }
 
+    body #confirmMessageCont {
+        width: 185px;
+    }
+
     /* Route: /staff */
     body #staffListCont table tbody tr td {
         font-size: 12px;
@@ -88,6 +92,10 @@
 
     body p {
         font-size: 18px;
+    }
+
+    body #confirmMessageCont {
+        width: 320px;
     }
 
     body a#torna_portfolio {
@@ -192,7 +200,7 @@
 }
 
 /* For desktop mode */
-@media (min-width: 1200px) {
+@media (min-width: 1200px) and (pointer: fine) {
 
     /* General */
     body a#torna_portfolio {
@@ -303,6 +311,10 @@
 
     body #staffListCont #tableWrapper {
         height: 215px;
+    }
+
+    body #confirmMessageCont {
+        left: calc(50% + 115px);
     }
 
     /* Footer */

@@ -1,6 +1,6 @@
 # HealthDash 🏥
 
-**HealthDash** è una dashboard ospedaliera simulata sviluppata in **React** e **TypeScript**, con supporto alla navigazione tramite **React Router**. Simula il comportamento di una dashboard ospedaliera reale, includendo la gestione di personale, pazienti, finanze, report e impostazioni. I dati provengono da un JSON locale, con persistenza temporanea tramite LocalStorage il quale viene resettato in automatico ogni 24 ore, o ogni 6 ore per i turni del personale.
+**HealthDash** simula una dashboard ospedaliera sviluppata in **React** e **TypeScript**, con supporto alla navigazione tramite **React Router**. Questo progetto riproduce il comportamento di una dashboard ospedaliera reale, includendo la gestione di personale, pazienti, finanze, report e impostazioni. I dati provengono da un file JSON locale, con persistenza temporanea tramite localStorage il quale viene resettato in automatico ogni 24 ore, oppure ogni 6 ore per i turni del personale.
 
 ## 🔧 Tecnologie utilizzate
 
@@ -30,7 +30,7 @@ Durante lo sviluppo sono stati seguiti i principi fondamentali di React:
 
 ## 📁 Struttura del progetto
 
-La struttura segue uno stile modulare, suddividendo componenti, pagine, logica e dati in cartelle dedicate come `src`, `components`, `assets`, `public` ecc...
+La struttura segue uno stile modulare suddividendo componenti, pagine, logica e dati in cartelle dedicate come `src`, `components`, `assets`, `public` ecc...
 
 ## Bundler / Build tool
 Il progetto è gestito tramite Vite.

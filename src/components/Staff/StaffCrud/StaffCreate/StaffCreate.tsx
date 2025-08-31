@@ -13,18 +13,9 @@ interface StaffCreateProps {
 }
 
 function StaffCreate({ close, staffData }: StaffCreateProps) {
-    const { setStaffList, setOriginalStaffList, setSelectedId } = staffData;
-    const scrollRef = useRef<HTMLDivElement>(null);
-
-    useEffect(() => {
-        if (scrollRef?.current && window.innerWidth >= 1200 && window.matchMedia("(pointer: fine)").matches) {
-            window.scrollTo({
-                top: scrollRef.current.offsetTop - 20,
-                behavior: 'smooth',
-            });
-        }
-    }, []);
-
+    const { setStaffList, setOriginalStaffList, setSelectedId, 
+        setInputListValue, setConfirmMessage } = staffData;
+    const scrollRef = useRef<HTMLDivElement | null>(null);
     const [formData, setFormData] = useState({
         name: '',
         surname: '',
@@ -42,9 +33,17 @@ function StaffCreate({ close, staffData }: StaffCreateProps) {
         email: ''
     });
 
+    useEffect(() => {
+        if (scrollRef?.current && window.innerWidth >= 1200 && window.matchMedia("(pointer: fine)").matches) {
+            window.scrollTo({
+                top: scrollRef.current.offsetTop - 20,
+                behavior: 'smooth',
+            });
+        }
+    }, []);
+
     function handleInputChange(e: React.ChangeEvent<HTMLInputElement>) {
         const { name, value, maxLength } = e.target;
-
         if (value.length <= maxLength) {
             setFormData(prevData => ({
                 ...prevData,
@@ -53,15 +52,15 @@ function StaffCreate({ close, staffData }: StaffCreateProps) {
         }
     }
 
-    // Add new employee to localStorage
+    // Add new employee
     function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
         const unknownData: string | null = localStorage.getItem("hospitalData");
         const savedData: hospitalShape = unknownData ? JSON.parse(unknownData) : {};
-        const staffData: StaffListType | undefined = savedData.staffList;
+        const staffLocalStorage: StaffListType | undefined = savedData.staffList;
 
         const maxIdLocalStorage: number = Math.max(
-            ...staffData?.flatMap(w => [w.id, ...w.staff.map(s => s.id)]) || []
+            ...staffLocalStorage?.flatMap(w => [w.id, ...w.staff.map(s => s.id)]) || []
         );
 
         const maxIdJSON: number = Math.max(
@@ -96,12 +95,17 @@ function StaffCreate({ close, staffData }: StaffCreateProps) {
         }
 
         // Save the new employee data
-        const updatedStaffData = staffData ? [newStructure, ...staffData] : [newStructure];
+        const updatedStaffData = staffLocalStorage ? [newStructure, ...staffLocalStorage] : [newStructure];
         localStorage.setItem("hospitalData", JSON.stringify({ ...savedData, staffList: updatedStaffData }));
         setStaffList(updatedStaffData);
+        setInputListValue('');
         setSelectedId(newEmployee.id);
         setOriginalStaffList(updatedStaffData);
         close();
+        setConfirmMessage({ message: "Dipendente aggiunto con successo", type: "success" });
+        setTimeout(() => {
+            setConfirmMessage(null);
+        }, 3500);
     }
 
     return (
@@ -117,86 +121,86 @@ function StaffCreate({ close, staffData }: StaffCreateProps) {
                 </svg>
                 <h3 className='box'>Aggiungi dipendente</h3>
             </div>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className='formStaff'>
                 {/* General informations */}
                 <div className="formGroup">
-                    <label htmlFor="name">Nome</label>
-                    <input onChange={handleInputChange} value={formData.name} type="text" autoComplete='off' spellCheck='false' id="name" name="name" required maxLength={14} />
+                    <label htmlFor="nameCreate">Nome</label>
+                    <input onChange={handleInputChange} value={formData.name} type="text" autoComplete='off' spellCheck='false' id="nameCreate" name="name" required maxLength={14} />
                 </div>
 
                 <div className="formGroup">
-                    <label htmlFor="surname">Cognome</label>
-                    <input onChange={handleInputChange} value={formData.surname} type="text" autoComplete='off' spellCheck='false' id="surname" name="surname" required maxLength={14} />
+                    <label htmlFor="surnameCreate">Cognome</label>
+                    <input onChange={handleInputChange} value={formData.surname} type="text" autoComplete='off' spellCheck='false' id="surnameCreate" name="surname" required maxLength={14} />
                 </div>
 
                 <div className="formGroup">
-                    <label htmlFor="shortRole">Ruolo breve</label>
-                    <input onChange={handleInputChange} value={formData.shortRole} type="text" autoComplete='off' spellCheck='false' id="shortRole" name="shortRole" required maxLength={15} />
+                    <label htmlFor="shortRoleCreate">Ruolo breve</label>
+                    <input onChange={handleInputChange} value={formData.shortRole} type="text" autoComplete='off' spellCheck='false' id="shortRoleCreate" name="shortRole" required maxLength={15} />
                 </div>
 
                 <div className="formGroup">
-                    <label htmlFor="longRole">Descrizione ruolo</label>
-                    <input onChange={handleInputChange} value={formData.longRole} type="text" autoComplete='off' spellCheck='false' id="longRole" name="longRole" required maxLength={100} />
+                    <label htmlFor="longRoleCreate">Descrizione ruolo</label>
+                    <input onChange={handleInputChange} value={formData.longRole} type="text" autoComplete='off' spellCheck='false' id="longRoleCreate" name="longRole" required maxLength={100} />
                 </div>
 
                 <div className="formGroup">
-                    <label htmlFor="ward">Reparto</label>
-                    <input onChange={handleInputChange} value={formData.ward} type="text" autoComplete='off' spellCheck='false' id="ward" name="ward" required maxLength={21} />
+                    <label htmlFor="wardCreate">Reparto</label>
+                    <input onChange={handleInputChange} value={formData.ward} type="text" autoComplete='off' spellCheck='false' id="wardCreate" name="ward" required maxLength={21} />
                 </div>
 
                 {/* Shifts */}
                 <div>
-                    <h4 id='employeeShiftsTitle'>Turni</h4>
-                    <div id='employeeShiftsForm'>
+                    <h4 className='employeeShiftsTitle'>Turni</h4>
+                    <div className='employeeShiftsForm'>
                         <div className="formGroup">
-                            <label htmlFor="mondayShift">Lunedì</label>
-                            <input onChange={handleInputChange} value={formData.mondayShift} type="text" autoComplete='off' spellCheck='false' id="mondayShift" name="mondayShift" required maxLength={12} />
+                            <label htmlFor="mondayShiftCreate">Lunedì</label>
+                            <input onChange={handleInputChange} value={formData.mondayShift} type="text" autoComplete='off' spellCheck='false' id="mondayShiftCreate" name="mondayShift" required maxLength={12} />
                         </div>
                         <div className="formGroup">
-                            <label htmlFor="tuesdayShift">Martedì</label>
-                            <input onChange={handleInputChange} value={formData.tuesdayShift} type="text" autoComplete='off' spellCheck='false' id="tuesdayShift" name="tuesdayShift" required maxLength={12} />
+                            <label htmlFor="tuesdayShiftCreate">Martedì</label>
+                            <input onChange={handleInputChange} value={formData.tuesdayShift} type="text" autoComplete='off' spellCheck='false' id="tuesdayShiftCreate" name="tuesdayShift" required maxLength={12} />
                         </div>
                         <div className="formGroup">
-                            <label htmlFor="wednesdayShift">Mercoledì</label>
-                            <input onChange={handleInputChange} value={formData.wednesdayShift} type="text" autoComplete='off' spellCheck='false' id="wednesdayShift" name="wednesdayShift" required maxLength={12} />
+                            <label htmlFor="wednesdayShiftCreate">Mercoledì</label>
+                            <input onChange={handleInputChange} value={formData.wednesdayShift} type="text" autoComplete='off' spellCheck='false' id="wednesdayShiftCreate" name="wednesdayShift" required maxLength={12} />
                         </div>
                         <div className="formGroup">
-                            <label htmlFor="thursdayShift">Giovedì</label>
-                            <input onChange={handleInputChange} value={formData.thursdayShift} type="text" autoComplete='off' spellCheck='false' id="thursdayShift" name="thursdayShift" required maxLength={12} />
+                            <label htmlFor="thursdayShiftCreate">Giovedì</label>
+                            <input onChange={handleInputChange} value={formData.thursdayShift} type="text" autoComplete='off' spellCheck='false' id="thursdayShiftCreate" name="thursdayShift" required maxLength={12} />
                         </div>
                         <div className="formGroup">
-                            <label htmlFor="fridayShift">Venerdì</label>
-                            <input onChange={handleInputChange} value={formData.fridayShift} type="text" autoComplete='off' spellCheck='false' id="fridayShift" name="fridayShift" required maxLength={12} />
+                            <label htmlFor="fridayShiftCreate">Venerdì</label>
+                            <input onChange={handleInputChange} value={formData.fridayShift} type="text" autoComplete='off' spellCheck='false' id="fridayShiftCreate" name="fridayShift" required maxLength={12} />
                         </div>
                         <div className="formGroup">
-                            <label htmlFor="saturdayShift">Sabato</label>
-                            <input onChange={handleInputChange} value={formData.saturdayShift} type="text" autoComplete='off' spellCheck='false' id="saturdayShift" name="saturdayShift" required maxLength={12} />
+                            <label htmlFor="saturdayShiftCreate">Sabato</label>
+                            <input onChange={handleInputChange} value={formData.saturdayShift} type="text" autoComplete='off' spellCheck='false' id="saturdayShiftCreate" name="saturdayShift" required maxLength={12} />
                         </div>
                         <div className="formGroup">
-                            <label htmlFor="sundayShift">Domenica</label>
-                            <input onChange={handleInputChange} value={formData.sundayShift} type="text" autoComplete='off' spellCheck='false' id="sundayShift" name="sundayShift" required maxLength={12} />
+                            <label htmlFor="sundayShiftCreate">Domenica</label>
+                            <input onChange={handleInputChange} value={formData.sundayShift} type="text" autoComplete='off' spellCheck='false' id="sundayShiftCreate" name="sundayShift" required maxLength={12} />
                         </div>
                     </div>
                 </div>
 
                 {/* Contacts */}
                 <div>
-                    <h4 id='employeeContactsTitle'>Contatti</h4>
-                    <div id='employeeContactsForm'>
+                    <h4 className='employeeContactsTitle'>Contatti</h4>
+                    <div className='employeeContactsForm'>
                         <div className="formGroup">
-                            <label htmlFor="phone">Telefono</label>
-                            <input onChange={handleInputChange} value={formData.phone} type="tel" autoComplete='off' spellCheck='false' id="phone" name="phone" required maxLength={16} />
+                            <label htmlFor="phoneCreate">Telefono</label>
+                            <input onChange={handleInputChange} value={formData.phone} type="tel" autoComplete='off' spellCheck='false' id="phoneCreate" name="phone" required maxLength={16} />
                         </div>
                         <div className="formGroup">
-                            <label htmlFor="email">Email</label>
-                            <input onChange={handleInputChange} value={formData.email} type="email" autoComplete='off' spellCheck='false' id="email" name="email" required maxLength={100} />
+                            <label htmlFor="emailCreate">Email</label>
+                            <input onChange={handleInputChange} value={formData.email} type="email" autoComplete='off' spellCheck='false' id="emailCreate" name="email" required maxLength={100} />
                         </div>
                     </div>
                 </div>
 
-                <div id='createEmployeeActions'>
-                    <button type="submit">Aggiungi</button>
+                <div className='createEmployeeActions'>
                     <button type="button" onClick={close}>Annulla</button>
+                    <button type="submit">Aggiungi</button>
                 </div>
             </form>
         </div>

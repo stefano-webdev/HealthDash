@@ -1,8 +1,61 @@
+import { useEffect, useRef } from 'react';
+import type { hospitalShape } from '../../../Home/PatientsToday.tsx';
+import type { StaffData } from '../../Staff/Staff.tsx';
+import type { StaffListType, StaffMember } from '../../StaffList/StaffList.tsx';
 import './StaffDelete.css';
 
-function StaffDelete() {
+interface StaffDeleteProps {
+    close: () => void;
+    staffData: StaffData;
+}
+
+function StaffDelete({ close, staffData }: StaffDeleteProps) {
+    const { setStaffList, setOriginalStaffList, setSelectedId, 
+        setConfirmMessage, setInputListValue, selectedId } = staffData;
+    const unknownData: string | null = localStorage.getItem("hospitalData");
+    const savedData: hospitalShape = unknownData ? JSON.parse(unknownData) : {};
+    const staffMember: StaffMember | undefined = savedData.staffList?.flatMap(ward => ward.staff).find(member => member.id === selectedId);
+    const scrollRef = useRef<HTMLDivElement | null>(null);
+
+    useEffect(() => {
+        if (scrollRef?.current && window.innerWidth >= 1200 && window.matchMedia("(pointer: fine)").matches) {
+            window.scrollTo({
+                top: scrollRef.current.offsetTop - 20,
+                behavior: 'smooth',
+            });
+        }
+    }, []);
+
+    // Delete the selected employee
+    function handleDelete() {
+        const updatedStaffList = savedData.staffList?.map(ward => {
+            return {
+                ...ward,
+                staff: ward.staff.filter(member => member.id !== selectedId)
+            }
+        })
+        .filter(ward => ward.staff.length > 0) as StaffListType; // remove the empty wards
+
+        const newData = {
+            ...savedData,
+            staffList: updatedStaffList
+        }
+        localStorage.setItem("hospitalData", JSON.stringify(newData));
+        setStaffList(updatedStaffList);
+        setInputListValue('');
+        setOriginalStaffList(updatedStaffList);
+        if (savedData.staffList) {
+            setSelectedId(updatedStaffList[0].staff[0].id);
+        }
+        close();
+        setConfirmMessage({ message: "Dipendente eliminato con successo", type: "error" });
+        setTimeout(() => {
+            setConfirmMessage(null);
+        }, 3500);
+    }
+
     return (
-        <div id='deleteEmployeeCont' className='boxStyle'>
+        <div id='deleteEmployeeCont' className='boxStyle' ref={scrollRef}>
             <div className='titleBox'>
                 <svg className='box' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
                     <path d="M232.7 69.9L224 96L128 96C110.3 96 96 110.3 96 
@@ -13,6 +66,11 @@ function StaffDelete() {
                                 576L443 576C468.3 576 489.3 556.4 490.9 531.1L512 208z" />
                 </svg>
                 <h3 className='box'>Elimina dipendente</h3>
+            </div>
+            <p id='deletedEmployee'>Stai eliminando i dati di <em style={{ color: 'var(--mainRed' }}>{staffMember?.employee}</em></p>
+            <div className='deleteEmployeeActions'>
+                <button type="button" onClick={close}>Annulla</button>
+                <button type="button" onClick={handleDelete}>Elimina</button>
             </div>
         </div>
     );

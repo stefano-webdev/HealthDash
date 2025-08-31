@@ -27,7 +27,9 @@ interface AllStaffList {
 type StaffListType = AllStaffList[];
 
 function StaffList({ staffData }: { staffData: StaffData }) {
-    const { staffList, originalStaffList, selectedId, setStaffList, setOriginalStaffList, setSelectedId, setActiveCrud } = staffData;
+    const { staffList, originalStaffList, selectedId,
+        inputListValue, setStaffList, setOriginalStaffList,
+        setSelectedId, setActiveCrud, setInputListValue } = staffData;
 
     useEffect(() => {
         // "YYYY-MM-DD"
@@ -76,18 +78,19 @@ function StaffList({ staffData }: { staffData: StaffData }) {
     // Filter staff based on input
     function filterStaff(e: React.ChangeEvent<HTMLInputElement>) {
         const query: string = e.target.value.toLowerCase();
-
-        const filtered: StaffListType = originalStaffList
-            .map(ward => ({
+        console.log(originalStaffList);
+        const filtered: StaffListType = originalStaffList.map(ward => {
+            return {
                 ...ward,
                 staff: ward.staff.filter(person =>
-                    person.employee.toLowerCase().split(" ")[1].includes(query) ||
+                    person.employee.toLowerCase().split(" ").slice(1).join(" ").includes(query) ||
                     person.shortRole.toLowerCase().includes(query) ||
                     person.ward.toLowerCase().includes(query)
                 )
-            }))
+            };
+        })
             .filter(ward => ward.staff.length > 0); // remove the empty wards
-
+        setInputListValue(e.target.value);
         setStaffList(filtered);
     }
 
@@ -149,7 +152,7 @@ function StaffList({ staffData }: { staffData: StaffData }) {
                             192.5 351.5 128 272 128C192.5 128 128 192.5 128 272C128 
                             351.5 192.5 416 272 416z" />
                         </svg>
-                        <input id='staffFilterInput' spellCheck='false' autoComplete='off' onChange={filterStaff} type="text" placeholder="Filtra i dipendenti" />
+                        <input id='staffFilterInput' spellCheck='false' autoComplete='off' value={inputListValue} onChange={filterStaff} type="text" placeholder="Filtra i dipendenti" />
                     </div>
 
                     {staffList === null ? null : staffList.length === 0 ? (
@@ -170,9 +173,9 @@ function StaffList({ staffData }: { staffData: StaffData }) {
                                         ward.staff.map((person) => (
                                             <tr onClick={() => setSelectedId(person.id)} key={person.id}
                                                 className={person.id === selectedId ? "selectedEmployee" : ""}>
-                                                <td>{person.employee.split(" ")[1]}</td>
+                                                <td>{person.employee.split(" ").slice(1).join(" ")}</td>
                                                 <td>{person.shortRole}</td>
-                                                <td>{ward.name}</td>
+                                                <td>{person.ward}</td>
                                             </tr>
                                         ))
                                     )}
@@ -187,7 +190,7 @@ function StaffList({ staffData }: { staffData: StaffData }) {
 
             <div className='flexGroupDesktop2Row'>
                 <StaffSchedule id={selectedId} />
-                <StaffCrud setCrud={setActiveCrud} />
+                <StaffCrud setActiveCrud={setActiveCrud} />
             </div>
         </>
     );

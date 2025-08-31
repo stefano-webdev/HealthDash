@@ -1,56 +1,56 @@
-#createEmployeeCont form .formGroup {
+.formStaff .formGroup {
     display: flex;
     flex-direction: column;
     gap: 5px;
 }
 
-#createEmployeeCont form {
+.formStaff {
     display: flex;
     flex-direction: column;
     gap: 1.4rem;
-    margin-top: 10px;
 }
 
-#createEmployeeCont form label {
+.formStaff label {
     width: fit-content;
 }
 
-#createEmployeeCont form input {
+.formStaff input {
     border: 2px solid rgba(0, 0, 0, 0.525);
+    padding: 3px 5px;
 }
 
-#createEmployeeCont form input:focus {
+.formStaff input:focus {
     outline: none;
     border-color: #2e7cd0;
 }
 
-#createEmployeeCont form #employeeShiftsForm {
+.formStaff .employeeShiftsForm {
     display: flex;
     flex-direction: column;
     gap: 1.4rem;
 }
 
-#createEmployeeCont form #employeeShiftsTitle,
-#createEmployeeCont form #employeeContactsTitle {
+.formStaff .employeeShiftsTitle,
+.formStaff .employeeContactsTitle {
     font-size: 17px;
     width: fit-content;
     margin: 45px auto 5px auto;
 }
 
-#createEmployeeCont form #employeeContactsForm {
+.formStaff .employeeContactsForm {
     display: flex;
     flex-direction: column;
     gap: 1.4rem;
 }
 
-#createEmployeeCont form #createEmployeeActions {
+.formStaff .createEmployeeActions {
     display: flex;
     justify-content: center;
     gap: 25px;
     margin-top: 20px;
 }
 
-#createEmployeeCont form #createEmployeeActions button {
+.formStaff .createEmployeeActions button {
     font-weight: normal;
     border: 1px solid black;
     box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.253);
@@ -58,20 +58,20 @@
     padding: 4px 8px;
 }
 
-#createEmployeeCont form #createEmployeeActions button:nth-child(1) {
+.formStaff .createEmployeeActions button:nth-child(1) {
+    color: white;
+    background-color: #2563EB;
+}
+
+.formStaff .createEmployeeActions button:nth-child(1):active {
+    background-color: #1d50bd;
+}
+
+.formStaff .createEmployeeActions button:nth-child(2) {
     color: white;
     background-color: rgb(0, 153, 0);
 }
 
-#createEmployeeCont form #createEmployeeActions button:nth-child(1):active {
+.formStaff .createEmployeeActions button:nth-child(2):active {
     background-color: rgb(0, 123, 0);
-}
-
-#createEmployeeCont form #createEmployeeActions button:nth-child(2) {
-    color: white;
-    background-color: rgb(221, 28, 44);
-}
-
-#createEmployeeCont form #createEmployeeActions button:nth-child(2):active {
-    background-color: rgb(191, 0, 14);
 }

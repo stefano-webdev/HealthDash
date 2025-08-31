@@ -4,6 +4,7 @@ import StaffCreate from '../StaffCrud/StaffCreate/StaffCreate.tsx';
 import StaffUpdate from '../StaffCrud/StaffUpdate/StaffUpdate.tsx';
 import StaffDelete from '../StaffCrud/StaffDelete/StaffDelete.tsx';
 import type { StaffListType } from '../StaffList/StaffList.tsx';
+import './Staff.css';
 
 type CrudType = "create" | "update" | "delete" | null;
 
@@ -11,10 +12,13 @@ type StaffData = {
     staffList: StaffListType | null;
     originalStaffList: StaffListType;
     selectedId: number | null;
-    setOriginalStaffList: React.Dispatch<React.SetStateAction<StaffListType>>;
+    inputListValue: string;
     setStaffList: React.Dispatch<React.SetStateAction<StaffListType | null>>;
+    setOriginalStaffList: React.Dispatch<React.SetStateAction<StaffListType>>;
     setSelectedId: React.Dispatch<React.SetStateAction<number | null>>;
     setActiveCrud: React.Dispatch<React.SetStateAction<CrudType>>;
+    setConfirmMessage: React.Dispatch<React.SetStateAction<{ message: string, type: "success" | "error" } | null>>;
+    setInputListValue: React.Dispatch<React.SetStateAction<string>>;
 };
 
 function Staff() {
@@ -22,15 +26,20 @@ function Staff() {
     const [staffList, setStaffList] = useState<StaffListType | null>(null);
     const [originalStaffList, setOriginalStaffList] = useState<StaffListType>([]);
     const [selectedId, setSelectedId] = useState<number | null>(null);
+    const [confirmMessage, setConfirmMessage] = useState<{ message: string, type: "success" | "error" } | null>(null);
+    const [inputListValue, setInputListValue] = useState<string>('');
 
     const staffData: StaffData = {
         staffList,
         originalStaffList,
         selectedId,
+        inputListValue,
         setStaffList,
         setOriginalStaffList,
         setSelectedId,
-        setActiveCrud
+        setActiveCrud,
+        setConfirmMessage,
+        setInputListValue
     };
 
     // Scroll to top on component mount
@@ -62,9 +71,15 @@ function Staff() {
             <div id="staffRouteCont">
                 <StaffList staffData={staffData} />
                 {activeCrud === 'create' && <StaffCreate close={() => setActiveCrud(null)} staffData={staffData} />}
-                {activeCrud === 'update' && <StaffUpdate />}
-                {activeCrud === 'delete' && <StaffDelete />}
+                {activeCrud === 'update' && <StaffUpdate close={() => setActiveCrud(null)} staffData={staffData} />}
+                {activeCrud === 'delete' && <StaffDelete close={() => setActiveCrud(null)} staffData={staffData} />}
             </div>
+
+            {confirmMessage && (
+                <div id='confirmMessageCont' className={confirmMessage.type === "success" ? "positive" : "negative"}>
+                    <p>{confirmMessage.message}</p>
+                </div>
+            )}
         </>
     );
 }

@@ -100,19 +100,19 @@ div.currentRoute h2 {
 #homeRouteCont {
     display: flex;
     flex-direction: column;
-    gap: 3.5rem;
+    gap: 3rem;
 }
 
 .flexGroupDesktop {
     display: flex;
     flex-direction: column;
-    gap: 3.5rem;
+    gap: 3rem;
 }
 
 .flexGroupDesktop2Row {
     display: flex;
     flex-direction: column;
-    gap: 3.5rem;
+    gap: 3rem;
 }
 
 #staffRouteCont {

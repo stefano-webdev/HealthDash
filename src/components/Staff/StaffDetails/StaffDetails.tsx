@@ -1,19 +1,11 @@
 import './StaffDetails.css';
-import staffData from '../Staff/Staff.json';
 import type { StaffMember } from '../StaffList/StaffList.tsx';
 import type { hospitalShape } from '../../Home/PatientsToday.tsx';
-import type { StaffListType } from '../StaffList/StaffList.tsx';
 
 function StaffDetails({ id }: { id: number | null }) {
-    let staffMember: StaffMember | undefined = staffData.flatMap(ward => ward.staff).find(member => member.id === id);
-
-    // If staffMember is undefined, search in localStorage instead
-    if (!staffMember) {
-        const unknownData: string | null = localStorage.getItem("hospitalData");
-        const savedData: hospitalShape = unknownData ? JSON.parse(unknownData) : {};
-        const staffData: StaffListType | undefined = savedData.staffList;
-        staffMember = staffData?.flatMap(ward => ward.staff).find(member => member.id === id);
-    }
+    const unknownData: string | null = localStorage.getItem("hospitalData");
+    const savedData: hospitalShape = unknownData ? JSON.parse(unknownData) : {};
+    const staffMember: StaffMember | undefined = savedData.staffList?.flatMap(ward => ward.staff).find(member => member.id === id);
 
     return (
         <div id='staffDetailsCont' className="boxStyle">

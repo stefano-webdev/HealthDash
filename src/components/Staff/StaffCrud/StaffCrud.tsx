@@ -1,7 +1,7 @@
 import type { CrudType } from '../Staff/Staff.tsx';
 import './StaffCrud.css';
 
-function StaffCrud({ setCrud }: { setCrud: React.Dispatch<React.SetStateAction<CrudType>> }) {
+function StaffCrud({ setActiveCrud }: { setActiveCrud: React.Dispatch<React.SetStateAction<CrudType>> }) {
     return (
         <>
             <div id='staffCrudCont' className='boxStyle'>
@@ -27,7 +27,7 @@ function StaffCrud({ setCrud }: { setCrud: React.Dispatch<React.SetStateAction<C
                 <p id='staffCrudFeatures'>Funzionalità CRUD</p>
 
                 <div id='staffCrudActionsCont'>
-                    <button type="button" aria-label="Add employee" onClick={() => setCrud("create")}>
+                    <button type="button" aria-label="Add employee" onClick={() => setActiveCrud("create")}>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
                             <path d="M352 128C352 110.3 337.7 96 320 96C302.3 96 288 
                                 110.3 288 128L288 288L128 288C110.3 288 96 302.3 96 320C96 
@@ -38,7 +38,7 @@ function StaffCrud({ setCrud }: { setCrud: React.Dispatch<React.SetStateAction<C
                         </svg>
                     </button>
 
-                    <button type="button" aria-label="Edit employee" onClick={() => setCrud("update")}>
+                    <button type="button" aria-label="Edit employee" onClick={() => setActiveCrud("update")}>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
                             <path d="M100.4 417.2C104.5 402.6 112.2 389.3 123 378.5L304.2 
                                 197.3L338.1 163.4C354.7 180 389.4 214.7 442.1 267.4L476 
@@ -54,7 +54,7 @@ function StaffCrud({ setCrud }: { setCrud: React.Dispatch<React.SetStateAction<C
                         </svg>
                     </button>
 
-                    <button type="button" aria-label="Delete employee" onClick={() => setCrud("delete")}>
+                    <button type="button" aria-label="Delete employee" onClick={() => setActiveCrud("delete")}>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
                             <path d="M232.7 69.9L224 96L128 96C110.3 96 96 110.3 96 
                                 128C96 145.7 110.3 160 128 160L512 160C529.7 160 544 145.7 
