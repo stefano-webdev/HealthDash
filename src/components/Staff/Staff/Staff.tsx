@@ -1,5 +1,8 @@
-import StaffList from '../StaffList/StaffList.tsx';
 import { useEffect, useState } from 'react';
+import StaffList from '../StaffList/StaffList.tsx';
+import StaffDetails from '../StaffDetails/StaffDetails.tsx';
+import StaffSchedule from '../StaffSchedule/StaffSchedule.tsx';
+import StaffCrud from '../StaffCrud/StaffCrud.tsx';
 import StaffCreate from '../StaffCrud/StaffCreate/StaffCreate.tsx';
 import StaffUpdate from '../StaffCrud/StaffUpdate/StaffUpdate.tsx';
 import StaffDelete from '../StaffCrud/StaffDelete/StaffDelete.tsx';
@@ -69,7 +72,16 @@ function Staff() {
                 <h2>PERSONALE</h2>
             </div>
             <div id="staffRouteCont">
-                <StaffList staffData={staffData} />
+                <div className='flexGroup'>
+                    <StaffList staffData={staffData} />
+                    <StaffDetails id={selectedId}/>
+                </div>
+
+                <div className='flexGroup'>
+                    <StaffSchedule id={selectedId}/>
+                    <StaffCrud setActiveCrud={setActiveCrud} />
+                </div>
+
                 {activeCrud === 'create' && <StaffCreate close={() => setActiveCrud(null)} staffData={staffData} />}
                 {activeCrud === 'update' && <StaffUpdate close={() => setActiveCrud(null)} staffData={staffData} />}
                 {activeCrud === 'delete' && <StaffDelete close={() => setActiveCrud(null)} staffData={staffData} />}

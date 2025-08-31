@@ -103,13 +103,7 @@ div.currentRoute h2 {
     gap: 3rem;
 }
 
-.flexGroupDesktop {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-}
-
-.flexGroupDesktop2Row {
+.flexGroup {
     display: flex;
     flex-direction: column;
     gap: 3rem;

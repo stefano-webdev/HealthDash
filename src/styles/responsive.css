@@ -270,7 +270,7 @@
         margin: 55px 0px 0px 0px;
     }
 
-    body .flexGroupDesktop {
+    body .flexGroup {
         flex-direction: row;
         justify-content: center;
         align-items: flex-start;
@@ -300,13 +300,6 @@
 
     body p#employeeSchedule {
         margin: 10px auto 15px auto;
-    }
-
-    body .flexGroupDesktop2Row {
-        flex-direction: row;
-        justify-content: center;
-        align-items: flex-start;
-        gap: 3rem;
     }
 
     body #staffListCont #tableWrapper {
