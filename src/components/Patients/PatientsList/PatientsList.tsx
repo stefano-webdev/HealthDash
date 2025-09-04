@@ -1,32 +1,38 @@
 import { useEffect } from 'react';
-import staffDataJSON from '../Staff/Staff.json';
+import patientsDataJSON from '../Patients/Patients.json';
 import type { hospitalShape } from "../../Home/PatientsToday.tsx";
-import type { StaffProps } from '../Staff/Staff.tsx';
-import "./StaffList.css";
+import type { PatientsProps } from '../Patients/Patients.tsx';
+import "./PatientsList.css";
 
-interface StaffMember {
+interface Patient {
     id: number,
     employee: string,
-    shortRole: string,
-    longRole: string,
-    ward: string,
-    schedule: { [key: string]: string },
-    number: string,
-    mail: string,
+    age: number,
+    code: string,
+    state: string,
+    pastDiseases: string,
+    chronicDiseases: string,
+    surgeries: string,
+    hospitalizations: string,
+    knownAllergies: string,
+    currentMedications: string,
+    currentSymptoms: string,
+    familyContacts: {
+        name: string,
+        relationship: string,
+        phone: string
+    },
+    prescriptions: {
+        medication: string,
+        frequency: string
+    }
 }
 
-interface AllStaffList {
-    id: number;
-    name: string;
-    staff: StaffMember[];
-}
+type PatientsListType = Patient[];
 
-type StaffListType = AllStaffList[];
-
-function StaffList({ staffData }: { staffData: StaffProps }) {
-    const { staffList, originalStaffList, selectedId,
-        inputListValue, setStaffList, setOriginalStaffList,
-        setSelectedId, setInputListValue } = staffData;
+function PatientsList({ patientsList, originalPatientsList,
+    inputListValue, selectedId, setPatientsList,
+    setOriginalPatientsList, setInputListValue, setSelectedId }: PatientsProps) {
 
     useEffect(() => {
         // "YYYY-MM-DD"
@@ -34,65 +40,53 @@ function StaffList({ staffData }: { staffData: StaffProps }) {
         const unknownData: string | null = localStorage.getItem("hospitalData");
         const savedData: hospitalShape = unknownData ? JSON.parse(unknownData) : {};
 
-        if (savedData.staffList && savedData.date === today) {
+        if (savedData.patientsList && savedData.date === today) {
             // If it already exists for today, use again
-            setOriginalStaffList(savedData.staffList);
-            setStaffList(savedData.staffList);
-            // Automatically click first table employee
-            setSelectedId(savedData.staffList[0]?.staff[0]?.id);
+            setOriginalPatientsList(savedData.patientsList);
+            setPatientsList(savedData.patientsList);
+            // Automatically click first table patient
+            setSelectedId(savedData.patientsList[0]?.id);
         } else {
-            // Generate a new staff list
-            const newStaffList: StaffListType = randomStaff(staffDataJSON);
+            // Generate a new patients list
+            const newPatientsList: PatientsListType = randomPatients(patientsDataJSON);
 
             const updatedData: hospitalShape = {
                 ...savedData,
                 date: today,
-                staffList: newStaffList
+                patientsList: newPatientsList
             };
 
             localStorage.setItem("hospitalData", JSON.stringify(updatedData));
-            setOriginalStaffList(newStaffList);
-            setStaffList(newStaffList);
-            // Automatically click first table employee
-            setSelectedId(newStaffList[0]?.staff[0]?.id);
+            setOriginalPatientsList(newPatientsList);
+            setPatientsList(newPatientsList);
+            // Automatically click first table patient
+            setSelectedId(newPatientsList[0]?.id);
         }
     }, []);
 
-    // Select 3-6 random staff members from each ward
+    // Select 30-40 random patients
     // In a real application this data would be fetched from a real database with an API,
     // but here I generate it randomly each day to simulate recent activity
-    function randomStaff(staffData: StaffListType): StaffListType {
-        return staffData.map((ward: AllStaffList): AllStaffList => {
-            const shuffledStaff = [...ward.staff].sort(() => 0.5 - Math.random());
-            const selectedStaff = shuffledStaff.slice(0, Math.floor(Math.random() * (6 - 3 + 1)) + 3);
-            return {
-                ...ward,
-                staff: selectedStaff
-            };
-        });
+    function randomPatients(patientsData: PatientsListType): PatientsListType {
+        const shuffledPatients = [...patientsData].sort(() => 0.5 - Math.random());
+        return shuffledPatients.slice(0, Math.floor(Math.random() * (40 - 30 + 1)) + 30);
     }
 
-    // Filter staff based on search query
-    function filterStaff(e: React.ChangeEvent<HTMLInputElement>) {
+    // Filter patients based on search query    
+    function filterPatients(e: React.ChangeEvent<HTMLInputElement>) {
         const query: string = e.target.value.toLowerCase();
-        const filtered: StaffListType = originalStaffList.map(ward => {
-            return {
-                ...ward,
-                staff: ward.staff.filter(person =>
-                    person.employee.toLowerCase().split(" ").slice(1).join(" ").includes(query) ||
-                    person.shortRole.toLowerCase().includes(query) ||
-                    person.ward.toLowerCase().includes(query)
-                )
-            };
-        })
-            .filter(ward => ward.staff.length > 0); // remove the empty wards
+        const filtered: PatientsListType = originalPatientsList.filter(patient =>
+            patient.employee.toLowerCase().split(" ").slice(1).join(" ").includes(query) ||
+            patient.code.toLowerCase().includes(query) ||
+            patient.state.toLowerCase().includes(query)
+        );
         setInputListValue(e.target.value);
-        setStaffList(filtered);
+        setPatientsList(filtered);
     }
 
     return (
         <>
-            <div id='staffListCont' className='boxStyle'>
+            <div id='patientsListCont' className='boxStyle'>
                 <div className='titleBox'>
                     <svg className='box' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
                         <path d="M104 112C90.7 112 80 122.7 80 136L80 184C80 197.3 
@@ -111,7 +105,7 @@ function StaffList({ staffData }: { staffData: StaffProps }) {
                             504C80 517.3 90.7 528 104 528L152 528C165.3 528 176 517.3 
                             176 504L176 456C176 442.7 165.3 432 152 432L104 432z" />
                     </svg>
-                    <h3 className='box'>Lista dipendenti</h3>
+                    <h3 className='box'>Lista pazienti</h3>
                 </div>
                 <div className="updateCont">
                     <svg className='updateSvg' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
@@ -133,9 +127,7 @@ function StaffList({ staffData }: { staffData: StaffProps }) {
                     <small>24 ore</small>
                 </div>
 
-                <p>Personale più attivo nelle ultime 24 ore.</p>
-
-                <small>Filtra per cognome, ruolo o reparto</small>
+                <small>Filtra per cognome, codice o stato</small>
                 <div className="listFilterCont">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
                         <path d="M480 272C480 317.9 465.1 360.3 440 
@@ -147,33 +139,31 @@ function StaffList({ staffData }: { staffData: StaffProps }) {
                             192.5 351.5 128 272 128C192.5 128 128 192.5 128 272C128 
                             351.5 192.5 416 272 416z" />
                     </svg>
-                    <input id='staffFilterInput' spellCheck='false' autoComplete='off' 
-                    value={inputListValue} onChange={filterStaff} type="text" placeholder="Filtra i dipendenti" />
+                    <input id='patientsFilterInput' spellCheck='false' autoComplete='off'
+                        value={inputListValue} onChange={filterPatients} type="text" placeholder="Filtra i pazienti" />
                 </div>
 
-                {staffList === null ? null : staffList.length === 0 ? (
-                    <p>Nessun dipendente trovato.</p>
+                {patientsList === null ? null : patientsList.length === 0 ? (
+                    <p>Nessun paziente trovato.</p>
                 ) : (
                     <div className='tableWrapper'>
                         <table>
                             <thead>
                                 <tr>
                                     <th>Cognome</th>
-                                    <th>Ruolo</th>
-                                    <th>Reparto</th>
+                                    <th>Codice</th>
+                                    <th>Stato</th>
                                 </tr>
                             </thead>
 
                             <tbody>
-                                {staffList.map((ward) =>
-                                    ward.staff.map((person) => (
-                                        <tr onClick={() => setSelectedId(person.id)} key={person.id}
-                                            className={person.id === selectedId ? "selectedRow" : ""}>
-                                            <td>{person.employee.split(" ").slice(1).join(" ")}</td>
-                                            <td>{person.shortRole}</td>
-                                            <td>{person.ward}</td>
-                                        </tr>
-                                    ))
+                                {patientsList.map(person =>
+                                    <tr onClick={() => setSelectedId(person.id)} key={person.id}
+                                        className={person.id === selectedId ? "selectedRow" : ""}>
+                                        <td>{person.employee.split(" ").slice(1).join(" ")}</td>
+                                        <td>{person.code}</td>
+                                        <td>{person.state}</td>
+                                    </tr>
                                 )}
                             </tbody>
                         </table>
@@ -184,5 +174,5 @@ function StaffList({ staffData }: { staffData: StaffProps }) {
     );
 }
 
-export default StaffList;
-export type { AllStaffList, StaffListType, StaffMember };
+export default PatientsList;
+export type { Patient, PatientsListType };

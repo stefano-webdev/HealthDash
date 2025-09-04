@@ -1,12 +1,12 @@
 import { useEffect, useRef } from 'react';
 import type { hospitalShape } from '../../../Home/PatientsToday.tsx';
-import type { StaffData } from '../../Staff/Staff.tsx';
+import type { StaffProps } from '../../Staff/Staff.tsx';
 import type { StaffListType, StaffMember } from '../../StaffList/StaffList.tsx';
 import './StaffDelete.css';
 
 interface StaffDeleteProps {
     close: () => void;
-    staffData: StaffData;
+    staffData: StaffProps;
 }
 
 function StaffDelete({ close, staffData }: StaffDeleteProps) {

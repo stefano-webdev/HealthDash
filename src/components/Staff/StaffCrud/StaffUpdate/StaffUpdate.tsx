@@ -1,16 +1,16 @@
 import { useState, useEffect, useRef } from 'react';
 import './StaffUpdate.css';
-import type { StaffData } from '../../Staff/Staff.tsx';
+import type { StaffProps } from '../../Staff/Staff.tsx';
 import type { hospitalShape } from '../../../Home/PatientsToday.tsx';
 import type { StaffListType } from '../../StaffList/StaffList.tsx';
 import type { StaffMember } from '../../StaffList/StaffList.tsx';
 
-interface StaffCreateProps {
+interface StaffUpdateProps {
     close: () => void;
-    staffData: StaffData;
+    staffData: StaffProps;
 }
 
-function StaffUpdate({ close, staffData }: StaffCreateProps) {
+function StaffUpdate({ close, staffData }: StaffUpdateProps) {
     const { setStaffList, setOriginalStaffList, setConfirmMessage, setInputListValue, selectedId } = staffData;
     const unknownData: string | null = localStorage.getItem("hospitalData");
     const savedData: hospitalShape = unknownData ? JSON.parse(unknownData) : {};

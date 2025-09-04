@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import './StaffCreate.css';
 import staffDataJSON from '../../Staff/Staff.json';
-import type { StaffData } from '../../Staff/Staff.tsx';
+import type { StaffProps } from '../../Staff/Staff.tsx';
 import type { StaffMember } from '../../StaffList/StaffList.tsx';
 import type { hospitalShape } from '../../../Home/PatientsToday.tsx';
 import type { StaffListType } from '../../StaffList/StaffList.tsx';
@@ -9,7 +9,7 @@ import type { AllStaffList } from "../../StaffList/StaffList.tsx";
 
 interface StaffCreateProps {
     close: () => void;
-    staffData: StaffData;
+    staffData: StaffProps;
 }
 
 function StaffCreate({ close, staffData }: StaffCreateProps) {

@@ -3,6 +3,7 @@ import type { StaffShift } from "./StaffToday.tsx";
 import type { DailyAppointments } from "./Appointments/Appointments.tsx";
 import type { DailyNotifications } from "./Notifications/Notifications.tsx";
 import type {StaffListType} from "../Staff/StaffList/StaffList.tsx";
+import type { PatientsListType } from "../Patients/PatientsList/PatientsList.tsx";
 
 interface hospitalShape {
     date?: string,
@@ -10,7 +11,8 @@ interface hospitalShape {
     staffToday?: StaffShift,
     appointmentsToday?: DailyAppointments,
     notificationsToday?: DailyNotifications,
-    staffList?: StaffListType
+    staffList?: StaffListType,
+    patientsList?: PatientsListType
 }
 
 function PatientsToday() {

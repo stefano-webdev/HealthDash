@@ -6,21 +6,25 @@
         max-width: 280px;
     }
 
-    body #confirmMessageCont {
+    body .confirmMessageCont {
         width: 185px;
     }
 
     /* Route: /staff */
-    body #staffListCont table tbody tr td {
+    body #staffListCont table tbody tr td,
+    body #patientsListCont table tbody tr td {
         font-size: 12px;
     }
 
     body #staffListCont table th,
-    body #staffListCont table td {
+    body #staffListCont table td,
+    body #patientsListCont table th,
+    body #patientsListCont table td {
         padding: 0px 4px 3px 4px;
     }
 
-    body #staffListCont input#staffFilterInput {
+    body #staffListCont input#staffFilterInput,
+    body #patientsListCont input#patientsFilterInput {
         width: 190px;
     }
 }
@@ -75,7 +79,6 @@
         width: 29px;
     }
 
-    /* Route: /home */
     body #patientsTodayCont {
         min-height: 146px;
         max-width: 240px;
@@ -90,11 +93,15 @@
         min-height: 592px;
     }
 
+    body div#notificationsCont {
+        min-height: 359px;
+    }
+
     body p {
         font-size: 18px;
     }
 
-    body #confirmMessageCont {
+    body .confirmMessageCont {
         width: 320px;
     }
 
@@ -102,7 +109,7 @@
         font-size: 18px;
     }
 
-    body svg.updateSvg {
+    body .updateSvg {
         width: 19px;
     }
 
@@ -149,25 +156,29 @@
         min-height: 405px;
     }
 
-    body #staffFilterCont svg {
+    body .listFilterCont svg {
         width: 22px;
+        left: 8px;
     }
 
     body input,
     body label,
     body button {
-        font-size: 18px;
+        font-size: 17px;
     }
 
-    body #staffListCont input#staffFilterInput {
+    body #staffListCont input#staffFilterInput,
+    body #patientsListCont input#patientsFilterInput {
         width: 300px;
     }
 
-    body #staffListCont table thead th {
+    body #staffListCont table thead th,
+    body #patientsListCont table thead th {
         font-size: 18px;
     }
 
-    body #staffListCont table tbody tr td {
+    body #staffListCont table tbody tr td,
+    body #patientsListCont table tbody tr td {
         font-size: 15px;
     }
 
@@ -193,9 +204,14 @@
         width: 36px;
     }
 
-    body #createEmployeeCont form #employeeShiftsTitle,
-    body #createEmployeeCont form #employeeContactsTitle {
+    body .formStaff .employeeShiftsTitle,
+    body .formStaff .employeeContactsTitle {
         font-size: 19px;
+    }
+
+    /* Route: /patients */
+    body #patientsListCont {
+        min-height: 417px;
     }
 }
 
@@ -302,12 +318,19 @@
         margin: 10px auto 15px auto;
     }
 
-    body #staffListCont #tableWrapper {
+    body #staffListCont .tableWrapper,
+    body #patientsListCont .tableWrapper {
         height: 215px;
     }
 
-    body #confirmMessageCont {
+    body .confirmMessageCont {
         left: calc(50% + 115px);
+    }
+
+    /* Patients */
+    body #patientsListCont {
+        min-height: auto;
+        height: 410px;
     }
 
     /* Footer */
@@ -319,8 +342,10 @@
     }
 }
 
-@media (min-width: 1300px) {
-    body #staffListCont table tbody tr td {
+@media (min-width: 1300px) and (pointer: fine) {
+
+    body #staffListCont table tbody tr td,
+    body #patientsListCont table tbody tr td {
         font-size: 16px;
     }
 }

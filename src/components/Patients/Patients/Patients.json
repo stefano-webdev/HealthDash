@@ -1,0 +1,1612 @@
+[
+    {
+        "id": 1,
+        "employee": "Marco Colombo",
+        "age": 45,
+        "code": "PT-34527",
+        "state": "Ricoverato",
+        "pastDiseases": "Appendicectomia",
+        "chronicDiseases": "Diabete",
+        "surgeries": "Bypass cardiaco",
+        "hospitalizations": "Ricoverato per infarto miocardico",
+        "knownAllergies": "Polline",
+        "currentMedications": "Aspirina",
+        "currentSymptoms": "Dolore toracico",
+        "familyContacts": {
+            "name": "Giovanni Colombo",
+            "relationship": "Fratello",
+            "phone": "3345678901"
+        },
+        "prescriptions": {
+            "medication": "Aspirina",
+            "frequency": "Una compressa da 100mg al giorno"
+        }
+    },
+    {
+        "id": 2,
+        "employee": "Laura Rossi",
+        "age": 38,
+        "code": "PT-19876",
+        "state": "Dismesso",
+        "pastDiseases": "Infezione urinaria ricorrente",
+        "chronicDiseases": "Ipertensione",
+        "surgeries": "Colecistectomia",
+        "hospitalizations": "Ricovero per calcoli biliari",
+        "knownAllergies": "Penicillina",
+        "currentMedications": "Lisinopril",
+        "currentSymptoms": "Nessuno",
+        "familyContacts": {
+            "name": "Paolo Sartori",
+            "relationship": "Marito",
+            "phone": "3351234567"
+        },
+        "prescriptions": {
+            "medication": "Lisinopril",
+            "frequency": "10mg una volta al giorno"
+        }
+    },
+    {
+        "id": 3,
+        "employee": "Giuseppe Bianchi",
+        "age": 67,
+        "code": "PT-56432",
+        "state": "Ricoverato",
+        "pastDiseases": "Polmonite",
+        "chronicDiseases": "Broncopneumopatia cronica ostruttiva",
+        "surgeries": "Protesi anca",
+        "hospitalizations": "Ricovero per riacutizzazione BPCO",
+        "knownAllergies": "Acari della polvere",
+        "currentMedications": "Spiriva",
+        "currentSymptoms": "Dispnea, tosse con espettorato",
+        "familyContacts": {
+            "name": "Mario Bianchi",
+            "relationship": "Figlio",
+            "phone": "3339876543"
+        },
+        "prescriptions": {
+            "medication": "Spiriva",
+            "frequency": "Una capsula al giorno"
+        }
+    },
+    {
+        "id": 4,
+        "employee": "Francesca Romano",
+        "age": 29,
+        "code": "PT-78901",
+        "state": "Dismesso",
+        "pastDiseases": "Nessuna",
+        "chronicDiseases": "Asma",
+        "surgeries": "Tonsillectomia",
+        "hospitalizations": "Ricovero per crisi asmatica",
+        "knownAllergies": "Graminacee",
+        "currentMedications": "Ventolin",
+        "currentSymptoms": "Nessuno",
+        "familyContacts": {
+            "name": "Veronica Favaro",
+            "relationship": "Figlia",
+            "phone": "3365432198"
+        },
+        "prescriptions": {
+            "medication": "Ventolin",
+            "frequency": "2 puff al bisogno"
+        }
+    },
+    {
+        "id": 5,
+        "employee": "Alessandro Conti",
+        "age": 52,
+        "code": "PT-23456",
+        "state": "Ricoverato",
+        "pastDiseases": "Reflusso gastroesofageo",
+        "chronicDiseases": "Colesterolo alto",
+        "surgeries": "Appendicectomia",
+        "hospitalizations": "Ricovero per dolore addominale",
+        "knownAllergies": "Nessuna",
+        "currentMedications": "Atorvastatina",
+        "currentSymptoms": "Dolore addominale, nausea",
+        "familyContacts": {
+            "name": "Marco Conti",
+            "relationship": "Figlio",
+            "phone": "3378901234"
+        },
+        "prescriptions": {
+            "medication": "Atorvastatina",
+            "frequency": "20mg una volta al giorno"
+        }
+    },
+    {
+        "id": 6,
+        "employee": "Chiara Marini",
+        "age": 41,
+        "code": "PT-87654",
+        "state": "Dismesso",
+        "pastDiseases": "Mononucleosi",
+        "chronicDiseases": "Tiroidite di Hashimoto",
+        "surgeries": "Cisti ovarica",
+        "hospitalizations": "Ricovero per tiroidite",
+        "knownAllergies": "Iodio",
+        "currentMedications": "Eutirox",
+        "currentSymptoms": "Nessuno",
+        "familyContacts": {
+            "name": "Lucia Bianchi",
+            "relationship": "Madre",
+            "phone": "3387654321"
+        },
+        "prescriptions": {
+            "medication": "Eutirox",
+            "frequency": "75mcg una volta al giorno"
+        }
+    },
+    {
+        "id": 7,
+        "employee": "Luca Ferrari",
+        "age": 63,
+        "code": "PT-34567",
+        "state": "Ricoverato",
+        "pastDiseases": "Ulcera peptica",
+        "chronicDiseases": "Diabete di tipo 2",
+        "surgeries": "By-pass gastrico",
+        "hospitalizations": "Ricovero per controllo glicemico",
+        "knownAllergies": "Solfamidici",
+        "currentMedications": "Metformina, Insulina",
+        "currentSymptoms": "Debolezza, poliuria",
+        "familyContacts": {
+            "name": "Giovanni Ferrari",
+            "relationship": "Fratello",
+            "phone": "3398765432"
+        },
+        "prescriptions": {
+            "medication": "Metformina",
+            "frequency": "1000mg due volte al giorno"
+        }
+    },
+    {
+        "id": 8,
+        "employee": "Elena Greco",
+        "age": 35,
+        "code": "PT-98765",
+        "state": "Dismesso",
+        "pastDiseases": "Anemia",
+        "chronicDiseases": "Nessuna",
+        "surgeries": "Parto cesareo",
+        "hospitalizations": "Ricovero per parto",
+        "knownAllergies": "Nichel",
+        "currentMedications": "Integratore di ferro",
+        "currentSymptoms": "Nessuno",
+        "familyContacts": {
+            "name": "Maria Greco",
+            "relationship": "Sorella",
+            "phone": "3301234567"
+        },
+        "prescriptions": {
+            "medication": "Ferro",
+            "frequency": "Una compressa al giorno"
+        }
+    },
+    {
+        "id": 9,
+        "employee": "Paolo Barbieri",
+        "age": 58,
+        "code": "PT-45678",
+        "state": "Ricoverato",
+        "pastDiseases": "Epatite A",
+        "chronicDiseases": "Cirrosi epatica",
+        "surgeries": "Nessuna",
+        "hospitalizations": "Ricovero per ascite",
+        "knownAllergies": "Nessuna",
+        "currentMedications": "Diuretici",
+        "currentSymptoms": "Addome gonfio, ittero",
+        "familyContacts": {
+            "name": "Francesco Barbieri",
+            "relationship": "Figlio",
+            "phone": "3312345678"
+        },
+        "prescriptions": {
+            "medication": "Furosemide",
+            "frequency": "40mg una volta al giorno"
+        }
+    },
+    {
+        "id": 10,
+        "employee": "Silvia Moretti",
+        "age": 44,
+        "code": "PT-56789",
+        "state": "Dismesso",
+        "pastDiseases": "Depressione",
+        "chronicDiseases": "Ansia generalizzata",
+        "surgeries": "Nessuna",
+        "hospitalizations": "Ricovero per attacco de panico",
+        "knownAllergies": "Nessuna",
+        "currentMedications": "Sertralina",
+        "currentSymptoms": "Nessuno",
+        "familyContacts": {
+            "name": "Roberto Moretti",
+            "relationship": "Padre",
+            "phone": "3323456789"
+        },
+        "prescriptions": {
+            "medication": "Sertralina",
+            "frequency": "50mg una volta al giorno"
+        }
+    },
+    {
+        "id": 11,
+        "employee": "Andrea Gallo",
+        "age": 31,
+        "code": "PT-67890",
+        "state": "Ricoverato",
+        "pastDiseases": "Frattura braccio",
+        "chronicDiseases": "Nessuna",
+        "surgeries": "Riduzione frattura",
+        "hospitalizations": "Ricovero per incidente stradale",
+        "knownAllergies": "Lattice",
+        "currentMedications": "Antidolorifici",
+        "currentSymptoms": "Dolore al braccio, limitazione movimento",
+        "familyContacts": {
+            "name": "Giuseppe Gallo",
+            "relationship": "Padre",
+            "phone": "3334567890"
+        },
+        "prescriptions": {
+            "medication": "Paracetamolo",
+            "frequency": "1000mg ogni 8 ore"
+        }
+    },
+    {
+        "id": 12,
+        "employee": "Martina Rizzo",
+        "age": 50,
+        "code": "PT-78912",
+        "state": "Dismesso",
+        "pastDiseases": "Osteoporosi",
+        "chronicDiseases": "Artrite reumatoide",
+        "surgeries": "Protesi ginocchio",
+        "hospitalizations": "Ricovero per infusione terapia biologica",
+        "knownAllergies": "Molluschi",
+        "currentMedications": "Methotrexate",
+        "currentSymptoms": "Nessuno",
+        "familyContacts": {
+            "name": "Sofia Righetti",
+            "relationship": "Figlia",
+            "phone": "3345678901"
+        },
+        "prescriptions": {
+            "medication": "Methotrexate",
+            "frequency": "15mg una volta a settimana"
+        }
+    },
+    {
+        "id": 13,
+        "employee": "Riccardo De Luca",
+        "age": 47,
+        "code": "PT-89123",
+        "state": "Ricoverato",
+        "pastDiseases": "Calcoli renali",
+        "chronicDiseases": "Ipertensione",
+        "surgeries": "Nefrolitotomia",
+        "hospitalizations": "Ricovero per colica renale",
+        "knownAllergies": "Mezzi di contrasto",
+        "currentMedications": "Amlodipina",
+        "currentSymptoms": "Dolore lombare, ematuria",
+        "familyContacts": {
+            "name": "Giulia De Luca",
+            "relationship": "Figlia",
+            "phone": "3356789012"
+        },
+        "prescriptions": {
+            "medication": "Amlodipina",
+            "frequency": "5mg una volta al giorno"
+        }
+    },
+    {
+        "id": 14,
+        "employee": "Valentina Costa",
+        "age": 26,
+        "code": "PT-91467",
+        "state": "Dismesso",
+        "pastDiseases": "Appendicite",
+        "chronicDiseases": "Nessuna",
+        "surgeries": "Appendicectomia",
+        "hospitalizations": "Ricovero per appendicite acuta",
+        "knownAllergies": "Punture di ape",
+        "currentMedications": "Antibiotico",
+        "currentSymptoms": "Nessuno",
+        "familyContacts": {
+            "name": "Antonio Costa",
+            "relationship": "Padre",
+            "phone": "3367890123"
+        },
+        "prescriptions": {
+            "medication": "Amoxicillina",
+            "frequency": "1g due volte al giorno per 7 giorni"
+        }
+    },
+    {
+        "id": 15,
+        "employee": "Daniele Giordano",
+        "age": 59,
+        "code": "PT-12345",
+        "state": "Ricoverato",
+        "pastDiseases": "Infarto miocardico",
+        "chronicDiseases": "Cardiopatia ischemica",
+        "surgeries": "Angioplastica",
+        "hospitalizations": "Ricovero per dolore toracico",
+        "knownAllergies": "Aspirina",
+        "currentMedications": "Clopidogrel",
+        "currentSymptoms": "Dolore toracico, dispnea",
+        "familyContacts": {
+            "name": "Laura Vianello",
+            "relationship": "Moglie",
+            "phone": "3378901234"
+        },
+        "prescriptions": {
+            "medication": "Clopidogrel",
+            "frequency": "75mg una volta al giorno"
+        }
+    },
+    {
+        "id": 16,
+        "employee": "Barbara Mancini",
+        "age": 33,
+        "code": "PT-23467",
+        "state": "Dismesso",
+        "pastDiseases": "Cistite ricorrente",
+        "chronicDiseases": "Nessuna",
+        "surgeries": "Nessuna",
+        "hospitalizations": "Ricovero per pielonefrite",
+        "knownAllergies": "Nessuna",
+        "currentMedications": "Antibiotico",
+        "currentSymptoms": "Nessuno",
+        "familyContacts": {
+            "name": "Veronica Mancini",
+            "relationship": "Sorella",
+            "phone": "3389012345"
+        },
+        "prescriptions": {
+            "medication": "Ciprofloxacina",
+            "frequency": "500mg due volte al giorno per 10 giorni"
+        }
+    },
+    {
+        "id": 17,
+        "employee": "Stefano Lombardi",
+        "age": 62,
+        "code": "PT-34678",
+        "state": "Ricoverato",
+        "pastDiseases": "BPCO",
+        "chronicDiseases": "Enfisema polmonare",
+        "surgeries": "Lobectomia polmonare",
+        "hospitalizations": "Ricovero per insufficienza respiratoria",
+        "knownAllergies": "Polvere",
+        "currentMedications": "Cortisone, Broncodilatatore",
+        "currentSymptoms": "Dispnea, tosse, cianosi",
+        "familyContacts": {
+            "name": "Anna Lombardi",
+            "relationship": "Sorella",
+            "phone": "3390123456"
+        },
+        "prescriptions": {
+            "medication": "Prednisone",
+            "frequency": "25mg una volta al giorno"
+        }
+    },
+    {
+        "id": 18,
+        "employee": "Eleonora Fontana",
+        "age": 39,
+        "code": "PT-46312",
+        "state": "Dismesso",
+        "pastDiseases": "Emicrania",
+        "chronicDiseases": "Nessuna",
+        "surgeries": "Nessuna",
+        "hospitalizations": "Ricovero per cefalea intrattabile",
+        "knownAllergies": "Cioccolato",
+        "currentMedications": "Sumatriptan",
+        "currentSymptoms": "Nessuno",
+        "familyContacts": {
+            "name": "Paolo Fontana",
+            "relationship": "Fratello",
+            "phone": "3301234567"
+        },
+        "prescriptions": {
+            "medication": "Sumatriptan",
+            "frequency": "50mg al bisogno per emicrania"
+        }
+    },
+    {
+        "id": 19,
+        "employee": "Giovanni Santoro",
+        "age": 55,
+        "code": "PT-57854",
+        "state": "Ricoverato",
+        "pastDiseases": "Colecistite",
+        "chronicDiseases": "Steatosi epatica",
+        "surgeries": "Colecistectomia",
+        "hospitalizations": "Ricovero per epatite alcolica",
+        "knownAllergies": "Nessuna",
+        "currentMedications": "Vitamine",
+        "currentSymptoms": "Ittero, astenia",
+        "familyContacts": {
+            "name": "Marco Santoro",
+            "relationship": "Figlio",
+            "phone": "3312345678"
+        },
+        "prescriptions": {
+            "medication": "Vitamina B",
+            "frequency": "Una compressa al giorno"
+        }
+    },
+    {
+        "id": 20,
+        "employee": "Anna Marino",
+        "age": 42,
+        "code": "PT-68345",
+        "state": "Dismesso",
+        "pastDiseases": "Endometriosi",
+        "chronicDiseases": "Ipotiroidismo",
+        "surgeries": "Laparoscopia",
+        "hospitalizations": "Ricovero per cisti ovarica",
+        "knownAllergies": "Nessuna",
+        "currentMedications": "Eutirox",
+        "currentSymptoms": "Nessuno",
+        "familyContacts": {
+            "name": "Giuseppe Marino",
+            "relationship": "Padre",
+            "phone": "3323456789"
+        },
+        "prescriptions": {
+            "medication": "Eutirox",
+            "frequency": "50mcg una volta al giorno"
+        }
+    },
+    {
+        "id": 21,
+        "employee": "Michele Rinaldi",
+        "age": 48,
+        "code": "PT-79542",
+        "state": "Ricoverato",
+        "pastDiseases": "Ernia iatale",
+        "chronicDiseases": "Reflusso gastroesofageo",
+        "surgeries": "Nessuna",
+        "hospitalizations": "Ricovero per esofagite",
+        "knownAllergies": "Pomodoro",
+        "currentMedications": "Pantoprazolo",
+        "currentSymptoms": "Pirosi, rigurgito acido",
+        "familyContacts": {
+            "name": "Maria Berto",
+            "relationship": "Madre",
+            "phone": "3334567890"
+        },
+        "prescriptions": {
+            "medication": "Pantoprazolo",
+            "frequency": "40mg una volta al giorno"
+        }
+    },
+    {
+        "id": 22,
+        "employee": "Sara Masiero",
+        "age": 36,
+        "code": "PT-80532",
+        "state": "Dismesso",
+        "pastDiseases": "Anemia sideropenica",
+        "chronicDiseases": "Nessuna",
+        "surgeries": "Nessuna",
+        "hospitalizations": "Ricovero per sincope",
+        "knownAllergies": "Nessuna",
+        "currentMedications": "Ferro",
+        "currentSymptoms": "Nessuno",
+        "familyContacts": {
+            "name": "Francesco Masiero",
+            "relationship": "Padre",
+            "phone": "3345678901"
+        },
+        "prescriptions": {
+            "medication": "Solfato ferroso",
+            "frequency": "Una compressa al giorno"
+        }
+    },
+    {
+        "id": 23,
+        "employee": "Antonio Ferrara",
+        "age": 61,
+        "code": "PT-15987",
+        "state": "Ricoverato",
+        "pastDiseases": "Ictus",
+        "chronicDiseases": "Fibrillazione atriale",
+        "surgeries": "Nessuna",
+        "hospitalizations": "Ricovero per TIA",
+        "knownAllergies": "Nessuna",
+        "currentMedications": "Warfarin",
+        "currentSymptoms": "Debolezza braccio sinistro",
+        "familyContacts": {
+            "name": "Giulia Ferrara",
+            "relationship": "Figlia",
+            "phone": "3356789012"
+        },
+        "prescriptions": {
+            "medication": "Warfarin",
+            "frequency": "5mg una volta al giorno"
+        }
+    },
+    {
+        "id": 24,
+        "employee": "Giorgia Pellegrini",
+        "age": 29,
+        "code": "PT-02432",
+        "state": "Dismesso",
+        "pastDiseases": "Asma infantile",
+        "chronicDiseases": "Nessuna",
+        "surgeries": "Nessuna",
+        "hospitalizations": "Ricovero per bronchite",
+        "knownAllergies": "Acari",
+        "currentMedications": "Nessuna",
+        "currentSymptoms": "Nessuno",
+        "familyContacts": {
+            "name": "Roberto Pellegrini",
+            "relationship": "Fratello",
+            "phone": "3367890123"
+        },
+        "prescriptions": {
+            "medication": "Salbutamolo",
+            "frequency": "2 puff al bisogno"
+        }
+    },
+    {
+        "id": 25,
+        "employee": "Roberto Villa",
+        "age": 53,
+        "code": "PT-19843",
+        "state": "Ricoverato",
+        "pastDiseases": "Diverticolite",
+        "chronicDiseases": "Malattia diverticolare",
+        "surgeries": "Resezione intestinale",
+        "hospitalizations": "Ricovero per diverticolite acuta",
+        "knownAllergies": "Noci",
+        "currentMedications": "Antibiotico",
+        "currentSymptoms": "Dolore addominale, febbre",
+        "familyContacts": {
+            "name": "Sofia Villa",
+            "relationship": "Figlia",
+            "phone": "3378901234"
+        },
+        "prescriptions": {
+            "medication": "Metronidazolo",
+            "frequency": "500mg tre volte al giorno"
+        }
+    },
+    {
+        "id": 26,
+        "employee": "Cinzia Monti",
+        "age": 45,
+        "code": "PT-25231",
+        "state": "Dismesso",
+        "pastDiseases": "Ipercolesterolemia",
+        "chronicDiseases": "Nessuna",
+        "surgeries": "Colectomia",
+        "hospitalizations": "Ricovero per poliposi intestinale",
+        "knownAllergies": "Crostacei",
+        "currentMedications": "Rosuvastatina",
+        "currentSymptoms": "Nessuno",
+        "familyContacts": {
+            "name": "Marco Monti",
+            "relationship": "Fratello",
+            "phone": "3389012345"
+        },
+        "prescriptions": {
+            "medication": "Rosuvastatina",
+            "frequency": "10mg una volta al giorno"
+        }
+    },
+    {
+        "id": 27,
+        "employee": "Fabio Serrano",
+        "age": 57,
+        "code": "PT-35643",
+        "state": "Ricoverato",
+        "pastDiseases": "Gotta",
+        "chronicDiseases": "Ipertensione",
+        "surgeries": "Protesi anca",
+        "hospitalizations": "Ricovero per attacco di gotta",
+        "knownAllergies": "Frattaglie",
+        "currentMedications": "Allopurinolo",
+        "currentSymptoms": "Dolore articolare, gonfiore",
+        "familyContacts": {
+            "name": "Lucia Serrano",
+            "relationship": "Sorella",
+            "phone": "3390123456"
+        },
+        "prescriptions": {
+            "medication": "Allopurinolo",
+            "frequency": "300mg una volta al giorno"
+        }
+    },
+    {
+        "id": 28,
+        "employee": "Daniela Palmieri",
+        "age": 40,
+        "code": "PT-15234",
+        "state": "Dismesso",
+        "pastDiseases": "Mononucleosi",
+        "chronicDiseases": "Nessuna",
+        "surgeries": "Tiroidectomia",
+        "hospitalizations": "Ricovero per tiroidite",
+        "knownAllergies": "Lattosio",
+        "currentMedications": "Eutirox",
+        "currentSymptoms": "Nessuno",
+        "familyContacts": {
+            "name": "Giovanna Rizzo",
+            "relationship": "Madre",
+            "phone": "3301234567"
+        },
+        "prescriptions": {
+            "medication": "Eutirox",
+            "frequency": "100mcg una volta al giorno"
+        }
+    },
+    {
+        "id": 29,
+        "employee": "Enrico Bernardi",
+        "age": 64,
+        "code": "PT-57743",
+        "state": "Ricoverato",
+        "pastDiseases": "Angina pectoris",
+        "chronicDiseases": "Cardiopatia ischemica",
+        "surgeries": "By-pass aortocoronarico",
+        "hospitalizations": "Ricovero per scompenso cardiaco",
+        "knownAllergies": "ACE-inibitori",
+        "currentMedications": "Diuretici, Beta-bloccanti",
+        "currentSymptoms": "Dispnea, edemi arti inferiori",
+        "familyContacts": {
+            "name": "Paolo Bernardi",
+            "relationship": "Figlio",
+            "phone": "3312345678"
+        },
+        "prescriptions": {
+            "medication": "Furosemide",
+            "frequency": "40mg una volta al giorno"
+        }
+    },
+    {
+        "id": 30,
+        "employee": "Veronica Messina",
+        "age": 32,
+        "code": "PT-68843",
+        "state": "Dismesso",
+        "pastDiseases": "Depressione post-partum",
+        "chronicDiseases": "Nessuna",
+        "surgeries": "Nessuna",
+        "hospitalizations": "Ricovero per depressione maggiore",
+        "knownAllergies": "Nessuna",
+        "currentMedications": "Sertralina",
+        "currentSymptoms": "Nessuno",
+        "familyContacts": {
+            "name": "Maria Zanella",
+            "relationship": "Madre",
+            "phone": "3323456789"
+        },
+        "prescriptions": {
+            "medication": "Sertralina",
+            "frequency": "100mg una volta al giorno"
+        }
+    },
+    {
+        "id": 31,
+        "employee": "Massimo Parisi",
+        "age": 49,
+        "code": "PT-79432",
+        "state": "Ricoverato",
+        "pastDiseases": "Epatite B",
+        "chronicDiseases": "Cirrosi epatica",
+        "surgeries": "Nessuna",
+        "hospitalizations": "Ricovero per encefalopatia epatica",
+        "knownAllergies": "Nessuna",
+        "currentMedications": "Lattulosio",
+        "currentSymptoms": "Confusione, ittero",
+        "familyContacts": {
+            "name": "Giovanni Parisi",
+            "relationship": "Fratello",
+            "phone": "3334567890"
+        },
+        "prescriptions": {
+            "medication": "Lattulosio",
+            "frequency": "30ml tre volte al giorno"
+        }
+    },
+    {
+        "id": 32,
+        "employee": "Alessia Longo",
+        "age": 37,
+        "code": "PT-80321",
+        "state": "Dismesso",
+        "pastDiseases": "Allergie stagionali",
+        "chronicDiseases": "Rinite allergica",
+        "surgeries": "Rinoplastica",
+        "hospitalizations": "Ricovero per sinusite",
+        "knownAllergies": "Ambrosia",
+        "currentMedications": "Antistaminico",
+        "currentSymptoms": "Nessuno",
+        "familyContacts": {
+            "name": "Anna Longo",
+            "relationship": "Sorella",
+            "phone": "3345678901"
+        },
+        "prescriptions": {
+            "medication": "Cetirizina",
+            "frequency": "10mg una volta al giorno"
+        }
+    },
+    {
+        "id": 33,
+        "employee": "Simone Martinelli",
+        "age": 56,
+        "code": "PT-32987",
+        "state": "Ricoverato",
+        "pastDiseases": "Ulcera duodenale",
+        "chronicDiseases": "Reflusso gastroesofageo",
+        "surgeries": "Nessuna",
+        "hospitalizations": "Ricovero per emorragia digestiva",
+        "knownAllergies": "FANS",
+        "currentMedications": "Pantoprazolo",
+        "currentSymptoms": "Melena, anemia",
+        "familyContacts": {
+            "name": "Marco Martinelli",
+            "relationship": "Figlio",
+            "phone": "3356789012"
+        },
+        "prescriptions": {
+            "medication": "Pantoprazolo",
+            "frequency": "40mg due volte al giorno"
+        }
+    },
+    {
+        "id": 34,
+        "employee": "Federica Ricci",
+        "age": 43,
+        "code": "PT-02212",
+        "state": "Dismesso",
+        "pastDiseases": "Cisti mammaria",
+        "chronicDiseases": "Nessuna",
+        "surgeries": "Escissione cisti",
+        "hospitalizations": "Ricovero per biopsia mammaria",
+        "knownAllergies": "Nessuna",
+        "currentMedications": "Nessuna",
+        "currentSymptoms": "Nessuno",
+        "familyContacts": {
+            "name": "Giuseppe Ricci",
+            "relationship": "Padre",
+            "phone": "3367890123"
+        },
+        "prescriptions": {
+            "medication": "Paracetamolo",
+            "frequency": "500mg al bisogno per dolore"
+        }
+    },
+        {
+        "id": 35,
+        "employee": "Vincenzo Bruno",
+        "age": 60,
+        "code": "PT-87533",
+        "state": "Ricoverato",
+        "pastDiseases": "Adenoma prostatico",
+        "chronicDiseases": "IPB",
+        "surgeries": "Resezione transuretrale",
+        "hospitalizations": "Ricovero per ritenzione urinaria",
+        "knownAllergies": "Nessuna",
+        "currentMedications": "Alfabloccante",
+        "currentSymptoms": "Disuria, ritenzione urinaria",
+        "familyContacts": {
+            "name": "Giuseppe Bruno",
+            "relationship": "Fratello",
+            "phone": "3378901234"
+        },
+        "prescriptions": {
+            "medication": "Tamsulosina",
+            "frequency": "0.4mg una volta al giorno"
+        }
+    },
+    {
+        "id": 36,
+        "employee": "Beatrice Orlando",
+        "age": 34,
+        "code": "PT-87545",
+        "state": "Dismesso",
+        "pastDiseases": "Anoressia nervosa",
+        "chronicDiseases": "Nessuna",
+        "surgeries": "Nessuna",
+        "hospitalizations": "Ricovero per denutrizione",
+        "knownAllergies": "Glutine",
+        "currentMedications": "Integratori alimentari",
+        "currentSymptoms": "Nessuno",
+        "familyContacts": {
+            "name": "Maria Carraro",
+            "relationship": "Madre",
+            "phone": "3389012345"
+        },
+        "prescriptions": {
+            "medication": "Multivitaminico",
+            "frequency": "Una compressa al giorno"
+        }
+    },
+    {
+        "id": 37,
+        "employee": "Dario Conte",
+        "age": 51,
+        "code": "PT-54621",
+        "state": "Ricoverato",
+        "pastDiseases": "Psoriasi",
+        "chronicDiseases": "Artrite psoriasica",
+        "surgeries": "Nessuna",
+        "hospitalizations": "Ricovero per artrite flare",
+        "knownAllergies": "Nessuna",
+        "currentMedications": "Metotrexate",
+        "currentSymptoms": "Dolore articolare, rigidità",
+        "familyContacts": {
+            "name": "Marco Conte",
+            "relationship": "Figlio",
+            "phone": "3390123456"
+        },
+        "prescriptions": {
+            "medication": "Metotrexate",
+            "frequency": "15mg una volta a settimana"
+        }
+    },
+    {
+        "id": 38,
+        "employee": "Gabriella Marchetti",
+        "age": 46,
+        "code": "PT-90865",
+        "state": "Dismesso",
+        "pastDiseases": "Fibromialgia",
+        "chronicDiseases": "Sindrome da fatica cronica",
+        "surgeries": "Nessuna",
+        "hospitalizations": "Ricovero per gestione dolore",
+        "knownAllergies": "Oppiacei",
+        "currentMedications": "Duloxetina",
+        "currentSymptoms": "Nessuno",
+        "familyContacts": {
+            "name": "Francesca Marchetti",
+            "relationship": "Sorella",
+            "phone": "3301234567"
+        },
+        "prescriptions": {
+            "medication": "Duloxetina",
+            "frequency": "60mg una volta al giorno"
+        }
+    },
+    {
+        "id": 39,
+        "employee": "Luigi Silvestri",
+        "age": 58,
+        "code": "PT-12434",
+        "state": "Ricoverato",
+        "pastDiseases": "Glaucoma",
+        "chronicDiseases": "Ipertensione oculare",
+        "surgeries": "Trabeculectomia",
+        "hospitalizations": "Ricovero per controllo pressione oculare",
+        "knownAllergies": "Nessuna",
+        "currentMedications": "Collirio",
+        "currentSymptoms": "Offuscamento visivo",
+        "familyContacts": {
+            "name": "Giovanni Silvestri",
+            "relationship": "Fratello",
+            "phone": "3312345678"
+        },
+        "prescriptions": {
+            "medication": "Latanoprost",
+            "frequency": "Una goccia per occhio alla sera"
+        }
+    },
+    {
+        "id": 40,
+        "employee": "Elisabetta Riva",
+        "age": 41,
+        "code": "PT-87656",
+        "state": "Dismesso",
+        "pastDiseases": "Endometriosi",
+        "chronicDiseases": "Nessuna",
+        "surgeries": "Laparoscopia",
+        "hospitalizations": "Ricovero per dolore pelvico",
+        "knownAllergies": "Nessuna",
+        "currentMedications": "Contraccettivo orale",
+        "currentSymptoms": "Nessuno",
+        "familyContacts": {
+            "name": "Anna Riva",
+            "relationship": "Sorella",
+            "phone": "3323456789"
+        },
+        "prescriptions": {
+            "medication": "Etinilestradiolo",
+            "frequency": "Una compressa al giorno"
+        }
+    },
+    {
+        "id": 41,
+        "employee": "Giancarlo Morelli",
+        "age": 62,
+        "code": "PT-12978",
+        "state": "Ricoverato",
+        "pastDiseases": "Bronchite cronica",
+        "chronicDiseases": "BPCO",
+        "surgeries": "Nessuna",
+        "hospitalizations": "Ricovero per riacutizzazione",
+        "knownAllergies": "Pollini",
+        "currentMedications": "Cortisone, Broncodilatatore",
+        "currentSymptoms": "Tosse, dispnea, febbre",
+        "familyContacts": {
+            "name": "Lucia Morelli",
+            "relationship": "Figlia",
+            "phone": "3334567890"
+        },
+        "prescriptions": {
+            "medication": "Beclometasone",
+            "frequency": "2 puff due volte al giorno"
+        }
+    },
+    {
+        "id": 42,
+        "employee": "Monica Ferraro",
+        "age": 39,
+        "code": "PT-97612",
+        "state": "Dismesso",
+        "pastDiseases": "Ipotiroidismo",
+        "chronicDiseases": "Nessuna",
+        "surgeries": "Tiroidectomia",
+        "hospitalizations": "Ricovero per tiroidite",
+        "knownAllergies": "Nessuna",
+        "currentMedications": "Eutirox",
+        "currentSymptoms": "Nessuno",
+        "familyContacts": {
+            "name": "Paola Ferraro",
+            "relationship": "Sorella",
+            "phone": "3345678901"
+        },
+        "prescriptions": {
+            "medication": "Eutirox",
+            "frequency": "75mcg una volta al giorno"
+        }
+    },
+    {
+        "id": 43,
+        "employee": "Rocco De Santis",
+        "age": 55,
+        "code": "PT-64345",
+        "state": "Ricoverato",
+        "pastDiseases": "Ernia discale",
+        "chronicDiseases": "Lombalgia cronica",
+        "surgeries": "Discectomia",
+        "hospitalizations": "Ricovero per sciatalgia",
+        "knownAllergies": "Nessuna",
+        "currentMedications": "Miorilassante",
+        "currentSymptoms": "Dolore lombare, irradiamento arto inferiore",
+        "familyContacts": {
+            "name": "Giuseppe De Santis",
+            "relationship": "Padre",
+            "phone": "3356789012"
+        },
+        "prescriptions": {
+            "medication": "Tiocolchicoside",
+            "frequency": "8mg due volte al giorno"
+        }
+    },
+    {
+        "id": 44,
+        "employee": "Caterina Leone",
+        "age": 47,
+        "code": "PT-12954",
+        "state": "Dismesso",
+        "pastDiseases": "Colecistite",
+        "chronicDiseases": "Nessuna",
+        "surgeries": "Colecistectomia laparoscopica",
+        "hospitalizations": "Ricovero per colica biliare",
+        "knownAllergies": "Mezzi di contrasto",
+        "currentMedications": "Antidolorifico",
+        "currentSymptoms": "Nessuno",
+        "familyContacts": {
+            "name": "Maria Veronese",
+            "relationship": "Madre",
+            "phone": "3367890123"
+        },
+        "prescriptions": {
+            "medication": "Ketoprofene",
+            "frequency": "100mg al bisogno per dolore"
+        }
+    },
+    {
+        "id": 45,
+        "employee": "Franco Martini",
+        "age": 63,
+        "code": "PT-96545",
+        "state": "Ricoverato",
+        "pastDiseases": "Insufficienza renale",
+        "chronicDiseases": "Malattia renale cronica",
+        "surgeries": "Inserimento catetere dialisi",
+        "hospitalizations": "Ricovero per dialisi",
+        "knownAllergies": "Nessuna",
+        "currentMedications": "Epoetina",
+        "currentSymptoms": "Astenia, edema",
+        "familyContacts": {
+            "name": "Giovanna Martini",
+            "relationship": "Sorella",
+            "phone": "3378901234"
+        },
+        "prescriptions": {
+            "medication": "Epoetina alfa",
+            "frequency": "4000 UI two volte a settimana"
+        }
+    },
+    {
+        "id": 46,
+        "employee": "Valeria Gentile",
+        "age": 36,
+        "code": "PT-97454",
+        "state": "Dismesso",
+        "pastDiseases": "Anemia",
+        "chronicDiseases": "Nessuna",
+        "surgeries": "Nessuna",
+        "hospitalizations": "Ricovero per sanguinamento uterino",
+        "knownAllergies": "Nessuna",
+        "currentMedications": "Ferro",
+        "currentSymptoms": "Nessuno",
+        "familyContacts": {
+            "name": "Roberto Gentile",
+            "relationship": "Fratello",
+            "phone": "3389012345"
+        },
+        "prescriptions": {
+            "medication": "Solfato ferroso",
+            "frequency": "Una compressa al giorno"
+        }
+    },
+    {
+        "id": 47,
+        "employee": "Domenico Caruso",
+        "age": 59,
+        "code": "PT-43567",
+        "state": "Ricoverato",
+        "pastDiseases": "Diverticolosi",
+        "chronicDiseases": "Malattia diverticolare",
+        "surgeries": "Resezione colon",
+        "hospitalizations": "Ricovero perforazione intestinale",
+        "knownAllergies": "Noci",
+        "currentMedications": "Antibiotico",
+        "currentSymptoms": "Dolore addominale, febbre",
+        "familyContacts": {
+            "name": "Antonio Caruso",
+            "relationship": "Fratello",
+            "phone": "3390123456"
+        },
+        "prescriptions": {
+            "medication": "Ciprofloxacina",
+            "frequency": "500mg due volte al giorno"
+        }
+    },
+    {
+        "id": 48,
+        "employee": "Giulia Testa",
+        "age": 42,
+        "code": "PT-65090",
+        "state": "Dismesso",
+        "pastDiseases": "Cefalea a grappolo",
+        "chronicDiseases": "Nessuna",
+        "surgeries": "Nessuna",
+        "hospitalizations": "Ricovero per cefalea intrattabile",
+        "knownAllergies": "Cioccolato",
+        "currentMedications": "Sumatriptan",
+        "currentSymptoms": "Nessuno",
+        "familyContacts": {
+            "name": "Francesco Testa",
+            "relationship": "Padre",
+            "phone": "3301234567"
+        },
+        "prescriptions": {
+            "medication": "Sumatriptan",
+            "frequency": "6mg sottocute al bisogno"
+        }
+    },
+    {
+        "id": 49,
+        "employee": "Piero Lombardo",
+        "age": 65,
+        "code": "PT-43256",
+        "state": "Ricoverato",
+        "pastDiseases": "Ictus ischemico",
+        "chronicDiseases": "Fibrillazione atriale",
+        "surgeries": "Nessuna",
+        "hospitalizations": "Ricovero per ictus",
+        "knownAllergies": "Nessuna",
+        "currentMedications": "Anticoagulante",
+        "currentSymptoms": "Emiparesi destra, afasia",
+        "familyContacts": {
+            "name": "Giovanna Lombardo",
+            "relationship": "Sorella",
+            "phone": "3312345678"
+        },
+        "prescriptions": {
+            "medication": "Apixaban",
+            "frequency": "5mg due volte al giorno"
+        }
+    },
+    {
+        "id": 50,
+        "employee": "Elena Sanna",
+        "age": 38,
+        "code": "PT-54876",
+        "state": "Dismesso",
+        "pastDiseases": "Lupus eritematoso",
+        "chronicDiseases": "LES",
+        "surgeries": "Nessuna",
+        "hospitalizations": "Ricovero per flare lupico",
+        "knownAllergies": "Sole",
+        "currentMedications": "Idrossiclorochina",
+        "currentSymptoms": "Nessuno",
+        "familyContacts": {
+            "name": "Marco Sanna",
+            "relationship": "Fratello",
+            "phone": "3323456789"
+        },
+        "prescriptions": {
+            "medication": "Idrossiclorochina",
+            "frequency": "200mg due volte al giorno"
+        }
+    },
+    {
+        "id": 51,
+        "employee": "Mauro Piras",
+        "age": 52,
+        "code": "PT-11876",
+        "state": "Ricoverato",
+        "pastDiseases": "Colecistite",
+        "chronicDiseases": "Steatosi epatica",
+        "surgeries": "Colecistectomia",
+        "hospitalizations": "Ricovero per epatite",
+        "knownAllergies": "Nessuna",
+        "currentMedications": "Vitamine",
+        "currentSymptoms": "Ittero, astenia",
+        "familyContacts": {
+            "name": "Giuseppe Piras",
+            "relationship": "Padre",
+            "phone": "3334567890"
+        },
+        "prescriptions": {
+            "medication": "Vitamina E",
+            "frequency": "400 UI una volta al giorno"
+        }
+    },
+    {
+        "id": 52,
+        "employee": "Lucia Cossu",
+        "age": 44,
+        "code": "PT-98456",
+        "state": "Dismesso",
+        "pastDiseases": "Depressione",
+        "chronicDiseases": "Disturbo d'ansia",
+        "surgeries": "Nessuna",
+        "hospitalizations": "Ricovero per crisi d'ansia",
+        "knownAllergies": "Nessuna",
+        "currentMedications": "Sertralina",
+        "currentSymptoms": "Nessuno",
+        "familyContacts": {
+            "name": "Maria Morelli",
+            "relationship": "Madre",
+            "phone": "3345678901"
+        },
+        "prescriptions": {
+            "medication": "Sertralina",
+            "frequency": "50mg una volta al giorno"
+        }
+    },
+    {
+        "id": 53,
+        "employee": "Alberto Melis",
+        "age": 57,
+        "code": "PT-12276",
+        "state": "Ricoverato",
+        "pastDiseases": "Ulcere arteriose",
+        "chronicDiseases": "Arteriopatia periferica",
+        "surgeries": "By-pass arterioso",
+        "hospitalizations": "Ricovero per ulcera infetta",
+        "knownAllergies": "Nessuna",
+        "currentMedications": "Antibiotico",
+        "currentSymptoms": "Dolore alla gamba, ulcera cutanea",
+        "familyContacts": {
+            "name": "Paolo Melis",
+            "relationship": "Fratello",
+            "phone": "3356789012"
+        },
+        "prescriptions": {
+            "medication": "Amoxicillina/acido clavulanico",
+            "frequency": "1g tre volte al giorno"
+        }
+    },
+    {
+        "id": 54,
+        "employee": "Serena Usai",
+        "age": 33,
+        "code": "PT-21767",
+        "state": "Dismesso",
+        "pastDiseases": "Asma",
+        "chronicDiseases": "Nessuna",
+        "surgeries": "Nessuna",
+        "hospitalizations": "Ricovero per crisi asmatica",
+        "knownAllergies": "Acari",
+        "currentMedications": "Cortisone inalatorio",
+        "currentSymptoms": "Nessuno",
+        "familyContacts": {
+            "name": "Giovanna Martinelli",
+            "relationship": "Madre",
+            "phone": "3367890123"
+        },
+        "prescriptions": {
+            "medication": "Budesonide",
+            "frequency": "400mcg due volte al giorno"
+        }
+    },
+    {
+        "id": 55,
+        "employee": "Giorgio Mura",
+        "age": 61,
+        "code": "PT-12545",
+        "state": "Ricoverato",
+        "pastDiseases": "Infarto miocardico",
+        "chronicDiseases": "Cardiopatia ischemica",
+        "surgeries": "Angioplastica",
+        "hospitalizations": "Ricovero per angina",
+        "knownAllergies": "Statine",
+        "currentMedications": "Beta-bloccante",
+        "currentSymptoms": "Dolore toracico, dispnea",
+        "familyContacts": {
+            "name": "Marco Mura",
+            "relationship": "Figlio",
+            "phone": "3378901234"
+        },
+        "prescriptions": {
+            "medication": "Bisoprololo",
+            "frequency": "5mg una volta al giorno"
+        }
+    },
+    {
+        "id": 56,
+        "employee": "Tiziana Pinna",
+        "age": 46,
+        "code": "PT-12287",
+        "state": "Dismesso",
+        "pastDiseases": "Iperparatiroidismo",
+        "chronicDiseases": "Nessuna",
+        "surgeries": "Paratiroidectomia",
+        "hospitalizations": "Ricovero per ipercalcemia",
+        "knownAllergies": "Nessuna",
+        "currentMedications": "Calcio e vitamina D",
+        "currentSymptoms": "Nessuno",
+        "familyContacts": {
+            "name": "Anna Pinna",
+            "relationship": "Sorella",
+            "phone": "3389012345"
+        },
+        "prescriptions": {
+            "medication": "Calcio",
+            "frequency": "1000mg due volte al giorno"
+        }
+    },
+    {
+        "id": 57,
+        "employee": "Fabrizio Manca",
+        "age": 54,
+        "code": "PT-12789",
+        "state": "Ricoverato",
+        "pastDiseases": "Epatite C",
+        "chronicDiseases": "Cirrosi epatica",
+        "surgeries": "Nessuna",
+        "hospitalizations": "Ricovero per ascite",
+        "knownAllergies": "Nessuna",
+        "currentMedications": "Diuretici",
+        "currentSymptoms": "Addome gonfio, ittero",
+        "familyContacts": {
+            "name": "Giuseppe Manca",
+            "relationship": "Padre",
+            "phone": "3390123456"
+        },
+        "prescriptions": {
+            "medication": "Spironolattone",
+            "frequency": "100mg una volta al giorno"
+        }
+    },
+    {
+        "id": 58,
+        "employee": "Rossella Pedrotti",
+        "age": 40,
+        "code": "PT-54678",
+        "state": "Dismesso",
+        "pastDiseases": "Emicrania con aura",
+        "chronicDiseases": "Nessuna",
+        "surgeries": "Nessuna",
+        "hospitalizations": "Ricovero per stato emicranico",
+        "knownAllergies": "Formaggi stagionati",
+        "currentMedications": "Topiramato",
+        "currentSymptoms": "Nessuno",
+        "familyContacts": {
+            "name": "Maria Giusti",
+            "relationship": "Madre",
+            "phone": "3301234567"
+        },
+        "prescriptions": {
+            "medication": "Topiramato",
+            "frequency": "50mg due volte al giorno"
+        }
+    },
+    {
+        "id": 59,
+        "employee": "Vito Sini",
+        "age": 58,
+        "code": "PT-90767",
+        "state": "Ricoverato",
+        "pastDiseases": "Glaucoma",
+        "chronicDiseases": "Ipertensione oculare",
+        "surgeries": "Trabeculectomia",
+        "hospitalizations": "Ricovero per controllo pressione oculare",
+        "knownAllergies": "Nessuna",
+        "currentMedications": "Collirio",
+        "currentSymptoms": "Offuscamento visivo",
+        "familyContacts": {
+            "name": "Giovanni Sini",
+            "relationship": "Fratello",
+            "phone": "3312345678"
+        },
+        "prescriptions": {
+            "medication": "Timololo",
+            "frequency": "Una goccia per occhio due volte al giorno"
+        }
+    },
+    {
+        "id": 60,
+        "employee": "Loredana Piredda",
+        "age": 35,
+        "code": "PT-98648",
+        "state": "Dismesso",
+        "pastDiseases": "Sindrome dell'ovaio policistico",
+        "chronicDiseases": "Nessuna",
+        "surgeries": "Nessuna",
+        "hospitalizations": "Ricovero per cisti ovarica",
+        "knownAllergies": "Nessuna",
+        "currentMedications": "Metformina",
+        "currentSymptoms": "Nessuno",
+        "familyContacts": {
+            "name": "Anna Piredda",
+            "relationship": "Sorella",
+            "phone": "3323456789"
+        },
+        "prescriptions": {
+            "medication": "Metformina",
+            "frequency": "850mg due volte al giorno"
+        }
+    },
+    {
+        "id": 61,
+        "employee": "Salvatore Lai",
+        "age": 62,
+        "code": "PT-79012",
+        "state": "Ricoverato",
+        "pastDiseases": "Bronchite cronica",
+        "chronicDiseases": "BPCO",
+        "surgeries": "Nessuna",
+        "hospitalizations": "Ricovero per riacutizzazione",
+        "knownAllergies": "Pollini",
+        "currentMedications": "Cortisone, Broncodilatatore",
+        "currentSymptoms": "Tosse, dispnea, febbre",
+        "familyContacts": {
+            "name": "Giuseppe Lai",
+            "relationship": "Padre",
+            "phone": "3334567890"
+        },
+        "prescriptions": {
+            "medication": "Formoterolo",
+            "frequency": "12mcg due volte al giorno"
+        }
+    },
+    {
+        "id": 62,
+        "employee": "Antonella Corda",
+        "age": 48,
+        "code": "PT-80123",
+        "state": "Dismesso",
+        "pastDiseases": "Ipertiroidismo",
+        "chronicDiseases": "Nessuna",
+        "surgeries": "Tiroidectomia",
+        "hospitalizations": "Ricovero per tireotossicosi",
+        "knownAllergies": "Nessuna",
+        "currentMedications": "Eutirox",
+        "currentSymptoms": "Nessuno",
+        "familyContacts": {
+            "name": "Maria Guerrini",
+            "relationship": "Madre",
+            "phone": "3345678901"
+        },
+        "prescriptions": {
+            "medication": "Eutirox",
+            "frequency": "125mcg una volta al giorno"
+        }
+    },
+    {
+        "id": 63,
+        "employee": "Mario Floris",
+        "age": 56,
+        "code": "PT-91234",
+        "state": "Ricoverato",
+        "pastDiseases": "Ernia iatale",
+        "chronicDiseases": "Reflusso gastroesofageo",
+        "surgeries": "Nessuna",
+        "hospitalizations": "Ricovero per esofagite",
+        "knownAllergies": "Pomodoro",
+        "currentMedications": "Pantoprazolo",
+        "currentSymptoms": "Pirosi, rigurgito acido",
+        "familyContacts": {
+            "name": "Giovanni Floris",
+            "relationship": "Fratello",
+            "phone": "3356789012"
+        },
+        "prescriptions": {
+            "medication": "Pantoprazolo",
+            "frequency": "40mg una volta al giorno"
+        }
+    },
+    {
+        "id": 64,
+        "employee": "Paola Serra",
+        "age": 43,
+        "code": "PT-02345",
+        "state": "Dismesso",
+        "pastDiseases": "Cisti mammaria",
+        "chronicDiseases": "Nessuna",
+        "surgeries": "Escissione cisti",
+        "hospitalizations": "Ricovero per biopsia mammaria",
+        "knownAllergies": "Nessuna",
+        "currentMedications": "Nessuna",
+        "currentSymptoms": "Nessuno",
+        "familyContacts": {
+            "name": "Anna Serra",
+            "relationship": "Sorella",
+            "phone": "3367890123"
+        },
+        "prescriptions": {
+            "medication": "Paracetamolo",
+            "frequency": "500mg al bisogno per dolore"
+        }
+    },
+    {
+        "id": 65,
+        "employee": "Claudio Carta",
+        "age": 59,
+        "code": "PT-13456",
+        "state": "Ricoverato",
+        "pastDiseases": "Adenoma prostatico",
+        "chronicDiseases": "IPB",
+        "surgeries": "Resezione transuretrale",
+        "hospitalizations": "Ricovero per ritenzione urinaria",
+        "knownAllergies": "Nessuna",
+        "currentMedications": "Alfabloccante",
+        "currentSymptoms": "Disuria, ritenzione urinaria",
+        "familyContacts": {
+            "name": "Francesco Carta",
+            "relationship": "Figlio",
+            "phone": "3378901234"
+        },
+        "prescriptions": {
+            "medication": "Tamsulosina",
+            "frequency": "0.4mg una volta al giorno"
+        }
+    },
+    {
+        "id": 66,
+        "employee": "Daniela Gori",
+        "age": 37,
+        "code": "PT-24567",
+        "state": "Dismesso",
+        "pastDiseases": "Anemia",
+        "chronicDiseases": "Nessuna",
+        "surgeries": "Nessuna",
+        "hospitalizations": "Ricovero per sanguinamento uterino",
+        "knownAllergies": "Nessuna",
+        "currentMedications": "Ferro",
+        "currentSymptoms": "Nessuno",
+        "familyContacts": {
+            "name": "Giuseppe Gori",
+            "relationship": "Padre",
+            "phone": "3389012345"
+        },
+        "prescriptions": {
+            "medication": "Solfato ferroso",
+            "frequency": "Una compressa al giorno"
+        }
+    },
+    {
+        "id": 67,
+        "employee": "Simone Meloni",
+        "age": 53,
+        "code": "PT-35678",
+        "state": "Ricoverato",
+        "pastDiseases": "Diverticolosi",
+        "chronicDiseases": "Malattia diverticolare",
+        "surgeries": "Resezione colon",
+        "hospitalizations": "Ricovero per perforazione intestinale",
+        "knownAllergies": "Noci",
+        "currentMedications": "Antibiotico",
+        "currentSymptoms": "Dolore addominale, febbre",
+        "familyContacts": {
+            "name": "Paolo Meloni",
+            "relationship": "Fratello",
+            "phone": "3390123456"
+        },
+        "prescriptions": {
+            "medication": "Metronidazolo",
+            "frequency": "500mg tre volte al giorno"
+        }
+    },
+    {
+        "id": 68,
+        "employee": "Barbara Lucchesi",
+        "age": 45,
+        "code": "PT-46789",
+        "state": "Dismesso",
+        "pastDiseases": "Cefalea a grappolo",
+        "chronicDiseases": "Nessuna",
+        "surgeries": "Nessuna",
+        "hospitalizations": "Ricovero per cefalea intrattabile",
+        "knownAllergies": "Cioccolato",
+        "currentMedications": "Sumatriptan",
+        "currentSymptoms": "Nessuno",
+        "familyContacts": {
+            "name": "Giovanna Donati",
+            "relationship": "Madre",
+            "phone": "3301234567"
+        },
+        "prescriptions": {
+            "medication": "Sumatriptan",
+            "frequency": "50mg al bisogno"
+        }
+    },
+    {
+        "id": 69,
+        "employee": "Giovanni Bertini",
+        "age": 64,
+        "code": "PT-57890",
+        "state": "Ricoverato",
+        "pastDiseases": "Ictus ischemico",
+        "chronicDiseases": "Fibrillazione atriale",
+        "surgeries": "Nessuna",
+        "hospitalizations": "Ricovero per ictus",
+        "knownAllergies": "Nessuna",
+        "currentMedications": "Anticoagulante",
+        "currentSymptoms": "Emiparesi destra, afasia",
+        "familyContacts": {
+            "name": "Marco Bertini",
+            "relationship": "Figlio",
+            "phone": "3312345678"
+        },
+        "prescriptions": {
+            "medication": "Dabigatran",
+            "frequency": "150mg due volte al giorno"
+        }
+    },
+    {
+        "id": 70,
+        "employee": "Maria Campisi",
+        "age": 39,
+        "code": "PT-68901",
+        "state": "Dismesso",
+        "pastDiseases": "Lupus eritematoso",
+        "chronicDiseases": "LES",
+        "surgeries": "Nessuna",
+        "hospitalizations": "Ricovero per flare lupico",
+        "knownAllergies": "Sole",
+        "currentMedications": "Idrossiclorochina",
+        "currentSymptoms": "Nessuno",
+        "familyContacts": {
+            "name": "Anna Campisi",
+            "relationship": "Sorella",
+            "phone": "3323456789"
+        },
+        "prescriptions": {
+            "medication": "Idrossiclorochina",
+            "frequency": "200mg due volte al giorno"
+        }
+    }
+]

@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from './App.tsx';
 import Home from './components/Home/Home.tsx';
 import Staff from './components/Staff/Staff/Staff.tsx';
+import Patients from './components/Patients/Patients/Patients.tsx';
 import InDevelopment from './components/InDevelopment.tsx';
 
 const router = createBrowserRouter([
@@ -13,6 +14,7 @@ const router = createBrowserRouter([
     children: [
       {index: true, element: <Home />},
       {path: 'staff', element: <Staff />},
+      {path: 'patients', element: <Patients />},
       {path: '*', element: <InDevelopment />},
     ]
   }

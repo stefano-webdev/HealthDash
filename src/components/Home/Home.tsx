@@ -27,7 +27,7 @@ function Home() {
                 </svg>
                 <h2>HOME</h2>
             </div>
-            <div id="homeRouteCont">
+            <div className="routeCont">
                 <div className="flexGroup">
                     <PatientsToday />
                     <StaffToday />

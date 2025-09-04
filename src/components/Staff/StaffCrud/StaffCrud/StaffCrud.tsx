@@ -1,4 +1,4 @@
-import type { CrudType } from '../Staff/Staff.tsx';
+import type { CrudType } from '../../Staff/Staff.tsx';
 import './StaffCrud.css';
 
 function StaffCrud({ setActiveCrud }: { setActiveCrud: React.Dispatch<React.SetStateAction<CrudType>> }) {

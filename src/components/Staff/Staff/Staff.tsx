@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import StaffList from '../StaffList/StaffList.tsx';
 import StaffDetails from '../StaffDetails/StaffDetails.tsx';
 import StaffSchedule from '../StaffSchedule/StaffSchedule.tsx';
-import StaffCrud from '../StaffCrud/StaffCrud.tsx';
+import StaffCrud from '../StaffCrud/StaffCrud/StaffCrud.tsx';
 import StaffCreate from '../StaffCrud/StaffCreate/StaffCreate.tsx';
 import StaffUpdate from '../StaffCrud/StaffUpdate/StaffUpdate.tsx';
 import StaffDelete from '../StaffCrud/StaffDelete/StaffDelete.tsx';
@@ -11,7 +11,7 @@ import './Staff.css';
 
 type CrudType = "create" | "update" | "delete" | null;
 
-type StaffData = {
+type StaffProps = {
     staffList: StaffListType | null;
     originalStaffList: StaffListType;
     selectedId: number | null;
@@ -32,7 +32,7 @@ function Staff() {
     const [confirmMessage, setConfirmMessage] = useState<{ message: string, type: "success" | "error" } | null>(null);
     const [inputListValue, setInputListValue] = useState<string>('');
 
-    const staffData: StaffData = {
+    const staffData: StaffProps = {
         staffList,
         originalStaffList,
         selectedId,
@@ -71,14 +71,14 @@ function Staff() {
                 </svg>
                 <h2>PERSONALE</h2>
             </div>
-            <div id="staffRouteCont">
+            <div className="routeCont">
                 <div className='flexGroup'>
                     <StaffList staffData={staffData} />
-                    <StaffDetails id={selectedId}/>
+                    <StaffDetails id={selectedId} />
                 </div>
 
                 <div className='flexGroup'>
-                    <StaffSchedule id={selectedId}/>
+                    <StaffSchedule id={selectedId} />
                     <StaffCrud setActiveCrud={setActiveCrud} />
                 </div>
 
@@ -88,7 +88,7 @@ function Staff() {
             </div>
 
             {confirmMessage && (
-                <div id='confirmMessageCont' className={confirmMessage.type === "success" ? "positive" : "negative"}>
+                <div className={`confirmMessageCont ${confirmMessage.type === "success" ? "positive" : "negative"}`}>
                     <p>{confirmMessage.message}</p>
                 </div>
             )}
@@ -97,4 +97,4 @@ function Staff() {
 }
 
 export default Staff;
-export type { CrudType, StaffData };
+export type { CrudType, StaffProps };
