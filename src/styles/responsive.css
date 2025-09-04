@@ -182,7 +182,8 @@
         font-size: 15px;
     }
 
-    body p#employeeDetails {
+    body p#employeeDetails,
+    body p#patientName {
         font-size: 28px;
     }
 
@@ -212,6 +213,14 @@
     /* Route: /patients */
     body #patientsListCont {
         min-height: 417px;
+    }
+
+    body #anamnesiCont h4 {
+        font-size: 21px;
+    }
+
+    body #anamnesiCont svg {
+        width: 24px;
     }
 }
 

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import type { PatientsListType } from "../PatientsList/PatientsList.tsx";
 import PatientsList from "../PatientsList/PatientsList.tsx";
+import PatientDetails from "../PatientDetails/PatientDetails.tsx";
 
 type PatientsProps = {
     patientsList: PatientsListType | null;
@@ -51,6 +52,7 @@ function Patients() {
             <div className="routeCont">
                 <div className='flexGroup'>
                     <PatientsList {...patientsData} />
+                    <PatientDetails selectedId={selectedId} />
                 </div>
 
                 <div className='flexGroup'>

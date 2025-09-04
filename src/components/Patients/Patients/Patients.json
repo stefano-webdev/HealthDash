@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "employee": "Marco Colombo",
+        "name": "Marco Colombo",
         "age": 45,
         "code": "PT-34527",
         "state": "Ricoverato",
@@ -24,7 +24,7 @@
     },
     {
         "id": 2,
-        "employee": "Laura Rossi",
+        "name": "Laura Rossi",
         "age": 38,
         "code": "PT-19876",
         "state": "Dismesso",
@@ -47,7 +47,7 @@
     },
     {
         "id": 3,
-        "employee": "Giuseppe Bianchi",
+        "name": "Giuseppe Bianchi",
         "age": 67,
         "code": "PT-56432",
         "state": "Ricoverato",
@@ -70,7 +70,7 @@
     },
     {
         "id": 4,
-        "employee": "Francesca Romano",
+        "name": "Francesca Romano",
         "age": 29,
         "code": "PT-78901",
         "state": "Dismesso",
@@ -93,7 +93,7 @@
     },
     {
         "id": 5,
-        "employee": "Alessandro Conti",
+        "name": "Alessandro Conti",
         "age": 52,
         "code": "PT-23456",
         "state": "Ricoverato",
@@ -116,7 +116,7 @@
     },
     {
         "id": 6,
-        "employee": "Chiara Marini",
+        "name": "Chiara Marini",
         "age": 41,
         "code": "PT-87654",
         "state": "Dismesso",
@@ -139,7 +139,7 @@
     },
     {
         "id": 7,
-        "employee": "Luca Ferrari",
+        "name": "Luca Ferrari",
         "age": 63,
         "code": "PT-34567",
         "state": "Ricoverato",
@@ -162,7 +162,7 @@
     },
     {
         "id": 8,
-        "employee": "Elena Greco",
+        "name": "Elena Greco",
         "age": 35,
         "code": "PT-98765",
         "state": "Dismesso",
@@ -185,7 +185,7 @@
     },
     {
         "id": 9,
-        "employee": "Paolo Barbieri",
+        "name": "Paolo Barbieri",
         "age": 58,
         "code": "PT-45678",
         "state": "Ricoverato",
@@ -208,7 +208,7 @@
     },
     {
         "id": 10,
-        "employee": "Silvia Moretti",
+        "name": "Silvia Moretti",
         "age": 44,
         "code": "PT-56789",
         "state": "Dismesso",
@@ -231,7 +231,7 @@
     },
     {
         "id": 11,
-        "employee": "Andrea Gallo",
+        "name": "Andrea Gallo",
         "age": 31,
         "code": "PT-67890",
         "state": "Ricoverato",
@@ -254,7 +254,7 @@
     },
     {
         "id": 12,
-        "employee": "Martina Rizzo",
+        "name": "Martina Rizzo",
         "age": 50,
         "code": "PT-78912",
         "state": "Dismesso",
@@ -277,7 +277,7 @@
     },
     {
         "id": 13,
-        "employee": "Riccardo De Luca",
+        "name": "Riccardo De Luca",
         "age": 47,
         "code": "PT-89123",
         "state": "Ricoverato",
@@ -300,7 +300,7 @@
     },
     {
         "id": 14,
-        "employee": "Valentina Costa",
+        "name": "Valentina Costa",
         "age": 26,
         "code": "PT-91467",
         "state": "Dismesso",
@@ -323,7 +323,7 @@
     },
     {
         "id": 15,
-        "employee": "Daniele Giordano",
+        "name": "Daniele Giordano",
         "age": 59,
         "code": "PT-12345",
         "state": "Ricoverato",
@@ -346,7 +346,7 @@
     },
     {
         "id": 16,
-        "employee": "Barbara Mancini",
+        "name": "Barbara Mancini",
         "age": 33,
         "code": "PT-23467",
         "state": "Dismesso",
@@ -369,7 +369,7 @@
     },
     {
         "id": 17,
-        "employee": "Stefano Lombardi",
+        "name": "Stefano Lombardi",
         "age": 62,
         "code": "PT-34678",
         "state": "Ricoverato",
@@ -392,7 +392,7 @@
     },
     {
         "id": 18,
-        "employee": "Eleonora Fontana",
+        "name": "Eleonora Fontana",
         "age": 39,
         "code": "PT-46312",
         "state": "Dismesso",
@@ -415,7 +415,7 @@
     },
     {
         "id": 19,
-        "employee": "Giovanni Santoro",
+        "name": "Giovanni Santoro",
         "age": 55,
         "code": "PT-57854",
         "state": "Ricoverato",
@@ -438,7 +438,7 @@
     },
     {
         "id": 20,
-        "employee": "Anna Marino",
+        "name": "Anna Marino",
         "age": 42,
         "code": "PT-68345",
         "state": "Dismesso",
@@ -461,7 +461,7 @@
     },
     {
         "id": 21,
-        "employee": "Michele Rinaldi",
+        "name": "Michele Rinaldi",
         "age": 48,
         "code": "PT-79542",
         "state": "Ricoverato",
@@ -484,7 +484,7 @@
     },
     {
         "id": 22,
-        "employee": "Sara Masiero",
+        "name": "Sara Masiero",
         "age": 36,
         "code": "PT-80532",
         "state": "Dismesso",
@@ -507,7 +507,7 @@
     },
     {
         "id": 23,
-        "employee": "Antonio Ferrara",
+        "name": "Antonio Ferrara",
         "age": 61,
         "code": "PT-15987",
         "state": "Ricoverato",
@@ -530,7 +530,7 @@
     },
     {
         "id": 24,
-        "employee": "Giorgia Pellegrini",
+        "name": "Giorgia Pellegrini",
         "age": 29,
         "code": "PT-02432",
         "state": "Dismesso",
@@ -553,7 +553,7 @@
     },
     {
         "id": 25,
-        "employee": "Roberto Villa",
+        "name": "Roberto Villa",
         "age": 53,
         "code": "PT-19843",
         "state": "Ricoverato",
@@ -576,7 +576,7 @@
     },
     {
         "id": 26,
-        "employee": "Cinzia Monti",
+        "name": "Cinzia Monti",
         "age": 45,
         "code": "PT-25231",
         "state": "Dismesso",
@@ -599,7 +599,7 @@
     },
     {
         "id": 27,
-        "employee": "Fabio Serrano",
+        "name": "Fabio Serrano",
         "age": 57,
         "code": "PT-35643",
         "state": "Ricoverato",
@@ -622,7 +622,7 @@
     },
     {
         "id": 28,
-        "employee": "Daniela Palmieri",
+        "name": "Daniela Palmieri",
         "age": 40,
         "code": "PT-15234",
         "state": "Dismesso",
@@ -645,7 +645,7 @@
     },
     {
         "id": 29,
-        "employee": "Enrico Bernardi",
+        "name": "Enrico Bernardi",
         "age": 64,
         "code": "PT-57743",
         "state": "Ricoverato",
@@ -668,7 +668,7 @@
     },
     {
         "id": 30,
-        "employee": "Veronica Messina",
+        "name": "Veronica Messina",
         "age": 32,
         "code": "PT-68843",
         "state": "Dismesso",
@@ -691,7 +691,7 @@
     },
     {
         "id": 31,
-        "employee": "Massimo Parisi",
+        "name": "Massimo Parisi",
         "age": 49,
         "code": "PT-79432",
         "state": "Ricoverato",
@@ -714,7 +714,7 @@
     },
     {
         "id": 32,
-        "employee": "Alessia Longo",
+        "name": "Alessia Longo",
         "age": 37,
         "code": "PT-80321",
         "state": "Dismesso",
@@ -737,7 +737,7 @@
     },
     {
         "id": 33,
-        "employee": "Simone Martinelli",
+        "name": "Simone Martinelli",
         "age": 56,
         "code": "PT-32987",
         "state": "Ricoverato",
@@ -760,7 +760,7 @@
     },
     {
         "id": 34,
-        "employee": "Federica Ricci",
+        "name": "Federica Ricci",
         "age": 43,
         "code": "PT-02212",
         "state": "Dismesso",
@@ -783,7 +783,7 @@
     },
         {
         "id": 35,
-        "employee": "Vincenzo Bruno",
+        "name": "Vincenzo Bruno",
         "age": 60,
         "code": "PT-87533",
         "state": "Ricoverato",
@@ -806,7 +806,7 @@
     },
     {
         "id": 36,
-        "employee": "Beatrice Orlando",
+        "name": "Beatrice Orlando",
         "age": 34,
         "code": "PT-87545",
         "state": "Dismesso",
@@ -829,7 +829,7 @@
     },
     {
         "id": 37,
-        "employee": "Dario Conte",
+        "name": "Dario Conte",
         "age": 51,
         "code": "PT-54621",
         "state": "Ricoverato",
@@ -852,7 +852,7 @@
     },
     {
         "id": 38,
-        "employee": "Gabriella Marchetti",
+        "name": "Gabriella Marchetti",
         "age": 46,
         "code": "PT-90865",
         "state": "Dismesso",
@@ -875,7 +875,7 @@
     },
     {
         "id": 39,
-        "employee": "Luigi Silvestri",
+        "name": "Luigi Silvestri",
         "age": 58,
         "code": "PT-12434",
         "state": "Ricoverato",
@@ -898,7 +898,7 @@
     },
     {
         "id": 40,
-        "employee": "Elisabetta Riva",
+        "name": "Elisabetta Riva",
         "age": 41,
         "code": "PT-87656",
         "state": "Dismesso",
@@ -921,7 +921,7 @@
     },
     {
         "id": 41,
-        "employee": "Giancarlo Morelli",
+        "name": "Giancarlo Morelli",
         "age": 62,
         "code": "PT-12978",
         "state": "Ricoverato",
@@ -944,7 +944,7 @@
     },
     {
         "id": 42,
-        "employee": "Monica Ferraro",
+        "name": "Monica Ferraro",
         "age": 39,
         "code": "PT-97612",
         "state": "Dismesso",
@@ -967,7 +967,7 @@
     },
     {
         "id": 43,
-        "employee": "Rocco De Santis",
+        "name": "Rocco De Santis",
         "age": 55,
         "code": "PT-64345",
         "state": "Ricoverato",
@@ -990,7 +990,7 @@
     },
     {
         "id": 44,
-        "employee": "Caterina Leone",
+        "name": "Caterina Leone",
         "age": 47,
         "code": "PT-12954",
         "state": "Dismesso",
@@ -1013,7 +1013,7 @@
     },
     {
         "id": 45,
-        "employee": "Franco Martini",
+        "name": "Franco Martini",
         "age": 63,
         "code": "PT-96545",
         "state": "Ricoverato",
@@ -1036,7 +1036,7 @@
     },
     {
         "id": 46,
-        "employee": "Valeria Gentile",
+        "name": "Valeria Gentile",
         "age": 36,
         "code": "PT-97454",
         "state": "Dismesso",
@@ -1059,7 +1059,7 @@
     },
     {
         "id": 47,
-        "employee": "Domenico Caruso",
+        "name": "Domenico Caruso",
         "age": 59,
         "code": "PT-43567",
         "state": "Ricoverato",
@@ -1082,7 +1082,7 @@
     },
     {
         "id": 48,
-        "employee": "Giulia Testa",
+        "name": "Giulia Testa",
         "age": 42,
         "code": "PT-65090",
         "state": "Dismesso",
@@ -1105,7 +1105,7 @@
     },
     {
         "id": 49,
-        "employee": "Piero Lombardo",
+        "name": "Piero Lombardo",
         "age": 65,
         "code": "PT-43256",
         "state": "Ricoverato",
@@ -1128,7 +1128,7 @@
     },
     {
         "id": 50,
-        "employee": "Elena Sanna",
+        "name": "Elena Sanna",
         "age": 38,
         "code": "PT-54876",
         "state": "Dismesso",
@@ -1151,7 +1151,7 @@
     },
     {
         "id": 51,
-        "employee": "Mauro Piras",
+        "name": "Mauro Piras",
         "age": 52,
         "code": "PT-11876",
         "state": "Ricoverato",
@@ -1174,7 +1174,7 @@
     },
     {
         "id": 52,
-        "employee": "Lucia Cossu",
+        "name": "Lucia Cossu",
         "age": 44,
         "code": "PT-98456",
         "state": "Dismesso",
@@ -1197,7 +1197,7 @@
     },
     {
         "id": 53,
-        "employee": "Alberto Melis",
+        "name": "Alberto Melis",
         "age": 57,
         "code": "PT-12276",
         "state": "Ricoverato",
@@ -1220,7 +1220,7 @@
     },
     {
         "id": 54,
-        "employee": "Serena Usai",
+        "name": "Serena Usai",
         "age": 33,
         "code": "PT-21767",
         "state": "Dismesso",
@@ -1243,7 +1243,7 @@
     },
     {
         "id": 55,
-        "employee": "Giorgio Mura",
+        "name": "Giorgio Mura",
         "age": 61,
         "code": "PT-12545",
         "state": "Ricoverato",
@@ -1266,7 +1266,7 @@
     },
     {
         "id": 56,
-        "employee": "Tiziana Pinna",
+        "name": "Tiziana Pinna",
         "age": 46,
         "code": "PT-12287",
         "state": "Dismesso",
@@ -1289,7 +1289,7 @@
     },
     {
         "id": 57,
-        "employee": "Fabrizio Manca",
+        "name": "Fabrizio Manca",
         "age": 54,
         "code": "PT-12789",
         "state": "Ricoverato",
@@ -1312,7 +1312,7 @@
     },
     {
         "id": 58,
-        "employee": "Rossella Pedrotti",
+        "name": "Rossella Pedrotti",
         "age": 40,
         "code": "PT-54678",
         "state": "Dismesso",
@@ -1335,7 +1335,7 @@
     },
     {
         "id": 59,
-        "employee": "Vito Sini",
+        "name": "Vito Sini",
         "age": 58,
         "code": "PT-90767",
         "state": "Ricoverato",
@@ -1358,7 +1358,7 @@
     },
     {
         "id": 60,
-        "employee": "Loredana Piredda",
+        "name": "Loredana Piredda",
         "age": 35,
         "code": "PT-98648",
         "state": "Dismesso",
@@ -1381,7 +1381,7 @@
     },
     {
         "id": 61,
-        "employee": "Salvatore Lai",
+        "name": "Salvatore Lai",
         "age": 62,
         "code": "PT-79012",
         "state": "Ricoverato",
@@ -1404,7 +1404,7 @@
     },
     {
         "id": 62,
-        "employee": "Antonella Corda",
+        "name": "Antonella Corda",
         "age": 48,
         "code": "PT-80123",
         "state": "Dismesso",
@@ -1427,7 +1427,7 @@
     },
     {
         "id": 63,
-        "employee": "Mario Floris",
+        "name": "Mario Floris",
         "age": 56,
         "code": "PT-91234",
         "state": "Ricoverato",
@@ -1450,7 +1450,7 @@
     },
     {
         "id": 64,
-        "employee": "Paola Serra",
+        "name": "Paola Serra",
         "age": 43,
         "code": "PT-02345",
         "state": "Dismesso",
@@ -1473,7 +1473,7 @@
     },
     {
         "id": 65,
-        "employee": "Claudio Carta",
+        "name": "Claudio Carta",
         "age": 59,
         "code": "PT-13456",
         "state": "Ricoverato",
@@ -1496,7 +1496,7 @@
     },
     {
         "id": 66,
-        "employee": "Daniela Gori",
+        "name": "Daniela Gori",
         "age": 37,
         "code": "PT-24567",
         "state": "Dismesso",
@@ -1519,7 +1519,7 @@
     },
     {
         "id": 67,
-        "employee": "Simone Meloni",
+        "name": "Simone Meloni",
         "age": 53,
         "code": "PT-35678",
         "state": "Ricoverato",
@@ -1542,7 +1542,7 @@
     },
     {
         "id": 68,
-        "employee": "Barbara Lucchesi",
+        "name": "Barbara Lucchesi",
         "age": 45,
         "code": "PT-46789",
         "state": "Dismesso",
@@ -1565,7 +1565,7 @@
     },
     {
         "id": 69,
-        "employee": "Giovanni Bertini",
+        "name": "Giovanni Bertini",
         "age": 64,
         "code": "PT-57890",
         "state": "Ricoverato",
@@ -1588,7 +1588,7 @@
     },
     {
         "id": 70,
-        "employee": "Maria Campisi",
+        "name": "Maria Campisi",
         "age": 39,
         "code": "PT-68901",
         "state": "Dismesso",
@@ -1596,7 +1596,7 @@
         "chronicDiseases": "LES",
         "surgeries": "Nessuna",
         "hospitalizations": "Ricovero per flare lupico",
-        "knownAllergies": "Sole",
+        "knownAllergies": "Sensibile al sole (fotodermatite)",
         "currentMedications": "Idrossiclorochina",
         "currentSymptoms": "Nessuno",
         "familyContacts": {

@@ -1,0 +1,45 @@
+div#patientNameAgeCont {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-height: 49px;
+}
+
+p#patientName {
+    font-size: 26px;
+    min-height: 34px;
+}
+
+small#patientAge {
+    font-style: italic;
+}
+
+#anamnesiCont {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    width: fit-content;
+    margin: auto;
+    margin-top: 45px;
+}
+
+#anamnesiCont h4 {
+    font-size: 19px;
+    letter-spacing: 2px;
+    margin: 0px;
+    color: var(--mainRed);
+}
+
+#anamnesiCont svg {
+    width: 22px;
+    fill: var(--mainRed);
+}
+
+#anamnesiInfoCont {
+    margin-top: 10px;
+}
+
+#anamnesiInfoCont p.anamnesiInfo {
+    margin-top: 28px;
+}
