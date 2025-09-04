@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import type { PatientsListType } from "../PatientsList/PatientsList.tsx";
 import PatientsList from "../PatientsList/PatientsList.tsx";
 import PatientDetails from "../PatientDetails/PatientDetails.tsx";
+import FamilyContacts from "../FamilyContacts/FamilyContacts.tsx";
 
 type PatientsProps = {
     patientsList: PatientsListType | null;
@@ -56,6 +57,7 @@ function Patients() {
                 </div>
 
                 <div className='flexGroup'>
+                    <FamilyContacts selectedId={selectedId} />
                 </div>
             </div>
         </>

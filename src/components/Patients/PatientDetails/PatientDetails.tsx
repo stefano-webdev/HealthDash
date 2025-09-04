@@ -1,5 +1,5 @@
 import type { hospitalShape } from "../../Home/PatientsToday.tsx";
-import type { Patient } from "../PatientsList/PatientsList";
+import type { Patient } from "../PatientsList/PatientsList.tsx";
 import "./PatientDetails.css";
 
 function PatientDetails({ selectedId }: { selectedId: number | null }) {
