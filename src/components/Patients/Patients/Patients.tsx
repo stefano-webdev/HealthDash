@@ -3,6 +3,7 @@ import type { PatientsListType } from "../PatientsList/PatientsList.tsx";
 import PatientsList from "../PatientsList/PatientsList.tsx";
 import PatientDetails from "../PatientDetails/PatientDetails.tsx";
 import FamilyContacts from "../FamilyContacts/FamilyContacts.tsx";
+import Prescriptions from "../Prescriptions/Prescriptions.tsx";
 
 type PatientsProps = {
     patientsList: PatientsListType | null;
@@ -58,6 +59,7 @@ function Patients() {
 
                 <div className='flexGroup'>
                     <FamilyContacts selectedId={selectedId} />
+                    <Prescriptions selectedId={selectedId} />
                 </div>
             </div>
         </>

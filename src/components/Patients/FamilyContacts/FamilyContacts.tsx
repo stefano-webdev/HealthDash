@@ -19,6 +19,7 @@ function FamilyContacts({ selectedId }: { selectedId: number | null }) {
                 </svg>
                 <h3 className='box'>Contatti familiari</h3>
             </div>
+            
             <div id="familyDetailsCont">
                 <p><strong>Nome:</strong> <em>{patient?.familyContacts.name}</em></p>
                 <p><strong>Relazione:</strong> <em>{patient?.familyContacts.relationship}</em></p>

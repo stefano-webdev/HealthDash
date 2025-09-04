@@ -1,0 +1,6 @@
+#prescriptionDetailsCont {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    margin-top: 40px;
+}
