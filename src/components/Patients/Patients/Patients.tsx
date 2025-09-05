@@ -3,7 +3,9 @@ import type { PatientsListType } from "../PatientsList/PatientsList.tsx";
 import PatientsList from "../PatientsList/PatientsList.tsx";
 import PatientDetails from "../PatientDetails/PatientDetails.tsx";
 import FamilyContacts from "../FamilyContacts/FamilyContacts.tsx";
-import Prescriptions from "../Prescriptions/Prescriptions.tsx";
+import PatientsCrud from "../PatientsCrud/PatientsCrud/PatientsCrud.tsx";
+import PatientsCreate from "../PatientsCrud/PatientsCreate/PatientsCreate.tsx";
+import type { CrudType } from "../../Staff/Staff/Staff.tsx";
 
 type PatientsProps = {
     patientsList: PatientsListType | null;
@@ -12,14 +14,17 @@ type PatientsProps = {
     inputListValue: string;
     setPatientsList: React.Dispatch<React.SetStateAction<PatientsListType | null>>;
     setOriginalPatientsList: React.Dispatch<React.SetStateAction<PatientsListType>>;
-    setInputListValue: React.Dispatch<React.SetStateAction<string>>;
     setSelectedId: React.Dispatch<React.SetStateAction<number | null>>;
-}
+    setConfirmMessage: React.Dispatch<React.SetStateAction<{ message: string, type: "success" | "error" } | null>>;
+    setInputListValue: React.Dispatch<React.SetStateAction<string>>;
+};
 
 function Patients() {
+    const [activeCrud, setActiveCrud] = useState<CrudType>(null);
     const [patientsList, setPatientsList] = useState<PatientsListType | null>(null);
     const [originalPatientsList, setOriginalPatientsList] = useState<PatientsListType>([]);
     const [selectedId, setSelectedId] = useState<number | null>(null);
+    const [confirmMessage, setConfirmMessage] = useState<{ message: string, type: "success" | "error" } | null>(null);
     const [inputListValue, setInputListValue] = useState<string>('');
 
     const patientsData: PatientsProps = {
@@ -29,8 +34,9 @@ function Patients() {
         inputListValue,
         setPatientsList,
         setOriginalPatientsList,
-        setInputListValue,
-        setSelectedId
+        setSelectedId,
+        setConfirmMessage,
+        setInputListValue
     }
 
     // Scroll to top on component mount
@@ -59,9 +65,17 @@ function Patients() {
 
                 <div className='flexGroup'>
                     <FamilyContacts selectedId={selectedId} />
-                    <Prescriptions selectedId={selectedId} />
+                    <PatientsCrud setActiveCrud={setActiveCrud} />
                 </div>
+
+                {activeCrud === 'create' && <PatientsCreate close={() => setActiveCrud(null)} patientsData={patientsData} />}
             </div>
+
+            {confirmMessage && (
+                <div className={`confirmMessageCont ${confirmMessage.type === "success" ? "positive" : "negative"}`}>
+                    <p>{confirmMessage.message}</p>
+                </div>
+            )}
         </>
     );
 }

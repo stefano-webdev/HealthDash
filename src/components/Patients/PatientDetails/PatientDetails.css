@@ -15,7 +15,8 @@ small#patientAge {
     font-style: italic;
 }
 
-#anamnesiCont {
+#anamnesiCont,
+#prescriptionsCont {
     display: flex;
     align-items: center;
     gap: 5px;
@@ -24,22 +25,30 @@ small#patientAge {
     margin-top: 45px;
 }
 
-#anamnesiCont h4 {
+#prescriptionsCont {
+    margin-top: 65px;
+}
+
+#anamnesiCont h4,
+#prescriptionsCont h4 {
     font-size: 19px;
     letter-spacing: 2px;
     margin: 0px;
     color: var(--mainRed);
 }
 
-#anamnesiCont svg {
+#anamnesiCont svg,
+#prescriptionsCont svg {
     width: 22px;
     fill: var(--mainRed);
 }
 
-#anamnesiInfoCont {
+#anamnesiInfoCont,
+#prescriptionsInfoCont {
     margin-top: 10px;
 }
 
-#anamnesiInfoCont p.anamnesiInfo {
+#anamnesiInfoCont p.anamnesiInfo,
+#prescriptionsInfoCont p.prescriptionsInfo {
     margin-top: 28px;
 }

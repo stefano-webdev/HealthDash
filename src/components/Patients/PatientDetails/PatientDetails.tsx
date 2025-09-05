@@ -32,6 +32,7 @@ function PatientDetails({ selectedId }: { selectedId: number | null }) {
                 <small id="patientAge">{patient?.age} anni</small>
             </div>
 
+            {/* Medical history */}
             <div id="anamnesiCont">
                 <h4>Anamnesi</h4>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
@@ -47,7 +48,6 @@ function PatientDetails({ selectedId }: { selectedId: number | null }) {
                     494.3 288 512 288z" />
                 </svg>
             </div>
-
             <div id="anamnesiInfoCont">
                 <p><strong>Malattie pregresse:</strong> <em>{patient?.pastDiseases}</em></p>
                 <p className="anamnesiInfo"><strong>Malattie croniche:</strong> <em>{patient?.chronicDiseases}</em></p>
@@ -56,6 +56,25 @@ function PatientDetails({ selectedId }: { selectedId: number | null }) {
                 <p className="anamnesiInfo"><strong>Allergie:</strong> <em>{patient?.knownAllergies}</em></p>
                 <p className="anamnesiInfo"><strong>Farmaci in corso:</strong> <em>{patient?.currentMedications}</em></p>
                 <p className="anamnesiInfo"><strong>Sintomi attuali:</strong> <em>{patient?.currentSymptoms}</em></p>
+            </div>
+
+            {/* Prescriptions */}
+            <div id="prescriptionsCont">
+                <h4>Prescrizioni</h4>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                    <path d="M128 176C128 149.5 149.5 128 176 128C202.5 128 224 149.5 224 176L224 
+                        288L128 288L128 176zM240 432C240 383.3 258.1 338.8 288 305L288 176C288 114.1 
+                        237.9 64 176 64C114.1 64 64 114.1 64 176L64 464C64 525.9 114.1 576 176 576C213.3 
+                        576 246.3 557.8 266.7 529.7C249.7 501.1 240 467.7 240 432zM304.7 499.4C309.3 
+                        508.1 321 509.1 328 502.1L502.1 328C509.1 321 508.1 309.3 499.4 304.7C479.3 294 
+                        456.4 288 432 288C352.5 288 288 352.5 288 432C288 456.3 294 479.3 304.7 499.4zM361.9 
+                        536C354.9 543 355.9 554.7 364.6 559.3C384.7 570 407.6 576 432 576C511.5 576 576 511.5 
+                        576 432C576 407.7 570 384.7 559.3 364.6C554.7 355.9 543 354.9 536 361.9L361.9 536z" />
+                </svg>
+            </div>
+            <div id="prescriptionsInfoCont">
+                <p><strong>Medicinale:</strong> <em>{patient?.prescriptions.medication}</em></p>
+                <p className="prescriptionsInfo"><strong>Frequenza:</strong> <em>{patient?.prescriptions.frequency}</em></p>
             </div>
         </div>
     );

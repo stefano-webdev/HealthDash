@@ -141,7 +141,7 @@ function StaffUpdate({ close, staffData }: StaffUpdateProps) {
                 <h3 className='box'>Modifica dipendente</h3>
             </div>
             <p id='editedEmployee'>Stai modificando i dati di <em style={{ color: '#1475d6ff' }}>{staffMember?.employee}</em></p>
-            <form onSubmit={handleSubmit} className='formStaff'>
+            <form onSubmit={handleSubmit}>
                 {/* General informations */}
                 <div className="formGroup">
                     <label htmlFor="nameUpdate">Nome</label>
@@ -170,7 +170,7 @@ function StaffUpdate({ close, staffData }: StaffUpdateProps) {
 
                 {/* Shifts */}
                 <div>
-                    <h4 className='employeeShiftsTitle'>Turni</h4>
+                    <h4 className='sectionTitle'>Turni</h4>
                     <div className='employeeShiftsForm'>
                         <div className="formGroup">
                             <label htmlFor="mondayShiftUpdate">Lunedì</label>
@@ -205,7 +205,7 @@ function StaffUpdate({ close, staffData }: StaffUpdateProps) {
 
                 {/* Contacts */}
                 <div>
-                    <h4 className='employeeContactsTitle'>Contatti</h4>
+                    <h4 className='sectionTitle'>Contatti</h4>
                     <div className='employeeContactsForm'>
                         <div className="formGroup">
                             <label htmlFor="phoneUpdate">Telefono</label>
@@ -218,7 +218,7 @@ function StaffUpdate({ close, staffData }: StaffUpdateProps) {
                     </div>
                 </div>
 
-                <div className='updateEmployeeActions'>
+                <div className='formActions'>
                     <button type="button" onClick={close}>Annulla</button>
                     <button type="submit">Modifica</button>
                 </div>

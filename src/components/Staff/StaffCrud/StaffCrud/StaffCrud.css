@@ -2,25 +2,25 @@
     min-height: 243px;
 }
 
-#staffCrudCont p#staffCrudDescription {
+.crudDescription {
     margin-top: 10px;
     text-align: center;
 }
 
-#staffCrudCont p#staffCrudFeatures {
+.crudFeatures {
     font-size: 18px;
     text-align: center;
     margin: 35px auto 0px auto;
 }
 
-#staffCrudCont #staffCrudActionsCont {
+.crudActionsCont {
     display: flex;
     justify-content: center;
     gap: 25px;
     margin-top: 8px;
 }
 
-#staffCrudCont #staffCrudActionsCont button {
+.crudActionsCont button {
     width: 42px;
     height: 42px;
     display: flex;
@@ -32,11 +32,11 @@
     border-radius: 5px;
 }
 
-#staffCrudCont #staffCrudActionsCont button:active {
+.crudActionsCont button:active {
     background-color: rgb(132, 39, 27);
 }
 
-#staffCrudCont #staffCrudActionsCont svg {
+.crudActionsCont svg {
     width: 28px;
     fill: white;
 }

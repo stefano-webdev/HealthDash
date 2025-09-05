@@ -1,9 +1,8 @@
-import type { CrudType } from '../../Staff/Staff.tsx';
-import './StaffCrud.css';
+import type { CrudType } from "../../../Staff/Staff/Staff.tsx";
 
-function StaffCrud({ setActiveCrud }: { setActiveCrud: React.Dispatch<React.SetStateAction<CrudType>> }) {
+function PatientsCrud({ setActiveCrud }: { setActiveCrud: React.Dispatch<React.SetStateAction<CrudType>> }) {
     return (
-        <div id='staffCrudCont' className='boxStyle'>
+        <div id="patientsCrudCont" className="boxStyle">
             <div className='titleBox'>
                 <svg className='box' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
                     <path d="M256.1 312C322.4 312 376.1 258.3 376.1 192C376.1 
@@ -20,13 +19,13 @@ function StaffCrud({ setActiveCrud }: { setActiveCrud: React.Dispatch<React.SetS
                         305.8 542.2 305.8 520.1 327.9L491.3 356.7L571.3 436.7L600.1 
                         407.9z" />
                 </svg>
-                <h3 className='box'>Gestione personale</h3>
+                <h3 className='box'>Gestione pazienti</h3>
             </div>
-            <p className='crudDescription'>Puoi gestire il personale in modo semplice e veloce: <em>aggiungi</em>, <em>modifica</em> o <em>rimuovi</em> i dipendenti.</p>
+            <p className='crudDescription'>Puoi gestire i pazienti in modo semplice e veloce: <em>aggiungi</em>, <em>modifica</em> o <em>rimuovi</em> i pazienti.</p>
             <p className='crudFeatures'>Funzionalità CRUD</p>
 
             <div className='crudActionsCont'>
-                <button type="button" aria-label="Add employee" onClick={() => setActiveCrud("create")}>
+                <button type="button" aria-label="Add patient" onClick={() => setActiveCrud("create")}>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
                         <path d="M352 128C352 110.3 337.7 96 320 96C302.3 96 288 
                                 110.3 288 128L288 288L128 288C110.3 288 96 302.3 96 320C96 
@@ -37,7 +36,7 @@ function StaffCrud({ setActiveCrud }: { setActiveCrud: React.Dispatch<React.SetS
                     </svg>
                 </button>
 
-                <button type="button" aria-label="Edit employee" onClick={() => setActiveCrud("update")}>
+                <button type="button" aria-label="Edit patient" onClick={() => setActiveCrud("update")}>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
                         <path d="M100.4 417.2C104.5 402.6 112.2 389.3 123 378.5L304.2 
                                 197.3L338.1 163.4C354.7 180 389.4 214.7 442.1 267.4L476 
@@ -53,7 +52,7 @@ function StaffCrud({ setActiveCrud }: { setActiveCrud: React.Dispatch<React.SetS
                     </svg>
                 </button>
 
-                <button type="button" aria-label="Delete employee" onClick={() => setActiveCrud("delete")}>
+                <button type="button" aria-label="Delete patient" onClick={() => setActiveCrud("delete")}>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
                         <path d="M232.7 69.9L224 96L128 96C110.3 96 96 110.3 96 
                                 128C96 145.7 110.3 160 128 160L512 160C529.7 160 544 145.7 
@@ -68,4 +67,4 @@ function StaffCrud({ setActiveCrud }: { setActiveCrud: React.Dispatch<React.SetS
     );
 }
 
-export default StaffCrud;
+export default PatientsCrud;

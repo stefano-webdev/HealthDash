@@ -27,7 +27,7 @@
         "name": "Laura Rossi",
         "age": 38,
         "code": "PT-19876",
-        "state": "Dismesso",
+        "state": "Dimesso",
         "pastDiseases": "Infezione urinaria ricorrente",
         "chronicDiseases": "Ipertensione",
         "surgeries": "Colecistectomia",
@@ -38,7 +38,7 @@
         "familyContacts": {
             "name": "Paolo Sartori",
             "relationship": "Marito",
-            "phone": "3351234567"
+            "phone": "3351238767"
         },
         "prescriptions": {
             "medication": "Lisinopril",
@@ -73,7 +73,7 @@
         "name": "Francesca Romano",
         "age": 29,
         "code": "PT-78901",
-        "state": "Dismesso",
+        "state": "Dimesso",
         "pastDiseases": "Nessuna",
         "chronicDiseases": "Asma",
         "surgeries": "Tonsillectomia",
@@ -119,7 +119,7 @@
         "name": "Chiara Marini",
         "age": 41,
         "code": "PT-87654",
-        "state": "Dismesso",
+        "state": "Dimesso",
         "pastDiseases": "Mononucleosi",
         "chronicDiseases": "Tiroidite di Hashimoto",
         "surgeries": "Cisti ovarica",
@@ -165,7 +165,7 @@
         "name": "Elena Greco",
         "age": 35,
         "code": "PT-98765",
-        "state": "Dismesso",
+        "state": "Dimesso",
         "pastDiseases": "Anemia",
         "chronicDiseases": "Nessuna",
         "surgeries": "Parto cesareo",
@@ -176,7 +176,7 @@
         "familyContacts": {
             "name": "Maria Greco",
             "relationship": "Sorella",
-            "phone": "3301234567"
+            "phone": "3303784567"
         },
         "prescriptions": {
             "medication": "Ferro",
@@ -199,7 +199,7 @@
         "familyContacts": {
             "name": "Francesco Barbieri",
             "relationship": "Figlio",
-            "phone": "3312345678"
+            "phone": "3390863678"
         },
         "prescriptions": {
             "medication": "Furosemide",
@@ -211,7 +211,7 @@
         "name": "Silvia Moretti",
         "age": 44,
         "code": "PT-56789",
-        "state": "Dismesso",
+        "state": "Dimesso",
         "pastDiseases": "Depressione",
         "chronicDiseases": "Ansia generalizzata",
         "surgeries": "Nessuna",
@@ -257,7 +257,7 @@
         "name": "Martina Rizzo",
         "age": 50,
         "code": "PT-78912",
-        "state": "Dismesso",
+        "state": "Dimesso",
         "pastDiseases": "Osteoporosi",
         "chronicDiseases": "Artrite reumatoide",
         "surgeries": "Protesi ginocchio",
@@ -303,7 +303,7 @@
         "name": "Valentina Costa",
         "age": 26,
         "code": "PT-91467",
-        "state": "Dismesso",
+        "state": "Dimesso",
         "pastDiseases": "Appendicite",
         "chronicDiseases": "Nessuna",
         "surgeries": "Appendicectomia",
@@ -325,7 +325,7 @@
         "id": 15,
         "name": "Daniele Giordano",
         "age": 59,
-        "code": "PT-12345",
+        "code": "PT-98654",
         "state": "Ricoverato",
         "pastDiseases": "Infarto miocardico",
         "chronicDiseases": "Cardiopatia ischemica",
@@ -349,7 +349,7 @@
         "name": "Barbara Mancini",
         "age": 33,
         "code": "PT-23467",
-        "state": "Dismesso",
+        "state": "Dimesso",
         "pastDiseases": "Cistite ricorrente",
         "chronicDiseases": "Nessuna",
         "surgeries": "Nessuna",
@@ -360,7 +360,7 @@
         "familyContacts": {
             "name": "Veronica Mancini",
             "relationship": "Sorella",
-            "phone": "3389012345"
+            "phone": "3389076532"
         },
         "prescriptions": {
             "medication": "Ciprofloxacina",
@@ -383,7 +383,7 @@
         "familyContacts": {
             "name": "Anna Lombardi",
             "relationship": "Sorella",
-            "phone": "3390123456"
+            "phone": "3390875436"
         },
         "prescriptions": {
             "medication": "Prednisone",
@@ -395,7 +395,7 @@
         "name": "Eleonora Fontana",
         "age": 39,
         "code": "PT-46312",
-        "state": "Dismesso",
+        "state": "Dimesso",
         "pastDiseases": "Emicrania",
         "chronicDiseases": "Nessuna",
         "surgeries": "Nessuna",
@@ -406,7 +406,7 @@
         "familyContacts": {
             "name": "Paolo Fontana",
             "relationship": "Fratello",
-            "phone": "3301234567"
+            "phone": "3307632267"
         },
         "prescriptions": {
             "medication": "Sumatriptan",
@@ -429,7 +429,7 @@
         "familyContacts": {
             "name": "Marco Santoro",
             "relationship": "Figlio",
-            "phone": "3312345678"
+            "phone": "3390876678"
         },
         "prescriptions": {
             "medication": "Vitamina B",
@@ -441,7 +441,7 @@
         "name": "Anna Marino",
         "age": 42,
         "code": "PT-68345",
-        "state": "Dismesso",
+        "state": "Dimesso",
         "pastDiseases": "Endometriosi",
         "chronicDiseases": "Ipotiroidismo",
         "surgeries": "Laparoscopia",
@@ -487,7 +487,7 @@
         "name": "Sara Masiero",
         "age": 36,
         "code": "PT-80532",
-        "state": "Dismesso",
+        "state": "Dimesso",
         "pastDiseases": "Anemia sideropenica",
         "chronicDiseases": "Nessuna",
         "surgeries": "Nessuna",
@@ -533,7 +533,7 @@
         "name": "Giorgia Pellegrini",
         "age": 29,
         "code": "PT-02432",
-        "state": "Dismesso",
+        "state": "Dimesso",
         "pastDiseases": "Asma infantile",
         "chronicDiseases": "Nessuna",
         "surgeries": "Nessuna",
@@ -579,7 +579,7 @@
         "name": "Cinzia Monti",
         "age": 45,
         "code": "PT-25231",
-        "state": "Dismesso",
+        "state": "Dimesso",
         "pastDiseases": "Ipercolesterolemia",
         "chronicDiseases": "Nessuna",
         "surgeries": "Colectomia",
@@ -590,7 +590,7 @@
         "familyContacts": {
             "name": "Marco Monti",
             "relationship": "Fratello",
-            "phone": "3389012345"
+            "phone": "3389021345"
         },
         "prescriptions": {
             "medication": "Rosuvastatina",
@@ -613,7 +613,7 @@
         "familyContacts": {
             "name": "Lucia Serrano",
             "relationship": "Sorella",
-            "phone": "3390123456"
+            "phone": "3390876546"
         },
         "prescriptions": {
             "medication": "Allopurinolo",
@@ -625,7 +625,7 @@
         "name": "Daniela Palmieri",
         "age": 40,
         "code": "PT-15234",
-        "state": "Dismesso",
+        "state": "Dimesso",
         "pastDiseases": "Mononucleosi",
         "chronicDiseases": "Nessuna",
         "surgeries": "Tiroidectomia",
@@ -636,7 +636,7 @@
         "familyContacts": {
             "name": "Giovanna Rizzo",
             "relationship": "Madre",
-            "phone": "3301234567"
+            "phone": "3308776967"
         },
         "prescriptions": {
             "medication": "Eutirox",
@@ -659,7 +659,7 @@
         "familyContacts": {
             "name": "Paolo Bernardi",
             "relationship": "Figlio",
-            "phone": "3312345678"
+            "phone": "3334450678"
         },
         "prescriptions": {
             "medication": "Furosemide",
@@ -671,7 +671,7 @@
         "name": "Veronica Messina",
         "age": 32,
         "code": "PT-68843",
-        "state": "Dismesso",
+        "state": "Dimesso",
         "pastDiseases": "Depressione post-partum",
         "chronicDiseases": "Nessuna",
         "surgeries": "Nessuna",
@@ -717,7 +717,7 @@
         "name": "Alessia Longo",
         "age": 37,
         "code": "PT-80321",
-        "state": "Dismesso",
+        "state": "Dimesso",
         "pastDiseases": "Allergie stagionali",
         "chronicDiseases": "Rinite allergica",
         "surgeries": "Rinoplastica",
@@ -763,7 +763,7 @@
         "name": "Federica Ricci",
         "age": 43,
         "code": "PT-02212",
-        "state": "Dismesso",
+        "state": "Dimesso",
         "pastDiseases": "Cisti mammaria",
         "chronicDiseases": "Nessuna",
         "surgeries": "Escissione cisti",
@@ -809,7 +809,7 @@
         "name": "Beatrice Orlando",
         "age": 34,
         "code": "PT-87545",
-        "state": "Dismesso",
+        "state": "Dimesso",
         "pastDiseases": "Anoressia nervosa",
         "chronicDiseases": "Nessuna",
         "surgeries": "Nessuna",
@@ -820,7 +820,7 @@
         "familyContacts": {
             "name": "Maria Carraro",
             "relationship": "Madre",
-            "phone": "3389012345"
+            "phone": "3389045660"
         },
         "prescriptions": {
             "medication": "Multivitaminico",
@@ -843,7 +843,7 @@
         "familyContacts": {
             "name": "Marco Conte",
             "relationship": "Figlio",
-            "phone": "3390123456"
+            "phone": "3390890036"
         },
         "prescriptions": {
             "medication": "Metotrexate",
@@ -855,7 +855,7 @@
         "name": "Gabriella Marchetti",
         "age": 46,
         "code": "PT-90865",
-        "state": "Dismesso",
+        "state": "Dimesso",
         "pastDiseases": "Fibromialgia",
         "chronicDiseases": "Sindrome da fatica cronica",
         "surgeries": "Nessuna",
@@ -866,7 +866,7 @@
         "familyContacts": {
             "name": "Francesca Marchetti",
             "relationship": "Sorella",
-            "phone": "3301234567"
+            "phone": "3306657867"
         },
         "prescriptions": {
             "medication": "Duloxetina",
@@ -889,7 +889,7 @@
         "familyContacts": {
             "name": "Giovanni Silvestri",
             "relationship": "Fratello",
-            "phone": "3312345678"
+            "phone": "3390776678"
         },
         "prescriptions": {
             "medication": "Latanoprost",
@@ -901,7 +901,7 @@
         "name": "Elisabetta Riva",
         "age": 41,
         "code": "PT-87656",
-        "state": "Dismesso",
+        "state": "Dimesso",
         "pastDiseases": "Endometriosi",
         "chronicDiseases": "Nessuna",
         "surgeries": "Laparoscopia",
@@ -947,7 +947,7 @@
         "name": "Monica Ferraro",
         "age": 39,
         "code": "PT-97612",
-        "state": "Dismesso",
+        "state": "Dimesso",
         "pastDiseases": "Ipotiroidismo",
         "chronicDiseases": "Nessuna",
         "surgeries": "Tiroidectomia",
@@ -993,7 +993,7 @@
         "name": "Caterina Leone",
         "age": 47,
         "code": "PT-12954",
-        "state": "Dismesso",
+        "state": "Dimesso",
         "pastDiseases": "Colecistite",
         "chronicDiseases": "Nessuna",
         "surgeries": "Colecistectomia laparoscopica",
@@ -1039,7 +1039,7 @@
         "name": "Valeria Gentile",
         "age": 36,
         "code": "PT-97454",
-        "state": "Dismesso",
+        "state": "Dimesso",
         "pastDiseases": "Anemia",
         "chronicDiseases": "Nessuna",
         "surgeries": "Nessuna",
@@ -1050,7 +1050,7 @@
         "familyContacts": {
             "name": "Roberto Gentile",
             "relationship": "Fratello",
-            "phone": "3389012345"
+            "phone": "3389022345"
         },
         "prescriptions": {
             "medication": "Solfato ferroso",
@@ -1073,7 +1073,7 @@
         "familyContacts": {
             "name": "Antonio Caruso",
             "relationship": "Fratello",
-            "phone": "3390123456"
+            "phone": "3390877656"
         },
         "prescriptions": {
             "medication": "Ciprofloxacina",
@@ -1085,7 +1085,7 @@
         "name": "Giulia Testa",
         "age": 42,
         "code": "PT-65090",
-        "state": "Dismesso",
+        "state": "Dimesso",
         "pastDiseases": "Cefalea a grappolo",
         "chronicDiseases": "Nessuna",
         "surgeries": "Nessuna",
@@ -1096,7 +1096,7 @@
         "familyContacts": {
             "name": "Francesco Testa",
             "relationship": "Padre",
-            "phone": "3301234567"
+            "phone": "3307748267"
         },
         "prescriptions": {
             "medication": "Sumatriptan",
@@ -1119,7 +1119,7 @@
         "familyContacts": {
             "name": "Giovanna Lombardo",
             "relationship": "Sorella",
-            "phone": "3312345678"
+            "phone": "3390087678"
         },
         "prescriptions": {
             "medication": "Apixaban",
@@ -1131,7 +1131,7 @@
         "name": "Elena Sanna",
         "age": 38,
         "code": "PT-54876",
-        "state": "Dismesso",
+        "state": "Dimesso",
         "pastDiseases": "Lupus eritematoso",
         "chronicDiseases": "LES",
         "surgeries": "Nessuna",
@@ -1177,7 +1177,7 @@
         "name": "Lucia Cossu",
         "age": 44,
         "code": "PT-98456",
-        "state": "Dismesso",
+        "state": "Dimesso",
         "pastDiseases": "Depressione",
         "chronicDiseases": "Disturbo d'ansia",
         "surgeries": "Nessuna",
@@ -1223,7 +1223,7 @@
         "name": "Serena Usai",
         "age": 33,
         "code": "PT-21767",
-        "state": "Dismesso",
+        "state": "Dimesso",
         "pastDiseases": "Asma",
         "chronicDiseases": "Nessuna",
         "surgeries": "Nessuna",
@@ -1269,7 +1269,7 @@
         "name": "Tiziana Pinna",
         "age": 46,
         "code": "PT-12287",
-        "state": "Dismesso",
+        "state": "Dimesso",
         "pastDiseases": "Iperparatiroidismo",
         "chronicDiseases": "Nessuna",
         "surgeries": "Paratiroidectomia",
@@ -1280,7 +1280,7 @@
         "familyContacts": {
             "name": "Anna Pinna",
             "relationship": "Sorella",
-            "phone": "3389012345"
+            "phone": "3389012234"
         },
         "prescriptions": {
             "medication": "Calcio",
@@ -1303,7 +1303,7 @@
         "familyContacts": {
             "name": "Giuseppe Manca",
             "relationship": "Padre",
-            "phone": "3390123456"
+            "phone": "3390885906"
         },
         "prescriptions": {
             "medication": "Spironolattone",
@@ -1315,7 +1315,7 @@
         "name": "Rossella Pedrotti",
         "age": 40,
         "code": "PT-54678",
-        "state": "Dismesso",
+        "state": "Dimesso",
         "pastDiseases": "Emicrania con aura",
         "chronicDiseases": "Nessuna",
         "surgeries": "Nessuna",
@@ -1326,7 +1326,7 @@
         "familyContacts": {
             "name": "Maria Giusti",
             "relationship": "Madre",
-            "phone": "3301234567"
+            "phone": "3307665467"
         },
         "prescriptions": {
             "medication": "Topiramato",
@@ -1349,7 +1349,7 @@
         "familyContacts": {
             "name": "Giovanni Sini",
             "relationship": "Fratello",
-            "phone": "3312345678"
+            "phone": "3399855678"
         },
         "prescriptions": {
             "medication": "Timololo",
@@ -1361,7 +1361,7 @@
         "name": "Loredana Piredda",
         "age": 35,
         "code": "PT-98648",
-        "state": "Dismesso",
+        "state": "Dimesso",
         "pastDiseases": "Sindrome dell'ovaio policistico",
         "chronicDiseases": "Nessuna",
         "surgeries": "Nessuna",
@@ -1407,7 +1407,7 @@
         "name": "Antonella Corda",
         "age": 48,
         "code": "PT-80123",
-        "state": "Dismesso",
+        "state": "Dimesso",
         "pastDiseases": "Ipertiroidismo",
         "chronicDiseases": "Nessuna",
         "surgeries": "Tiroidectomia",
@@ -1453,7 +1453,7 @@
         "name": "Paola Serra",
         "age": 43,
         "code": "PT-02345",
-        "state": "Dismesso",
+        "state": "Dimesso",
         "pastDiseases": "Cisti mammaria",
         "chronicDiseases": "Nessuna",
         "surgeries": "Escissione cisti",
@@ -1499,7 +1499,7 @@
         "name": "Daniela Gori",
         "age": 37,
         "code": "PT-24567",
-        "state": "Dismesso",
+        "state": "Dimesso",
         "pastDiseases": "Anemia",
         "chronicDiseases": "Nessuna",
         "surgeries": "Nessuna",
@@ -1510,7 +1510,7 @@
         "familyContacts": {
             "name": "Giuseppe Gori",
             "relationship": "Padre",
-            "phone": "3389012345"
+            "phone": "3389022345"
         },
         "prescriptions": {
             "medication": "Solfato ferroso",
@@ -1533,7 +1533,7 @@
         "familyContacts": {
             "name": "Paolo Meloni",
             "relationship": "Fratello",
-            "phone": "3390123456"
+            "phone": "3390899876"
         },
         "prescriptions": {
             "medication": "Metronidazolo",
@@ -1545,7 +1545,7 @@
         "name": "Barbara Lucchesi",
         "age": 45,
         "code": "PT-46789",
-        "state": "Dismesso",
+        "state": "Dimesso",
         "pastDiseases": "Cefalea a grappolo",
         "chronicDiseases": "Nessuna",
         "surgeries": "Nessuna",
@@ -1556,7 +1556,7 @@
         "familyContacts": {
             "name": "Giovanna Donati",
             "relationship": "Madre",
-            "phone": "3301234567"
+            "phone": "3301126567"
         },
         "prescriptions": {
             "medication": "Sumatriptan",
@@ -1579,7 +1579,7 @@
         "familyContacts": {
             "name": "Marco Bertini",
             "relationship": "Figlio",
-            "phone": "3312345678"
+            "phone": "3390865678"
         },
         "prescriptions": {
             "medication": "Dabigatran",
@@ -1591,7 +1591,7 @@
         "name": "Maria Campisi",
         "age": 39,
         "code": "PT-68901",
-        "state": "Dismesso",
+        "state": "Dimesso",
         "pastDiseases": "Lupus eritematoso",
         "chronicDiseases": "LES",
         "surgeries": "Nessuna",

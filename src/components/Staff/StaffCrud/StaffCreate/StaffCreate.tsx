@@ -13,7 +13,7 @@ interface StaffCreateProps {
 }
 
 function StaffCreate({ close, staffData }: StaffCreateProps) {
-    const { setStaffList, setOriginalStaffList, setSelectedId, 
+    const { setStaffList, setOriginalStaffList, setSelectedId,
         setInputListValue, setConfirmMessage } = staffData;
     const scrollRef = useRef<HTMLDivElement | null>(null);
     const [formData, setFormData] = useState({
@@ -42,6 +42,7 @@ function StaffCreate({ close, staffData }: StaffCreateProps) {
         }
     }, []);
 
+    // Handle input change
     function handleInputChange(e: React.ChangeEvent<HTMLInputElement>) {
         const { name, value, maxLength } = e.target;
         if (value.length <= maxLength) {
@@ -121,7 +122,8 @@ function StaffCreate({ close, staffData }: StaffCreateProps) {
                 </svg>
                 <h3 className='box'>Aggiungi dipendente</h3>
             </div>
-            <form onSubmit={handleSubmit} className='formStaff'>
+            <small className='warning'>Tutti i campi sono obbligatori</small>
+            <form onSubmit={handleSubmit}>
                 {/* General informations */}
                 <div className="formGroup">
                     <label htmlFor="nameCreate">Nome</label>
@@ -150,7 +152,7 @@ function StaffCreate({ close, staffData }: StaffCreateProps) {
 
                 {/* Shifts */}
                 <div>
-                    <h4 className='employeeShiftsTitle'>Turni</h4>
+                    <h4 className='sectionTitle'>Turni</h4>
                     <div className='employeeShiftsForm'>
                         <div className="formGroup">
                             <label htmlFor="mondayShiftCreate">Lunedì</label>
@@ -185,7 +187,7 @@ function StaffCreate({ close, staffData }: StaffCreateProps) {
 
                 {/* Contacts */}
                 <div>
-                    <h4 className='employeeContactsTitle'>Contatti</h4>
+                    <h4 className='sectionTitle'>Contatti</h4>
                     <div className='employeeContactsForm'>
                         <div className="formGroup">
                             <label htmlFor="phoneCreate">Telefono</label>
@@ -198,7 +200,7 @@ function StaffCreate({ close, staffData }: StaffCreateProps) {
                     </div>
                 </div>
 
-                <div className='createEmployeeActions'>
+                <div className='formActions'>
                     <button type="button" onClick={close}>Annulla</button>
                     <button type="submit">Aggiungi</button>
                 </div>

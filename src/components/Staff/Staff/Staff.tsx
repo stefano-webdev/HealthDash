@@ -19,7 +19,6 @@ type StaffProps = {
     setStaffList: React.Dispatch<React.SetStateAction<StaffListType | null>>;
     setOriginalStaffList: React.Dispatch<React.SetStateAction<StaffListType>>;
     setSelectedId: React.Dispatch<React.SetStateAction<number | null>>;
-    setActiveCrud: React.Dispatch<React.SetStateAction<CrudType>>;
     setConfirmMessage: React.Dispatch<React.SetStateAction<{ message: string, type: "success" | "error" } | null>>;
     setInputListValue: React.Dispatch<React.SetStateAction<string>>;
 };
@@ -40,7 +39,6 @@ function Staff() {
         setStaffList,
         setOriginalStaffList,
         setSelectedId,
-        setActiveCrud,
         setConfirmMessage,
         setInputListValue
     };
