@@ -5,7 +5,7 @@ function InfoChartButton() {
     return (
         <div id="recoveryInfoCont">
             <button
-                onClick={() => setInfoChart(!infoChart)} aria-label="Shows information about the chart">
+                onClick={() => setInfoChart(!infoChart)} aria-label="Shows informations about the chart">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
                     <path d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 
                         320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM288 224C288 

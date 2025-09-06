@@ -56,7 +56,7 @@ function StaffUpdate({ close, staffData }: StaffUpdateProps) {
             window.innerWidth >= 1200 &&
             window.matchMedia("(pointer: fine)").matches) {
             window.scrollTo({
-                top: scrollRef.current.offsetTop - 20,
+                top: scrollRef.current.offsetTop - 30,
                 behavior: 'smooth',
             });
             onlyOneScroll.current = true;

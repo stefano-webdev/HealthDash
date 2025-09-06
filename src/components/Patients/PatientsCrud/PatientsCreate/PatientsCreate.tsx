@@ -37,7 +37,7 @@ function PatientsCreate({ close, patientsData }: PatientsCreateProps) {
     useEffect(() => {
         if (scrollRef?.current && window.innerWidth >= 1200 && window.matchMedia("(pointer: fine)").matches) {
             window.scrollTo({
-                top: scrollRef.current.offsetTop - 20,
+                top: scrollRef.current.offsetTop - 30,
                 behavior: 'smooth',
             });
         }
