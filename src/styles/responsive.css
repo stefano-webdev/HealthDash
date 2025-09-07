@@ -2,6 +2,10 @@
 @media (max-width: 370px) {
 
     /* General */
+    body #mainContainer {
+        margin: 50px 13px 0px 13px;
+    }
+
     body div.boxStyle {
         max-width: 280px;
     }
@@ -75,6 +79,14 @@
         flex-wrap: wrap;
         align-items: flex-start;
         justify-content: center;
+    }
+
+    body #recoveryMainCont {
+        min-width: 569px;
+    }
+
+    body #revenueMainCont {
+        min-width: 569px;
     }
 
     body div.boxStyle {
@@ -321,6 +333,7 @@
 
     body #recoveryMainCont,
     body #revenueMainCont {
+        min-width: auto;
         width: clamp(390px, 33vw, 500px);
     }
 

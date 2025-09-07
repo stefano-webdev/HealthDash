@@ -69,7 +69,7 @@ function MonthlyRevenueChart() {
 
   function handleResize() {
     // Smartphones
-    if (window.innerWidth <= 549) {
+    if (window.innerWidth <= 649) {
       setFontSizeXYTooltip(14);
       setFontSizeLegend(17);
       setChartHeight(300);
