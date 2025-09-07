@@ -82,16 +82,16 @@ body {
 div.currentRoute {
     display: flex;
     gap: 15px;
-    margin-bottom: 25px;
+    margin: 0px 0px 25px 5px;
 }
 
 div.currentRoute svg {
     fill: var(--mainRed);
-    width: clamp(30px, 4vw, 34px);
+    width: clamp(30px, 5vw, 34px);
 }
 
 div.currentRoute h2 {
-    font-size: clamp(25px, 4vw, 33px);
+    font-size: clamp(25px, 4.2vw, 33px);
     font-family: Arial, 'Helvetica Neue', Helvetica, 'Liberation Sans', sans-serif;
     margin: 5px 0px 0px 0px;
     letter-spacing: 2px;
@@ -101,7 +101,12 @@ div.currentRoute h2 {
     display: flex;
     flex-direction: column;
     gap: 3rem;
-    align-items: center;
+}
+
+.routeCRUD {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
 }
 
 .flexGroup {

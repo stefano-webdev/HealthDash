@@ -26,7 +26,7 @@ function Notifications() {
         const unknownData: string | null = localStorage.getItem("hospitalData");
         const savedData: hospitalShape = unknownData ? JSON.parse(unknownData) : {};
 
-        if (savedData.notificationsToday && savedData.date === today) {
+        if (savedData.notificationsToday && savedData.date?.HomeDate === today) {
             // If we have today's notifications, we use them
             setNotifications(savedData.notificationsToday);
         } else {
@@ -35,7 +35,6 @@ function Notifications() {
 
             const updatedData: hospitalShape = {
                 ...savedData,
-                date: today,
                 notificationsToday: newData
             };
 

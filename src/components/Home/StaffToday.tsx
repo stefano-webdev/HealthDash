@@ -27,7 +27,7 @@ function StaffToday() {
         const unknownData: string | null = localStorage.getItem("hospitalData");
         const savedData: hospitalShape = unknownData ? JSON.parse(unknownData) : {};
 
-        if (savedData.staffToday && savedData.date === today && savedData.staffToday.shift === currentShift) {
+        if (savedData.staffToday && savedData.date?.HomeDate === today && savedData.staffToday.shift === currentShift) {
             // If it already exists for today and for this shift, use again
             setStaff(savedData.staffToday.staff);
         } else {
@@ -36,7 +36,6 @@ function StaffToday() {
 
             const updatedData: hospitalShape = {
                 ...savedData,
-                date: today,
                 staffToday: {
                     staff: staffToday,
                     shift: currentShift

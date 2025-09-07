@@ -70,6 +70,21 @@
         padding: 33px 15px;
     }
 
+    body .flexGroup {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+    body div.boxStyle {
+        margin: 0px;
+    }
+
+    body .routeCRUD {
+        align-items: center;
+    }
+
     body footer p,
     body footer a {
         font-size: 18px;
@@ -106,7 +121,12 @@
     }
 
     body a#torna_portfolio {
+        margin: 15px 0px 40px 15px;
         font-size: 18px;
+    }
+
+    div.currentRoute {
+        margin: 0px 0px 25px 20px;
     }
 
     body .updateSvg {
@@ -231,7 +251,6 @@
     /* General */
     body a#torna_portfolio {
         position: absolute;
-        margin: 15px 0px 40px 15px;
     }
 
     body #healthDashCont {
@@ -296,16 +315,8 @@
         margin: 55px 0px 0px 0px;
     }
 
-    body .flexGroup {
-        flex-direction: row;
-        justify-content: center;
-        align-items: flex-start;
-        gap: 3rem;
-    }
-
     body div.boxStyle {
         width: clamp(390px, 33vw, 470px);
-        margin: 0px;
     }
 
     body #recoveryMainCont,
@@ -317,7 +328,7 @@
 
     body #staffListCont {
         min-height: auto;
-        height: 450px;
+        height: 560px;
     }
 
     body #staffScheduleCont {
@@ -328,19 +339,16 @@
         margin: 10px auto 15px auto;
     }
 
-    body #staffListCont .tableWrapper,
+    body #staffListCont .tableWrapper {
+        height: 320px;
+    }
+
     body #patientsListCont .tableWrapper {
-        height: 215px;
+        height: 522px;
     }
 
     body .confirmMessageCont {
         left: calc(50% + 115px);
-    }
-
-    /* Patients */
-    body #patientsListCont {
-        min-height: auto;
-        height: 410px;
     }
 
     /* Footer */

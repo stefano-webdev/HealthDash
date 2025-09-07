@@ -69,7 +69,7 @@ function Staff() {
                 </svg>
                 <h2>PERSONALE</h2>
             </div>
-            <div className="routeCont">
+            <div className="routeCRUD">
                 <div className='flexGroup'>
                     <StaffList staffData={staffData} />
                     <StaffDetails id={selectedId} />

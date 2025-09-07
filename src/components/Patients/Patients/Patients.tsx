@@ -5,6 +5,8 @@ import PatientDetails from "../PatientDetails/PatientDetails.tsx";
 import FamilyContacts from "../FamilyContacts/FamilyContacts.tsx";
 import PatientsCrud from "../PatientsCrud/PatientsCrud/PatientsCrud.tsx";
 import PatientsCreate from "../PatientsCrud/PatientsCreate/PatientsCreate.tsx";
+import PatientsUpdate from "../PatientsCrud/PatientsUpdate/PatientsUpdate.tsx";
+import PatientsDelete from "../PatientsCrud/PatientsDelete/PatientsDelete.tsx";
 import type { CrudType } from "../../Staff/Staff/Staff.tsx";
 
 type PatientsProps = {
@@ -57,7 +59,7 @@ function Patients() {
                 </svg>
                 <h2>PAZIENTI</h2>
             </div>
-            <div className="routeCont">
+            <div className="routeCRUD">
                 <div className='flexGroup'>
                     <PatientsList {...patientsData} />
                     <PatientDetails selectedId={selectedId} />
@@ -69,6 +71,8 @@ function Patients() {
                 </div>
 
                 {activeCrud === 'create' && <PatientsCreate close={() => setActiveCrud(null)} patientsData={patientsData} />}
+                {activeCrud === 'update' && <PatientsUpdate close={() => setActiveCrud(null)} patientsData={patientsData} />}
+                {activeCrud === 'delete' && <PatientsDelete close={() => setActiveCrud(null)} patientsData={patientsData} />}
             </div>
 
             {confirmMessage && (

@@ -34,7 +34,7 @@ function StaffList({ staffData }: { staffData: StaffProps }) {
         const unknownData: string | null = localStorage.getItem("hospitalData");
         const savedData: hospitalShape = unknownData ? JSON.parse(unknownData) : {};
 
-        if (savedData.staffList && savedData.date === today) {
+        if (savedData.staffList && savedData.date?.StaffDate === today) {
             // If it already exists for today, use again
             setOriginalStaffList(savedData.staffList);
             setStaffList(savedData.staffList);
@@ -46,7 +46,10 @@ function StaffList({ staffData }: { staffData: StaffProps }) {
 
             const updatedData: hospitalShape = {
                 ...savedData,
-                date: today,
+                date: {
+                    ...savedData.date,
+                    StaffDate: today
+                },
                 staffList: newStaffList
             };
 

@@ -5,8 +5,14 @@ import type { DailyNotifications } from "./Notifications/Notifications.tsx";
 import type {StaffListType} from "../Staff/StaffList/StaffList.tsx";
 import type { PatientsListType } from "../Patients/PatientsList/PatientsList.tsx";
 
+type Dates = {
+    HomeDate?: string,
+    StaffDate?: string,
+    PatientsDate?: string
+}
+
 interface hospitalShape {
-    date?: string,
+    date?: Dates,
     patientsToday?: number,
     staffToday?: StaffShift,
     appointmentsToday?: DailyAppointments,
@@ -23,7 +29,7 @@ function PatientsToday() {
         const unknownData: string | null = localStorage.getItem("hospitalData");
         const savedData: hospitalShape = unknownData ? JSON.parse(unknownData) : {};
 
-        if (savedData.patientsToday && savedData.date === today) {
+        if (savedData.patientsToday && savedData.date?.HomeDate === today) {
             // Use the existing data
             setPatients(savedData.patientsToday);
         }
@@ -33,7 +39,10 @@ function PatientsToday() {
 
             const updatedData: hospitalShape = {
                 ...savedData,
-                date: today,
+                date: {
+                    ...savedData.date,
+                    HomeDate: today
+                },
                 patientsToday: newPatients
             };
 
@@ -42,7 +51,6 @@ function PatientsToday() {
 
             setPatients(newPatients);
         }
-
     }, []);
 
     return (

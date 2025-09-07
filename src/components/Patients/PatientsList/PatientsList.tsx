@@ -40,7 +40,7 @@ function PatientsList({ patientsList, originalPatientsList,
         const unknownData: string | null = localStorage.getItem("hospitalData");
         const savedData: hospitalShape = unknownData ? JSON.parse(unknownData) : {};
 
-        if (savedData.patientsList && savedData.date === today) {
+        if (savedData.patientsList && savedData.date?.PatientsDate === today) {
             // If it already exists for today, use again
             setOriginalPatientsList(savedData.patientsList);
             setPatientsList(savedData.patientsList);
@@ -52,7 +52,10 @@ function PatientsList({ patientsList, originalPatientsList,
 
             const updatedData: hospitalShape = {
                 ...savedData,
-                date: today,
+                date: {
+                    ...savedData.date,
+                    PatientsDate: today
+                },
                 patientsList: newPatientsList
             };
 

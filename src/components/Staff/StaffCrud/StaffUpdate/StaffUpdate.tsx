@@ -19,7 +19,7 @@ function StaffUpdate({ close, staffData }: StaffUpdateProps) {
     const onlyOneScroll = useRef<boolean>(false);
     const [formData, setFormData] = useState({
         name: staffMember?.employee.split(" ")[0],
-        surname: staffMember?.employee.split(" ")[1],
+        surname: staffMember?.employee.split(" ").slice(1).join(" "),
         shortRole: staffMember?.shortRole,
         longRole: staffMember?.longRole,
         ward: staffMember?.ward,
@@ -37,7 +37,7 @@ function StaffUpdate({ close, staffData }: StaffUpdateProps) {
     useEffect(() => {
         setFormData({
             name: staffMember?.employee.split(" ")[0],
-            surname: staffMember?.employee.split(" ")[1],
+            surname: staffMember?.employee.split(" ").slice(1).join(" "),
             shortRole: staffMember?.shortRole,
             longRole: staffMember?.longRole,
             ward: staffMember?.ward,
@@ -110,7 +110,8 @@ function StaffUpdate({ close, staffData }: StaffUpdateProps) {
         const newData = {
             ...savedData,
             staffList: updatedStaffList
-        }
+        };
+
         localStorage.setItem("hospitalData", JSON.stringify(newData));
         setStaffList(updatedStaffList);
         setInputListValue('');
@@ -140,7 +141,8 @@ function StaffUpdate({ close, staffData }: StaffUpdateProps) {
                 </svg>
                 <h3 className='box'>Modifica dipendente</h3>
             </div>
-            <p id='editedEmployee'>Stai modificando i dati di <em style={{ color: '#1475d6ff' }}>{staffMember?.employee}</em></p>
+            <p id='updatedEmployee'>Stai modificando i dati di <em style={{ color: '#1475d6ff' }}>{staffMember?.employee}</em></p>
+            <small className='warning'>Tutti i campi sono obbligatori</small>
             <form onSubmit={handleSubmit}>
                 {/* General informations */}
                 <div className="formGroup">

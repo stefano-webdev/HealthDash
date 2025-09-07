@@ -1,4 +1,5 @@
-p#editedEmployee {
-    margin: 20px 0px;
+p#updatedEmployee,
+p#updatedPatient {
+    margin: 20px 0px 2px 0px;
     text-align: center;
 }

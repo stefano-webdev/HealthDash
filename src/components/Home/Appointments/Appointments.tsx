@@ -29,7 +29,7 @@ function Appointments() {
         const unknownData: string | null = localStorage.getItem("hospitalData");
         const savedData: hospitalShape = unknownData ? JSON.parse(unknownData) : {};
 
-        if (savedData.appointmentsToday && savedData.date === today) {
+        if (savedData.appointmentsToday && savedData.date?.HomeDate === today) {
             // If we have today's data, we use it
             setDailyAppointments(savedData.appointmentsToday);
         } else {
@@ -38,7 +38,6 @@ function Appointments() {
 
             const updatedData: hospitalShape = {
                 ...savedData,
-                date: today,
                 appointmentsToday: newData
             };
 
