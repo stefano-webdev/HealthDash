@@ -1,0 +1,36 @@
+#financeOverviewCont {
+    position: relative;
+}
+
+#dataWarning {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0px;
+    width: 100%;
+    text-align: center;
+    font-style: italic;
+}
+
+#cashFlowCont {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin-top: 2.5rem;
+}
+
+.cashFlowItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px
+}
+
+.cashFlowItem p:nth-child(1) {
+    font-size: 28px;
+    letter-spacing: 1.2px;
+}
+
+.cashFlowItem p:nth-child(2) {
+    font-style: italic;
+    letter-spacing: 0.5px;
+}

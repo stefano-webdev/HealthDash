@@ -23,7 +23,7 @@ function InDevelopment() {
             </p>
 
             <p>
-                <strong><em>Home</em></strong> - <strong><em>Personale</em></strong> - <strong><em>Pazienti</em></strong>
+                <strong><em>Home</em></strong> - <strong><em>Personale</em></strong> - <strong><em>Pazienti</em></strong> - <strong><em>Finanze</em></strong>
             </p>
         </div>
     );

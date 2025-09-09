@@ -1,4 +1,5 @@
 import "./MonthlyRevenue.css";
+import type { hospitalShape } from "../PatientsToday.tsx";
 import { useState, useEffect, useRef } from "react";
 import {
   BarChart,
@@ -17,33 +18,33 @@ type RevenueData = {
 };
 
 const allMonths: { short: string; full: string }[] = [
-  { short: "Gen", full: "Gennaio" },
-  { short: "Feb", full: "Febbraio" },
-  { short: "Mar", full: "Marzo" },
-  { short: "Apr", full: "Aprile" },
-  { short: "Mag", full: "Maggio" },
-  { short: "Giu", full: "Giugno" },
-  { short: "Lug", full: "Luglio" },
-  { short: "Ago", full: "Agosto" },
-  { short: "Set", full: "Settembre" },
-  { short: "Ott", full: "Ottobre" },
-  { short: "Nov", full: "Novembre" },
-  { short: "Dic", full: "Dicembre" },
+  { short: "gen", full: "Gennaio" },
+  { short: "feb", full: "Febbraio" },
+  { short: "mar", full: "Marzo" },
+  { short: "apr", full: "Aprile" },
+  { short: "mag", full: "Maggio" },
+  { short: "giu", full: "Giugno" },
+  { short: "lug", full: "Luglio" },
+  { short: "ago", full: "Agosto" },
+  { short: "set", full: "Settembre" },
+  { short: "ott", full: "Ottobre" },
+  { short: "nov", full: "Novembre" },
+  { short: "dic", full: "Dicembre" },
 ];
 
-const fullData: Record<string, number> = {
-  Gen: 5000000,
-  Feb: 7000000,
-  Mar: 8200000,
-  Apr: 12600000,
-  Mag: 6400000,
-  Giu: 9800000,
-  Lug: 14900000,
-  Ago: 4200000,
-  Set: 8000000,
-  Ott: 11000000,
-  Nov: 9500000,
-  Dic: 12300000,
+const fullData: Record<string, { revenue: number, expenses: number }> = {
+  gen: { revenue: 5425866.58, expenses: 4137492.34 },
+  feb: { revenue: 7183452.12, expenses: 7298641.77 },
+  mar: { revenue: 8247389.45, expenses: 6584731.22 },
+  apr: { revenue: 12637814.90, expenses: 10238472.66 },
+  mag: { revenue: 6482117.33, expenses: 6073598.89 },
+  giu: { revenue: 9874225.78, expenses: 9561837.41 },
+  lug: { revenue: 14932487.55, expenses: 13087643.88 },
+  ago: { revenue: 4283519.66, expenses: 4527184.20 },
+  set: { revenue: 8046732.44, expenses: 7498211.95 },
+  ott: { revenue: 11083951.27, expenses: 10574839.55 },
+  nov: { revenue: 9573812.98, expenses: 9047366.11 },
+  dic: { revenue: 12358491.62, expenses: 12517943.77 },
 };
 
 // Get the last 6 months dinamically
@@ -55,7 +56,7 @@ for (let i = 5; i >= 0; i--) {
   const month = allMonths[idx].short;
   last6Months.push({
     month,
-    revenue: fullData[month] || 0,
+    revenue: fullData[month].revenue || 0,
   });
 }
 
@@ -83,6 +84,16 @@ function MonthlyRevenueChart() {
   }
 
   useEffect(() => {
+    const unknownData: string | null = localStorage.getItem("hospitalData");
+    const savedData: hospitalShape = unknownData ? JSON.parse(unknownData) : {};
+
+    localStorage.setItem("hospitalData", JSON.stringify({
+      ...savedData,
+      finance: {
+        monthlyCashFlow: fullData
+      }
+    }));
+
     handleResize();
     window.addEventListener("resize", handleResize);
 

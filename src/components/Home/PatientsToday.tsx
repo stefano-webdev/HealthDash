@@ -19,6 +19,9 @@ interface hospitalShape {
     notificationsToday?: DailyNotifications,
     staffList?: StaffListType,
     patientsList?: PatientsListType
+    finance?: {
+        monthlyCashFlow: Record<string, { revenue: number, expenses: number }>
+    }
 }
 
 function PatientsToday() {

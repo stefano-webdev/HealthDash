@@ -128,6 +128,10 @@
         font-size: 18px;
     }
 
+    body .cashFlowItem p:nth-child(1) {
+        font-size: 30px;
+    }
+
     body .confirmMessageCont {
         width: 320px;
     }
