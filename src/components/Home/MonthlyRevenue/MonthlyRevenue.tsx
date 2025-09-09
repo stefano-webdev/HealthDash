@@ -190,7 +190,7 @@ function MonthlyRevenueChart() {
           </BarChart>
         </ResponsiveContainer>
       </div>
-      <small id="lastMonths">(Ultimi 6 mesi)</small>
+      <small id="lastMonthsHome">(Ultimi 6 mesi)</small>
     </div>
   );
 }

@@ -81,7 +81,7 @@ function RecoveryChart() {
               data={data}
               margin={{ top: 20, right: 23, bottom: 20, left: -6 }}>
               <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="day" tick={{ fontSize: fontSizeXYTooltip, fill: "black" }} padding={{ left: 20 }} />
+              <XAxis dataKey="day" tick={{ fontSize: fontSizeXYTooltip, fill: "black" }} padding={{ left: 15 }} />
               <YAxis
                 domain={[0, 100]}
                 tick={{ fontSize: fontSizeXYTooltip, fill: "black" }}
@@ -89,13 +89,13 @@ function RecoveryChart() {
                 padding={{ bottom: 20 }} />
               <Tooltip
                 contentStyle={{
-                  border: '2px solid black', 
+                  border: '2px solid black',
                   borderRadius: '8px',
                   backgroundColor: 'white',
                   boxShadow: "0px 0px 10px 1px #0000009f",
                   fontSize: fontSizeXYTooltip
                 }}
-                labelStyle={{ fontSize: fontSizeXYTooltip }} 
+                labelStyle={{ fontSize: fontSizeXYTooltip }}
                 formatter={(value: number) => [`Pazienti guariti: ${value}%`]}
                 labelFormatter={(label: string) => {
                   const daysFull: Record<string, string> = {
@@ -133,7 +133,6 @@ function RecoveryChart() {
                 isAnimationActive={visibleChart}
                 animationDuration={2100}
               />
-
             </LineChart>
           </ResponsiveContainer>
         </div>

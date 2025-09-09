@@ -25,10 +25,11 @@ function FinanceOverview() {
     }, []);
 
     return (
-        <div id="financeOverviewCont" className="boxStyle">
-            <div className='titleBox'>
-                <svg className="box" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
-                    <path d="M169.3 256C196.8 163.5 282.5 96 384 96L448 96C465.7 96 480 110.3 480 
+        <div id='financeOverviewMainCont'>
+            <div id="financeOverviewCont" className="boxStyle">
+                <div className='titleBox'>
+                    <svg className="box" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                        <path d="M169.3 256C196.8 163.5 282.5 96 384 96L448 96C465.7 96 480 110.3 480 
                         128C480 145.7 465.7 160 448 160L384 160C318.4 160 262 199.5 237.3 256L368 256C381.3 
                         256 392 266.7 392 280C392 293.3 381.3 304 368 304L224.8 304C224.3 309.3 224 314.6 
                         224 320C224 325.4 224.3 330.7 224.8 336L368 336C381.3 336 392 346.7 392 360C392 
@@ -37,21 +38,22 @@ function FinanceOverview() {
                         384L136 384C122.7 384 112 373.3 112 360C112 346.7 122.7 336 136 336L160.6 336C159.9 
                         325.5 159.9 314.5 160.6 304L136 304C122.7 304 112 293.3 112 280C112 266.7 122.7 256 
                         136 256L169.3 256z" />
-                </svg>
-                <h3 className='box'>Panoramica economica</h3>
-            </div>
-            <div id="cashFlowCont">
-                <div className="cashFlowItem">
-                    <p>{cashFlow?.revenue.toLocaleString("it-IT")} €</p>
-                    <p>Entrate mensili</p>
+                    </svg>
+                    <h3 className='box'>Panoramica economica</h3>
                 </div>
-                <div className="cashFlowItem">
-                    <p>{cashFlow?.expenses.toLocaleString("it-IT")} €</p>
-                    <p>Uscite mensili</p>
-                </div>
-                <div className="cashFlowItem">
-                    <p>{cashFlow?.balance.toLocaleString("it-IT")} €</p>
-                    <p>Saldo attuale</p>
+                <div id="cashFlowCont">
+                    <div className="cashFlowItem">
+                        <p>{cashFlow?.revenue.toLocaleString("it-IT")} €</p>
+                        <p>Entrate mensili</p>
+                    </div>
+                    <div className="cashFlowItem">
+                        <p>{cashFlow?.expenses.toLocaleString("it-IT")} €</p>
+                        <p>Uscite mensili</p>
+                    </div>
+                    <div className="cashFlowItem">
+                        <p>{cashFlow?.balance.toLocaleString("it-IT")} €</p>
+                        <p>Saldo attuale</p>
+                    </div>
                 </div>
             </div>
             <small id='dataWarning'>Le cifre di entrate e uscite mensili si riferiscono al mese precedente rispetto a quello attuale.</small>

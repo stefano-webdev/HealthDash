@@ -10,6 +10,14 @@
         max-width: 280px;
     }
 
+    body h3.box {
+        font-size: 18px;
+    }
+
+    body .cashFlowItem p:nth-child(1) {
+        font-size: 26px;
+    }
+
     body .confirmMessageCont {
         width: 185px;
     }
@@ -74,6 +82,10 @@
         padding: 33px 15px;
     }
 
+    body #mainContainer {
+        margin: 50px 30px 0px 30px;
+    }
+
     body .flexGroup {
         flex-direction: row;
         flex-wrap: wrap;
@@ -89,7 +101,12 @@
         min-width: 569px;
     }
 
-    body div.boxStyle {
+    body #financeChartMainCont {
+        min-width: 569px;
+    }
+
+    body div.boxStyle,
+    body #financeOverviewMainCont{
         margin: 0px;
     }
 
@@ -336,7 +353,8 @@
     }
 
     body #recoveryMainCont,
-    body #revenueMainCont {
+    body #revenueMainCont,
+    body #financeChartMainCont {
         min-width: auto;
         width: clamp(390px, 33vw, 500px);
     }

@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import FinanceOverview from "../FinanceOverview/FinanceOverview.tsx";
+import FinanceChart from "../FinanceChart/FinanceChart.tsx";
 
 function Finance() {
     // Scroll to top on component mount
@@ -28,6 +29,7 @@ function Finance() {
             <div className="routeCont">
                 <div className='flexGroup'>
                     <FinanceOverview />
+                    <FinanceChart />
                 </div>
 
                 <div className='flexGroup'>

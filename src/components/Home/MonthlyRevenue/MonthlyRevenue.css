@@ -2,7 +2,7 @@ div#revenueCont svg {
     outline: none;
 }
 
-small#lastMonths {
+small#lastMonthsHome {
     display: block;
     width: fit-content;
     margin: auto;
