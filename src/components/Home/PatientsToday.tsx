@@ -4,6 +4,7 @@ import type { DailyAppointments } from "./Appointments/Appointments.tsx";
 import type { DailyNotifications } from "./Notifications/Notifications.tsx";
 import type {StaffListType} from "../Staff/StaffList/StaffList.tsx";
 import type { PatientsListType } from "../Patients/PatientsList/PatientsList.tsx";
+import type { Transaction } from "../Finance/TransactionList/TransactionList.tsx";
 
 type Dates = {
     HomeDate?: string,
@@ -21,6 +22,7 @@ interface hospitalShape {
     patientsList?: PatientsListType
     finance?: {
         monthlyCashFlow: Record<string, { revenue: number, expenses: number }>
+        invoices?: Transaction[]
     }
 }
 

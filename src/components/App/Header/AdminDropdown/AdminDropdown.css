@@ -18,13 +18,13 @@
 #adminButton svg {
     width: 11px;
     stroke: white;
-    transition: transform 0.2s ease;
+    transition: transform 0.3s ease;
     will-change: transform;
     padding-bottom: 3px;
 }
 
-.rotate180Admin {
-    transform: rotate(180deg) translateY(-5px);
+.rotate180 {
+    transform: rotate(180deg) translateY(-2px);
 }
 
 /* Dropdown */

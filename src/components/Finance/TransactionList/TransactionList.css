@@ -1,0 +1,84 @@
+#transactionListCont table tbody {
+    cursor: auto;
+}
+
+#transactionFiltersCont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 13px;
+    width: fit-content;
+    margin: 0px auto 30px auto;
+}
+
+#transactionFiltersCont button {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.435);
+    border-radius: 10px;
+    padding: 4px 7px;
+    font-size: 13px;
+    color: black;
+}
+
+#transactionFiltersCont svg.check {
+    width: 20px;
+    fill: white;
+    padding: 0px;
+    opacity: 0;
+}
+
+#transactionFiltersCont svg.checkActive {
+    opacity: 1;
+}
+
+#transactionFiltersCont button.buttonFiltersActive {
+    outline: 2px solid rgb(84, 155, 255);
+}
+
+#transactionFiltersCont svg {
+    width: 11px;
+    stroke: black;
+    padding-bottom: 3px;
+    transition: transform 0.25s ease;
+    will-change: transform;
+}
+
+.dropdownCont {
+    position: relative;
+}
+
+.dropdownFiltersCont {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.25s ease;
+    z-index: 1;
+    width: 258px;
+    border-radius: 18px;
+    background-color: #504d4df9;
+    pointer-events: none;
+}
+
+.dropdownFiltersCont.fadeDownFilters {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.dropdownFiltersCont div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    color: #FAF7F7;
+    border-bottom: 0.7px solid rgba(255, 255, 255, 0.274);
+    padding: 15px 0px;
+    cursor: pointer;
+    padding-right: 27px;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+}

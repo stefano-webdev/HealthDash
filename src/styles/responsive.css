@@ -22,17 +22,17 @@
         width: 185px;
     }
 
-    /* Route: /staff */
-    body #staffListCont table tbody tr td,
-    body #patientsListCont table tbody tr td {
+    body table tbody tr td {
         font-size: 12px;
     }
 
-    body #staffListCont table th,
-    body #staffListCont table td,
-    body #patientsListCont table th,
-    body #patientsListCont table td {
-        padding: 0px 4px 3px 4px;
+    body thead th {
+        font-size: 15px;
+    }
+
+    body table th,
+    body table td {
+        padding: 3px 4px;
     }
 
     body #staffListCont input#staffFilterInput,
@@ -105,8 +105,7 @@
         min-width: 569px;
     }
 
-    body div.boxStyle,
-    body #financeOverviewMainCont{
+    body div.boxStyle {
         margin: 0px;
     }
 
@@ -220,19 +219,38 @@
         font-size: 17px;
     }
 
+    body #transactionFiltersCont button {
+        font-size: 15px;
+    }
+
+    body #transactionFiltersCont svg {
+        width: 13px;
+    }
+
     body #staffListCont input#staffFilterInput,
     body #patientsListCont input#patientsFilterInput {
         width: 300px;
     }
 
-    body #staffListCont table thead th,
-    body #patientsListCont table thead th {
+    body table thead th {
         font-size: 18px;
     }
 
-    body #staffListCont table tbody tr td,
-    body #patientsListCont table tbody tr td {
+    body table tbody tr td {
         font-size: 15px;
+        padding-top: 40px;
+    }
+
+    body #transactionListCont table tbody tr td:nth-child(2) {
+        width: 125px;
+    }
+
+    body #transactionListCont {
+        height: 400px;
+    }
+
+    body #transactionListCont .tableWrapper {
+        height: 250px;
     }
 
     body p#employeeDetails,
@@ -349,7 +367,11 @@
     }
 
     body div.boxStyle {
-        width: clamp(390px, 33vw, 470px);
+        width: clamp(390px, 33vw, 410px);
+    }
+
+    body #transactionListCont {
+        width: clamp(390px, 33vw, 500px);
     }
 
     body #recoveryMainCont,
@@ -358,8 +380,6 @@
         min-width: auto;
         width: clamp(390px, 33vw, 500px);
     }
-
-    /* Staff */
 
     body #staffListCont {
         min-height: auto;
@@ -397,8 +417,7 @@
 
 @media (min-width: 1300px) and (pointer: fine) {
 
-    body #staffListCont table tbody tr td,
-    body #patientsListCont table tbody tr td {
+    body table tbody tr td {
         font-size: 16px;
     }
 }

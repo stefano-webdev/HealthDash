@@ -38,8 +38,7 @@
     border-color: #2e7cd0;
 }
 
-#staffListCont table,
-#patientsListCont table {
+table {
     table-layout: fixed;
     width: 100%;
     margin: auto;
@@ -47,14 +46,25 @@
     will-change: transform;
 }
 
-#staffListCont .tableWrapper,
-#patientsListCont .tableWrapper {
+#transactionListCont table  {
+    table-layout: auto;
+}
+
+#transactionListCont table tbody tr td:nth-child(2) {
+    width: 103px;
+    text-align: center;
+}
+
+#transactionListCont table tbody tr td:nth-child(3) {
+    text-align: center;
+}
+
+.tableWrapper {
     height: 210px;
     overflow-y: auto;
 }
 
-#staffListCont table thead th,
-#patientsListCont table thead th {
+thead th {
     position: sticky;
     top: 0;
     background-color: var(--mainRed);
@@ -62,32 +72,26 @@
     font-size: 16px;
 }
 
-#staffListCont table tbody,
-#patientsListCont table tbody {
+table tbody {
     cursor: pointer;
 }
 
-#staffListCont table th,
-#staffListCont table td,
-#patientsListCont table th,
-#patientsListCont table td {
-    padding: 0px 9px 3px 9px;
+table th,
+table td {
+    padding: 3px 9px;
 }
 
-#staffListCont table tbody tr:first-child td,
-#patientsListCont table tbody tr:first-child td {
+table tbody tr:first-child td{
     padding-top: 12px;
 }
 
-#staffListCont table tbody tr td,
-#patientsListCont table tbody tr td {
-    padding-top: 28px;
+table tbody tr td {
+    padding-top: 32px;
     font-size: 13px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.227);
 }
 
-#staffListCont tr.selectedRow,
-#patientsListCont tr.selectedRow {
+tr.selectedRow {
     background-color: #cce5ff;
     font-style: italic;
     transition: background-color 0.3s ease-in-out; 

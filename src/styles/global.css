@@ -20,6 +20,12 @@ a {
     cursor: pointer;
 }
 
+button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
 a#torna_portfolio {
     display: inline-block;
     margin: 10px 0px 40px 10px;
@@ -67,7 +73,7 @@ html {
 }
 
 body {
-    min-width: 330px;
+    min-width: 320px;
     max-width: 1550px;
     background-color: white;
     margin: 0px auto;
@@ -100,19 +106,19 @@ div.currentRoute h2 {
 .routeCont {
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 4rem;
 }
 
 .routeCRUD {
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 4rem;
 }
 
 .flexGroup {
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 4rem;
 }
 
 svg.box {
@@ -136,7 +142,7 @@ div.boxStyle {
     background-color: var(--backgroundBox);
     border-radius: 5px;
     border: 1px solid rgba(0, 0, 0, 0.28);
-    width: clamp(340px, 78vw, 430px);
+    width: clamp(340px, 78vw, 410px);
 }
 
 #patientsTodayCont,

@@ -1,0 +1,650 @@
+[
+    {
+        "id": 1,
+        "month": "January",
+        "data": [
+            {
+                "id": 2,
+                "date": "02/01",
+                "amount": 12500.75,
+                "description": "Servizio smaltimento farmaci scaduti"
+            },
+            {
+                "id": 3,
+                "date": "05/01",
+                "amount": 5423.45,
+                "description": "Manutenzione generatori di emergenza"
+            },
+            {
+                "id": 4,
+                "date": "08/01",
+                "amount": 78000.22,
+                "description": "Pagamento straordinari personale amministrativo"
+            },
+            {
+                "id": 5,
+                "date": "10/01",
+                "amount": 3200.58,
+                "description": "Servizio lavanderia e sanificazione divise"
+            },
+            {
+                "id": 6,
+                "date": "15/01",
+                "amount": 45000.35,
+                "description": "Acquisto di soluzioni disinfettanti e detergenti"
+            },
+            {
+                "id": 7,
+                "date": "20/01",
+                "amount": 98000.14,
+                "description": "Ordine apparecchi per monitoraggio pressione sanguigna"
+            },
+            {
+                "id": 8,
+                "date": "25/01",
+                "amount": 21500.86,
+                "description": "Installazione nuovo sistema antincendio"
+            },
+            {
+                "id": 9,
+                "date": "28/01",
+                "amount": 6700.97,
+                "description": "Acquisto stampanti e toner uffici amministrativi"
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "month": "February",
+        "data": [
+            {
+                "id": 11,
+                "date": "03/02",
+                "amount": 14320.55,
+                "description": "Riparazione porte automatiche pronto soccorso"
+            },
+            {
+                "id": 12,
+                "date": "06/02",
+                "amount": 6100.24,
+                "description": "Fornitura pasti per pazienti ricoverati"
+            },
+            {
+                "id": 13,
+                "date": "09/02",
+                "amount": 82000.53,
+                "description": "Pagamento corsi ECM per medici"
+            },
+            {
+                "id": 14,
+                "date": "12/02",
+                "amount": 4500.75,
+                "description": "Riparazione porte automatiche pronto soccorso"
+            },
+            {
+                "id": 15,
+                "date": "16/02",
+                "amount": 49000.58,
+                "description": "Intervento tecnico impianto ossigeno terapia intensiva"
+            },
+            {
+                "id": 16,
+                "date": "18/02",
+                "amount": 92500.21,
+                "description": "Rimborso assicurativo per ricoveri"
+            },
+            {
+                "id": 17,
+                "date": "22/02",
+                "amount": 22000.95,
+                "description": "Acquisto defibrillatori portatili"
+            },
+            {
+                "id": 18,
+                "date": "27/02",
+                "amount": 7300.42,
+                "description": "Rinnovo contratto assistenza informatica"
+            }
+        ]
+    },
+    {
+        "id": 19,
+        "month": "March",
+        "data": [
+            {
+                "id": 20,
+                "date": "02/03",
+                "amount": 13850.75,
+                "description": "Fornitura guanti, mascherine e camici monouso"
+            },
+            {
+                "id": 21,
+                "date": "05/03",
+                "amount": 5750.24,
+                "description": "Spese legali e amministrative"
+            },
+            {
+                "id": 22,
+                "date": "08/03",
+                "amount": 79000.28,
+                "description": "Fattura forniture farmaceutiche"
+            },
+            {
+                "id": 23,
+                "date": "11/03",
+                "amount": 4800.65,
+                "description": "Acquisto defibrillatori portatili"
+            },
+            {
+                "id": 24,
+                "date": "15/03",
+                "amount": 46500.42,
+                "description": "Pagamento manutenzione apparecchiature diagnostiche"
+            },
+            {
+                "id": 25,
+                "date": "19/03",
+                "amount": 76000.55,
+                "description": "Rimborso assicurativo per ricoveri"
+            },
+            {
+                "id": 26,
+                "date": "22/03",
+                "amount": 23000.83,
+                "description": "Ordine kit pronto soccorso e medicinali"
+            },
+            {
+                "id": 27,
+                "date": "28/03",
+                "amount": 7100.55,
+                "description": "Acquisto letti elettrici per terapia intensiva"
+            }
+        ]
+    },
+    {
+        "id": 28,
+        "month": "April",
+        "data": [
+            {
+                "id": 29,
+                "date": "03/04",
+                "amount": 15020.32,
+                "description": "Pagamento ticket visite specialistiche"
+            },
+            {
+                "id": 30,
+                "date": "06/04",
+                "amount": 6325.53,
+                "description": "Installazione nuove telecamere di sorveglianza"
+            },
+            {
+                "id": 31,
+                "date": "09/04",
+                "amount": 83000.54,
+                "description": "Fattura forniture farmaceutiche"
+            },
+            {
+                "id": 32,
+                "date": "12/04",
+                "amount": 5000.75,
+                "description": "Rinnovo contratto vigilanza notturna"
+            },
+            {
+                "id": 33,
+                "date": "16/04",
+                "amount": 48500.25,
+                "description": "Riparazione impianto climatizzazione e riscaldamento"
+            },
+            {
+                "id": 34,
+                "date": "19/04",
+                "amount": 86530.44,
+                "description": "Rimborso assicurativo per ricoveri"
+            },
+            {
+                "id": 35,
+                "date": "23/04",
+                "amount": 22500.83,
+                "description": "Spese carburante ambulanze e mezzi di soccorso"
+            },
+            {
+                "id": 36,
+                "date": "28/04",
+                "amount": 7500.65,
+                "description": "Riparazione ascensore e manutenzione impianti"
+            }
+        ]
+    },
+    {
+        "id": 37,
+        "month": "May",
+        "data": [
+            {
+                "id": 38,
+                "date": "02/05",
+                "amount": 14250.45,
+                "description": "Aggiornamento hardware server ospedalieri"
+            },
+            {
+                "id": 39,
+                "date": "05/05",
+                "amount": 6100.75,
+                "description": "Pagamento per consulenza medica"
+            },
+            {
+                "id": 40,
+                "date": "08/05",
+                "amount": 80500.32,
+                "description": "Fattura forniture farmaceutiche"
+            },
+            {
+                "id": 41,
+                "date": "11/05",
+                "amount": 4750.63,
+                "description": "Rimborso spese laboratorio analisi"
+            },
+            {
+                "id": 42,
+                "date": "15/05",
+                "amount": 47000.24,
+                "description": "Pagamento manutenzione apparecchiature diagnostiche"
+            },
+            {
+                "id": 43,
+                "date": "19/05",
+                "amount": 97500.12,
+                "description": "Rimborso assicurativo per ricoveri"
+            },
+            {
+                "id": 44,
+                "date": "22/05",
+                "amount": 22700.83,
+                "description": "Stipendi personale infermieristico (parziale)"
+            },
+            {
+                "id": 45,
+                "date": "28/05",
+                "amount": 7300.55,
+                "description": "Contributo assicurativo responsabilità civile"
+            }
+        ]
+    },
+    {
+        "id": 46,
+        "month": "June",
+        "data": [
+            {
+                "id": 47,
+                "date": "01/06",
+                "amount": 14800.75,
+                "description": "Pagamento ticket visite specialistiche"
+            },
+            {
+                "id": 48,
+                "date": "04/06",
+                "amount": 6250.69,
+                "description": "Rifornimento ossigeno e gas medicali"
+            },
+            {
+                "id": 49,
+                "date": "07/06",
+                "amount": 81000.43,
+                "description": "Fattura forniture farmaceutiche"
+            },
+            {
+                "id": 50,
+                "date": "10/06",
+                "amount": 4900.25,
+                "description": "Manutenzione ascensori e impianti di sicurezza"
+            },
+            {
+                "id": 51,
+                "date": "14/06",
+                "amount": 48000.54,
+                "description": "Pagamento manutenzione apparecchiature obsolete"
+            },
+            {
+                "id": 52,
+                "date": "18/06",
+                "amount": 93500.12,
+                "description": "Rimborso assicurativo per ricoveri"
+            },
+            {
+                "id": 53,
+                "date": "21/06",
+                "amount": 22900.84,
+                "description": "Acquisto software gestione turni"
+            },
+            {
+                "id": 54,
+                "date": "27/06",
+                "amount": 7450.65,
+                "description": "Servizio catering per mensa dipendenti"
+            }
+        ]
+    },
+    {
+        "id": 55,
+        "month": "July",
+        "data": [
+            {
+                "id": 56,
+                "date": "02/07",
+                "amount": 15320.42,
+                "description": "Contributo assicurativo responsabilità civile"
+            },
+            {
+                "id": 57,
+                "date": "05/07",
+                "amount": 6400.75,
+                "description": "Spese per pulizia straordinaria reparti"
+            },
+            {
+                "id": 58,
+                "date": "08/07",
+                "amount": 82500.55,
+                "description": "Fattura forniture farmaceutiche"
+            },
+            {
+                "id": 59,
+                "date": "12/07",
+                "amount": 5050.62,
+                "description": "Acquisto nuove carrozzine per pazienti"
+            },
+            {
+                "id": 60,
+                "date": "15/07",
+                "amount": 48750.26,
+                "description": "Pagamento manutenzione apparecchiature diagnostiche"
+            },
+            {
+                "id": 61,
+                "date": "19/07",
+                "amount": 89020.43,
+                "description": "Rimborso assicurativo per ricoveri"
+            },
+            {
+                "id": 62,
+                "date": "23/07",
+                "amount": 23250.84,
+                "description": "Compenso specialisti consulenti esterni"
+            },
+            {
+                "id": 63,
+                "date": "28/07",
+                "amount": 7600.55,
+                "description": "Servizio lavanderia e sterilizzazione camici"
+            }
+        ]
+    },
+    {
+        "id": 64,
+        "month": "August",
+        "data": [
+            {
+                "id": 65,
+                "date": "03/08",
+                "amount": 14500.35,
+                "description": "Pagamento ticket visite specialistiche"
+            },
+            {
+                "id": 66,
+                "date": "06/08",
+                "amount": 6180.54,
+                "description": "Pagamento per consulenza medica"
+            },
+            {
+                "id": 67,
+                "date": "09/08",
+                "amount": 79500.54,
+                "description": "Fattura forniture farmaceutiche"
+            },
+            {
+                "id": 68,
+                "date": "12/08",
+                "amount": 4850.25,
+                "description": "Rimborso spese laboratorio analisi"
+            },
+            {
+                "id": 69,
+                "date": "16/08",
+                "amount": 47250.48,
+                "description": "Pagamento manutenzione apparecchiature diagnostiche"
+            },
+            {
+                "id": 70,
+                "date": "19/08",
+                "amount": 87520.15,
+                "description": "Rimborso assicurativo per ricoveri"
+            },
+            {
+                "id": 71,
+                "date": "23/08",
+                "amount": 22850.75,
+                "description": "Acquisto apparecchiature di laboratorio"
+            },
+            {
+                "id": 72,
+                "date": "28/08",
+                "amount": 7350.62,
+                "description": "Acquisto materiali monouso e farmaci"
+            }
+        ]
+    },
+    {
+        "id": 73,
+        "month": "September",
+        "data": [
+            {
+                "id": 74,
+                "date": "02/09",
+                "amount": 15020.55,
+                "description": "Pagamento ticket visite specialistiche"
+            },
+            {
+                "id": 75,
+                "date": "05/09",
+                "amount": 6350.75,
+                "description": "Servizio di smaltimento rifiuti sanitari"
+            },
+            {
+                "id": 76,
+                "date": "08/09",
+                "amount": 82000.54,
+                "description": "Manutenzione ascensori e impianti di sicurezza"
+            },
+            {
+                "id": 77,
+                "date": "12/09",
+                "amount": 5000.42,
+                "description": "Rimborso spese laboratorio analisi"
+            },
+            {
+                "id": 78,
+                "date": "15/09",
+                "amount": 48500.36,
+                "description": "Pagamento manutenzione apparecchiature diagnostiche"
+            },
+            {
+                "id": 79,
+                "date": "19/09",
+                "amount": 96040.12,
+                "description": "Rimborso assicurativo per ricoveri"
+            },
+            {
+                "id": 80,
+                "date": "23/09",
+                "amount": 23100.86,
+                "description": "Rinnovo contratto di vigilanza e sicurezza"
+            },
+            {
+                "id": 81,
+                "date": "28/09",
+                "amount": 7550.69,
+                "description": "Acquisto materiali monouso e farmaci"
+            }
+        ]
+    },
+    {
+        "id": 82,
+        "month": "October",
+        "data": [
+            {
+                "id": 83,
+                "date": "01/10",
+                "amount": 15250.63,
+                "description": "Pagamento ticket visite specialistiche"
+            },
+            {
+                "id": 84,
+                "date": "04/10",
+                "amount": 6400.85,
+                "description": "Acquisto apparecchiature di laboratorio"
+            },
+            {
+                "id": 85,
+                "date": "07/10",
+                "amount": 82550.43,
+                "description": "Fattura forniture farmaceutiche"
+            },
+            {
+                "id": 86,
+                "date": "11/10",
+                "amount": 5050.25,
+                "description": "Rimborso spese laboratorio analisi"
+            },
+            {
+                "id": 87,
+                "date": "14/10",
+                "amount": 48750.45,
+                "description": "Pagamento manutenzione apparecchiature diagnostiche"
+            },
+            {
+                "id": 88,
+                "date": "18/10",
+                "amount": 96500.12,
+                "description": "Rimborso assicurativo per ricoveri"
+            },
+            {
+                "id": 89,
+                "date": "22/10",
+                "amount": 23250.95,
+                "description": "Pagamento bollette energia e utenze"
+            },
+            {
+                "id": 90,
+                "date": "27/10",
+                "amount": 7600.75,
+                "description": "Spese amministrative e notarili"
+            }
+        ]
+    },
+    {
+        "id": 91,
+        "month": "November",
+        "data": [
+            {
+                "id": 92,
+                "date": "02/11",
+                "amount": 14750.35,
+                "description": "Pagamento ticket visite specialistiche"
+            },
+            {
+                "id": 93,
+                "date": "05/11",
+                "amount": 6200.64,
+                "description": "Pagamento per consulenza medica"
+            },
+            {
+                "id": 94,
+                "date": "08/11",
+                "amount": 81000.54,
+                "description": "Fattura forniture farmaceutiche"
+            },
+            {
+                "id": 95,
+                "date": "12/11",
+                "amount": 4900.45,
+                "description": "Rimborso spese laboratorio analisi"
+            },
+            {
+                "id": 96,
+                "date": "15/11",
+                "amount": 48250.25,
+                "description": "Pagamento manutenzione apparecchiature diagnostiche"
+            },
+            {
+                "id": 97,
+                "date": "19/11",
+                "amount": 91500.54,
+                "description": "Rimborso assicurativo per ricoveri"
+            },
+            {
+                "id": 98,
+                "date": "23/11",
+                "amount": 22950.85,
+                "description": "Consulenza specialistica esterna"
+            },
+            {
+                "id": 99,
+                "date": "28/11",
+                "amount": 7400.55,
+                "description": "Acquisto materiali monouso e farmaci"
+            }
+        ]
+    },
+    {
+        "id": 100,
+        "month": "December",
+        "data": [
+            {
+                "id": 101,
+                "date": "01/12",
+                "amount": 15500.45,
+                "description": "Pagamento ticket visite specialistiche"
+            },
+            {
+                "id": 102,
+                "date": "04/12",
+                "amount": 6500.75,
+                "description": "Pagamento per consulenza medica"
+            },
+            {
+                "id": 103,
+                "date": "07/12",
+                "amount": 83500.87,
+                "description": "Fattura forniture farmaceutiche"
+            },
+            {
+                "id": 104,
+                "date": "11/12",
+                "amount": 5100.65,
+                "description": "Rimborso spese laboratorio analisi"
+            },
+            {
+                "id": 105,
+                "date": "14/12",
+                "amount": 49050.36,
+                "description": "Riparazione apparecchiatura radiologica"
+            },
+            {
+                "id": 106,
+                "date": "18/12",
+                "amount": 92430.54,
+                "description": "Rimborso assicurativo per ricoveri"
+            },
+            {
+                "id": 107,
+                "date": "22/12",
+                "amount": 23400.87,
+                "description": "Manutenzione impianti elettrici e idraulici"
+            },
+            {
+                "id": 108,
+                "date": "28/12",
+                "amount": 7700.65,
+                "description": "Acquisto materiali monouso e farmaci"
+            }
+        ]
+    }
+]

@@ -11,7 +11,7 @@ function AdminDropdown({ open, onToggle }: AdminDropdownProps) {
             <div id="adminWrapper">
                 <button onClick={onToggle} id="adminButton" aria-expanded={open} aria-controls="adminMenu">
                     Admin
-                    <svg viewBox="0 0 200 200" className={`${open ? 'rotate180Admin' : ''}`}>
+                    <svg viewBox="0 0 200 200" className={`${open ? 'rotate180' : ''}`}>
                         <polyline
                             points="15,110 100,180 185,110"
                             fill="none"

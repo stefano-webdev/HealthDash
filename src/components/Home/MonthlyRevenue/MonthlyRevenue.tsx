@@ -1,5 +1,4 @@
 import "./MonthlyRevenue.css";
-import type { hospitalShape } from "../PatientsToday.tsx";
 import { useState, useEffect, useRef } from "react";
 import {
   BarChart,
@@ -84,16 +83,6 @@ function MonthlyRevenueChart() {
   }
 
   useEffect(() => {
-    const unknownData: string | null = localStorage.getItem("hospitalData");
-    const savedData: hospitalShape = unknownData ? JSON.parse(unknownData) : {};
-
-    localStorage.setItem("hospitalData", JSON.stringify({
-      ...savedData,
-      finance: {
-        monthlyCashFlow: fullData
-      }
-    }));
-
     handleResize();
     window.addEventListener("resize", handleResize);
 
@@ -196,3 +185,4 @@ function MonthlyRevenueChart() {
 }
 
 export default MonthlyRevenueChart;
+export {fullData, allMonths};
