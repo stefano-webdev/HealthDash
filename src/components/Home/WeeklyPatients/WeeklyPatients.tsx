@@ -30,19 +30,18 @@ const data: DataPoint[] = [
 function RecoveryChart() {
   const [visibleChart, setVisibleChart] = useState(false);
   const chartRef = useRef<HTMLDivElement>(null);
-  const [fontSizeXYTooltip, setFontSizeXYTooltip] = useState(14);
+  const [fontSizeXYTooltip, setFontSizeXYTooltip] = useState(13);
   const [fontSizeLegend, setFontSizeLegend] = useState(17);
   const [chartHeight, setChartHeight] = useState(300);
   const [minHeight, setMinHeight] = useState(window.innerWidth <= 549 ? 300 : 350);
 
   function handleResize() {
-    // Smartphones
     if (window.innerWidth <= 649) {
-      setFontSizeXYTooltip(14);
+      setFontSizeXYTooltip(13);
       setFontSizeLegend(17);
-      setChartHeight(300);
+      setChartHeight(310);
       setMinHeight(300);
-    } else { // Tablet and desktop
+    } else {
       setFontSizeXYTooltip(17);
       setFontSizeLegend(20);
       setChartHeight(350);
@@ -74,7 +73,7 @@ function RecoveryChart() {
 
   return (
     <>
-      <div id="recoveryMainCont">
+      <div id="recoveryMainCont" className="resize">
         <div id="recoveryCont" ref={chartRef} style={{ width: "100%", maxWidth: "500px", margin: "0 auto", height: chartHeight, minHeight: minHeight }}>
           <ResponsiveContainer width="100%" height="100%">
             <LineChart
@@ -116,7 +115,7 @@ function RecoveryChart() {
                   display: "flex",
                   justifyContent: "center",
                   width: "100%",
-                  left: 0,
+                  left: 5,
                   bottom: 15,
                   padding: 0,
                   margin: 0,

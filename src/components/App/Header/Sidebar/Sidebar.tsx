@@ -110,7 +110,7 @@ function Sidebar({ open, onToggle, changeRoute }: SidebarProps) {
 
                     {/* Reports */}
                     <li>
-                        <NavLink to="/reports" className={({ isActive }) =>
+                        <NavLink to="/report" className={({ isActive }) =>
                             isActive ? "activeLink" : "regularLink"}>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
                                 <path d="M96 96C113.7 96 128 110.3 128 128L128 464C128 472.8 

@@ -50,7 +50,7 @@ const fullData: Record<string, { revenue: number, expenses: number }> = {
 const today = new Date();
 const currentMonthIndex = today.getMonth();
 const last6Months: RevenueData[] = [];
-for (let i = 5; i >= 0; i--) {
+for (let i = 6; i >= 1; i--) {
   const idx = (currentMonthIndex - i + 12) % 12;
   const month = allMonths[idx].short;
   last6Months.push({
@@ -62,19 +62,18 @@ for (let i = 5; i >= 0; i--) {
 function MonthlyRevenueChart() {
   const [visibleChart, setVisibleChart] = useState(false);
   const chartRef = useRef<HTMLDivElement>(null);
-  const [fontSizeXYTooltip, setFontSizeXYTooltip] = useState(14);
+  const [fontSizeXYTooltip, setFontSizeXYTooltip] = useState(13);
   const [fontSizeLegend, setFontSizeLegend] = useState(17);
   const [chartHeight, setChartHeight] = useState(300);
   const [minHeight, setMinHeight] = useState(window.innerWidth <= 549 ? 300 : 350);
 
   function handleResize() {
-    // Smartphones
     if (window.innerWidth <= 649) {
-      setFontSizeXYTooltip(14);
+      setFontSizeXYTooltip(13);
       setFontSizeLegend(17);
-      setChartHeight(300);
+      setChartHeight(310);
       setMinHeight(300);
-    } else { // Tablet and desktop
+    } else {
       setFontSizeXYTooltip(17);
       setFontSizeLegend(20);
       setChartHeight(350);
@@ -105,13 +104,12 @@ function MonthlyRevenueChart() {
   }, []);
 
   return (
-    <div id="revenueMainCont">
+    <div id="revenueMainCont" className="resize">
       <div id="revenueCont" ref={chartRef} style={{ width: "100%", maxWidth: "500px", margin: "0 auto", height: chartHeight, minHeight: minHeight }}>
         <ResponsiveContainer width="100%" height="100%">
           <BarChart
             data={last6Months}
-            margin={{ top: 20, right: 25, bottom: 20, left: 12 }}
-          >
+            margin={{ top: 20, right: 25, bottom: 20, left: 12 }}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="month" tick={{ fontSize: fontSizeXYTooltip, fill: "black" }} padding={{ left: 20, right: 15 }} />
             <YAxis
@@ -121,7 +119,7 @@ function MonthlyRevenueChart() {
                 const milioni = v / 1000000;
                 return `€${milioni}\u00A0Mil.`;
               }}
-              padding={{ bottom: 0 }}
+              padding={{ bottom: 0.5 }}
             />
             <Tooltip
               contentStyle={{
@@ -155,8 +153,8 @@ function MonthlyRevenueChart() {
                   <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
                     <div
                       style={{
-                        width: 14,
-                        height: 14,
+                        width: window.innerWidth > 649 ? 17 : 14,
+                        height: window.innerWidth > 649 ? 17 : 14,
                         backgroundColor: "#AE3626",
                         borderRadius: "4px 4px 0 0",
                         marginRight: 6,
@@ -185,4 +183,4 @@ function MonthlyRevenueChart() {
 }
 
 export default MonthlyRevenueChart;
-export {fullData, allMonths};
+export { fullData, allMonths };

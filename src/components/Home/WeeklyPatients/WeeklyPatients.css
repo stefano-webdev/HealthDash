@@ -45,3 +45,12 @@ div#recoveryInfoCont button {
     border: none;
     background-color: transparent;
 }
+
+.recharts-default-legend li {
+  margin-right: 0px !important;
+}
+
+.recharts-default-legend li svg {
+    width: 18px;
+    height: 18px;
+}

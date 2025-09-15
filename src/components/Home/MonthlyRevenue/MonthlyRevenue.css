@@ -1,21 +1,15 @@
 div#revenueCont svg {
-    outline: none;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
 }
 
 small#lastMonthsHome {
-    display: block;
-    width: fit-content;
-    margin: auto;
-    position: relative;
-    bottom: 11px;
-    left: 17px;
-    z-index: 0;
-}
-
-g.recharts-cartesian-grid line {
-  pointer-events: all; /* permette hover e click */
-}
-
-g.recharts-cartesian-grid line:hover {
-  cursor: pointer;
+  display: block;
+  width: fit-content;
+  margin: auto;
+  position: relative;
+  bottom: 11px;
+  left: 17px;
+  z-index: 0;
 }

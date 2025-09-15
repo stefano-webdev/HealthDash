@@ -97,15 +97,7 @@
         justify-content: center;
     }
 
-    body #recoveryMainCont {
-        min-width: 569px;
-    }
-
-    body #revenueMainCont {
-        min-width: 569px;
-    }
-
-    body #financeChartMainCont {
+    body div.resize {
         min-width: 569px;
     }
 
