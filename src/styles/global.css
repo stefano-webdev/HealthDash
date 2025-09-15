@@ -1,6 +1,7 @@
 /* Global styles */
 :root {
     --mainRed: #AE3626;
+    --secondaryRed: #be2520;
     --backgroundBox: #f0f0f067;
     --scale-font: clamp(19px, 4vw, 30px);
 }
@@ -50,9 +51,7 @@ p {
     color: black;
 }
 
-input,
-label,
-button {
+input, label, button, textarea {
     font-size: 16px;
 }
 

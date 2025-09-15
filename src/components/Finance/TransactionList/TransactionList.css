@@ -1,3 +1,7 @@
+#transactionListCont {
+    min-height: 349px;
+}
+
 #transactionListCont table tbody {
     cursor: auto;
 }

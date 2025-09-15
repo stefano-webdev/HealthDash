@@ -39,6 +39,10 @@
     body #patientsListCont input#patientsFilterInput {
         width: 190px;
     }
+
+    body .dropdownFiltersCont {
+        width: 220px;
+    }
 }
 
 /* For mobile devices in landscape mode */
@@ -213,9 +217,7 @@
         left: 8px;
     }
 
-    body input,
-    body label,
-    body button {
+    body input, body label, body button, body textarea {
         font-size: 17px;
     }
 
@@ -412,6 +414,16 @@
         position: relative;
         left: 230px;
         margin: 5rem 0px 2.2rem 0px;
+    }
+
+    /* Buttons hover + active */
+    /* Finance */
+    body #saveInvoice:hover {
+        background-color: #d02528;
+    }
+
+    body #saveInvoice:active {
+        background-color: var(--secondaryRed);
     }
 }
 

@@ -2,6 +2,7 @@ import { useEffect, useState, memo } from "react";
 import FinanceOverview from "../FinanceOverview/FinanceOverview.tsx";
 import FinanceChart from "../FinanceChart/FinanceChart.tsx";
 import TransactionList from "../TransactionList/TransactionList.tsx";
+import CreateInvoice from "../CreateInvoice/CreateInvoice.tsx";
 import type { Transaction } from "../TransactionList/TransactionList.tsx";
 
 const MemoizedFinanceOverview = memo(FinanceOverview);
@@ -9,6 +10,8 @@ const MemoizedFinanceChart = memo(FinanceChart);
 
 function Finance() {
     const [transactionList, setTransactionList] = useState<Transaction[] | null>(null);
+    const [selectedOperations, setSelectedOperations] = useState<number>(4);
+    const [confirmMessage, setConfirmMessage] = useState<{ message: string, type: "success" } | null>(null);
 
     // Scroll to top on component mount
     useEffect(() => {
@@ -40,9 +43,19 @@ function Finance() {
                 </div>
 
                 <div className='flexGroup'>
-                    <TransactionList transactionList={transactionList} setTransactionList={setTransactionList} />
+                    <TransactionList transactionList={transactionList} setTransactionList={setTransactionList}
+                        selectedOperations={selectedOperations} setSelectedOperations={setSelectedOperations} />
+
+                    <CreateInvoice setTransactionList={setTransactionList}
+                        selectedOperations={selectedOperations} setConfirmMessage={setConfirmMessage} />
                 </div>
             </div>
+
+            {confirmMessage && (
+                <div className={`confirmMessageCont ${confirmMessage.type === "success" ? "positive" : ""}`}>
+                    <p>{confirmMessage.message}</p>
+                </div>
+            )}
         </>
     );
 }

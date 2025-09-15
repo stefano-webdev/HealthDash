@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import TransactionsJSON from "../Finance/FinanceTransactions.json"
+import TransactionsJSON from "../Finance/FinanceTransactions.json";
 import "./TransactionList.css";
 import type { hospitalShape } from "../../Home/PatientsToday.tsx";
 
@@ -19,13 +19,14 @@ interface TransactionsMonth {
 interface TransactionListProps {
     transactionList: Transaction[] | null;
     setTransactionList: React.Dispatch<React.SetStateAction<Transaction[] | null>>;
+    selectedOperations: number;
+    setSelectedOperations: React.Dispatch<React.SetStateAction<number>>;
 }
 
 type Menu = "lastOperations" | "lastMonths" | null;
 
-function TransactionList({ transactionList, setTransactionList }: TransactionListProps) {
+function TransactionList({ transactionList, setTransactionList, selectedOperations, setSelectedOperations }: TransactionListProps) {
     const [openMenu, setOpenMenu] = useState<Menu>(null);
-    const [selectedOperations, setSelectedOperations] = useState<number>(4);
     const months: string[] = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     const previousMonth: string = months[new Date().getMonth() - 1];
     const monthData: TransactionsMonth | undefined = TransactionsJSON.find(month => month.month === previousMonth);
@@ -47,23 +48,23 @@ function TransactionList({ transactionList, setTransactionList }: TransactionLis
     function handleSelectedOperations(operations: number) {
         setSelectedOperations(operations);
         setOpenMenu(null);
-        let monthSliced: Transaction[] | null;
-
-        if (savedData.finance?.invoices) {
-            monthSliced = savedData.finance.invoices.slice(0, operations).reverse();
-        } else {
-            monthSliced = monthData ? monthData.data.slice(-operations).reverse() : null;
-        }
-
+        const monthSliced: Transaction[] | null = savedData.finance?.invoices.slice(0, operations) ?? null;
         setTransactionList(monthSliced);
     }
 
     useEffect(() => {
-        if (savedData.finance?.invoices) {
-            setTransactionList(savedData.finance.invoices.slice(-4).reverse());
+        if (savedData.finance?.month === previousMonth && savedData.finance?.invoices) {
+            setTransactionList(savedData.finance.invoices.slice(0, 4));
         } else {
             const monthDataSliced: Transaction[] | null = monthData ? monthData.data.slice(-4).reverse() : null;
             setTransactionList(monthDataSliced);
+            localStorage.setItem("hospitalData", JSON.stringify({
+                ...savedData,
+                finance: {
+                    invoices: monthData?.data.slice().reverse(),
+                    month: previousMonth
+                }
+            }));
         }
 
         window.addEventListener("click", handleClickOutside);
@@ -72,7 +73,7 @@ function TransactionList({ transactionList, setTransactionList }: TransactionLis
 
     return (
         <div id="transactionListCont" className="boxStyle">
-            <div style={{ margin: "0px auto 15px auto" }} className='titleBox'>
+            <div style={{ margin: "0px auto 10px auto" }} className='titleBox'>
                 <svg className="box" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
                     <path d="M64 192L64 224L576 224L576 192C576 
                         156.7 547.3 128 512 128L128 128C92.7 128 64 
@@ -160,9 +161,9 @@ function TransactionList({ transactionList, setTransactionList }: TransactionLis
                         <tbody>
                             {transactionList.map(transaction => (
                                 <tr key={transaction.id}>
-                                    <td>{`${transaction.date}/${new Date().getFullYear().toString().slice(2)}`}</td>
+                                    <td>{transaction.date.length === 5 ? `${transaction.date}/${new Date().getFullYear().toString().slice(2)}` : transaction.date}</td>
                                     <td>{transaction.amount.toLocaleString('it-IT',
-                                        { minimumFractionDigits: 2, maximumFractionDigits: 2 })} €
+                                        { minimumFractionDigits: 0, maximumFractionDigits: 2 })} €
                                     </td>
                                     <td>{transaction.description}</td>
                                 </tr>

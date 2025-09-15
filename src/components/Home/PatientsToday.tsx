@@ -21,8 +21,8 @@ interface hospitalShape {
     staffList?: StaffListType,
     patientsList?: PatientsListType
     finance?: {
-        monthlyCashFlow: Record<string, { revenue: number, expenses: number }>
-        invoices?: Transaction[]
+        invoices: Transaction[],
+        month: string
     }
 }
 
