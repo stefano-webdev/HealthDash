@@ -84,7 +84,7 @@ function FinanceBalanceChart() {
     }, []);
 
     return (
-        <div id="financeChartMainCont">
+        <div id="financeChartMainCont" className="resize">
             <div id="financeChartCont" ref={chartRef} style={{ width: "100%", maxWidth: "500px", margin: "0 auto", height: chartHeight, minHeight: minHeight }} >
                 <ResponsiveContainer width="100%" height="100%">
                     <LineChart

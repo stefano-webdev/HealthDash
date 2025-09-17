@@ -368,9 +368,7 @@
         width: clamp(390px, 33vw, 500px);
     }
 
-    body #recoveryMainCont,
-    body #revenueMainCont,
-    body #financeChartMainCont {
+    body div.resize {
         min-width: auto;
         width: clamp(390px, 33vw, 500px);
     }

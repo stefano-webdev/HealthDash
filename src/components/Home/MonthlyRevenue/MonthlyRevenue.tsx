@@ -127,7 +127,7 @@ function MonthlyRevenueChart() {
                 borderRadius: "8px",
                 backgroundColor: "white",
                 boxShadow: "0px 0px 10px 1px #0000009f",
-                fontSize: fontSizeXYTooltip
+                fontSize: fontSizeXYTooltip + 1
               }}
               labelStyle={{ fontSize: fontSizeXYTooltip }}
               formatter={(value: number) => [`€${value.toLocaleString()}`]}

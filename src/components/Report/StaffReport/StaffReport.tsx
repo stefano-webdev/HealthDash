@@ -27,7 +27,7 @@ const staffPerShift: ShiftData[] = [
 function StaffReport() {
     const [visibleChart, setVisibleChart] = useState(false);
     const chartRef = useRef<HTMLDivElement>(null);
-    const [fontSizeXYTooltip, setFontSizeXYTooltip] = useState(12);
+    const [fontSizeXYTooltip, setFontSizeXYTooltip] = useState(13);
     const [fontSizeLegend, setFontSizeLegend] = useState(17);
     const [chartHeight, setChartHeight] = useState(310);
     const [minHeight, setMinHeight] = useState(window.innerWidth <= 549 ? 300 : 350);
@@ -40,17 +40,18 @@ function StaffReport() {
             setFontSizeLegend(16);
         } else if (window.innerWidth <= 649) {
             setBarSize(53);
-            setFontSizeXYTooltip(12);
+            setFontSizeXYTooltip(13);
             setFontSizeLegend(17);
             setChartHeight(310);
             setMinHeight(300);
             setOffsetYAxis(12);
         } else {
-            setFontSizeXYTooltip(17);
+            setBarSize(65);
+            setFontSizeXYTooltip(15);
             setFontSizeLegend(20);
             setChartHeight(350);
             setMinHeight(350);
-            setOffsetYAxis(-10);
+            setOffsetYAxis(0);
         }
     }
 
@@ -81,7 +82,7 @@ function StaffReport() {
             <div
                 id="staffReportCont"
                 ref={chartRef}
-                style={{ width: "100%", maxWidth: "500px", margin: "0 auto", height: chartHeight, minHeight }}>
+                style={{ width: "100%", maxWidth: "500px", margin: "0 auto", height: chartHeight, minHeight: minHeight }}>
                 <ResponsiveContainer width="100%" height="100%">
                     <BarChart
                         data={staffPerShift}
@@ -145,7 +146,7 @@ function StaffReport() {
                                                 marginRight: 6,
                                             }}
                                         />
-                                        <span style={{ fontSize: fontSizeLegend, fontWeight: 500, textAlign: "center", color: "#AE3626" }}>
+                                        <span style={{ fontSize: fontSizeLegend, textAlign: "center", color: "#AE3626" }}>
                                             Personale per turno
                                         </span>
                                     </div>

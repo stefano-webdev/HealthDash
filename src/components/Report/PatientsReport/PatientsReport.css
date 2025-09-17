@@ -1,0 +1,18 @@
+/* div#patientsReportMainCont {
+    height: 480px;
+} */
+
+div#patientsReportCont svg {
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+}
+
+div#patientsReportCont svg path:focus,
+#patientsReportCont svg *:focus {
+  outline: none;
+}
+
+#legendPatientsReport {
+    margin-top: 2px;
+}
