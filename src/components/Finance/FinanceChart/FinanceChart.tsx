@@ -8,7 +8,6 @@ import {
     YAxis,
     CartesianGrid,
     Tooltip,
-    Legend,
     ResponsiveContainer,
 } from "recharts";
 
@@ -42,29 +41,8 @@ function monthlyData() {
 function FinanceBalanceChart() {
     const [visibleChart, setVisibleChart] = useState(false);
     const chartRef = useRef<HTMLDivElement>(null);
-    const [fontSizeXYTooltip, setFontSizeXYTooltip] = useState(14);
-    const [fontSizeLegend, setFontSizeLegend] = useState(17);
-    const [chartHeight, setChartHeight] = useState(300);
-    const [minHeight, setMinHeight] = useState(window.innerWidth <= 549 ? 300 : 350);
-
-    function handleResize() {
-        if (window.innerWidth <= 649) {
-            setFontSizeXYTooltip(14);
-            setFontSizeLegend(17);
-            setChartHeight(300);
-            setMinHeight(300);
-        } else {
-            setFontSizeXYTooltip(16);
-            setFontSizeLegend(20);
-            setChartHeight(350);
-            setMinHeight(350);
-        }
-    }
 
     useEffect(() => {
-        handleResize();
-        window.addEventListener("resize", handleResize);
-
         const observer = new IntersectionObserver(
             ([entry]) => {
                 if (entry.isIntersecting) {
@@ -79,21 +57,20 @@ function FinanceBalanceChart() {
 
         return () => {
             if (chartRef.current) observer.unobserve(chartRef.current);
-            window.removeEventListener("resize", handleResize);
         };
     }, []);
 
     return (
         <div id="financeChartMainCont" className="resize">
-            <div id="financeChartCont" ref={chartRef} style={{ width: "100%", maxWidth: "500px", margin: "0 auto", height: chartHeight, minHeight: minHeight }} >
+            <div id="financeChartCont" ref={chartRef} style={{ width: "100%", maxWidth: "500px", margin: "0 auto", height: '380px' }} >
                 <ResponsiveContainer width="100%" height="100%">
                     <LineChart
                         data={monthlyData()}
-                        margin={{ top: 20, right: 23, bottom: 20, left: -20 }} >
+                        margin={{ top: 20, right: 23, bottom: -5, left: -20 }} >
                         <CartesianGrid strokeDasharray="3 3" />
-                        <XAxis dataKey="month" tick={{ fontSize: fontSizeXYTooltip, fill: "black" }} padding={{ left: 15 }} />
+                        <XAxis dataKey="month" className="XYAxis" padding={{ left: 15 }} />
                         <YAxis
-                            tick={{ fontSize: fontSizeXYTooltip, fill: "black" }}
+                            className="XYAxis"
                             tickFormatter={(v: number) => {
                                 const valueInM = v / 1_000_000;
                                 return `€ ${Number.isInteger(valueInM) ? valueInM : valueInM.toFixed(1)}M`;
@@ -102,16 +79,9 @@ function FinanceBalanceChart() {
                             padding={{ bottom: 20 }}
                         />
                         <Tooltip
-                            contentStyle={{
-                                border: '2px solid black',
-                                borderRadius: '8px',
-                                backgroundColor: 'white',
-                                boxShadow: "0px 0px 10px 1px #0000009f",
-                                fontSize: fontSizeXYTooltip
-                            }}
-                            labelStyle={{ fontSize: fontSizeXYTooltip }}
-                            formatter={(value: number) => [`Saldo cumulativo: ${value.toLocaleString()}€`]}
-                            labelFormatter={(label: string) => {
+                            content={({ payload, label }) => {
+                                if (!payload || payload.length === 0) return null;
+                                const value = payload[0].value;
                                 const monthsFull: Record<string, string> = {
                                     Gen: "Gennaio",
                                     Feb: "Febbraio",
@@ -126,21 +96,24 @@ function FinanceBalanceChart() {
                                     Nov: "Novembre",
                                     Dic: "Dicembre",
                                 };
-                                return monthsFull[label] || label;
-                            }}
-                        />
-                        <Legend
-                            verticalAlign="bottom"
-                            align="center"
-                            wrapperStyle={{
-                                display: "flex",
-                                justifyContent: "center",
-                                width: "100%",
-                                left: 0,
-                                bottom: 15,
-                                padding: 0,
-                                margin: 0,
-                                fontSize: fontSizeLegend
+                                const monthLabel = monthsFull[String(label)] || label;
+                                return (
+                                    <div
+                                        className="tooltipChart"
+                                        style={{
+                                            border: "2px solid black",
+                                            borderRadius: "8px",
+                                            backgroundColor: "white",
+                                            boxShadow: "0px 0px 10px 1px #0000009f",
+                                            padding: "6px 10px",
+                                        }}
+                                    >
+                                        <div>{monthLabel}</div>
+                                        <div style={{ color: "var(--mainRed)" }}>
+                                            {`Saldo cumulativo: ${value.toLocaleString("it-IT")}€`}
+                                        </div>
+                                    </div>
+                                );
                             }}
                         />
                         <Line
@@ -156,6 +129,15 @@ function FinanceBalanceChart() {
                         />
                     </LineChart>
                 </ResponsiveContainer>
+            </div>
+            <div className="legendCont">
+                <svg className="legendSymbolLine" viewBox="45 10 110 20">
+                    <line x1="45" y1="20" x2="85" y2="20" stroke="#a52a2a" strokeWidth="10" />
+                    <line x1="115" y1="20" x2="155" y2="20" stroke="#a52a2a" strokeWidth="10" />
+                    <circle cx="100" cy="20" r="21" fill="#a52a2a" />
+                    <circle cx="100" cy="20" r="10" fill="white" />
+                </svg>
+                <span className="legendText">Saldo cumulativo</span>
             </div>
             <small id="lastMonthsFinance">(Ultimi 6 mesi)</small>
         </div>

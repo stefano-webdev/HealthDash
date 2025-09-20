@@ -7,7 +7,6 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend,
   ResponsiveContainer,
 } from "recharts";
 
@@ -62,29 +61,8 @@ for (let i = 6; i >= 1; i--) {
 function MonthlyRevenueChart() {
   const [visibleChart, setVisibleChart] = useState(false);
   const chartRef = useRef<HTMLDivElement>(null);
-  const [fontSizeXYTooltip, setFontSizeXYTooltip] = useState(13);
-  const [fontSizeLegend, setFontSizeLegend] = useState(17);
-  const [chartHeight, setChartHeight] = useState(300);
-  const [minHeight, setMinHeight] = useState(window.innerWidth <= 549 ? 300 : 350);
-
-  function handleResize() {
-    if (window.innerWidth <= 649) {
-      setFontSizeXYTooltip(13);
-      setFontSizeLegend(17);
-      setChartHeight(310);
-      setMinHeight(300);
-    } else {
-      setFontSizeXYTooltip(17);
-      setFontSizeLegend(20);
-      setChartHeight(350);
-      setMinHeight(350);
-    }
-  }
 
   useEffect(() => {
-    handleResize();
-    window.addEventListener("resize", handleResize);
-
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -99,22 +77,21 @@ function MonthlyRevenueChart() {
 
     return () => {
       if (chartRef.current) observer.unobserve(chartRef.current);
-      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
   return (
     <div id="revenueMainCont" className="resize">
-      <div id="revenueCont" ref={chartRef} style={{ width: "100%", maxWidth: "500px", margin: "0 auto", height: chartHeight, minHeight: minHeight }}>
+      <div id="revenueCont" ref={chartRef} style={{ width: "100%", maxWidth: "500px", margin: "0 auto", height: '380px' }} >
         <ResponsiveContainer width="100%" height="100%">
           <BarChart
             data={last6Months}
-            margin={{ top: 20, right: 25, bottom: 20, left: 12 }}>
+            margin={{ top: 20, right: 25, bottom: 0, left: 0 }}>
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="month" tick={{ fontSize: fontSizeXYTooltip, fill: "black" }} padding={{ left: 20, right: 15 }} />
+            <XAxis dataKey="month" className="XYAxis" padding={{ left: 20, right: 15 }} />
             <YAxis
               domain={[0, 20000000]}
-              tick={{ fontSize: fontSizeXYTooltip, fill: "black" }}
+              className="XYAxis"
               tickFormatter={(v) => {
                 const milioni = v / 1000000;
                 return `€${milioni}\u00A0Mil.`;
@@ -122,47 +99,27 @@ function MonthlyRevenueChart() {
               padding={{ bottom: 0.5 }}
             />
             <Tooltip
-              contentStyle={{
-                border: "2px solid black",
-                borderRadius: "8px",
-                backgroundColor: "white",
-                boxShadow: "0px 0px 10px 1px #0000009f",
-                fontSize: fontSizeXYTooltip + 1
-              }}
-              labelStyle={{ fontSize: fontSizeXYTooltip }}
-              formatter={(value: number) => [`€${value.toLocaleString()}`]}
-              labelFormatter={(label: string) => {
-                const monthObj = allMonths.find((m) => m.short === label);
-                return `Mese: ${monthObj?.full || label}`;
-              }}
-            />
-            <Legend
-              verticalAlign="bottom"
-              align="center"
-              wrapperStyle={{
-                display: "flex",
-                justifyContent: "center",
-                width: "100%",
-                bottom: 15,
-                padding: 0,
-                margin: 0
-              }}
-              content={({ payload }) => {
+              content={({ payload, label }) => {
                 if (!payload || payload.length === 0) return null;
+
+                const { revenue } = payload[0].payload;
+                const monthObj = allMonths.find((m) => m.short === label);
+                const formattedLabel = `Mese: ${monthObj?.full || label}`;
+
                 return (
-                  <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-                    <div
-                      style={{
-                        width: window.innerWidth > 649 ? 17 : 14,
-                        height: window.innerWidth > 649 ? 17 : 14,
-                        backgroundColor: "#AE3626",
-                        borderRadius: "4px 4px 0 0",
-                        marginRight: 6,
-                      }}
-                    />
-                    <span style={{ fontSize: fontSizeLegend, fontWeight: 500, textAlign: "center", color: "#AE3626" }}>
-                      Entrate mensili
-                    </span>
+                  <div
+                    className="tooltipChart"
+                    style={{
+                      border: "2px solid black",
+                      borderRadius: "8px",
+                      backgroundColor: "white",
+                      boxShadow: "0px 0px 10px 1px #0000009f",
+                      padding: "6px 10px",
+                    }}>
+                    <div>{formattedLabel}</div>
+                    <div style={{ color: "var(--mainRed)" }}>
+                      €{revenue.toLocaleString()}
+                    </div>
                   </div>
                 );
               }}
@@ -176,6 +133,10 @@ function MonthlyRevenueChart() {
             />
           </BarChart>
         </ResponsiveContainer>
+      </div>
+      <div className="legendCont">
+        <div className="legendSymbolBar"></div>
+        <span className="legendText">Entrate mensili</span>
       </div>
       <small id="lastMonthsHome">(Ultimi 6 mesi)</small>
     </div>

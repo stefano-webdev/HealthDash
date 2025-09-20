@@ -43,6 +43,49 @@
     body .dropdownFiltersCont {
         width: 220px;
     }
+
+    /* Charts */
+    body .legendCont {
+        margin-top: 10px;
+    }
+
+    body .legendText {
+        font-size: 16px;
+    }
+
+    body .tooltipChart div {
+        font-size: 15px;
+    }
+
+    body .legendSymbolPill,
+    body #legendSymbolPatients {
+        width: 18px;
+        height: 10px;
+    }
+
+    body .legendSymbolBar {
+        width: 14px;
+        height: 14px;
+    }
+
+    body .legendSymbolLine {
+        width: 24px;
+        height: 12px;
+    }
+
+    body #legendRadialBars {
+        column-gap: 24px;
+        margin: 17px 0px 25px 0px;
+    }
+
+    body .radialBarsSpan {
+        font-size: 13px;
+    }
+
+    body .radialBarsSymbol {
+        width: 15px;
+        height: 15px;
+    }
 }
 
 /* For mobile devices in landscape mode */
@@ -209,7 +252,10 @@
         left: 8px;
     }
 
-    body input, body label, body button, body textarea {
+    body input,
+    body label,
+    body button,
+    body textarea {
         font-size: 17px;
     }
 
@@ -287,6 +333,52 @@
     body #anamnesiCont svg,
     body #prescriptionsCont svg {
         width: 24px;
+    }
+
+    /* Charts */
+    body .XYAxis text {
+        font-size: 15px;
+    }
+
+    body .YStaff .recharts-label tspan {
+        font-size: 16px;
+    }
+
+    body .tooltipChart div {
+        font-size: 18px;
+    }
+
+    body .legendSymbolPill,
+    body #legendSymbolPatients {
+        width: 23px;
+        height: 15px;
+    }
+
+    body .legendSymbolBar {
+        width: 18px;
+        height: 18px;
+    }
+
+    body .legendSymbolLine {
+        width: 30px;
+        height: 18px;
+    }
+
+    body .legendText {
+        font-size: 20px;
+    }
+
+    body .radialBarsSpan {
+        font-size: 15px;
+    }
+
+    body .radialBarsSymbol {
+        width: 19px;
+        height: 19px;
+    }
+
+    body #legendRadialBars {
+        margin: 17px 0px 25px 0px;
     }
 }
 

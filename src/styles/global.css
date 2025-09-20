@@ -51,7 +51,10 @@ p {
     color: black;
 }
 
-input, label, button, textarea {
+input,
+label,
+button,
+textarea {
     font-size: 16px;
 }
 
@@ -105,19 +108,19 @@ div.currentRoute h2 {
 .routeCont {
     display: flex;
     flex-direction: column;
-    gap: 4rem;
+    gap: 4.5rem;
 }
 
 .routeCRUD {
     display: flex;
     flex-direction: column;
-    gap: 4rem;
+    gap: 4.5rem;
 }
 
 .flexGroup {
     display: flex;
     flex-direction: column;
-    gap: 4rem;
+    gap: 4.5rem;
 }
 
 svg.box {
@@ -190,4 +193,60 @@ div.updateCont {
     width: fit-content;
     margin: auto;
     margin-bottom: 22px;
+}
+
+.XYAxis text {
+    font-size: 13px;
+    fill: black;
+}
+
+.YStaff .recharts-label tspan {
+    font-size: 14px;
+}
+
+.tooltipChart div {
+    font-size: 16px;
+}
+
+.legendCont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+    gap: 8px;
+}
+
+.legendSymbolPill {
+    width: 20px;
+    height: 12px;
+    margin-top: 2px;
+    border-radius: 10px;
+    background-color: var(--mainRed);
+}
+
+#legendSymbolPatients {
+    width: 20px;
+    height: 12px;
+    margin-top: 1px;
+    background-color: var(--mainRed);
+}
+
+.legendSymbolBar {
+    width: 16px;
+    height: 16px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    margin-bottom: 1.5px;
+    background-color: var(--mainRed);
+}
+
+.legendSymbolLine {
+    margin-top: 2px;
+    width: 28px;
+    height: 16px;
+}
+
+.legendText {
+    color: var(--mainRed);
+    font-size: 17px;
 }

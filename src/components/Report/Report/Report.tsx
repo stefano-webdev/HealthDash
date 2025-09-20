@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import StaffReport from "../StaffReport/StaffReport.tsx";
 import PatientsReport from "../PatientsReport/PatientsReport.tsx";
+import RevenueReport from "../RevenueReport/RevenueReport.tsx";
+import BedOccupancy from "../BedOccupancy/BedOccupancy.tsx";
 
 function Report() {
     // Scroll to top on component mount
@@ -33,7 +35,8 @@ function Report() {
                 </div>
 
                 <div className="flexGroup">
-
+                    <RevenueReport />
+                    <BedOccupancy />
                 </div>
             </div>
         </>

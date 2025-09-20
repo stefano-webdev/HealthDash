@@ -8,7 +8,6 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend,
   ResponsiveContainer,
 } from "recharts";
 
@@ -30,29 +29,8 @@ const data: DataPoint[] = [
 function RecoveryChart() {
   const [visibleChart, setVisibleChart] = useState(false);
   const chartRef = useRef<HTMLDivElement>(null);
-  const [fontSizeXYTooltip, setFontSizeXYTooltip] = useState(13);
-  const [fontSizeLegend, setFontSizeLegend] = useState(17);
-  const [chartHeight, setChartHeight] = useState(300);
-  const [minHeight, setMinHeight] = useState(window.innerWidth <= 549 ? 300 : 350);
-
-  function handleResize() {
-    if (window.innerWidth <= 649) {
-      setFontSizeXYTooltip(13);
-      setFontSizeLegend(17);
-      setChartHeight(310);
-      setMinHeight(300);
-    } else {
-      setFontSizeXYTooltip(17);
-      setFontSizeLegend(20);
-      setChartHeight(350);
-      setMinHeight(350);
-    }
-  }
 
   useEffect(() => {
-    handleResize();
-    window.addEventListener("resize", handleResize);
-
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -67,36 +45,28 @@ function RecoveryChart() {
 
     return () => {
       if (chartRef.current) observer.unobserve(chartRef.current);
-      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
   return (
     <>
       <div id="recoveryMainCont" className="resize">
-        <div id="recoveryCont" ref={chartRef} style={{ width: "100%", maxWidth: "500px", margin: "0 auto", height: chartHeight, minHeight: minHeight }}>
+        <div id="recoveryCont" ref={chartRef} style={{ width: "100%", maxWidth: "500px", margin: "0 auto", height: '380px' }}>
           <ResponsiveContainer width="100%" height="100%">
             <LineChart
               data={data}
-              margin={{ top: 20, right: 23, bottom: 20, left: -6 }}>
+              margin={{ top: 20, right: 23, bottom: 0, left: -13 }}>
               <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="day" tick={{ fontSize: fontSizeXYTooltip, fill: "black" }} padding={{ left: 15 }} />
+              <XAxis dataKey="day" className="XYAxis" padding={{ left: 15 }} />
               <YAxis
                 domain={[0, 100]}
-                tick={{ fontSize: fontSizeXYTooltip, fill: "black" }}
+                className="XYAxis"
                 tickFormatter={(v: number) => `${v}%`}
                 padding={{ bottom: 20 }} />
               <Tooltip
-                contentStyle={{
-                  border: '2px solid black',
-                  borderRadius: '8px',
-                  backgroundColor: 'white',
-                  boxShadow: "0px 0px 10px 1px #0000009f",
-                  fontSize: fontSizeXYTooltip + 1
-                }}
-                labelStyle={{ fontSize: fontSizeXYTooltip }}
-                formatter={(value: number) => [`Pazienti guariti: ${value}%`]}
-                labelFormatter={(label: string) => {
+                content={({ payload, label }) => {
+                  if (!payload || payload.length === 0) return null;
+                  const value = payload[0].value;
                   const daysFull: Record<string, string> = {
                     Lun: "Lunedì",
                     Mar: "Martedì",
@@ -106,21 +76,26 @@ function RecoveryChart() {
                     Sab: "Sabato",
                     Dom: "Domenica",
                   };
-                  return daysFull[label] || label;
-                }} />
-              <Legend
-                verticalAlign="bottom"
-                align="center"
-                wrapperStyle={{
-                  display: "flex",
-                  justifyContent: "center",
-                  width: "100%",
-                  left: 5,
-                  bottom: 15,
-                  padding: 0,
-                  margin: 0,
-                  fontSize: fontSizeLegend
-                }} />
+                  const dayLabel = daysFull[String(label)] || label;
+                  return (
+                    <div
+                      className="tooltipChart"
+                      style={{
+                        border: "2px solid black",
+                        borderRadius: "8px",
+                        backgroundColor: "white",
+                        boxShadow: "0px 0px 10px 1px #0000009f",
+                        padding: "6px 10px"
+                      }}
+                    >
+                      <div>{dayLabel}</div>
+                      <div style={{ color: "var(--mainRed)" }}>
+                        {`Pazienti guariti: ${value}%`}
+                      </div>
+                    </div>
+                  );
+                }}
+              />
               <Line
                 type="monotone"
                 dataKey="recoveryRate"
@@ -134,6 +109,15 @@ function RecoveryChart() {
               />
             </LineChart>
           </ResponsiveContainer>
+        </div>
+        <div className="legendCont">
+          <svg className="legendSymbolLine" viewBox="45 10 110 20">
+            <line x1="45" y1="20" x2="85" y2="20" stroke="#a52a2a" strokeWidth="10" />
+            <line x1="115" y1="20" x2="155" y2="20" stroke="#a52a2a" strokeWidth="10" />
+            <circle cx="100" cy="20" r="21" fill="#a52a2a" />
+            <circle cx="100" cy="20" r="10" fill="white" />
+          </svg>
+          <span className="legendText">Tasso di guarigione pazienti</span>
         </div>
         <InfoChartButton />
       </div>

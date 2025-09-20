@@ -5,9 +5,5 @@ div#financeChartMainCont svg {
 small#lastMonthsFinance {
     display: block;
     width: fit-content;
-    margin: auto;
-    position: relative;
-    bottom: 11px;
-    left: 0px;
-    z-index: 0;
+    margin: 4px auto 0px auto;
 }

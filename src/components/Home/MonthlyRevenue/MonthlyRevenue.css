@@ -7,9 +7,5 @@ div#revenueCont svg {
 small#lastMonthsHome {
   display: block;
   width: fit-content;
-  margin: auto;
-  position: relative;
-  bottom: 11px;
-  left: 17px;
-  z-index: 0;
+  margin: 4px auto 0px auto;
 }
