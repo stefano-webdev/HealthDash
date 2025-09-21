@@ -1,5 +1,5 @@
 /* For devices like iPhone SE */
-@media (max-width: 370px) {
+@media (max-width: 350px) {
 
     /* General */
     body #mainContainer {
@@ -45,8 +45,9 @@
     }
 
     /* Charts */
-    body .legendCont {
-        margin-top: 10px;
+
+    body .XYAxisSmall text {
+        font-size: 12px;
     }
 
     body .legendText {
@@ -75,7 +76,7 @@
 
     body #legendRadialBars {
         column-gap: 24px;
-        margin: 17px 0px 25px 0px;
+        margin: 0px 0px 25px 0px;
     }
 
     body .radialBarsSpan {
@@ -85,6 +86,10 @@
     body .radialBarsSymbol {
         width: 15px;
         height: 15px;
+    }
+
+    body .downloadChartBtn {
+        padding: 5px 10px 5px 5px
     }
 }
 
@@ -336,7 +341,8 @@
     }
 
     /* Charts */
-    body .XYAxis text {
+    body .XYAxis text,
+    body .XYAxisSmall text {
         font-size: 15px;
     }
 
@@ -378,7 +384,11 @@
     }
 
     body #legendRadialBars {
-        margin: 17px 0px 25px 0px;
+        margin: 0px 0px 25px 0px;
+    }
+
+    body .downloadChartBtn svg {
+        width: 34px;
     }
 }
 
@@ -449,7 +459,7 @@
     }
 
     body #mainContainer {
-        margin: 55px 0px 0px 0px;
+        margin: 40px 0px 0px 0px;
     }
 
     body div.boxStyle {
@@ -499,13 +509,13 @@
     }
 
     /* Buttons hover + active */
-    /* Finance */
-    body #saveInvoice:hover {
+    /* buttonRed */
+    body .buttonRed:hover {
         background-color: #d02528;
     }
 
-    body #saveInvoice:active {
-        background-color: var(--secondaryRed);
+    body .buttonRed:active {
+        background-color: var(--pressButtonRed);
     }
 }
 

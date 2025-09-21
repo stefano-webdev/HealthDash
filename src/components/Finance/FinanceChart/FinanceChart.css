@@ -1,3 +1,7 @@
+div#financeChartCont {
+    padding: 5px;
+}
+
 div#financeChartMainCont svg {
     outline: none;
 }

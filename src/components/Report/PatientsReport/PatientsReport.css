@@ -1,3 +1,7 @@
+div#patientsReportCont {
+    padding: 5px;
+}
+
 div#patientsReportCont svg {
     outline: none;
     -webkit-tap-highlight-color: transparent;

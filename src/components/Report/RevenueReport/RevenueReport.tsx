@@ -1,4 +1,5 @@
 import "./RevenueReport.css";
+import * as htmlToImage from 'html-to-image';
 import { useState, useEffect, useRef } from "react";
 import {
     AreaChart,
@@ -11,23 +12,37 @@ import {
 } from "recharts";
 
 type RevenueData = {
-    name: string;
+    fullName: string;
+    shortName: string;
     revenue: number;
 };
 
 const WardRevenue: RevenueData[] = [
-    { name: "Cardiologia", revenue: 1852347 },
-    { name: "Ortopedia", revenue: 1164875 },
-    { name: "Pediatria", revenue: 981324 },
-    { name: "Oncologia", revenue: 2101245 },
-    { name: "Neurologia", revenue: 1248756 },
-    { name: "Pronto S.", revenue: 2347654 },
-    { name: "Chirurgia", revenue: 1753421 },
+    { fullName: "Cardiologia", shortName: "Card.", revenue: 1852347 },
+    { fullName: "Ortopedia", shortName: "Ortop.", revenue: 1164875 },
+    { fullName: "Pediatria", shortName: "Ped.", revenue: 981324 },
+    { fullName: "Oncologia", shortName: "Onc.", revenue: 2101245 },
+    { fullName: "Neurologia", shortName: "Neur.", revenue: 1248756 },
+    { fullName: "Pronto Soccorso", shortName: "P.S.", revenue: 2347654 },
+    { fullName: "Chirurgia", shortName: "Chir.", revenue: 1753421 },
 ];
 
 function RevenueReport() {
     const [visibleChart, setVisibleChart] = useState(false);
     const chartRef = useRef<HTMLDivElement>(null);
+
+    function downloadChart() {
+        if (chartRef.current) {
+            htmlToImage.toPng(chartRef.current)
+                .then((dataUrl: string) => {
+                    const link: HTMLAnchorElement = document.createElement('a');
+                    link.href = dataUrl;
+                    link.download = 'revenue-report-chart.png';
+                    link.click();
+                })
+                .catch(err => window.alert(`Errore nel download del grafico: ${err.message}`));
+        }
+    }
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -53,12 +68,12 @@ function RevenueReport() {
                 <ResponsiveContainer width="100%" height="100%">
                     <AreaChart
                         data={WardRevenue}
-                        margin={{ top: 10, right: 15, bottom: 40, left: -3 }}
+                        margin={{ top: 10, right: 17, bottom: 25, left: 12 }}
                     >
                         <CartesianGrid strokeDasharray="3 3" />
                         <XAxis
                             className="XYAxis"
-                            dataKey="name"
+                            dataKey="shortName"
                             interval={0}
                             angle={-45}
                             textAnchor="end"
@@ -71,7 +86,7 @@ function RevenueReport() {
                         <Tooltip
                             content={({ payload }) => {
                                 if (!payload || payload.length === 0) return null;
-                                const { name, revenue } = payload[0].payload;
+                                const { fullName, revenue } = payload[0].payload;
                                 return (
                                     <div className="tooltipChart"
                                         style={{
@@ -82,7 +97,7 @@ function RevenueReport() {
                                             padding: "6px 10px",
                                         }}
                                     >
-                                        <div>{name}</div>
+                                        <div>{fullName}</div>
                                         <div style={{ color: "var(--mainRed)" }}>
                                             € {revenue.toLocaleString("it-IT")}
                                         </div>
@@ -93,8 +108,8 @@ function RevenueReport() {
                         <Area
                             type="monotone"
                             dataKey="revenue"
-                            stroke={visibleChart ? "var(--mainRed)" : "transparent"}
-                            fill={visibleChart ? "var(--mainRed)" : "transparent"}
+                            stroke={visibleChart ? "#AE3626" : "transparent"}
+                            fill={visibleChart ? "#AE3626" : "transparent"}
                             isAnimationActive={visibleChart}
                             animationDuration={2100}
                         />
@@ -105,6 +120,21 @@ function RevenueReport() {
                 <div className="legendSymbolPill"></div>
                 <span className="legendText">Incassi per reparto</span>
             </div>
+            <button className="downloadChartBtn buttonRed" onClick={downloadChart}>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                    <path d="M352 96C352 78.3 337.7 64 320 64C302.3 64 288 78.3 288 
+                        96L288 306.7L246.6 265.3C234.1 252.8 213.8 252.8 201.3 265.3C188.8 
+                        277.8 188.8 298.1 201.3 310.6L297.3 406.6C309.8 419.1 330.1 419.1 342.6 
+                        406.6L438.6 310.6C451.1 298.1 451.1 277.8 438.6 265.3C426.1 252.8 
+                        405.8 252.8 393.3 265.3L352 306.7L352 96zM160 384C124.7 384 96 412.7 
+                        96 448L96 480C96 515.3 124.7 544 160 544L480 544C515.3 544 544 515.3 
+                        544 480L544 448C544 412.7 515.3 384 480 384L433.1 384L376.5 440.6C345.3 
+                        471.8 294.6 471.8 263.4 440.6L206.9 384L160 384zM464 440C477.3 440 488 
+                        450.7 488 464C488 477.3 477.3 488 464 488C450.7 488 440 477.3 440 464C440 
+                        450.7 450.7 440 464 440z" />
+                </svg>
+                Download
+            </button>
         </div>
     );
 }

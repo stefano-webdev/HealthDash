@@ -1,3 +1,7 @@
+div#recoveryCont {
+    padding: 5px;
+}
+
 div#recoveryCont svg {
     outline: none;
 }

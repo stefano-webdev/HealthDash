@@ -10,14 +10,9 @@ textarea {
 
 #saveInvoice {
     color: white;
-    background-color: var(--secondaryRed);
     border: none;
     padding: 8px 4.4rem;
     border-radius: 6px;
     margin-top: 3rem;
     align-self: center;
-}
-
-#saveInvoice:active {
-    background-color: #9a1c1e;
 }

@@ -110,7 +110,7 @@ function CreateInvoice({ setTransactionList, selectedOperations, setConfirmMessa
                     <label htmlFor="descriptionInvoice">Descrizione</label>
                     <textarea onChange={handleInputChange} value={formData.description} id="descriptionInvoice" name="description" required />
                 </div>
-                <button id="saveInvoice" type="submit">Salva</button>
+                <button id="saveInvoice" className="buttonRed" type="submit">Salva</button>
             </form>
         </div>
     );

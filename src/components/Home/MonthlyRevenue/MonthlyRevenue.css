@@ -1,3 +1,7 @@
+div#revenueCont {
+  padding: 5px;
+}
+
 div#revenueCont svg {
   outline: none;
   -webkit-tap-highlight-color: transparent;

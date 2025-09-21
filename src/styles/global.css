@@ -1,8 +1,8 @@
 /* Global styles */
 :root {
     --mainRed: #AE3626;
-    --secondaryRed: #be2520;
-    --backgroundBox: #f0f0f067;
+    --secondaryRed: #BE2520;
+    --pressButtonRed: #A71E21;
     --scale-font: clamp(19px, 4vw, 30px);
 }
 
@@ -25,6 +25,14 @@ button {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
+}
+
+.buttonRed {
+    background-color: var(--secondaryRed);
+}
+
+.buttonRed:active {
+    background-color: var(--pressButtonRed);
 }
 
 a#torna_portfolio {
@@ -141,10 +149,10 @@ div.crudShowCont h4 {
 div.boxStyle {
     margin: auto;
     padding: 23px 16px;
-    background-color: var(--backgroundBox);
+    background-color: #F0F0F067;
     border-radius: 5px;
     border: 1px solid rgba(0, 0, 0, 0.28);
-    width: clamp(340px, 78vw, 410px);
+    width: clamp(291px, 78vw, 410px);
 }
 
 #patientsTodayCont,
@@ -200,6 +208,11 @@ div.updateCont {
     fill: black;
 }
 
+.XYAxisSmall text {
+    font-size: 13px;
+    fill: black;
+}
+
 .YStaff .recharts-label tspan {
     font-size: 14px;
 }
@@ -212,7 +225,6 @@ div.updateCont {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 15px;
     gap: 8px;
 }
 
@@ -249,4 +261,21 @@ div.updateCont {
 .legendText {
     color: var(--mainRed);
     font-size: 17px;
+}
+
+/* Download chart button */
+.downloadChartBtn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 14px auto 0px auto;
+    padding: 8px 13px 8px 8px;
+    color: white;
+    border: none;
+    border-radius: 8px;
+}
+
+.downloadChartBtn svg {
+    width: 33px;
+    fill: white;
 }

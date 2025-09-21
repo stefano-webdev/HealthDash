@@ -1,3 +1,7 @@
+div#bedOccupancyCont {
+    padding: 5px;
+}
+
 div#bedOccupancyCont svg {
     outline: none;
     -webkit-tap-highlight-color: transparent;
@@ -21,7 +25,7 @@ div#bedOccupancyCont svg {
     row-gap: 15px;
     column-gap: 31px;
     justify-content: center;
-    margin: 11px auto 25px auto;
+    margin: 0px auto 25px auto;
 }
 
 #legendRadialBars div {
