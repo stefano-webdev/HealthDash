@@ -201,8 +201,8 @@
         font-size: 18px;
     }
 
-    div.currentRoute {
-        margin: 0px 0px 25px 20px;
+    body div.currentRoute {
+        margin-left: 20px;
     }
 
     body .updateSvg {
@@ -371,7 +371,7 @@
     }
 
     body .legendText {
-        font-size: 20px;
+        font-size: 21px;
     }
 
     body .radialBarsSpan {
@@ -404,7 +404,6 @@
         padding-top: 20px;
     }
 
-    /* Home */
     body div.currentRoute {
         margin-left: 30px;
         justify-content: flex-start;

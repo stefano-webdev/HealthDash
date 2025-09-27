@@ -31,16 +31,21 @@ function RecoveryChart() {
   const [visibleChart, setVisibleChart] = useState(false);
   const chartRef = useRef<HTMLDivElement>(null);
 
-  function downloadChart() {
+  async function downloadChart() {
     if (chartRef.current) {
-      htmlToImage.toPng(chartRef.current)
-        .then((dataUrl: string) => {
-          const link: HTMLAnchorElement = document.createElement('a');
-          link.href = dataUrl;
-          link.download = 'weekly-patients-chart.png';
-          link.click();
-        })
-        .catch(err => window.alert(`Errore nel download del grafico: ${err.message}`));
+      try {
+        const dataUrl: string = await htmlToImage.toPng(chartRef.current);
+        const link: HTMLAnchorElement = document.createElement('a');
+        link.href = dataUrl;
+        link.download = 'weekly-patients-chart.png';
+        link.click();
+      } catch (err: unknown) {
+        if (err instanceof Error) {
+          window.alert(`Errore nel download del grafico: ${err.message}`);
+        } else {
+          window.alert(`Errore nel download del grafico: ${String(err)}`);
+        }
+      }
     }
   }
 
@@ -96,14 +101,14 @@ function RecoveryChart() {
                       className="tooltipChart"
                       style={{
                         border: "2px solid black",
-                        borderRadius: "8px",
+                        borderRadius: "var(--borderRadius)",
                         backgroundColor: "white",
                         boxShadow: "0px 0px 10px 1px #0000009f",
                         padding: "6px 10px"
                       }}
                     >
                       <div>{dayLabel}</div>
-                      <div style={{ color: "var(--mainRed)" }}>
+                      <div style={{ color: "var(--secondaryRed)" }}>
                         {`Pazienti guariti: ${value}%`}
                       </div>
                     </div>
@@ -114,7 +119,7 @@ function RecoveryChart() {
                 type="monotone"
                 dataKey="recoveryRate"
                 name="Tasso di guarigione pazienti"
-                stroke={visibleChart ? "#AE3626" : "transparent"}
+                stroke={visibleChart ? "var(--secondaryRed)" : "transparent"}
                 strokeWidth={3}
                 dot={{ r: 5 }}
                 activeDot={{ r: 8 }}
@@ -126,9 +131,9 @@ function RecoveryChart() {
         </div>
         <div className="legendCont">
           <svg className="legendSymbolLine" viewBox="45 10 110 20">
-            <line x1="45" y1="20" x2="85" y2="20" stroke="#a52a2a" strokeWidth="10" />
-            <line x1="115" y1="20" x2="155" y2="20" stroke="#a52a2a" strokeWidth="10" />
-            <circle cx="100" cy="20" r="21" fill="#a52a2a" />
+            <line x1="45" y1="20" x2="85" y2="20" stroke="var(--secondaryRed)" strokeWidth="10" />
+            <line x1="115" y1="20" x2="155" y2="20" stroke="var(--secondaryRed)" strokeWidth="10" />
+            <circle cx="100" cy="20" r="21" fill="var(--secondaryRed)" />
             <circle cx="100" cy="20" r="10" fill="white" />
           </svg>
           <span className="legendText">Tasso di guarigione pazienti</span>

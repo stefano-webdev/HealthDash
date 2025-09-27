@@ -19,10 +19,14 @@ interface hospitalShape {
     appointmentsToday?: DailyAppointments,
     notificationsToday?: DailyNotifications,
     staffList?: StaffListType,
-    patientsList?: PatientsListType
+    patientsList?: PatientsListType,
     finance?: {
         invoices: Transaction[],
         month: string
+    },
+    settings?: {
+        theme: "Chiaro" | "Scuro",
+        borderRadius: string
     }
 }
 
@@ -63,7 +67,7 @@ function PatientsToday() {
             <div>
                 <p>Pazienti in ospedale</p>
                 <div className="updateCont">
-                    <svg className="updateSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                    <svg className="updateSvgBlack" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
                         <path d="M129.9 292.5C143.2 199.5 223.3 128 320 128C373 128 
                             421 149.5 455.8 184.2C456 184.4 456.2 184.6 456.4 184.8L464 
                             192L416.1 192C398.4 192 384.1 206.3 384.1 224C384.1 241.7 398.4 
@@ -79,7 +83,7 @@ function PatientsToday() {
                             542.7L128.6 491.2L139.3 501.3C185.6 547.4 249.5 576 320 576C449 576 555.7 480.6 
                             573.4 356.5z" />
                     </svg>
-                    <small>24 ore</small>
+                    <small className="smallBlack">24 ore</small>
                 </div>
             </div>
             <p>{patients}</p>

@@ -11,15 +11,6 @@ div#notificationsCont div#notificationsTitleCont {
     margin: 0px auto 6px auto;
 }
 
-div#updateNotificationsCont {
-    display: flex;
-    gap: 5px;
-    align-items: center;
-    width: fit-content;
-    margin: auto;
-    margin-bottom: 25px;
-}
-
 div#allNotificationsCont {
     display: flex;
     flex-direction: column;
@@ -29,4 +20,5 @@ div#allNotificationsCont {
 div#allNotificationsCont h4 {
     font-size: 17px;
     margin: 0px 0px 2px 0px;
+    color: var(--textColor);
 }

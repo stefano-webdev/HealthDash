@@ -31,16 +31,21 @@ function RevenueReport() {
     const [visibleChart, setVisibleChart] = useState(false);
     const chartRef = useRef<HTMLDivElement>(null);
 
-    function downloadChart() {
+    async function downloadChart() {
         if (chartRef.current) {
-            htmlToImage.toPng(chartRef.current)
-                .then((dataUrl: string) => {
-                    const link: HTMLAnchorElement = document.createElement('a');
-                    link.href = dataUrl;
-                    link.download = 'revenue-report-chart.png';
-                    link.click();
-                })
-                .catch(err => window.alert(`Errore nel download del grafico: ${err.message}`));
+            try {
+                const dataUrl: string = await htmlToImage.toPng(chartRef.current);
+                const link: HTMLAnchorElement = document.createElement('a');
+                link.href = dataUrl;
+                link.download = 'revenue-report-chart.png';
+                link.click();
+            } catch (err: unknown) {
+                if (err instanceof Error) {
+                    window.alert(`Errore nel download del grafico: ${err.message}`);
+                } else {
+                    window.alert(`Errore nel download del grafico: ${String(err)}`);
+                }
+            }
         }
     }
 
@@ -91,14 +96,14 @@ function RevenueReport() {
                                     <div className="tooltipChart"
                                         style={{
                                             border: "2px solid black",
-                                            borderRadius: "8px",
+                                            borderRadius: "var(--borderRadius)",
                                             backgroundColor: "white",
                                             boxShadow: "0px 0px 10px 1px #0000009f",
                                             padding: "6px 10px",
                                         }}
                                     >
                                         <div>{fullName}</div>
-                                        <div style={{ color: "var(--mainRed)" }}>
+                                        <div style={{ color: "var(--secondaryRed)" }}>
                                             € {revenue.toLocaleString("it-IT")}
                                         </div>
                                     </div>
@@ -108,8 +113,8 @@ function RevenueReport() {
                         <Area
                             type="monotone"
                             dataKey="revenue"
-                            stroke={visibleChart ? "#AE3626" : "transparent"}
-                            fill={visibleChart ? "#AE3626" : "transparent"}
+                            stroke={visibleChart ? "var(--secondaryRed)" : "transparent"}
+                            fill={visibleChart ? "var(--secondaryRed)" : "transparent"}
                             isAnimationActive={visibleChart}
                             animationDuration={2100}
                         />

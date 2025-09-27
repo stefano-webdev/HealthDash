@@ -1,9 +1,8 @@
 #staffCrudCont {
-    min-height: 243px;
+    min-height: 257px;
 }
 
 .crudDescription {
-    margin-top: 10px;
     text-align: center;
 }
 
@@ -29,14 +28,14 @@
     padding: 0px;
     background-color: var(--mainRed);
     border: none;
-    border-radius: 5px;
+    border-radius: var(--borderRadius);
 }
 
 .crudActionsCont button:active {
-    background-color: rgb(132, 39, 27);
+    background-color: var(--mainRedActive);
 }
 
 .crudActionsCont svg {
-    width: 28px;
+    width: 25px;
     fill: white;
 }

@@ -1,10 +1,10 @@
 #staffScheduleCont {
-    min-height: 377px;
+    min-height: 396.5px;
 }
 
 p#employeeSchedule {
     text-align: center;
-    margin: 10px auto 30px auto;
+    margin: 10px auto 15px auto;
     min-height: 38px;
 }
 
@@ -20,5 +20,5 @@ p#employeeSchedule {
     display: flex;
     justify-content: space-between;
     gap: 40px;
-    border-bottom: 1px solid #ae362691;
+    border-bottom: 2px solid var(--mainRed);
 }

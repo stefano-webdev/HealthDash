@@ -13,36 +13,41 @@ import {
 } from "recharts";
 
 type DepartmentData = {
-  fullName: string;
-  shortName: string;
-  patients: number;
-  color: string;
+    fullName: string;
+    shortName: string;
+    patients: number;
+    color: string;
 };
 
 const patientsPerDepartment: DepartmentData[] = [
-    { fullName: "Cardiologia", shortName: "Card.", patients: 412, color: "#008080" },
+    { fullName: "Cardiologia", shortName: "Card.", patients: 412, color: "#00ababff" },
     { fullName: "Ortopedia", shortName: "Ortop.", patients: 327, color: "#98750bff" },
-    { fullName: "Pediatria", shortName: "Ped.", patients: 289, color: "#1E3A8A" },
-    { fullName: "Oncologia", shortName: "Onc.", patients: 374, color: "#8B0000" },
+    { fullName: "Pediatria", shortName: "Ped.", patients: 289, color: "#3369ffff" },
+    { fullName: "Oncologia", shortName: "Onc.", patients: 374, color: "#00af66ff" },
     { fullName: "Neurologia", shortName: "Neur.", patients: 241, color: "#259725ff" },
     { fullName: "Pronto Soccorso", shortName: "P.S.", patients: 538, color: "#FF4500" },
-    { fullName: "Chirurgia", shortName: "Chir.", patients: 365, color: "#6A5ACD" },
+    { fullName: "Chirurgia", shortName: "Chir.", patients: 365, color: "#7665e1ff" },
 ];
 
 function PatientsReport() {
     const [visibleChart, setVisibleChart] = useState(false);
     const chartRef = useRef<HTMLDivElement>(null);
 
-    function downloadChart() {
+    async function downloadChart() {
         if (chartRef.current) {
-            htmlToImage.toPng(chartRef.current)
-                .then((dataUrl: string) => {
-                    const link: HTMLAnchorElement = document.createElement('a');
-                    link.href = dataUrl;
-                    link.download = 'patients-report-chart.png';
-                    link.click();
-                })
-                .catch(err => window.alert(`Errore nel download del grafico: ${err.message}`));
+            try {
+                const dataUrl: string = await htmlToImage.toPng(chartRef.current);
+                const link: HTMLAnchorElement = document.createElement('a');
+                link.href = dataUrl;
+                link.download = 'patients-report-chart.png';
+                link.click();
+            } catch (err: unknown) {
+                if (err instanceof Error) {
+                    window.alert(`Errore nel download del grafico: ${err.message}`);
+                } else {
+                    window.alert(`Errore nel download del grafico: ${String(err)}`);
+                }
+            }
         }
     }
 
@@ -84,14 +89,14 @@ function PatientsReport() {
                                     <div className="tooltipChart"
                                         style={{
                                             border: "2px solid black",
-                                            borderRadius: "8px",
+                                            borderRadius: "var(--borderRadius)",
                                             backgroundColor: "white",
                                             boxShadow: "0px 0px 10px 1px #0000009f",
                                             padding: "6px 10px",
                                         }}
                                     >
                                         <div>{fullName}</div>
-                                        <div style={{ color: "var(--mainRed)" }}>{`${patients} pazienti`}</div>
+                                        <div style={{ color: "var(--secondaryRed)" }}>{`${patients} pazienti`}</div>
                                     </div>
                                 );
                             }}

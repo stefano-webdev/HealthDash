@@ -7,7 +7,7 @@ import Staff from './components/Staff/Staff/Staff.tsx';
 import Patients from './components/Patients/Patients/Patients.tsx';
 import Finance from './components/Finance/Finance/Finance.tsx';
 import Report from './components/Report/Report/Report.tsx';
-import InDevelopment from './components/InDevelopment.tsx';
+import Settings from './components/Settings/Settings/Settings.tsx';
 
 const router = createBrowserRouter([
   {
@@ -19,7 +19,7 @@ const router = createBrowserRouter([
       {path: 'patients', element: <Patients />},
       {path: 'finance', element: <Finance />},
       {path: 'report', element: <Report />},
-      {path: '*', element: <InDevelopment />},
+      {path: 'settings', element: <Settings />}
     ]
   }
 ]);

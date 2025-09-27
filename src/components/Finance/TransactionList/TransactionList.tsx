@@ -23,7 +23,7 @@ interface TransactionListProps {
     setSelectedOperations: React.Dispatch<React.SetStateAction<number>>;
 }
 
-type Menu = "lastOperations" | "lastMonths" | null;
+type Menu = "lastOperations" | null;
 
 function TransactionList({ transactionList, setTransactionList, selectedOperations, setSelectedOperations }: TransactionListProps) {
     const [openMenu, setOpenMenu] = useState<Menu>(null);
@@ -44,6 +44,7 @@ function TransactionList({ transactionList, setTransactionList, selectedOperatio
             setOpenMenu(null);
         }
     }
+
     // Change the number of transactions shown
     function handleSelectedOperations(operations: number) {
         setSelectedOperations(operations);
@@ -73,9 +74,10 @@ function TransactionList({ transactionList, setTransactionList, selectedOperatio
 
     return (
         <div id="transactionListCont" className="boxStyle">
-            <div style={{ margin: "0px auto 10px auto" }} className='titleBox'>
-                <svg className="box" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
-                    <path d="M64 192L64 224L576 224L576 192C576 
+            <div className='titleBox'>
+                <div className="titleSVG">
+                    <svg className="box" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                        <path d="M64 192L64 224L576 224L576 192C576 
                         156.7 547.3 128 512 128L128 128C92.7 128 64 
                         156.7 64 192zM64 272L64 448C64 483.3 92.7 512 
                         128 512L512 512C547.3 512 576 483.3 576 448L576 
@@ -86,92 +88,94 @@ function TransactionList({ transactionList, setTransactionList, selectedOperatio
                         400L360 400C373.3 400 384 410.7 384 424C384 
                         437.3 373.3 448 360 448L296 448C282.7 448 272 
                         437.3 272 424z" />
-                </svg>
-                <h3 className='box'>Elenco transazioni</h3>
+                    </svg>
+                    <h3 className='box'>Elenco transazioni</h3>
+                </div>
             </div>
-
-            <div id="transactionFiltersCont">
-                <div id="lastOperationsCont" className="dropdownCont">
-                    <button type="button" onClick={() => handleFiltersOpen('lastOperations')}
-                        className={openMenu === 'lastOperations' ? "buttonFiltersActive" : ""}>
-                        Ultime {selectedOperations} operazioni
-                        <svg viewBox="0 0 200 200" className={openMenu === 'lastOperations' ? "rotate180" : ""}>
-                            <polyline
-                                points="15,110 100,180 185,110"
-                                fill="none"
-                                strokeWidth="30" />
-                        </svg>
-                    </button>
-                    <div className={`dropdownFiltersCont ${openMenu === 'lastOperations' ? "fadeDownFilters" : ""}`}>
-                        <div onClick={() => handleSelectedOperations(4)}>
-                            <svg className={`check ${selectedOperations === 4 ? "checkActive" : ""}`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
-                                <path d="M530.8 134.1C545.1 144.5 548.3 164.5 537.9 178.8L281.9 530.8C276.4 538.4 267.9 
+            <div className="contentBox">
+                <div id="transactionFiltersCont">
+                    <div id="lastOperationsCont" className="dropdownCont">
+                        <button type="button" onClick={() => handleFiltersOpen('lastOperations')}
+                            className={openMenu === 'lastOperations' ? "buttonFiltersActive" : ""}>
+                            Ultime {selectedOperations} operazioni
+                            <svg viewBox="0 0 200 200" className={openMenu === 'lastOperations' ? "rotate180" : ""}>
+                                <polyline
+                                    points="15,110 100,180 185,110"
+                                    fill="none"
+                                    strokeWidth="30" />
+                            </svg>
+                        </button>
+                        <div className={`dropdownFiltersCont ${openMenu === 'lastOperations' ? "fadeDownFilters" : ""}`}>
+                            <div onClick={() => handleSelectedOperations(4)}>
+                                <svg className={`check ${selectedOperations === 4 ? "checkActive" : ""}`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                                    <path d="M530.8 134.1C545.1 144.5 548.3 164.5 537.9 178.8L281.9 530.8C276.4 538.4 267.9 
                                     543.1 258.5 543.9C249.1 544.7 240 541.2 233.4 534.6L105.4 406.6C92.9 394.1 92.9 373.8 105.4 
                                     361.3C117.9 348.8 138.2 348.8 150.7 361.3L252.2 462.8L486.2 141.1C496.6 126.8 516.6 123.6 530.9 134z" />
-                            </svg>
-                            Ultime 4 operazioni
-                        </div>
-                        <div onClick={() => handleSelectedOperations(5)}>
-                            <svg className={`check ${selectedOperations === 5 ? "checkActive" : ""}`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
-                                <path d="M530.8 134.1C545.1 144.5 548.3 164.5 537.9 178.8L281.9 530.8C276.4 538.4 267.9 
+                                </svg>
+                                Ultime 4 operazioni
+                            </div>
+                            <div onClick={() => handleSelectedOperations(5)}>
+                                <svg className={`check ${selectedOperations === 5 ? "checkActive" : ""}`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                                    <path d="M530.8 134.1C545.1 144.5 548.3 164.5 537.9 178.8L281.9 530.8C276.4 538.4 267.9 
                                     543.1 258.5 543.9C249.1 544.7 240 541.2 233.4 534.6L105.4 406.6C92.9 394.1 92.9 373.8 105.4 
                                     361.3C117.9 348.8 138.2 348.8 150.7 361.3L252.2 462.8L486.2 141.1C496.6 126.8 516.6 123.6 530.9 134z" />
-                            </svg>
-                            Ultime 5 operazioni
-                        </div>
-                        <div onClick={() => handleSelectedOperations(6)}>
-                            <svg className={`check ${selectedOperations === 6 ? "checkActive" : ""}`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
-                                <path d="M530.8 134.1C545.1 144.5 548.3 164.5 537.9 178.8L281.9 530.8C276.4 538.4 267.9 
+                                </svg>
+                                Ultime 5 operazioni
+                            </div>
+                            <div onClick={() => handleSelectedOperations(6)}>
+                                <svg className={`check ${selectedOperations === 6 ? "checkActive" : ""}`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                                    <path d="M530.8 134.1C545.1 144.5 548.3 164.5 537.9 178.8L281.9 530.8C276.4 538.4 267.9 
                                     543.1 258.5 543.9C249.1 544.7 240 541.2 233.4 534.6L105.4 406.6C92.9 394.1 92.9 373.8 105.4 
                                     361.3C117.9 348.8 138.2 348.8 150.7 361.3L252.2 462.8L486.2 141.1C496.6 126.8 516.6 123.6 530.9 134z" />
-                            </svg>
-                            Ultime 6 operazioni
-                        </div>
-                        <div onClick={() => handleSelectedOperations(7)}>
-                            <svg className={`check ${selectedOperations === 7 ? "checkActive" : ""}`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
-                                <path d="M530.8 134.1C545.1 144.5 548.3 164.5 537.9 178.8L281.9 530.8C276.4 538.4 267.9 
+                                </svg>
+                                Ultime 6 operazioni
+                            </div>
+                            <div onClick={() => handleSelectedOperations(7)}>
+                                <svg className={`check ${selectedOperations === 7 ? "checkActive" : ""}`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                                    <path d="M530.8 134.1C545.1 144.5 548.3 164.5 537.9 178.8L281.9 530.8C276.4 538.4 267.9 
                                     543.1 258.5 543.9C249.1 544.7 240 541.2 233.4 534.6L105.4 406.6C92.9 394.1 92.9 373.8 105.4 
                                     361.3C117.9 348.8 138.2 348.8 150.7 361.3L252.2 462.8L486.2 141.1C496.6 126.8 516.6 123.6 530.9 134z" />
-                            </svg>
-                            Ultime 7 operazioni
-                        </div>
-                        <div onClick={() => handleSelectedOperations(8)}>
-                            <svg className={`check ${selectedOperations === 8 ? "checkActive" : ""}`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
-                                <path d="M530.8 134.1C545.1 144.5 548.3 164.5 537.9 178.8L281.9 530.8C276.4 538.4 267.9 
+                                </svg>
+                                Ultime 7 operazioni
+                            </div>
+                            <div onClick={() => handleSelectedOperations(8)}>
+                                <svg className={`check ${selectedOperations === 8 ? "checkActive" : ""}`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                                    <path d="M530.8 134.1C545.1 144.5 548.3 164.5 537.9 178.8L281.9 530.8C276.4 538.4 267.9 
                                     543.1 258.5 543.9C249.1 544.7 240 541.2 233.4 534.6L105.4 406.6C92.9 394.1 92.9 373.8 105.4 
                                     361.3C117.9 348.8 138.2 348.8 150.7 361.3L252.2 462.8L486.2 141.1C496.6 126.8 516.6 123.6 530.9 134z" />
-                            </svg>
-                            Ultime 8 operazioni
+                                </svg>
+                                Ultime 8 operazioni
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            {transactionList ? (
-                <div className='tableWrapper'>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Data</th>
-                                <th>Importo</th>
-                                <th>Descrizione</th>
-                            </tr>
-                        </thead>
-
-                        <tbody>
-                            {transactionList.map(transaction => (
-                                <tr key={transaction.id}>
-                                    <td>{transaction.date.length === 5 ? `${transaction.date}/${new Date().getFullYear().toString().slice(2)}` : transaction.date}</td>
-                                    <td>{transaction.amount.toLocaleString('it-IT',
-                                        { minimumFractionDigits: 0, maximumFractionDigits: 2 })} €
-                                    </td>
-                                    <td>{transaction.description}</td>
+                {transactionList ? (
+                    <div className='tableWrapper'>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Data</th>
+                                    <th>Importo</th>
+                                    <th>Descrizione</th>
                                 </tr>
-                            ))}
-                        </tbody>
-                    </table>
-                </div>
-            ) : null}
+                            </thead>
+
+                            <tbody>
+                                {transactionList.map(transaction => (
+                                    <tr key={transaction.id}>
+                                        <td>{transaction.date.length === 5 ? `${transaction.date}/${new Date().getFullYear().toString().slice(2)}` : transaction.date}</td>
+                                        <td>{transaction.amount.toLocaleString('it-IT',
+                                            { minimumFractionDigits: 0, maximumFractionDigits: 2 })} €
+                                        </td>
+                                        <td>{transaction.description}</td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
+                ) : null}
+            </div>
         </div>
     );
 }

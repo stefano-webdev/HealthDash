@@ -67,8 +67,9 @@ function Notifications() {
     return (
         <div id="notificationsCont" className="boxStyle">
             <div className="titleBox">
-                <svg className="box" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
-                    <path d="M320 64C302.3 64 288 78.3 288 96L288 99.2C215 114 
+                <div className="titleSVG">
+                    <svg className="box" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                        <path d="M320 64C302.3 64 288 78.3 288 96L288 99.2C215 114 
                         160 178.6 160 256L160 277.7C160 325.8 143.6 372.5 113.6 
                         410.1L103.8 422.3C98.7 428.6 96 436.4 96 444.5C96 464.1 111.9 
                         480 131.5 480L508.4 480C528 480 543.9 464.1 543.9 444.5C543.9 
@@ -76,12 +77,12 @@ function Notifications() {
                         480 277.7L480 256C480 178.6 425 114 352 99.2L352 96C352 78.3 337.7 
                         64 320 64zM258 528C265.1 555.6 290.2 576 320 576C349.8 576 374.9 
                         555.6 382 528L258 528z" />
-                </svg>
-                <h3 className="box">Notifiche</h3>
-            </div>
-            <div id="updateNotificationsCont">
-                <svg className="updateSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
-                    <path d="M129.9 292.5C143.2 199.5 223.3 128 320 128C373 128 
+                    </svg>
+                    <h3 className="box">Notifiche</h3>
+                </div>
+                <div className="updateCont">
+                    <svg className="updateSvgWhite" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                        <path d="M129.9 292.5C143.2 199.5 223.3 128 320 128C373 128 
                             421 149.5 455.8 184.2C456 184.4 456.2 184.6 456.4 184.8L464 
                             192L416.1 192C398.4 192 384.1 206.3 384.1 224C384.1 241.7 398.4 
                             256 416.1 256L544.1 256C561.8 256 576.1 241.7 576.1 224L576.1 
@@ -95,16 +96,19 @@ function Notifications() {
                             407.7 64 416.3L65 543.3C65.1 561 79.6 575.2 97.3 575C115 574.8 129.2 560.4 129 
                             542.7L128.6 491.2L139.3 501.3C185.6 547.4 249.5 576 320 576C449 576 555.7 480.6 
                             573.4 356.5z" />
-                </svg>
-                <small>24 ore</small>
+                    </svg>
+                    <small className="smallWhite">24 ore</small>
+                </div>
             </div>
-            <div id="allNotificationsCont">
-                {notifications.map((noti: Notifications) => (
-                    <div key={noti.id}>
-                        <h4>{noti.name}</h4>
-                        <p>{noti.notifications[0].message}</p>
-                    </div>
-                ))}
+            <div className="contentBox">
+                <div id="allNotificationsCont">
+                    {notifications.map((noti: Notifications) => (
+                        <div key={noti.id}>
+                            <h4>{noti.name}</h4>
+                            <p>{noti.notifications[0].message}</p>
+                        </div>
+                    ))}
+                </div>
             </div>
         </div>
     );

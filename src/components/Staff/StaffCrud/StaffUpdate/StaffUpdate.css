@@ -1,5 +1,9 @@
 p#updatedEmployee,
 p#updatedPatient {
-    margin: 20px 0px 2px 0px;
     text-align: center;
+    margin-bottom: 11px;
+}
+
+.updatedInline {
+    color: var(--updatedEmployee)
 }

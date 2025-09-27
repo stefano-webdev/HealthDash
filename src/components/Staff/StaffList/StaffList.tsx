@@ -96,8 +96,9 @@ function StaffList({ staffData }: { staffData: StaffProps }) {
     return (
         <div id='staffListCont' className='boxStyle'>
             <div className='titleBox'>
-                <svg className='box' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
-                    <path d="M104 112C90.7 112 80 122.7 80 136L80 184C80 197.3 
+                <div className='titleSVG'>
+                    <svg className="box" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                        <path d="M104 112C90.7 112 80 122.7 80 136L80 184C80 197.3 
                             90.7 208 104 208L152 208C165.3 208 176 197.3 176 184L176 
                             136C176 122.7 165.3 112 152 112L104 112zM256 128C238.3 128 
                             224 142.3 224 160C224 177.7 238.3 192 256 192L544 192C561.7 
@@ -112,12 +113,12 @@ function StaffList({ staffData }: { staffData: StaffProps }) {
                             272 80 282.7 80 296zM104 432C90.7 432 80 442.7 80 456L80 
                             504C80 517.3 90.7 528 104 528L152 528C165.3 528 176 517.3 
                             176 504L176 456C176 442.7 165.3 432 152 432L104 432z" />
-                </svg>
-                <h3 className='box'>Lista dipendenti</h3>
-            </div>
-            <div className="updateCont">
-                <svg className='updateSvg' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
-                    <path d="M129.9 292.5C143.2 199.5 223.3 128 320 128C373 128 
+                    </svg>
+                    <h3 className='box'>Lista dipendenti</h3>
+                </div>
+                <div className="updateCont">
+                    <svg className='updateSvgWhite' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                        <path d="M129.9 292.5C143.2 199.5 223.3 128 320 128C373 128 
                             421 149.5 455.8 184.2C456 184.4 456.2 184.6 456.4 184.8L464 
                             192L416.1 192C398.4 192 384.1 206.3 384.1 224C384.1 241.7 398.4 
                             256 416.1 256L544.1 256C561.8 256 576.1 241.7 576.1 224L576.1 
@@ -131,12 +132,11 @@ function StaffList({ staffData }: { staffData: StaffProps }) {
                             407.7 64 416.3L65 543.3C65.1 561 79.6 575.2 97.3 575C115 574.8 129.2 560.4 129 
                             542.7L128.6 491.2L139.3 501.3C185.6 547.4 249.5 576 320 576C449 576 555.7 480.6 
                             573.4 356.5z" />
-                </svg>
-                <small>24 ore</small>
+                    </svg>
+                    <small className='smallWhite'>24 ore</small>
+                </div>
             </div>
-
             <p>Personale più attivo nelle ultime 24 ore.</p>
-
             <small>Filtra per cognome, ruolo o reparto</small>
             <div className="listFilterCont">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">

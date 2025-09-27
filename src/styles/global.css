@@ -1,9 +1,66 @@
 /* Global styles */
 :root {
-    --mainRed: #AE3626;
     --secondaryRed: #BE2520;
     --pressButtonRed: #A71E21;
-    --scale-font: clamp(19px, 4vw, 30px);
+}
+
+html.light {
+    --fadingWhite: rgb(255, 255, 255);
+    --mainRed: #AE3626;
+    --bgColor: #F9F9F9;
+    --boxStyleBg: #efefef;
+    --logoColor: rgb(47, 47, 47);
+    --textColor: rgb(0, 0, 0);
+    --smallColorBlack: rgba(0, 0, 0, 0.6);
+    --smallColorWhite: rgba(255, 255, 255, 0.66);
+    --inputBg: rgb(255, 255, 255);
+    --selectedRow: #cce5ff;
+    --updatedEmployee: #1475d6ff;
+    --deletedEmployee: var(--mainRed);
+    --mainRedActive: rgb(150, 44, 30);
+}
+
+/* #8a2316 */
+html.dark {
+    --fadingWhite: var(--textColor);
+    --mainRed: #7c2014;
+    --bgColor: #1f2831;
+    --boxStyleBg: #667886bf;
+    --logoColor: rgb(255, 255, 255);
+    --textColor: rgb(230, 230, 230);
+    --smallColorBlack: rgba(255, 255, 255, 0.6);
+    --smallColorWhite: rgba(255, 255, 255, 0.6);
+    --inputBg: rgba(0, 0, 0, 0.233);
+    --selectedRow: #002a7271;
+    --updatedEmployee: rgb(134, 201, 255);
+    --deletedEmployee: #5e0000;
+    --mainRedActive: #6a1c11;
+}
+
+html.brNo {
+    --borderRadius: 0px;
+}
+
+html.brMedium {
+    --borderRadius: 10px;
+}
+
+html.brHigh {
+    --borderRadius: 20px;
+}
+
+html {
+    text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    scrollbar-color: var(--mainRed) var(--boxStyleBg);
+}
+
+body {
+    min-width: 320px;
+    max-width: 1550px;
+    background-color: var(--bgColor);
+    margin: 0px auto;
 }
 
 * {
@@ -35,12 +92,20 @@ button {
     background-color: var(--pressButtonRed);
 }
 
+.buttonMainRed {
+    background-color: var(--mainRed);
+}
+
+.buttonMainRed:active {
+    background-color: var(--mainRedActive);
+}
+
 a#torna_portfolio {
     display: inline-block;
     margin: 10px 0px 40px 10px;
     font-size: 14px;
-    color: black;
-    background-color: #2354ae48;
+    color: var(--textColor);
+    background-color: var(--boxStyleBg);
     padding: 4px 8px;
     border-radius: 5px;
     border: 1px solid black;
@@ -53,10 +118,11 @@ a#torna_portfolio:active {
     background-color: #2354ae62;
 }
 
-p {
+p,
+label {
     font-size: 16px;
     margin: 0px;
-    color: black;
+    color: var(--textColor);
 }
 
 input,
@@ -66,27 +132,42 @@ textarea {
     font-size: 16px;
 }
 
-small {
-    font-size: 14px;
-    color: rgb(72, 72, 72);
+input,
+textarea {
+    padding: 8px 10px;
+    border: 2px solid rgba(0, 0, 0, 0.28);
+    border-radius: var(--borderRadius);
+    color: var(--textColor);
+    background-color: var(--inputBg);
 }
 
-.updateSvg {
-    fill: rgb(72, 72, 72);
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: rgb(128, 184, 241);
+}
+
+.updateSvgBlack {
+    fill: var(--smallColorBlack);
     width: 18px;
 }
 
-html {
-    text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%;
-    -moz-text-size-adjust: 100%;
+.updateSvgWhite {
+    fill: var(--smallColorWhite);
+    width: 18px;
 }
 
-body {
-    min-width: 320px;
-    max-width: 1550px;
-    background-color: white;
-    margin: 0px auto;
+small {
+    color: var(--textColor);
+    font-size: 14px;
+}
+
+.smallBlack {
+    color: var(--smallColorBlack);
+}
+
+.smallWhite {
+    color: var(--smallColorWhite);
 }
 
 #mainContainer {
@@ -98,11 +179,11 @@ body {
 div.currentRoute {
     display: flex;
     gap: 15px;
-    margin: 0px 0px 25px 5px;
+    margin-bottom: 25px;
 }
 
 div.currentRoute svg {
-    fill: var(--mainRed);
+    fill: var(--secondaryRed);
     width: clamp(30px, 5vw, 34px);
 }
 
@@ -111,6 +192,7 @@ div.currentRoute h2 {
     font-family: Arial, 'Helvetica Neue', Helvetica, 'Liberation Sans', sans-serif;
     margin: 5px 0px 0px 0px;
     letter-spacing: 2px;
+    color: var(--textColor);
 }
 
 .routeCont {
@@ -133,34 +215,40 @@ div.currentRoute h2 {
 
 svg.box {
     width: 25px;
-    fill: var(--mainRed);
+    fill: var(--fadingWhite);
 }
 
 h3.box {
     font-size: 20px;
     margin: 0px;
+    color: var(--fadingWhite);
 }
 
 div.crudShowCont h4 {
     font-size: 18px;
 }
 
-/* Home */
 div.boxStyle {
     margin: auto;
-    padding: 23px 16px;
-    background-color: #F0F0F067;
-    border-radius: 5px;
+    background-color: var(--boxStyleBg);
+    border-radius: var(--borderRadius);
     border: 1px solid rgba(0, 0, 0, 0.28);
-    width: clamp(291px, 78vw, 410px);
+    width: 93%;
+    max-width: 410px;
+}
+
+div.contentBox {
+    padding: 22px 16px;
 }
 
 #patientsTodayCont,
 #staffTodayCont {
     display: flex;
     flex-direction: column;
+    gap: 17px;
     align-items: center;
-    min-height: 143px;
+    padding: 15px 0px;
+    min-height: 119px;
     width: 100%;
 }
 
@@ -188,10 +276,20 @@ div#staffTodayCont div:first-child {
 
 div.titleBox {
     display: flex;
+    flex-direction: column;
+    gap: 6px;
+    background-color: var(--mainRed);
+    border-top-left-radius: calc(var(--borderRadius) - 1px);
+    border-top-right-radius: calc(var(--borderRadius) - 1px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.6);
+    padding: 10px 0px;
+}
+
+div.titleSVG {
+    display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 10px;
-    width: fit-content;
-    margin: 0px auto 6px auto;
+    gap: 6px;
 }
 
 div.updateCont {
@@ -200,17 +298,16 @@ div.updateCont {
     align-items: center;
     width: fit-content;
     margin: auto;
-    margin-bottom: 22px;
 }
 
 .XYAxis text {
     font-size: 13px;
-    fill: black;
+    fill: var(--textColor);
 }
 
 .XYAxisSmall text {
     font-size: 13px;
-    fill: black;
+    fill: var(--textColor);
 }
 
 .YStaff .recharts-label tspan {
@@ -233,14 +330,14 @@ div.updateCont {
     height: 12px;
     margin-top: 2px;
     border-radius: 10px;
-    background-color: var(--mainRed);
+    background-color: var(--secondaryRed);
 }
 
 #legendSymbolPatients {
     width: 20px;
     height: 12px;
     margin-top: 1px;
-    background-color: var(--mainRed);
+    background-color: var(--secondaryRed);
 }
 
 .legendSymbolBar {
@@ -249,7 +346,7 @@ div.updateCont {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     margin-bottom: 1.5px;
-    background-color: var(--mainRed);
+    background-color: var(--secondaryRed);
 }
 
 .legendSymbolLine {
@@ -259,8 +356,8 @@ div.updateCont {
 }
 
 .legendText {
-    color: var(--mainRed);
-    font-size: 17px;
+    color: var(--textColor);
+    font-size: 18px;
 }
 
 /* Download chart button */
@@ -272,7 +369,7 @@ div.updateCont {
     padding: 8px 13px 8px 8px;
     color: white;
     border: none;
-    border-radius: 8px;
+    border-radius: var(--borderRadius);
 }
 
 .downloadChartBtn svg {

@@ -7,7 +7,7 @@ form {
 small.warning {
     display: block;
     text-align: center;
-    margin-bottom: 35px;
+    color: var(--fadingWhite);
 }
 
 form .formGroup {
@@ -20,21 +20,6 @@ form label {
     width: fit-content;
 }
 
-form input,
-form textarea {
-    border: 2px solid rgba(0, 0, 0, 0.525);
-    padding: 3px 5px;
-    background-color: white;
-    color: black;
-    border-radius: 0px;
-}
-
-form input:focus,
-form textarea:focus {
-    outline: none;
-    border-color: #2e7cd0;
-}
-
 form .employeeShiftsForm,
 form .patientHistoryForm,
 form .patientPrescriptionsForm,
@@ -45,9 +30,10 @@ form .patientFamilyContactsForm {
 }
 
 form .sectionTitle {
+    color: var(--textColor);
     font-size: 17px;
     width: fit-content;
-    margin: 45px auto 12px auto;
+    margin: 45px auto 7px auto;
 }
 
 form .employeeContactsForm {
@@ -67,8 +53,8 @@ form .formActions button {
     font-weight: normal;
     border: 1px solid black;
     box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.253);
-    border-radius: 3px;
-    padding: 4px 8px;
+    border-radius: var(--borderRadius);
+    padding: 6px 10px;
 }
 
 form .formActions button:nth-child(1) {

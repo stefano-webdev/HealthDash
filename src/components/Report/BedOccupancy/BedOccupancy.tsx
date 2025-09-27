@@ -16,13 +16,13 @@ type OccupancyData = {
 };
 
 const bedOccupancyData: OccupancyData[] = [
-    { name: "Cardiologia", occupancy: 88, color: "#008080" },
+    { name: "Cardiologia", occupancy: 88, color: "#00ababff" },
     { name: "Ortopedia", occupancy: 75, color: "#98750bff" },
-    { name: "Pediatria", occupancy: 63, color: "#1E3A8A" },
-    { name: "Oncologia", occupancy: 73, color: "#8B0000" },
+    { name: "Pediatria", occupancy: 63, color: "#3369ffff" },
+    { name: "Oncologia", occupancy: 73, color: "#00af66ff" },
     { name: "Neurologia", occupancy: 69, color: "#259725ff" },
     { name: "Pronto Soccorso", occupancy: 79, color: "#FF4500" },
-    { name: "Chirurgia", occupancy: 77, color: "#6A5ACD" },
+    { name: "Chirurgia", occupancy: 77, color: "#7665e1ff" },
 ];
 
 function BedOccupancy() {
@@ -30,16 +30,21 @@ function BedOccupancy() {
     const chartRef = useRef<HTMLDivElement>(null);
     const [chartConfig, setChartConfig] = useState({ barSize: 13, height: 380 });
 
-    function downloadChart() {
+    async function downloadChart() {
         if (chartRef.current) {
-            htmlToImage.toPng(chartRef.current)
-                .then((dataUrl: string) => {
-                    const link: HTMLAnchorElement = document.createElement('a');
-                    link.href = dataUrl;
-                    link.download = 'bed-occupancy-chart.png';
-                    link.click();
-                })
-                .catch(err => window.alert(`Errore nel download del grafico: ${err.message}`));
+            try {
+                const dataUrl: string = await htmlToImage.toPng(chartRef.current);
+                const link: HTMLAnchorElement = document.createElement('a');
+                link.href = dataUrl;
+                link.download = 'bed-occupancy-chart.png';
+                link.click();
+            } catch (err: unknown) {
+                if (err instanceof Error) {
+                    window.alert(`Errore nel download del grafico: ${err.message}`);
+                } else {
+                    window.alert(`Errore nel download del grafico: ${String(err)}`);
+                }
+            }
         }
     }
 
@@ -95,7 +100,7 @@ function BedOccupancy() {
                                     <div className="tooltipChart"
                                         style={{
                                             border: "2px solid black",
-                                            borderRadius: "8px",
+                                            borderRadius: "var(--borderRadius)",
                                             backgroundColor: "white",
                                             boxShadow: "0px 0px 10px 1px #0000009f",
                                             padding: "6px 10px",

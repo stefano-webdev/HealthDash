@@ -1,9 +1,8 @@
 #staffDetailsCont {
-    min-height: 263px;
+    min-height: 277px;
 }
 
 div#employeeDetailsCont {
-    margin-top: 25px;
     display: flex;
     flex-direction: column;
     gap: 2px;
@@ -40,4 +39,9 @@ div#employeeMailCont svg,
 div#employeePhoneCont svg {
     fill: var(--mainRed);
     width: 22px;
+}
+
+div#employeeMailCont p,
+div#employeePhoneCont p {
+    margin-bottom: 1px;
 }

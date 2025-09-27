@@ -73,18 +73,19 @@ function Appointments() {
     return (
         <div id="appointmentsCont" className="boxStyle">
             <div className="titleBox">
-                <svg className="box" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
-                    <path d="M320 64C461.4 64 576 178.6 576 320C576 461.4 461.4 576 
+                <div className="titleSVG">
+                    <svg className="box" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                        <path d="M320 64C461.4 64 576 178.6 576 320C576 461.4 461.4 576 
                         320 576C178.6 576 64 461.4 64 320C64 178.6 178.6 64 320 64zM296 
                         184L296 320C296 328 300 335.5 306.7 340L402.7 404C413.7 411.4 428.6 
                         408.4 436 397.3C443.4 386.2 440.4 371.4 429.3 364L344 307.2L344 
                         184C344 170.7 333.3 160 320 160C306.7 160 296 170.7 296 184z" />
-                </svg>
-                <h3 className="box">Appuntamenti</h3>
-            </div>
-            <div className="updateCont">
-                <svg className="updateSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
-                    <path d="M129.9 292.5C143.2 199.5 223.3 128 320 128C373 128 
+                    </svg>
+                    <h3 className="box">Appuntamenti</h3>
+                </div>
+                <div className="updateCont">
+                    <svg className="updateSvgWhite" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                        <path d="M129.9 292.5C143.2 199.5 223.3 128 320 128C373 128 
                             421 149.5 455.8 184.2C456 184.4 456.2 184.6 456.4 184.8L464 
                             192L416.1 192C398.4 192 384.1 206.3 384.1 224C384.1 241.7 398.4 
                             256 416.1 256L544.1 256C561.8 256 576.1 241.7 576.1 224L576.1 
@@ -98,22 +99,25 @@ function Appointments() {
                             407.7 64 416.3L65 543.3C65.1 561 79.6 575.2 97.3 575C115 574.8 129.2 560.4 129 
                             542.7L128.6 491.2L139.3 501.3C185.6 547.4 249.5 576 320 576C449 576 555.7 480.6 
                             573.4 356.5z" />
-                </svg>
-                <small>24 ore</small>
+                    </svg>
+                    <small className="smallWhite">24 ore</small>
+                </div>
             </div>
-            <div id="allAppointmentsCont">
-                {dailyAppointments.map((dept: Department) => (
-                    <div key={dept.id}>
-                        <h4>{dept.name}</h4>
-                        <ul className="appointmentsUl">
-                            {dept.appointments.map((appt) => (
-                                <li key={appt.id}>
-                                    {appt.time} <br /> {appt.patient} - {appt.room}
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                ))}
+            <div className="contentBox">
+                <div id="allAppointmentsCont">
+                    {dailyAppointments.map((dept: Department) => (
+                        <div key={dept.id}>
+                            <h4>{dept.name}</h4>
+                            <ul className="appointmentsUl">
+                                {dept.appointments.map((appt) => (
+                                    <li key={appt.id}>
+                                        {appt.time} <br /> {appt.patient} - {appt.room}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    ))}
+                </div>
             </div>
         </div >
     );

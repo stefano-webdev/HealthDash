@@ -29,16 +29,21 @@ function StaffReport() {
     const chartRef = useRef<HTMLDivElement>(null);
     const [barSize, setBarSize] = useState(53);
 
-    function downloadChart() {
+    async function downloadChart() {
         if (chartRef.current) {
-            htmlToImage.toPng(chartRef.current)
-                .then((dataUrl: string) => {
-                    const link: HTMLAnchorElement = document.createElement('a');
-                    link.href = dataUrl;
-                    link.download = 'staff-report-chart.png';
-                    link.click();
-                })
-                .catch(err => window.alert(`Errore nel download del grafico: ${err.message}`));
+            try {
+                const dataUrl: string = await htmlToImage.toPng(chartRef.current);
+                const link: HTMLAnchorElement = document.createElement('a');
+                link.href = dataUrl;
+                link.download = 'staff-report-chart.png';
+                link.click();
+            } catch (err: unknown) {
+                if (err instanceof Error) {
+                    window.alert(`Errore nel download del grafico: ${err.message}`);
+                } else {
+                    window.alert(`Errore nel download del grafico: ${String(err)}`);
+                }
+            }
         }
     }
 
@@ -90,7 +95,7 @@ function StaffReport() {
                             className="XYAxisSmall YStaff"
                             allowDecimals={false}
                             label={{
-                                value: "Persone", angle: -90, dx: window.innerWidth >= 600 ? -8 : 0, position: "insideLeft", style: { fill: "var(--mainRed)" }
+                                value: "Persone", angle: -90, dx: window.innerWidth >= 600 ? -8 : 0, position: "insideLeft", style: { fill: "var(--textColor)" }
                             }} />
                         <Tooltip
                             content={({ payload, label }) => {
@@ -100,13 +105,13 @@ function StaffReport() {
                                     <div className="tooltipChart"
                                         style={{
                                             border: "2px solid black",
-                                            borderRadius: "8px",
+                                            borderRadius: "var(--borderRadius)",
                                             backgroundColor: "white",
                                             boxShadow: "0px 0px 10px 1px #0000009f",
                                             padding: "6px 10px",
                                         }}>
                                         <div>{label}</div>
-                                        <div style={{ color: "var(--mainRed)" }}>{`${staff} persone`}</div>
+                                        <div style={{ color: "var(--secondaryRed)" }}>{`${staff} persone`}</div>
                                     </div>
                                 );
                             }}

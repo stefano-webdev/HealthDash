@@ -15,7 +15,7 @@
     letter-spacing: 1px;
     font-size: clamp(32px, 5vw, 40px);
     font-style: italic;
-    color: rgb(88, 88, 88);
+    color: var(--logoColor);
     margin: 0px;
 }
 

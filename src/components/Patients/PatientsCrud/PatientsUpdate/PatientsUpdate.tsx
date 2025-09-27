@@ -134,8 +134,9 @@ function PatientsUpdate({ close, patientsData }: PatientsUpdateProps) {
     return (
         <div id="updatePatientCont" className="boxStyle" ref={scrollRef}>
             <div className='titleBox'>
-                <svg className='box' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
-                    <path d="M100.4 417.2C104.5 402.6 112.2 389.3 123 378.5L304.2 
+                <div className="titleSVG">
+                    <svg className='box' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                        <path d="M100.4 417.2C104.5 402.6 112.2 389.3 123 378.5L304.2 
                         197.3L338.1 163.4C354.7 180 389.4 214.7 442.1 267.4L476 
                         301.3L442.1 335.2L260.9 516.4C250.2 527.1 236.8 534.9 222.2 
                         539L94.4 574.6C86.1 576.9 77.1 574.6 71 568.4C64.9 562.2 62.6 
@@ -146,116 +147,119 @@ function PatientsUpdate({ close, patientsData }: PatientsUpdateProps) {
                         63.4 468 63.4C487.2 63.4 505.6 71 519.1 84.6L554.8 120.3C568.4 
                         133.9 576 152.3 576 171.4C576 190.5 568.4 209 554.8 222.5C551.3 
                         226 536.4 240.9 509.9 267.4z" />
-                </svg>
-                <h3 className='box'>Modifica paziente</h3>
+                    </svg>
+                    <h3 className='box'>Modifica paziente</h3>
+                </div>
+                <small className='warning'>I campi contrassegnati con * sono obbligatori</small>
             </div>
-            <p id='updatedPatient'>Stai modificando i dati di <em style={{ color: '#1475d6ff' }}>{patientLocal?.name}</em></p>
-            <small className='warning'>I campi contrassegnati con * sono obbligatori</small>
-            <form onSubmit={handleSubmit}>
-                {/* General informations */}
-                <div className="formGroup">
-                    <label htmlFor="nameUpdate">Nome*</label>
-                    <input onChange={handleInputChange} value={formData.name} type="text" autoComplete='off' spellCheck='false' id="nameUpdate" name="name" required maxLength={14} />
-                </div>
+            <div className="contentBox">
+                <p id='updatedPatient'>Stai modificando i dati di <strong><em className='updatedInline'>{patientLocal?.name}</em></strong></p>
+                <form onSubmit={handleSubmit}>
+                    {/* General informations */}
+                    <div className="formGroup">
+                        <label htmlFor="nameUpdate">Nome*</label>
+                        <input onChange={handleInputChange} value={formData.name} type="text" autoComplete='off' spellCheck='false' id="nameUpdate" name="name" required maxLength={14} />
+                    </div>
 
-                <div className="formGroup">
-                    <label htmlFor="surnameUpdate">Cognome*</label>
-                    <input onChange={handleInputChange} value={formData.surname} type="text" autoComplete='off' spellCheck='false' id="surnameUpdate" name="surname" required maxLength={14} />
-                </div>
+                    <div className="formGroup">
+                        <label htmlFor="surnameUpdate">Cognome*</label>
+                        <input onChange={handleInputChange} value={formData.surname} type="text" autoComplete='off' spellCheck='false' id="surnameUpdate" name="surname" required maxLength={14} />
+                    </div>
 
-                <div className="formGroup">
-                    <label htmlFor="ageUpdate">Età*</label>
-                    <input onChange={handleInputChange} value={formData.age} type="text" autoComplete='off' spellCheck='false' id="ageUpdate" name="age" required maxLength={3} />
-                </div>
+                    <div className="formGroup">
+                        <label htmlFor="ageUpdate">Età*</label>
+                        <input onChange={handleInputChange} value={formData.age} type="text" autoComplete='off' spellCheck='false' id="ageUpdate" name="age" required maxLength={3} />
+                    </div>
 
-                <div className="formGroup">
-                    <label htmlFor="codeUpdate">Codice paziente*</label>
-                    <input onChange={handleInputChange} value={formData.code} type="text" autoComplete='off' spellCheck='false' id="codeUpdate" name="code" required maxLength={8} />
-                </div>
+                    <div className="formGroup">
+                        <label htmlFor="codeUpdate">Codice paziente*</label>
+                        <input onChange={handleInputChange} value={formData.code} type="text" autoComplete='off' spellCheck='false' id="codeUpdate" name="code" required maxLength={8} />
+                    </div>
 
-                <div className="formGroup">
-                    <label htmlFor="stateUpdate">Stato (ricoverato o dimesso)*</label>
-                    <input onChange={handleInputChange} value={formData.state} type="text" autoComplete='off' spellCheck='false' id="stateUpdate" name="state" required maxLength={15} />
-                </div>
+                    <div className="formGroup">
+                        <label htmlFor="stateUpdate">Stato (ricoverato o dimesso)*</label>
+                        <input onChange={handleInputChange} value={formData.state} type="text" autoComplete='off' spellCheck='false' id="stateUpdate" name="state" required maxLength={15} />
+                    </div>
 
-                {/* Medical history */}
-                <div>
-                    <h4 className='sectionTitle'>Anamnesi e prescrizioni</h4>
-                    <div className='patientHistoryForm'>
-                        <div className="formGroup">
-                            <label htmlFor="pastDiseaseUpdate">Malattie pregresse</label>
-                            <input onChange={handleInputChange} value={formData.pastDiseases} type="text" autoComplete='off' spellCheck='false' id="pastDiseaseUpdate" name="pastDiseases" maxLength={150} />
-                        </div>
-                        <div className="formGroup">
-                            <label htmlFor="chronicDiseasesUpdate">Malattie croniche</label>
-                            <input onChange={handleInputChange} value={formData.chronicDiseases} type="text" autoComplete='off' spellCheck='false' id="chronicDiseasesUpdate" name="chronicDiseases" maxLength={150} />
-                        </div>
-                        <div className="formGroup">
-                            <label htmlFor="surgeriesUpdate">Interventi chirurgici</label>
-                            <input onChange={handleInputChange} value={formData.surgeries} type="text" autoComplete='off' spellCheck='false' id="surgeriesUpdate" name="surgeries" maxLength={150} />
-                        </div>
-                        <div className="formGroup">
-                            <label htmlFor="hospitalizationsUpdate">Ricoveri</label>
-                            <input onChange={handleInputChange} value={formData.hospitalizations} type="text" autoComplete='off' spellCheck='false' id="hospitalizationsUpdate" name="hospitalizations" maxLength={150} />
-                        </div>
-                        <div className="formGroup">
-                            <label htmlFor="knownAllergiesUpdate">Allergie</label>
-                            <input onChange={handleInputChange} value={formData.knownAllergies} type="text" autoComplete='off' spellCheck='false' id="knownAllergiesUpdate" name="knownAllergies" maxLength={150} />
-                        </div>
-                        <div className="formGroup">
-                            <label htmlFor="currentMedicationsUpdate">Farmaci in corso</label>
-                            <input onChange={handleInputChange} value={formData.currentMedications} type="text" autoComplete='off' spellCheck='false' id="currentMedicationsUpdate" name="currentMedications" maxLength={150} />
-                        </div>
-                        <div className="formGroup">
-                            <label htmlFor="currentSymptomsUpdate">Sintomi attuali</label>
-                            <input onChange={handleInputChange} value={formData.currentSymptoms} type="text" autoComplete='off' spellCheck='false' id="currentSymptomsUpdate" name="currentSymptoms" maxLength={150} />
+                    {/* Medical history */}
+                    <div>
+                        <h4 className='sectionTitle'>Anamnesi e prescrizioni</h4>
+                        <div className='patientHistoryForm'>
+                            <div className="formGroup">
+                                <label htmlFor="pastDiseaseUpdate">Malattie pregresse</label>
+                                <input onChange={handleInputChange} value={formData.pastDiseases} type="text" autoComplete='off' spellCheck='false' id="pastDiseaseUpdate" name="pastDiseases" maxLength={150} />
+                            </div>
+                            <div className="formGroup">
+                                <label htmlFor="chronicDiseasesUpdate">Malattie croniche</label>
+                                <input onChange={handleInputChange} value={formData.chronicDiseases} type="text" autoComplete='off' spellCheck='false' id="chronicDiseasesUpdate" name="chronicDiseases" maxLength={150} />
+                            </div>
+                            <div className="formGroup">
+                                <label htmlFor="surgeriesUpdate">Interventi chirurgici</label>
+                                <input onChange={handleInputChange} value={formData.surgeries} type="text" autoComplete='off' spellCheck='false' id="surgeriesUpdate" name="surgeries" maxLength={150} />
+                            </div>
+                            <div className="formGroup">
+                                <label htmlFor="hospitalizationsUpdate">Ricoveri</label>
+                                <input onChange={handleInputChange} value={formData.hospitalizations} type="text" autoComplete='off' spellCheck='false' id="hospitalizationsUpdate" name="hospitalizations" maxLength={150} />
+                            </div>
+                            <div className="formGroup">
+                                <label htmlFor="knownAllergiesUpdate">Allergie</label>
+                                <input onChange={handleInputChange} value={formData.knownAllergies} type="text" autoComplete='off' spellCheck='false' id="knownAllergiesUpdate" name="knownAllergies" maxLength={150} />
+                            </div>
+                            <div className="formGroup">
+                                <label htmlFor="currentMedicationsUpdate">Farmaci in corso</label>
+                                <input onChange={handleInputChange} value={formData.currentMedications} type="text" autoComplete='off' spellCheck='false' id="currentMedicationsUpdate" name="currentMedications" maxLength={150} />
+                            </div>
+                            <div className="formGroup">
+                                <label htmlFor="currentSymptomsUpdate">Sintomi attuali</label>
+                                <input onChange={handleInputChange} value={formData.currentSymptoms} type="text" autoComplete='off' spellCheck='false' id="currentSymptomsUpdate" name="currentSymptoms" maxLength={150} />
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                {/* Prescriptions */}
-                <div>
-                    <h4 className='sectionTitle'>Prescrizioni</h4>
-                    <div className='patientPrescriptionsForm'>
-                        <div className="formGroup">
-                            <label htmlFor="medicationUpdate">Medicinale</label>
-                            <input onChange={handleInputChange} value={formData.prescriptionsMedication} type="text" autoComplete='off' spellCheck='false' id="medicationUpdate" name="prescriptionsMedication" maxLength={150} />
-                        </div>
-                        <div className="formGroup">
-                            <label htmlFor="frequencyUpdate">Frequenza</label>
-                            <input onChange={handleInputChange} value={formData.prescriptionsFrequency} type="text" autoComplete='off' spellCheck='false' id="frequencyUpdate" name="prescriptionsFrequency" maxLength={150} />
+                    {/* Prescriptions */}
+                    <div>
+                        <h4 className='sectionTitle'>Prescrizioni</h4>
+                        <div className='patientPrescriptionsForm'>
+                            <div className="formGroup">
+                                <label htmlFor="medicationUpdate">Medicinale</label>
+                                <input onChange={handleInputChange} value={formData.prescriptionsMedication} type="text" autoComplete='off' spellCheck='false' id="medicationUpdate" name="prescriptionsMedication" maxLength={150} />
+                            </div>
+                            <div className="formGroup">
+                                <label htmlFor="frequencyUpdate">Frequenza</label>
+                                <input onChange={handleInputChange} value={formData.prescriptionsFrequency} type="text" autoComplete='off' spellCheck='false' id="frequencyUpdate" name="prescriptionsFrequency" maxLength={150} />
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                {/* Family contacts */}
-                <div>
-                    <h4 className='sectionTitle'>Contatti familiari</h4>
-                    <div className='patientFamilyContactsForm'>
-                        <div className="formGroup">
-                            <label htmlFor="familyNameUpdate">Nome*</label>
-                            <input onChange={handleInputChange} value={formData.familyContactsName} type="text" autoComplete='off' spellCheck='false' id="familyNameUpdate" name="familyContactsName" required maxLength={150} />
-                        </div>
-                        <div className="formGroup">
-                            <label htmlFor="familySurnameUpdate">Cognome*</label>
-                            <input onChange={handleInputChange} value={formData.familyContactsSurname} type="text" autoComplete='off' spellCheck='false' id="familySurnameUpdate" name="familyContactsSurname" required maxLength={150} />
-                        </div>
-                        <div className="formGroup">
-                            <label htmlFor="familyRelationUpdate">Relazione*</label>
-                            <input onChange={handleInputChange} value={formData.familyContactsRelation} type="text" autoComplete='off' spellCheck='false' id="familyRelationUpdate" name="familyContactsRelation" required maxLength={150} />
-                        </div>
-                        <div className="formGroup">
-                            <label htmlFor="familyPhoneUpdate">Telefono*</label>
-                            <input onChange={handleInputChange} value={formData.familyContactsPhone} type="text" autoComplete='off' spellCheck='false' id="familyPhoneUpdate" name="familyContactsPhone" required maxLength={30} />
+                    {/* Family contacts */}
+                    <div>
+                        <h4 className='sectionTitle'>Contatti familiari</h4>
+                        <div className='patientFamilyContactsForm'>
+                            <div className="formGroup">
+                                <label htmlFor="familyNameUpdate">Nome*</label>
+                                <input onChange={handleInputChange} value={formData.familyContactsName} type="text" autoComplete='off' spellCheck='false' id="familyNameUpdate" name="familyContactsName" required maxLength={150} />
+                            </div>
+                            <div className="formGroup">
+                                <label htmlFor="familySurnameUpdate">Cognome*</label>
+                                <input onChange={handleInputChange} value={formData.familyContactsSurname} type="text" autoComplete='off' spellCheck='false' id="familySurnameUpdate" name="familyContactsSurname" required maxLength={150} />
+                            </div>
+                            <div className="formGroup">
+                                <label htmlFor="familyRelationUpdate">Relazione*</label>
+                                <input onChange={handleInputChange} value={formData.familyContactsRelation} type="text" autoComplete='off' spellCheck='false' id="familyRelationUpdate" name="familyContactsRelation" required maxLength={150} />
+                            </div>
+                            <div className="formGroup">
+                                <label htmlFor="familyPhoneUpdate">Telefono*</label>
+                                <input onChange={handleInputChange} value={formData.familyContactsPhone} type="text" autoComplete='off' spellCheck='false' id="familyPhoneUpdate" name="familyContactsPhone" required maxLength={30} />
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div className='formActions'>
-                    <button type="button" onClick={close}>Annulla</button>
-                    <button type="submit">Aggiungi</button>
-                </div>
-            </form>
+                    <div className='formActions'>
+                        <button type="button" onClick={close}>Annulla</button>
+                        <button type="submit">Aggiungi</button>
+                    </div>
+                </form>
+            </div>
         </div>
     );
 }

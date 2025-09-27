@@ -1,11 +1,10 @@
 #staffListCont {
     min-height: 444px;
     text-align: center;
-    padding: 23px 5px;
 }
 
 #staffListCont p:nth-of-type(1) {
-    margin-bottom: 15px;
+    margin: 10px 20px 15px 20px;
 }
 
 .listFilterCont {
@@ -15,7 +14,7 @@
 }
 
 .listFilterCont svg {
-    fill: black;
+    fill: var(--textColor);
     position: absolute;
     left: 7px;
     top: 50%;
@@ -28,14 +27,6 @@
 #patientsListCont input#patientsFilterInput {
     width: 267px;
     padding: 8px 12px 8px 33px;
-    border: 2px solid rgba(0, 0, 0, 0.28);
-    border-radius: 5px;
-}
-
-#staffListCont input#staffFilterInput:focus,
-#patientsListCont input#patientsFilterInput:focus {
-    outline: none;
-    border-color: #2e7cd0;
 }
 
 table {
@@ -81,6 +72,10 @@ table td {
     padding: 3px 9px;
 }
 
+table td {
+    color: var(--textColor)
+}
+
 table tbody tr:first-child td{
     padding-top: 12px;
 }
@@ -92,7 +87,7 @@ table tbody tr td {
 }
 
 tr.selectedRow {
-    background-color: #cce5ff;
+    background-color: var(--selectedRow);
     font-style: italic;
     transition: background-color 0.3s ease-in-out; 
 }

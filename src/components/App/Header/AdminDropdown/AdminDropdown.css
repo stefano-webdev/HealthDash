@@ -6,7 +6,7 @@
     font-size: 16px;
     border: none;
     padding: 0px;
-    color: white;
+    color: var(--fadingWhite);
     background-color: transparent;
 }
 
@@ -17,7 +17,7 @@
 /* SVG freccetta */
 #adminButton svg {
     width: 11px;
-    stroke: white;
+    stroke: var(--fadingWhite);
     transition: transform 0.3s ease;
     will-change: transform;
     padding-bottom: 3px;
@@ -31,7 +31,7 @@
 .adminSettingsUl {
     list-style-type: none;
     background-color: var(--mainRed);
-    border-radius: 7px;
+    border-radius: var(--borderRadius);
     margin: 0px;
     padding: 7px;
     position: absolute;
@@ -47,7 +47,7 @@
 
 .adminSettingsUl li {
     cursor: pointer;
-    color: white;
+    color: var(--fadingWhite);
     padding: 3px;
     font-size: 14px;
 }

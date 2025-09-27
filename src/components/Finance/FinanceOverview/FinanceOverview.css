@@ -10,8 +10,8 @@
 #cashFlowCont {
     display: flex;
     flex-direction: column;
-    gap: 3rem;
-    margin-top: 2.5rem;
+    gap: 1.8rem;
+    margin-bottom: 3rem;
 }
 
 .cashFlowItem {

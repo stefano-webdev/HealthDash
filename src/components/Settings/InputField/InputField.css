@@ -1,0 +1,28 @@
+.inputFieldCont {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.inputFieldCont label:first-child {
+    margin-left: 2px;
+}
+
+#showPasswordBtn {
+    border: none;
+    background-color: transparent;
+    padding: 0px;
+    height: 21px;
+    margin-top: 1px;
+}
+
+#labelPassword {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#labelPassword svg {
+    width: 21px;
+    fill: var(--mainRed);
+}

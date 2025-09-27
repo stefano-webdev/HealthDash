@@ -1,6 +1,9 @@
+.deletedInline {
+    color: var(--deletedEmployee);
+}
+
 p#deletedEmployee,
 p#deletedPatient {
-    margin-top: 20px;
     text-align: center;
 }
 
@@ -15,8 +18,8 @@ p#deletedPatient {
     font-weight: normal;
     border: 1px solid black;
     box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.253);
-    border-radius: 3px;
-    padding: 4px 8px;
+    border-radius: var(--borderRadius);
+    padding: 6px 10px;
 }
 
 .deleteActions button:nth-child(1) {
