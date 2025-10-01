@@ -1,4 +1,16 @@
 /* Global styles */
+
+* {
+    box-sizing: border-box;
+    font-family: 'Tahoma', 'Verdana', 'Arial', 'Helvetica', sans-serif;
+}
+
+.smoothSettingsSelectors {
+    transition: border-radius 0.7s ease,
+        background-color 0.7s ease,
+        color 0.7s ease;
+}
+
 :root {
     --secondaryRed: #BE2520;
     --pressButtonRed: #A71E21;
@@ -6,6 +18,7 @@
 
 html.light {
     --fadingWhite: rgb(255, 255, 255);
+    --adminBorder: #F9F9F9;
     --mainRed: #AE3626;
     --bgColor: #F9F9F9;
     --boxStyleBg: #efefef;
@@ -18,11 +31,18 @@ html.light {
     --updatedEmployee: #1475d6ff;
     --deletedEmployee: var(--mainRed);
     --mainRedActive: rgb(150, 44, 30);
+    --toggleCircleBg: rgba(0, 0, 0, 0.35);
+    --greenToggleBg: rgb(0, 170, 0);
+    --infoBorder: #252525c4;
+    --infoBg: #ebebeb;
+    --infoText: #262626;
+    --infoCloseBg: #efefef;
 }
 
 /* #8a2316 */
 html.dark {
     --fadingWhite: var(--textColor);
+    --adminBorder: #1f2831;
     --mainRed: #7c2014;
     --bgColor: #1f2831;
     --boxStyleBg: #667886bf;
@@ -35,6 +55,12 @@ html.dark {
     --updatedEmployee: rgb(134, 201, 255);
     --deletedEmployee: #5e0000;
     --mainRedActive: #6a1c11;
+    --toggleCircleBg: var(--inputBg);
+    --greenToggleBg: rgb(0, 126, 0);
+    --infoBorder: #077bff;
+    --infoBg: #adcbeb;
+    --infoText: #004085;
+    --infoCloseBg: #4eb2ff;
 }
 
 html.brNo {
@@ -56,16 +82,16 @@ html {
     scrollbar-color: var(--mainRed) var(--boxStyleBg);
 }
 
+main,
+footer {
+    transition: opacity 0.5s ease;
+}
+
 body {
     min-width: 320px;
     max-width: 1550px;
     background-color: var(--bgColor);
     margin: 0px auto;
-}
-
-* {
-    box-sizing: border-box;
-    font-family: 'Tahoma', 'Verdana', 'Arial', 'Helvetica', sans-serif;
 }
 
 button,
@@ -102,12 +128,12 @@ button {
 
 a#torna_portfolio {
     display: inline-block;
-    margin: 10px 0px 40px 10px;
+    margin: 10px 0px 20px 10px;
     font-size: 14px;
     color: var(--textColor);
     background-color: var(--boxStyleBg);
     padding: 4px 8px;
-    border-radius: 5px;
+    border-radius: var(--borderRadius);
     border: 1px solid black;
     text-decoration: none;
     outline-offset: 5px;
@@ -123,6 +149,7 @@ label {
     font-size: 16px;
     margin: 0px;
     color: var(--textColor);
+    transition: color 0.7s ease;
 }
 
 input,
@@ -139,6 +166,9 @@ textarea {
     border-radius: var(--borderRadius);
     color: var(--textColor);
     background-color: var(--inputBg);
+    transition: border-radius 0.7s ease,
+        background-color 0.7s ease,
+        color 0.7s ease;
 }
 
 input:focus,
@@ -190,9 +220,10 @@ div.currentRoute svg {
 div.currentRoute h2 {
     font-size: clamp(25px, 4.2vw, 33px);
     font-family: Arial, 'Helvetica Neue', Helvetica, 'Liberation Sans', sans-serif;
-    margin: 5px 0px 0px 0px;
+    margin: 3px 0px 0px 0px;
     letter-spacing: 2px;
     color: var(--textColor);
+    transition: color 0.7s ease;
 }
 
 .routeCont {

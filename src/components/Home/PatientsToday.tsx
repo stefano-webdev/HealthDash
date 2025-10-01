@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import type { StaffShift } from "./StaffToday.tsx";
 import type { DailyAppointments } from "./Appointments/Appointments.tsx";
 import type { DailyNotifications } from "./Notifications/Notifications.tsx";
-import type {StaffListType} from "../Staff/StaffList/StaffList.tsx";
+import type { StaffListType } from "../Staff/StaffList/StaffList.tsx";
 import type { PatientsListType } from "../Patients/PatientsList/PatientsList.tsx";
 import type { Transaction } from "../Finance/TransactionList/TransactionList.tsx";
 
@@ -25,8 +25,16 @@ interface hospitalShape {
         month: string
     },
     settings?: {
-        theme: "Chiaro" | "Scuro",
-        borderRadius: string
+        userProfile?: {
+            name: string,
+            surname: string,
+            email: string,
+            password: string
+        },
+        theme?: string,
+        borderRadius?: string,
+        notificationsEnabled?: boolean,
+        role?: string
     }
 }
 

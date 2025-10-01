@@ -6,8 +6,7 @@
     gap: 7px;
 }
 
-.themeDropdownCont,
-.borderRadiusDropdownCont {
+.choicesDropdownCont {
     position: absolute;
     top: calc(100% + 8px);
     left: -1px;
@@ -21,19 +20,17 @@
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
 }
 
-.borderRadiusDropdownCont {
+#dropdownBorderRadius {
     left: auto;
     right: -1px;
 }
 
-.themeDropdownCont.fadeDownChoices,
-.borderRadiusDropdownCont.fadeDownChoices {
+.choicesDropdownCont.fadeDownChoices {
     opacity: 1;
     pointer-events: auto;
 }
 
-.themeDropdownCont div,
-.borderRadiusDropdownCont div {
+.choicesDropdownCont div {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -47,13 +44,11 @@
     -moz-user-select: none;
 }
 
-.themeDropdownCont div:not(:last-child),
-.borderRadiusDropdownCont div:not(:last-child) {
+.choicesDropdownCont div:not(:last-child) {
     border-bottom: 0.7px solid rgba(255, 255, 255, 0.274);
 }
 
-#buttonThemeCont button,
-#buttonBorderRadiusCont button {
+.selectorBtnCont button {
     display: flex;
     gap: 5px;
     align-items: center;
@@ -63,15 +58,16 @@
     background-color: var(--inputBg);
     font-size: 13px;
     color: var(--textColor);
+    transition: border-radius 0.7s ease,
+        background-color 0.7s ease,
+        color 0.7s ease;
 }
 
-#buttonThemeCont button.choicesActive,
-#buttonBorderRadiusCont button.choicesActive {
+.selectorBtnCont button.choicesActive {
     outline: 2px solid rgb(128, 184, 241);
 }
 
-#buttonThemeCont svg,
-#buttonBorderRadiusCont svg {
+.selectorBtnCont svg {
     width: 12px;
     stroke: var(--textColor);
     padding-bottom: 3px;
@@ -79,15 +75,13 @@
     will-change: transform;
 }
 
-#buttonThemeCont svg.check,
-#buttonBorderRadiusCont svg.check {
+.selectorBtnCont svg.check {
     width: 20px;
     fill: white;
     padding: 0px;
     opacity: 0;
 }
 
-#buttonThemeCont svg.checkActive,
-#buttonBorderRadiusCont svg.checkActive {
+.selectorBtnCont svg.checkActive {
     opacity: 1;
 }

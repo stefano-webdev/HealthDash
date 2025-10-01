@@ -1,5 +1,5 @@
 #githubCont {
-    margin-top: 1.8rem;
+    margin: 1.8rem 0px 7px 0px;
     display: flex;
     justify-content: center;
     gap: 10px;
@@ -7,7 +7,7 @@
 }
 
 footer {
-    margin: 5rem 15px 2.2rem 15px;
+    margin: 5rem 15px 2.4rem 15px;
     text-align: center;
 }
 

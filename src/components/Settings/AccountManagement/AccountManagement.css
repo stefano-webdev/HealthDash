@@ -1,0 +1,17 @@
+#accountManagementCont {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+#roleSelectorCont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+}
+
+#dropdownRole {
+    left: 50%;
+    transform: translateX(-50%);
+}

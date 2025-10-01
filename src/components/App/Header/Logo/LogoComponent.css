@@ -1,6 +1,7 @@
 #logoComponent {
     width: 90px;
     fill: var(--fadingWhite);
+    transition: fill 0.7s ease;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import type { hospitalShape } from "./components/Home/PatientsToday.tsx";
 import Header from "./components/App/Header/Header/Header.tsx";
 import HealthDashLogo from "./components/App/HeatlhDashLogo/HealthDashLogo.tsx";
@@ -7,6 +8,14 @@ import "./styles/responsive.css";
 import Footer from "./components/App/Footer/Footer.tsx";
 
 function App() {
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      document.body.classList.add("smoothSettingsSelectors");
+    }, 500);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   const unknownData: string | null = localStorage.getItem("hospitalData");
   const savedData: hospitalShape = unknownData ? JSON.parse(unknownData) : {};
 
@@ -42,7 +51,7 @@ function App() {
     <>
       <Header />
       <main>
-        <a id="torna_portfolio" href="https://stefanodev.it/">Torna al portfolio</a>
+        <a id="torna_portfolio" className="smoothSettingsSelectors" href="https://stefanodev.it/">Torna al portfolio</a>
         <HealthDashLogo />
         <div id="mainContainer">
           <Outlet />

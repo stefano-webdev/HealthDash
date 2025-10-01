@@ -1,12 +1,10 @@
-/* Bottone */
+/* Button */
 #adminButton {
     display: flex;
     align-items: center;
-    gap: 5px;
-    font-size: 16px;
+    gap: 2px;
     border: none;
     padding: 0px;
-    color: var(--fadingWhite);
     background-color: transparent;
 }
 
@@ -14,26 +12,35 @@
     position: relative;
 }
 
-/* SVG freccetta */
-#adminButton svg {
-    width: 11px;
+/* Arrow and user svg */
+#adminButton svg:last-child {
+    width: 15px;
     stroke: var(--fadingWhite);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, stroke 0.7s ease;
     will-change: transform;
     padding-bottom: 3px;
+}
+
+#adminButton svg:first-child {
+    width: 37px;
+    fill: var(--fadingWhite);
+    transition: fill 0.7s ease;
 }
 
 .rotate180 {
     transform: rotate(180deg) translateY(-2px);
 }
 
-/* Dropdown */
+/* Dropdown user*/
 .adminSettingsUl {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
     list-style-type: none;
     background-color: var(--mainRed);
     border-radius: var(--borderRadius);
     margin: 0px;
-    padding: 7px;
+    padding: 5px 18px;
     position: absolute;
     top: calc(100% + 46px);
     right: 0px;
@@ -45,15 +52,17 @@
     box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.532);
 }
 
-.adminSettingsUl li {
-    cursor: pointer;
-    color: var(--fadingWhite);
-    padding: 3px;
-    font-size: 14px;
-}
-
 .fadeDownAdmin {
     opacity: 1;
     transform: translateY(0px);
     pointer-events: auto;
+}
+
+/* Buttons inside <li> elements */
+#adminMenu button {
+    color: var(--fadingWhite);
+    padding: 6px 3px;
+    font-size: 14px;
+    background-color: transparent;
+    border: none;
 }

@@ -23,7 +23,7 @@ div#recoveryInfoCont p {
     width: 80%;
     max-width: 330px;
     text-align: center;
-    border: 2px solid black;
+    border: 2px solid var(--textColor);
     border-radius: var(--borderRadius);
     padding: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.379);
@@ -40,7 +40,7 @@ div#recoveryInfoCont p::before {
     transform: translateX(-50%);
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
-    border-bottom: 10px solid black;
+    border-bottom: 10px solid var(--textColor);
     z-index: 0;
 }
 

@@ -2,6 +2,9 @@ import { useState, useEffect } from "react";
 import InputField from "../InputField/InputField.tsx";
 import ThemeSelector from "../ThemeSelector/ThemeSelector.tsx";
 import BorderRadiusSelector from "../BorderRadiusSelector/BorderRadiusSelector.tsx";
+import NotificationsToggle from "../NotificationsToggle/NotificationsToggle.tsx";
+import AccountManagement from "../AccountManagement/AccountManagement.tsx";
+import type { hospitalShape } from "../../Home/PatientsToday.tsx";
 import "./Settings.css";
 
 interface UserData {
@@ -12,14 +15,13 @@ interface UserData {
 }
 
 function Settings() {
-    const [userData, setUserData] = useState<UserData>({
-        name: "",
-        surname: "",
-        email: "",
-        password: ""
-    });
+    const unknownData: string | null = localStorage.getItem("hospitalData");
+    const savedData: hospitalShape = unknownData ? JSON.parse(unknownData) : {};
+    const [userData, setUserData] = useState<UserData>(initialUserData());
     const [showPassword, setShowPassword] = useState<boolean>(false);
+    const [confirmMessage, setConfirmMessage] = useState<{ message: string, type: "success" | "error" } | null>(null);
 
+    // Handle input changes
     function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
         const { name, value } = event.target;
         setUserData(prevData => ({
@@ -28,9 +30,66 @@ function Settings() {
         }));
     }
 
+    // Get initial user data from localStorage or set to default values
+    function initialUserData(): UserData {
+        if (savedData.settings?.userProfile) {
+            return {
+                name: savedData.settings.userProfile.name,
+                surname: savedData.settings.userProfile.surname,
+                email: savedData.settings.userProfile.email,
+                password: savedData.settings.userProfile.password
+            };
+        } else {
+            return {
+                name: "Stefano",
+                surname: "Quaranta",
+                email: "stefanoquaranta.web@gmail.com",
+                password: "HealthDash25*"
+            };
+        }
+    }
+
+    // Save user data changes on localStorage
+    function handleSubmitUpdates(event: React.FormEvent<HTMLFormElement>) {
+        event.preventDefault();
+        const updatedData: hospitalShape = {
+            ...savedData,
+            settings: {
+                ...savedData.settings,
+                userProfile: {
+                    name: userData.name,
+                    surname: userData.surname,
+                    email: userData.email,
+                    password: userData.password
+                }
+            }
+        };
+        localStorage.setItem("hospitalData", JSON.stringify(updatedData));
+        const activeEl = document.activeElement as HTMLElement;
+        console.log(activeEl);
+        if (activeEl && event.currentTarget.contains(activeEl)) {
+            activeEl.blur();
+        }
+
+        setShowPassword(false);
+        setConfirmMessage({ message: "Modifiche salvate con successo!", type: "success" });
+        setTimeout(() => {
+            setConfirmMessage(null);
+        }, 3500);
+    }
+
     // Scroll to top on component mount
     useEffect(() => {
         window.scrollTo(0, 0);
+
+        if (savedData.settings?.userProfile) {
+            setUserData({
+                name: savedData.settings.userProfile.name,
+                surname: savedData.settings.userProfile.surname,
+                email: savedData.settings.userProfile.email,
+                password: savedData.settings.userProfile.password
+            });
+        }
     }, []);
 
     return (
@@ -53,28 +112,32 @@ function Settings() {
                 </svg>
                 <h2>IMPOSTAZIONI</h2>
             </div>
-            <form id="formSettings">
-                {/* User profile */}
-                <div className="flexSettings">
-                    <h3>Profilo utente</h3>
-                    <div id="userSettingsCont">
-                        <InputField type="text" label="Nome" placeholder="Stefano"
-                            value={userData.name} onChange={handleChange} name="name"
-                            id="nameSettings" />
 
-                        <InputField type="text" label="Cognome" placeholder="Quaranta"
-                            value={userData.surname} onChange={handleChange} name="surname"
-                            id="surnameSettings" />
+            <div className="routeCont">
+                <form onSubmit={handleSubmitUpdates}>
+                    {/* User profile */}
+                    <div className="flexSettings">
+                        <h3>Profilo utente</h3>
+                        <div id="userSettingsCont">
+                            <InputField type="text" label="Nome" placeholder="Nome"
+                                value={userData.name} onChange={handleChange} name="name"
+                                id="nameSettings" />
 
-                        <InputField type="email" label="Email" placeholder="stefanoquaranta.web@gmail.com"
-                            value={userData.email} onChange={handleChange} name="email"
-                            id="emailSettings" />
+                            <InputField type="text" label="Cognome" placeholder="Cognome"
+                                value={userData.surname} onChange={handleChange} name="surname"
+                                id="surnameSettings" />
 
-                        <InputField type="password" label="Password" placeholder="Inserisci password"
-                            value={userData.password} onChange={handleChange} name="password"
-                            id="passwordSettings" showPassword={showPassword} setShowPassword={setShowPassword} />
+                            <InputField type="email" label="Email" placeholder="Email"
+                                value={userData.email} onChange={handleChange} name="email"
+                                id="emailSettings" />
+
+                            <InputField type="password" label="Password" placeholder="Password"
+                                value={userData.password} onChange={handleChange} name="password"
+                                id="passwordSettings" showPassword={showPassword} setShowPassword={setShowPassword} />
+                        </div>
+                        <button type="submit" id="saveUserChanges" className="buttonMainRed smoothSettingsSelectors">Salva modifiche</button>
                     </div>
-                </div>
+                </form>
 
                 {/* UI preferences */}
                 <div className="flexSettings">
@@ -84,7 +147,28 @@ function Settings() {
                         <BorderRadiusSelector />
                     </div>
                 </div>
-            </form>
+
+                {/* Notifications */}
+                <div className="flexSettings">
+                    <h3>Aggiornamenti</h3>
+                    <div id="notificationsSettingsCont">
+                        <NotificationsToggle />
+                    </div>
+                </div>
+
+                {/* Account management */}
+                <div className="flexSettings">
+                    <h3>Gestione account</h3>
+                    <div id="accountManagementCont">
+                        <AccountManagement />
+                    </div>
+                </div>
+            </div>
+            {confirmMessage && (
+                <div className={`confirmMessageCont ${confirmMessage.type === "success" ? "positive" : "negative"}`}>
+                    <p>{confirmMessage.message}</p>
+                </div>
+            )}
         </>
     );
 }

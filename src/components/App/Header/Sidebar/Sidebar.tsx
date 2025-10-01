@@ -22,9 +22,9 @@ function Sidebar({ open, onToggle, changeRoute }: SidebarProps) {
             <button
                 className={`hamburger ${open ? "open" : ""}`}
                 onClick={onToggle}>
-                <span></span>
-                <span></span>
-                <span></span>
+                <span className="smoothSettingsSelectors"></span>
+                <span className="smoothSettingsSelectors"></span>
+                <span className="smoothSettingsSelectors"></span>
             </button>
 
             <nav aria-label="Main navigation">

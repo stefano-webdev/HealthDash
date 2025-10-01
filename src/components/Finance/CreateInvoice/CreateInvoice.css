@@ -11,7 +11,7 @@ textarea {
 #saveInvoice {
     color: var(--fadingWhite);
     border: none;
-    padding: 8px 4.4rem;
+    padding: 8px 4rem;
     border-radius: var(--borderRadius);
     margin-top: 3rem;
     align-self: center;

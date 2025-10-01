@@ -54,11 +54,13 @@ function InputField({ type, label, placeholder, value, onChange, name, id, showP
                             }
                         </button>
                     </div>
-                    <input type={showPassword ? "text" : "password"} placeholder={placeholder} value={value} name={name} id={id} onChange={onChange} autoComplete="off" />
+                    <input type={showPassword ? "text" : "password"} placeholder={placeholder} value={value} name={name}
+                        id={id} onChange={onChange} autoComplete="off" required />
                 </div> :
                 <div className="inputFieldCont">
                     <label htmlFor={id}>{label}</label>
-                    <input type={type} placeholder={placeholder} value={value} name={name} id={id} onChange={onChange} autoComplete="off" />
+                    <input type={type} placeholder={placeholder} value={value} name={name} id={id} onChange={onChange}
+                        autoComplete="off" required />
                 </div>
             }
         </>

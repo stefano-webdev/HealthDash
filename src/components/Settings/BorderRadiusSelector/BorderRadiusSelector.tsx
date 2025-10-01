@@ -1,11 +1,10 @@
 import { useState, useEffect } from "react";
 import type { hospitalShape } from "../../Home/PatientsToday.tsx";
-
 type Menu = "open" | null;
 
 function BorderRadiusSelector() {
     const unknownData: string | null = localStorage.getItem("hospitalData");
-    const savedData: hospitalShape = unknownData ? JSON.parse(unknownData) : {};
+    const initialSavedData: hospitalShape = unknownData ? JSON.parse(unknownData) : {};
     const borderConverterWords = {
         "No": "brNo",
         "Media": "brMedium",
@@ -16,39 +15,47 @@ function BorderRadiusSelector() {
         "brMedium": "Media",
         "brHigh": "Alta"
     }
-    let initialBorderRadius = "";
-    if (savedData.settings?.borderRadius) {
-        initialBorderRadius = borderConverterClasses[savedData.settings.borderRadius as "brNo" | "brMedium" | "brHigh"];
-    } else {
-        initialBorderRadius = "Media";
-    }
-    const [borderRadius, setBorderRadius] = useState<string>(initialBorderRadius);
+    const [borderRadius, setBorderRadius] = useState<string>(initialBorderRadius());
     const [openMenu, setOpenMenu] = useState<Menu>(null);
+
+    // Get the initial border radius from localStorage or set to default value (Media)
+    function initialBorderRadius(): string {
+        if (initialSavedData.settings?.borderRadius) {
+            return borderConverterClasses[initialSavedData.settings.borderRadius as "brNo" | "brMedium" | "brHigh"];
+        } else {
+            return "Media";
+        }
+    }
 
     // Change the border radius and save it to localStorage
     function handleBorderRadius(selectedBorderRadius: "No" | "Media" | "Alta") {
+        const unknownData: string | null = localStorage.getItem("hospitalData");
+        const updatedSavedData: hospitalShape = unknownData ? JSON.parse(unknownData) : {};
+
         const borderRadius = borderConverterWords[selectedBorderRadius];
         document.documentElement.classList.remove("brNo", "brMedium", "brHigh");
         document.documentElement.classList.add(borderRadius);
 
-        localStorage.setItem("hospitalData", JSON.stringify({
-            ...savedData,
+        const updatedData: hospitalShape = {
+            ...updatedSavedData,
             settings: {
-                ...savedData.settings,
+                ...updatedSavedData.settings,
                 borderRadius: borderRadius
             }
-        }));
+        };
+
+        localStorage.setItem("hospitalData", JSON.stringify(updatedData));
 
         setBorderRadius(selectedBorderRadius);
         setOpenMenu(null);
     }
 
-    // Clicking the button opens/closes the filters dropdown
+    // Clicking the button opens/closes the choices dropdown
     function handleChoices(menu: Menu) {
         setOpenMenu(prev => prev === menu ? null : menu);
     }
 
-    // Clicking outside of the filters dropdown closes it
+    // Clicking outside of the choices dropdown closes it
     function handleClickOutside(e: MouseEvent) {
         if (!(e.target as HTMLElement).closest('.dropdownBorderRadiusCont')) {
             setOpenMenu(null);
@@ -63,7 +70,7 @@ function BorderRadiusSelector() {
     return (
         <div id="borderRadiusSelectorCont">
             <p>Curvatura angoli</p>
-            <div id="buttonBorderRadiusCont" className="dropdownBorderRadiusCont">
+            <div id="buttonBorderRadiusCont" className="dropdownBorderRadiusCont selectorBtnCont">
                 <button type="button" onClick={() => handleChoices('open')}
                     className={openMenu === 'open' ? "choicesActive" : ""}>
                     {borderRadius}
@@ -74,7 +81,7 @@ function BorderRadiusSelector() {
                             strokeWidth="30" />
                     </svg>
                 </button>
-                <div className={`borderRadiusDropdownCont ${openMenu === 'open' ? "fadeDownChoices" : ""}`}>
+                <div id="dropdownBorderRadius" className={`choicesDropdownCont ${openMenu === 'open' ? "fadeDownChoices" : ""}`}>
                     <div onClick={() => handleBorderRadius("No")}>
                         <svg className={`check ${borderRadius === 'No' ? "checkActive" : ""}`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
                             <path d="M530.8 134.1C545.1 144.5 548.3 164.5 537.9 178.8L281.9 530.8C276.4 538.4 267.9 

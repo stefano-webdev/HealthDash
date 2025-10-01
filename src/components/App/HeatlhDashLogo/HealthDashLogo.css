@@ -17,6 +17,7 @@
     font-style: italic;
     color: var(--logoColor);
     margin: 0px;
+    transition: color 0.7s ease;
 }
 
 #h2inDevelopment {

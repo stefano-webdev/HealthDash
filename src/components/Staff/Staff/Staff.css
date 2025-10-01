@@ -1,19 +1,24 @@
 .confirmMessageCont {
     position: fixed;
-    z-index: 1;
-    bottom: 22px;
+    z-index: 2;
+    bottom: 25px;
     left: 50%;
     transform: translateX(-50%);
-    border-radius: 10px;
+    border-radius: var(--borderRadius);
     padding: 18px 7px;
     text-align: center;
     width: 220px;
     box-shadow: 0px 3px 10px 2px rgba(0, 0, 0, 0.387);
+    transition: border-radius 0.7s ease, border-color 0.7s ease, background-color 0.7s ease;
+}
+
+.confirmMessageCont p {
+    transition: color 0.7s ease;
 }
 
 .confirmMessageCont.positive {
     background-color: #d4edda;
-    border: 1px solid #7c9883;
+    border: 2px solid #7c9883;
 }
 
 .confirmMessageCont.positive p {
@@ -22,9 +27,48 @@
 
 .confirmMessageCont.negative {
     background-color: #f8d7da;
-    border: 1px solid #ab676e;
+    border: 2px solid #ab676e;
 }
 
 .confirmMessageCont.negative p {
     color: #721c24;
+}
+
+.confirmMessageCont.info {
+    background-color: var(--infoBg);
+    border: 2px solid var(--infoBorder);
+    width: 255px;
+}
+
+.confirmMessageCont.info p {
+    padding: 0px 6px;
+    color: var(--infoText);
+}
+
+.confirmMessageCont.info p:nth-of-type(1) {
+    margin-bottom: 20px;
+}
+
+#closeInfoBtn {
+    width: 26px;
+    height: 26px;
+    border: 2px solid var(--infoBorder);
+    background-color: var(--infoCloseBg);
+    border-radius: 50%;
+    position: absolute;
+    top: -12px;
+    right: -12px;
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.7s ease, border-color 0.7s ease;
+}
+
+#closeInfoBtn svg {
+    width: 16px;
+    fill: var(--infoText);
+    stroke: var(--infoText);
+    stroke-width: 20;
+    transition: fill 0.7s ease, stroke 0.7s ease;
 }

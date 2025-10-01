@@ -313,12 +313,12 @@
     }
 
     body .crudActionsCont button {
-        width: 47px;
-        height: 47px;
+        width: 49px;
+        height: 49px;
     }
 
     body .crudActionsCont svg {
-        width: 36px;
+        width: 30px;
     }
 
     body form .sectionTitle {
@@ -418,6 +418,7 @@
         height: 100vh;
         gap: 20px;
         pointer-events: auto;
+        box-shadow: none;
     }
 
     body header {
@@ -440,9 +441,9 @@
         right: max(15px, calc((100vw - 2100px) / 2 + 15px));
         top: 15px;
         background-color: var(--mainRed);
-        padding: 8px 12px;
-        border-radius: 8px;
-        border: 1px solid white;
+        padding: 8px 14px;
+        border-radius: var(--borderRadius);
+        border: 1px solid var(--adminBorder);
     }
 
     body #adminWrapper {
