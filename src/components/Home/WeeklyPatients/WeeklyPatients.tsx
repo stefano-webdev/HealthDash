@@ -69,7 +69,7 @@ function RecoveryChart() {
 
   return (
     <>
-      <div id="recoveryMainCont" className="resize">
+      <div id="recoveryMainCont" className="resize" tabIndex={-1}>
         <div id="recoveryCont" ref={chartRef} style={{ width: "100%", maxWidth: "500px", margin: "0 auto", height: '380px' }}>
           <ResponsiveContainer width="100%" height="100%">
             <LineChart

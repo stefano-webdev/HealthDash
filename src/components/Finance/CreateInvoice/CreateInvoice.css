@@ -16,3 +16,7 @@ textarea {
     margin-top: 3rem;
     align-self: center;
 }
+
+#saveInvoice:active {
+    transform: scale(var(--scaleBtn));
+}

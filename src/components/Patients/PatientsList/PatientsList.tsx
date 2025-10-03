@@ -149,7 +149,7 @@ function PatientsList({ patientsList, originalPatientsList,
             {patientsList === null ? null : patientsList.length === 0 ? (
                 <p>Nessun paziente trovato.</p>
             ) : (
-                <div className='tableWrapper'>
+                <div className='tableWrapper' tabIndex={-1}>
                     <table>
                         <thead>
                             <tr>

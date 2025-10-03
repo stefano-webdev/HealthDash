@@ -66,7 +66,6 @@ function Settings() {
         };
         localStorage.setItem("hospitalData", JSON.stringify(updatedData));
         const activeEl = document.activeElement as HTMLElement;
-        console.log(activeEl);
         if (activeEl && event.currentTarget.contains(activeEl)) {
             activeEl.blur();
         }
@@ -114,53 +113,57 @@ function Settings() {
             </div>
 
             <div className="routeCont">
-                <form onSubmit={handleSubmitUpdates}>
-                    {/* User profile */}
-                    <div className="flexSettings">
-                        <h3>Profilo utente</h3>
-                        <div id="userSettingsCont">
-                            <InputField type="text" label="Nome" placeholder="Nome"
-                                value={userData.name} onChange={handleChange} name="name"
-                                id="nameSettings" />
+                <div className="flexGroup">
+                    <form id="formSettings" onSubmit={handleSubmitUpdates}>
+                        {/* User profile */}
+                        <div style={{ width: "100%" }} className="flexSettings">
+                            <h3>Profilo utente</h3>
+                            <div id="userSettingsCont">
+                                <InputField type="text" label="Nome" placeholder="Nome"
+                                    value={userData.name} onChange={handleChange} name="name"
+                                    id="nameSettings" />
 
-                            <InputField type="text" label="Cognome" placeholder="Cognome"
-                                value={userData.surname} onChange={handleChange} name="surname"
-                                id="surnameSettings" />
+                                <InputField type="text" label="Cognome" placeholder="Cognome"
+                                    value={userData.surname} onChange={handleChange} name="surname"
+                                    id="surnameSettings" />
 
-                            <InputField type="email" label="Email" placeholder="Email"
-                                value={userData.email} onChange={handleChange} name="email"
-                                id="emailSettings" />
+                                <InputField type="email" label="Email" placeholder="Email"
+                                    value={userData.email} onChange={handleChange} name="email"
+                                    id="emailSettings" />
 
-                            <InputField type="password" label="Password" placeholder="Password"
-                                value={userData.password} onChange={handleChange} name="password"
-                                id="passwordSettings" showPassword={showPassword} setShowPassword={setShowPassword} />
+                                <InputField type="password" label="Password" placeholder="Password"
+                                    value={userData.password} onChange={handleChange} name="password"
+                                    id="passwordSettings" showPassword={showPassword} setShowPassword={setShowPassword} />
+                            </div>
+                            <button type="submit" id="saveUserChanges" className="buttonMainRed">Salva modifiche</button>
                         </div>
-                        <button type="submit" id="saveUserChanges" className="buttonMainRed smoothSettingsSelectors">Salva modifiche</button>
-                    </div>
-                </form>
+                    </form>
 
-                {/* UI preferences */}
-                <div className="flexSettings">
-                    <h3>Preferenze UI</h3>
-                    <div id="UISelectorsCont">
-                        <ThemeSelector />
-                        <BorderRadiusSelector />
-                    </div>
-                </div>
-
-                {/* Notifications */}
-                <div className="flexSettings">
-                    <h3>Aggiornamenti</h3>
-                    <div id="notificationsSettingsCont">
-                        <NotificationsToggle />
+                    {/* UI preferences */}
+                    <div className="flexSettings">
+                        <h3>Preferenze UI</h3>
+                        <div id="UISelectorsCont">
+                            <ThemeSelector />
+                            <BorderRadiusSelector />
+                        </div>
                     </div>
                 </div>
 
-                {/* Account management */}
-                <div className="flexSettings">
-                    <h3>Gestione account</h3>
-                    <div id="accountManagementCont">
-                        <AccountManagement />
+                <div className="flexGroup">
+                    {/* Notifications */}
+                    <div className="flexSettings">
+                        <h3>Aggiornamenti</h3>
+                        <div id="notificationsSettingsCont">
+                            <NotificationsToggle />
+                        </div>
+                    </div>
+
+                    {/* Account management */}
+                    <div className="flexSettings">
+                        <h3>Gestione account</h3>
+                        <div id="accountManagementCont">
+                            <AccountManagement />
+                        </div>
                     </div>
                 </div>
             </div>

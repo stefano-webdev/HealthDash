@@ -33,9 +33,10 @@
 
 .crudActionsCont button:active {
     background-color: var(--mainRedActive);
+    transform: scale(var(--scaleBtn));
 }
 
 .crudActionsCont svg {
     width: 25px;
-    fill: white;
+    fill: var(--fadingWhite);
 }

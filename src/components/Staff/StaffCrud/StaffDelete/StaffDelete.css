@@ -29,6 +29,7 @@ p#deletedPatient {
 
 .deleteActions button:nth-child(1):active {
     background-color: #1d50bd;
+    transform: scale(var(--scaleBtn));
 }
 
 .deleteActions button:nth-child(2) {
@@ -37,5 +38,6 @@ p#deletedPatient {
 }
 
 .deleteActions button:nth-child(2):active {
-    background-color: rgb(191, 0, 14);
+    background-color: rgb(170, 0, 11);
+    transform: scale(var(--scaleBtn));
 }

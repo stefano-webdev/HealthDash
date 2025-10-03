@@ -12,38 +12,47 @@
 }
 
 :root {
-    --secondaryRed: #BE2520;
-    --pressButtonRed: #A71E21;
+    --scaleBtn: 0.94;
 }
 
 html.light {
     --fadingWhite: rgb(255, 255, 255);
-    --adminBorder: #F9F9F9;
+    --adminBorder: #ffffff;
     --mainRed: #AE3626;
+    --mainRedHover: #ca3e2b;
+    --mainRedActive: rgb(148, 45, 31);
+    --secondaryRed: #c2241f;
+    --pressSecondaryRed: #a31f1a;
+    --hoverSecondaryRed: #d12629;
     --bgColor: #F9F9F9;
     --boxStyleBg: #efefef;
     --logoColor: rgb(47, 47, 47);
     --textColor: rgb(0, 0, 0);
-    --smallColorBlack: rgba(0, 0, 0, 0.6);
+    --smallColorBlack: rgba(0, 0, 0, 0.7);
     --smallColorWhite: rgba(255, 255, 255, 0.66);
     --inputBg: rgb(255, 255, 255);
     --selectedRow: #cce5ff;
     --updatedEmployee: #1475d6ff;
     --deletedEmployee: var(--mainRed);
-    --mainRedActive: rgb(150, 44, 30);
     --toggleCircleBg: rgba(0, 0, 0, 0.35);
     --greenToggleBg: rgb(0, 170, 0);
     --infoBorder: #252525c4;
     --infoBg: #ebebeb;
     --infoText: #262626;
     --infoCloseBg: #efefef;
+    --backPortfolioActive: #b7b7b7;
+    --backPortfolioHover: #dcdcdc;
 }
 
-/* #8a2316 */
 html.dark {
     --fadingWhite: var(--textColor);
-    --adminBorder: #1f2831;
-    --mainRed: #7c2014;
+    --adminBorder: #405d7c;
+    --mainRed: #68170d;
+    --mainRedHover: #80271b;
+    --mainRedActive: #4f130d;
+    --secondaryRed: #9f1e1a;
+    --pressSecondaryRed: #7a1913;
+    --hoverSecondaryRed: #af1e20;
     --bgColor: #1f2831;
     --boxStyleBg: #667886bf;
     --logoColor: rgb(255, 255, 255);
@@ -54,13 +63,14 @@ html.dark {
     --selectedRow: #002a7271;
     --updatedEmployee: rgb(134, 201, 255);
     --deletedEmployee: #5e0000;
-    --mainRedActive: #6a1c11;
     --toggleCircleBg: var(--inputBg);
     --greenToggleBg: rgb(0, 126, 0);
     --infoBorder: #077bff;
     --infoBg: #adcbeb;
     --infoText: #004085;
     --infoCloseBg: #4eb2ff;
+    --backPortfolioActive: #2f3a40bf;
+    --backPortfolioHover: #4f616cbf;
 }
 
 html.brNo {
@@ -104,6 +114,10 @@ a {
     cursor: pointer;
 }
 
+a {
+    transition: color 0.7s ease, border-radius 0.7s ease;
+}
+
 button {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -115,9 +129,11 @@ button {
 }
 
 .buttonRed:active {
-    background-color: var(--pressButtonRed);
+    background-color: var(--pressSecondaryRed);
+    transform: scale(var(--scaleBtn));
 }
 
+/* Save invoice and save settings*/
 .buttonMainRed {
     background-color: var(--mainRed);
 }
@@ -126,22 +142,21 @@ button {
     background-color: var(--mainRedActive);
 }
 
-a#torna_portfolio {
+a#backPortfolio {
     display: inline-block;
     margin: 10px 0px 20px 10px;
     font-size: 14px;
     color: var(--textColor);
     background-color: var(--boxStyleBg);
-    padding: 4px 8px;
+    padding: 4px 10px;
     border-radius: var(--borderRadius);
     border: 1px solid black;
     text-decoration: none;
-    outline-offset: 5px;
-    outline-color: #000;
 }
 
-a#torna_portfolio:active {
-    background-color: #2354ae62;
+a#backPortfolio:active {
+    background-color: var(--backPortfolioActive);
+    transform: scale(var(--scaleBtn));
 }
 
 p,
@@ -150,6 +165,10 @@ label {
     margin: 0px;
     color: var(--textColor);
     transition: color 0.7s ease;
+}
+
+label {
+    -webkit-tap-highlight-color: transparent;
 }
 
 input,
@@ -213,7 +232,7 @@ div.currentRoute {
 }
 
 div.currentRoute svg {
-    fill: var(--secondaryRed);
+    fill: #E63946;
     width: clamp(30px, 5vw, 34px);
 }
 
@@ -398,12 +417,29 @@ div.updateCont {
     gap: 10px;
     margin: 14px auto 0px auto;
     padding: 8px 13px 8px 8px;
-    color: white;
+    color: var(--fadingWhite);
     border: none;
     border-radius: var(--borderRadius);
 }
 
 .downloadChartBtn svg {
     width: 33px;
-    fill: white;
+    fill: var(--fadingWhite);
+}
+
+/* No interaction */
+body.noInteraction {
+    overflow: hidden;
+}
+
+main.noInteraction,
+footer.noInteraction {
+    pointer-events: none;
+    opacity: 0.2;
+}
+
+/* Accessibility*/
+*:focus-visible {
+    outline: 1px solid var(--textColor);
+    outline-offset: 5px;
 }

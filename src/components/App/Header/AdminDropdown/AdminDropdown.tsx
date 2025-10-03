@@ -1,25 +1,40 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./AdminDropdown.css";
 
 type AdminDropdownProps = {
     open: boolean;
     onToggle: () => void;
+    setAdminOpen: (open: boolean) => void;
 };
 
-function AdminDropdown({ open, onToggle }: AdminDropdownProps) {
+function AdminDropdown({ open, onToggle, setAdminOpen }: AdminDropdownProps) {
     const [infoMessage, setInfoMessage] = useState<{ message: string, type: "info" } | null>(null);
+
+    useEffect(() => {
+        document.addEventListener('click', handleClickOutside);
+        return () => {
+            document.removeEventListener('click', handleClickOutside);
+        };
+    }, []);
+
+    // Clicking outside of the filters dropdown closes it
+    function handleClickOutside(e: MouseEvent) {
+        if (!(e.target as HTMLElement).closest('#adminButton')) {
+            setAdminOpen(false);
+        }
+    }
+
+    // Focus out closes the dropdown if focus is outside of it
+    function handleKeyOutside(e: React.FocusEvent<HTMLUListElement>) {
+        if (!e.currentTarget.contains(e.relatedTarget)) {
+            setAdminOpen(false);
+        }
+    }
 
     // Handle admin options (Profile, Settings, Logout)
     // Currently shows an info message
     function handleInfo() {
         onToggle();
-        document.body.style.overflow = "auto";
-        const main = document.querySelector("main")!;
-        const footer = document.querySelector("footer")!;
-        main.style.pointerEvents = "auto";
-        main.style.opacity = "1";
-        footer.style.pointerEvents = "auto";
-        footer.style.opacity = "1";
         setInfoMessage({
             message: `Attualmente questa sezione è presente solo a scopo dimostrativo. 
             Grazie per avere utilizzato il progetto`, type: "info"
@@ -46,17 +61,17 @@ function AdminDropdown({ open, onToggle }: AdminDropdownProps) {
                     </svg>
                 </button>
 
-                <ul id="adminMenu" className={`adminSettingsUl ${open ? 'fadeDownAdmin' : ''}`}>
+                <ul id="adminMenu" className={`adminSettingsUl ${open ? 'fadeDownAdmin' : ''}`} onBlur={handleKeyOutside}>
                     <li>
-                        <button type="button" onClick={handleInfo}>Profilo</button>
+                        <button type="button" onClick={handleInfo} tabIndex={open ? 0 : -1}>Profilo</button>
                     </li>
 
                     <li>
-                        <button type="button" onClick={handleInfo}>Supporto</button>
+                        <button type="button" onClick={handleInfo} tabIndex={open ? 0 : -1}>Supporto</button>
                     </li>
 
                     <li>
-                        <button type="button" onClick={handleInfo}>Logout</button>
+                        <button type="button" onClick={handleInfo} tabIndex={open ? 0 : -1}>Logout</button>
                     </li>
                 </ul>
             </div>

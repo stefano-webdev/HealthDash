@@ -15,7 +15,7 @@
     margin: 0px auto 11px auto;
 }
 
-#transactionFiltersCont button {
+#transactionFiltersCont #lastOperationsButton {
     display: flex;
     gap: 5px;
     align-items: center;
@@ -78,20 +78,21 @@
     pointer-events: auto;
 }
 
-.dropdownFiltersCont div {
+.dropdownFiltersCont button {
+    width: 100%;
     display: flex;
-    align-items: center;
     justify-content: center;
     gap: 5px;
     color: #FAF7F7;
     padding: 13px 0px;
-    cursor: pointer;
+    background-color: transparent;
     padding-right: 27px;
     user-select: none;
     -webkit-user-select: none;
     -moz-user-select: none;
+    border: none;
 }
 
-.dropdownFiltersCont div:not(:last-child) {
+.dropdownFiltersCont button:not(:last-child) {
     border-bottom: 0.7px solid rgba(255, 255, 255, 0.274);
 }

@@ -95,7 +95,7 @@ function TransactionList({ transactionList, setTransactionList, selectedOperatio
             <div className="contentBox">
                 <div id="transactionFiltersCont">
                     <div id="lastOperationsCont" className="dropdownCont">
-                        <button type="button" onClick={() => handleFiltersOpen('lastOperations')}
+                        <button type="button" id="lastOperationsButton" onClick={() => handleFiltersOpen('lastOperations')}
                             className={openMenu === 'lastOperations' ? "buttonFiltersActive" : ""}>
                             Ultime {selectedOperations} operazioni
                             <svg viewBox="0 0 200 200" className={openMenu === 'lastOperations' ? "rotate180" : ""}>
@@ -106,52 +106,52 @@ function TransactionList({ transactionList, setTransactionList, selectedOperatio
                             </svg>
                         </button>
                         <div className={`dropdownFiltersCont ${openMenu === 'lastOperations' ? "fadeDownFilters" : ""}`}>
-                            <div onClick={() => handleSelectedOperations(4)}>
+                            <button onClick={() => handleSelectedOperations(4)} tabIndex={openMenu ? 0 : -1} type="button">
                                 <svg className={`check ${selectedOperations === 4 ? "checkActive" : ""}`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
                                     <path d="M530.8 134.1C545.1 144.5 548.3 164.5 537.9 178.8L281.9 530.8C276.4 538.4 267.9 
                                     543.1 258.5 543.9C249.1 544.7 240 541.2 233.4 534.6L105.4 406.6C92.9 394.1 92.9 373.8 105.4 
                                     361.3C117.9 348.8 138.2 348.8 150.7 361.3L252.2 462.8L486.2 141.1C496.6 126.8 516.6 123.6 530.9 134z" />
                                 </svg>
                                 Ultime 4 operazioni
-                            </div>
-                            <div onClick={() => handleSelectedOperations(5)}>
+                            </button>
+                            <button onClick={() => handleSelectedOperations(5)} tabIndex={openMenu ? 0 : -1} type="button">
                                 <svg className={`check ${selectedOperations === 5 ? "checkActive" : ""}`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
                                     <path d="M530.8 134.1C545.1 144.5 548.3 164.5 537.9 178.8L281.9 530.8C276.4 538.4 267.9 
                                     543.1 258.5 543.9C249.1 544.7 240 541.2 233.4 534.6L105.4 406.6C92.9 394.1 92.9 373.8 105.4 
                                     361.3C117.9 348.8 138.2 348.8 150.7 361.3L252.2 462.8L486.2 141.1C496.6 126.8 516.6 123.6 530.9 134z" />
                                 </svg>
                                 Ultime 5 operazioni
-                            </div>
-                            <div onClick={() => handleSelectedOperations(6)}>
+                            </button>
+                            <button onClick={() => handleSelectedOperations(6)} tabIndex={openMenu ? 0 : -1} type="button">
                                 <svg className={`check ${selectedOperations === 6 ? "checkActive" : ""}`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
                                     <path d="M530.8 134.1C545.1 144.5 548.3 164.5 537.9 178.8L281.9 530.8C276.4 538.4 267.9 
                                     543.1 258.5 543.9C249.1 544.7 240 541.2 233.4 534.6L105.4 406.6C92.9 394.1 92.9 373.8 105.4 
                                     361.3C117.9 348.8 138.2 348.8 150.7 361.3L252.2 462.8L486.2 141.1C496.6 126.8 516.6 123.6 530.9 134z" />
                                 </svg>
                                 Ultime 6 operazioni
-                            </div>
-                            <div onClick={() => handleSelectedOperations(7)}>
+                            </button>
+                            <button onClick={() => handleSelectedOperations(7)} tabIndex={openMenu ? 0 : -1} type="button">
                                 <svg className={`check ${selectedOperations === 7 ? "checkActive" : ""}`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
                                     <path d="M530.8 134.1C545.1 144.5 548.3 164.5 537.9 178.8L281.9 530.8C276.4 538.4 267.9 
                                     543.1 258.5 543.9C249.1 544.7 240 541.2 233.4 534.6L105.4 406.6C92.9 394.1 92.9 373.8 105.4 
                                     361.3C117.9 348.8 138.2 348.8 150.7 361.3L252.2 462.8L486.2 141.1C496.6 126.8 516.6 123.6 530.9 134z" />
                                 </svg>
                                 Ultime 7 operazioni
-                            </div>
-                            <div onClick={() => handleSelectedOperations(8)}>
+                            </button>
+                            <button onClick={() => handleSelectedOperations(8)} tabIndex={openMenu ? 0 : -1} type="button">
                                 <svg className={`check ${selectedOperations === 8 ? "checkActive" : ""}`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
                                     <path d="M530.8 134.1C545.1 144.5 548.3 164.5 537.9 178.8L281.9 530.8C276.4 538.4 267.9 
                                     543.1 258.5 543.9C249.1 544.7 240 541.2 233.4 534.6L105.4 406.6C92.9 394.1 92.9 373.8 105.4 
                                     361.3C117.9 348.8 138.2 348.8 150.7 361.3L252.2 462.8L486.2 141.1C496.6 126.8 516.6 123.6 530.9 134z" />
                                 </svg>
                                 Ultime 8 operazioni
-                            </div>
+                            </button>
                         </div>
                     </div>
                 </div>
 
                 {transactionList ? (
-                    <div className='tableWrapper'>
+                    <div className='tableWrapper' tabIndex={-1}>
                         <table>
                             <thead>
                                 <tr>

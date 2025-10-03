@@ -51,7 +51,7 @@ function App() {
     <>
       <Header />
       <main>
-        <a id="torna_portfolio" className="smoothSettingsSelectors" href="https://stefanodev.it/">Torna al portfolio</a>
+        <a id="backPortfolio" href="https://stefanodev.it/">Torna al portfolio</a>
         <HealthDashLogo />
         <div id="mainContainer">
           <Outlet />

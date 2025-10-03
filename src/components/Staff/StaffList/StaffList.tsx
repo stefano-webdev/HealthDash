@@ -156,7 +156,7 @@ function StaffList({ staffData }: { staffData: StaffProps }) {
             {staffList === null ? null : staffList.length === 0 ? (
                 <p>Nessun dipendente trovato.</p>
             ) : (
-                <div className='tableWrapper'>
+                <div className='tableWrapper' tabIndex={-1}>
                     <table>
                         <thead>
                             <tr>

@@ -9,7 +9,7 @@ interface InputFieldProps {
     name: string;
     id: string;
     showPassword?: boolean;
-    setShowPassword?: (show: boolean) => void;
+    setShowPassword?: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 function InputField({ type, label, placeholder, value, onChange, name, id, showPassword, setShowPassword }: InputFieldProps) {
@@ -21,7 +21,12 @@ function InputField({ type, label, placeholder, value, onChange, name, id, showP
                         <label htmlFor={id}>{label}</label>
                         <button type="button" id="showPasswordBtn" onMouseDown={event => {
                             event.preventDefault();
-                            setShowPassword(!showPassword);
+                            setShowPassword(prev => !prev);
+                        }} onKeyDown={(e) => {
+                            if (e.key === 'Enter' || e.key === ' ') {
+                                e.preventDefault();
+                                setShowPassword(prev => !prev);
+                            }
                         }}>
                             {showPassword ?
                                 // Password visible icon

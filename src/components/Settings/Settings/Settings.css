@@ -21,6 +21,12 @@
 }
 
 /* User settings */
+#formSettings {
+    width: 93%;
+    margin: auto;
+    max-width: 410px;
+}
+
 #userSettingsCont {
     display: flex;
     flex-direction: column;
@@ -36,6 +42,12 @@
     margin: 3rem auto 0rem auto;
     width: fit-content;
     display: block;
+    transition: border-radius 0.7s ease,
+        color 0.7s ease;
+}
+
+#saveUserChanges:active {
+    transform: scale(var(--scaleBtn));
 }
 
 /* UI preferences */

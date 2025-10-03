@@ -1,21 +1,56 @@
 import { NavLink } from "react-router-dom";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import "./Sidebar.css"
+import "./Sidebar.css";
 
 interface SidebarProps {
     open: boolean,
     onToggle: () => void,
-    changeRoute: React.Dispatch<React.SetStateAction<boolean>>,
+    changeRoute: React.Dispatch<React.SetStateAction<boolean>>
 };
 
 function Sidebar({ open, onToggle, changeRoute }: SidebarProps) {
+    const [accessibilityLinks, setAccessibilityLinks] = useState<boolean>(false);
     const location = useLocation();
+
+    useEffect(() => {
+        document.addEventListener('click', handleClickOutside);
+        window.addEventListener('resize', handleResize);
+        handleResize();
+        
+        return () => {
+            document.removeEventListener('click', handleClickOutside);
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
 
     useEffect(() => {
         // Every time the location changes, close the sidebar
         changeRoute(false);
     }, [location]);
+
+    // After 1200px on desktop, make "open" state true for accessibility in nav links
+    function handleResize() {
+        if (window.innerWidth >= 1200 && window.matchMedia("(pointer: fine)").matches) {
+            setAccessibilityLinks(true);
+        } else {
+            setAccessibilityLinks(false);
+        }
+    }
+
+    // Clicking outside of the filters dropdown closes it
+    function handleClickOutside(e: MouseEvent) {
+        if (!(e.target as HTMLElement).closest('button.hamburger')) {
+            changeRoute(false);
+        }
+    }
+
+    // Focus out closes the dropdown if focus is outside of it
+    function handleKeyOutside(e: React.FocusEvent<HTMLUListElement>) {
+        if (!e.currentTarget.contains(e.relatedTarget) && !(e.relatedTarget)?.closest('button.hamburger')) {
+            changeRoute(false);
+        }
+    }
 
     return (
         <>
@@ -28,11 +63,11 @@ function Sidebar({ open, onToggle, changeRoute }: SidebarProps) {
             </button>
 
             <nav aria-label="Main navigation">
-                <ul className={`menuUl ${open ? "show" : ""}`}>
+                <ul className={`menuUl ${open ? "show" : ""}`} onBlur={handleKeyOutside}>
                     {/* Home */}
                     <li>
                         <NavLink to="/" className={({ isActive }) =>
-                            isActive ? "activeLink" : "regularLink"}>
+                            isActive ? "activeLink" : "regularLink"} tabIndex={open || accessibilityLinks ? 0 : -1}>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
                                 <path d="M341.8 72.6C329.5 61.2 310.5 
                                 61.2 298.3 72.6L74.3 280.6C64.7 289.6 61.5 303.5 66.3 
@@ -50,7 +85,7 @@ function Sidebar({ open, onToggle, changeRoute }: SidebarProps) {
                     {/* Staff */}
                     <li>
                         <NavLink to="/staff" className={({ isActive }) =>
-                            isActive ? "activeLink" : "regularLink"}>
+                            isActive ? "activeLink" : "regularLink"} tabIndex={open || accessibilityLinks ? 0 : -1}>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
                                 <path d="M320 80C377.4 80 424 126.6 424 184C424 241.4 377.4 
                                 288 320 288C262.6 288 216 241.4 216 184C216 126.6 262.6 80 
@@ -74,7 +109,7 @@ function Sidebar({ open, onToggle, changeRoute }: SidebarProps) {
                     {/* Patients */}
                     <li>
                         <NavLink to="/patients" className={({ isActive }) =>
-                            isActive ? "activeLink" : "regularLink"}>
+                            isActive ? "activeLink" : "regularLink"} tabIndex={open || accessibilityLinks ? 0 : -1}>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
                                 <path d="M64 96C81.7 96 96 110.3 96 128L96 352L320 352L320 224C320 206.3 334.3 
                                 192 352 192L512 192C565 192 608 235 608 288L608 512C608 529.7 593.7 544 576 
@@ -90,7 +125,7 @@ function Sidebar({ open, onToggle, changeRoute }: SidebarProps) {
                     {/* Finance */}
                     <li>
                         <NavLink to="/finance" className={({ isActive }) =>
-                            isActive ? "activeLink" : "regularLink"}>
+                            isActive ? "activeLink" : "regularLink"} tabIndex={open || accessibilityLinks ? 0 : -1}>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
                                 <path d="M392 176L248 176L210.7 101.5C208.9 97.9 208 93.9 208 89.9C208 75.6 219.6 64 
                                 233.9 64L406.1 64C420.4 64 432 75.6 432 89.9C432 93.9 431.1 97.9 429.3 101.5L392 
@@ -111,7 +146,7 @@ function Sidebar({ open, onToggle, changeRoute }: SidebarProps) {
                     {/* Reports */}
                     <li>
                         <NavLink to="/report" className={({ isActive }) =>
-                            isActive ? "activeLink" : "regularLink"}>
+                            isActive ? "activeLink" : "regularLink"} tabIndex={open || accessibilityLinks ? 0 : -1}>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
                                 <path d="M96 96C113.7 96 128 110.3 128 128L128 464C128 472.8 
                                 135.2 480 144 480L544 480C561.7 480 576 494.3 576 512C576 529.7 
@@ -132,7 +167,7 @@ function Sidebar({ open, onToggle, changeRoute }: SidebarProps) {
                     {/* Settings */}
                     <li>
                         <NavLink to="/settings" className={({ isActive }) =>
-                            isActive ? "activeLink" : "regularLink"}>
+                            isActive ? "activeLink" : "regularLink"} tabIndex={open || accessibilityLinks ? 0 : -1}>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
                                 <path d="M259.1 73.5C262.1 58.7 275.2 48 290.4 48L350.2 48C365.4 48 378.5 
                                 58.7 381.5 73.5L396 143.5C410.1 149.5 423.3 157.2 435.3 166.3L503.1 143.8C517.5 

@@ -33,12 +33,12 @@ small#patientAge {
     font-size: 19px;
     letter-spacing: 2px;
     margin: 0px;
-    color: var(--mainRed);
+    color: var(--textColor);
 }
 
 #anamnesiCont svg,
 #prescriptionsCont svg {
-    width: 22px;
+    width: 23px;
     fill: var(--mainRed);
 }
 
