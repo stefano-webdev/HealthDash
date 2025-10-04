@@ -1,4 +1,4 @@
-import { useEffect, useState, memo } from "react";
+import { useState, memo } from "react";
 import FinanceOverview from "../FinanceOverview/FinanceOverview.tsx";
 import FinanceChart from "../FinanceChart/FinanceChart.tsx";
 import TransactionList from "../TransactionList/TransactionList.tsx";
@@ -12,11 +12,6 @@ function Finance() {
     const [transactionList, setTransactionList] = useState<Transaction[] | null>(null);
     const [selectedOperations, setSelectedOperations] = useState<number>(4);
     const [confirmMessage, setConfirmMessage] = useState<{ message: string, type: "success" } | null>(null);
-
-    // Scroll to top on component mount
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, []);
 
     return (
         <>

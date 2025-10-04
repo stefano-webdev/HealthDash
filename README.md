@@ -38,3 +38,7 @@ Il progetto è gestito tramite Vite.
 ---
 
 > ⚠️ Questo progetto è stato sviluppato solo a scopo dimostrativo per dimostrare le competenze tecniche. Non utilizza un backend reale e non è destinato all’uso in contesti sanitari reali, pertanto alcuni bottoni o funzionalità non sono volutamente funzionanti.
+
+> 🖼️ Icone
+Alcune icone utilizzate in **HealthDash** provengono da [OpenMoji](https://openmoji.org/)  
+© OpenMoji contributors — licenza [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.it)

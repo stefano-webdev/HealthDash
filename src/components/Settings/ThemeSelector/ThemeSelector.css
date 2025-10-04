@@ -11,13 +11,14 @@
     top: calc(100% + 8px);
     left: -1px;
     opacity: 0;
+    transition: opacity 0.25s ease;
     z-index: 1;
     width: 158px;
     border-radius: var(--borderRadius);
     border: 1px solid rgba(0, 0, 0, 0.5);
-    background-color: #504d4df9;
+    background-color: #504d4d;
     pointer-events: none;
-    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
 }
 
 #dropdownBorderRadius {

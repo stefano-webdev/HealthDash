@@ -19,11 +19,3 @@
     margin: 0px;
     transition: color 0.7s ease;
 }
-
-#h2inDevelopment {
-    margin: 0px 10px;
-    text-align: center;
-    font-weight: normal;
-    color: gray;
-    font-size: 23px;
-}

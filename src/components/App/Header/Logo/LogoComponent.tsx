@@ -1,4 +1,4 @@
-import "./LogoComponent.css"
+import "./LogoComponent.css";
 
 function LogoComponent() {
     return (

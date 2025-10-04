@@ -21,6 +21,17 @@ function Settings() {
     const [showPassword, setShowPassword] = useState<boolean>(false);
     const [confirmMessage, setConfirmMessage] = useState<{ message: string, type: "success" | "error" } | null>(null);
 
+    useEffect(() => {        
+        if (savedData.settings?.userProfile) {
+            setUserData({
+                name: savedData.settings.userProfile.name,
+                surname: savedData.settings.userProfile.surname,
+                email: savedData.settings.userProfile.email,
+                password: savedData.settings.userProfile.password
+            });
+        }
+    }, []);
+
     // Handle input changes
     function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
         const { name, value } = event.target;
@@ -76,20 +87,6 @@ function Settings() {
             setConfirmMessage(null);
         }, 3500);
     }
-
-    // Scroll to top on component mount
-    useEffect(() => {
-        window.scrollTo(0, 0);
-
-        if (savedData.settings?.userProfile) {
-            setUserData({
-                name: savedData.settings.userProfile.name,
-                surname: savedData.settings.userProfile.surname,
-                email: savedData.settings.userProfile.email,
-                password: savedData.settings.userProfile.password
-            });
-        }
-    }, []);
 
     return (
         <>

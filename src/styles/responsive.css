@@ -44,6 +44,10 @@
         width: 220px;
     }
 
+    body .choicesDropdownCont {
+        width: 150px;
+    }
+
     /* Charts */
 
     body .XYAxisSmall text {
@@ -114,19 +118,11 @@
         width: 37px;
     }
 
-    body #adminButton {
-        font-size: 18px;
-    }
-
-    body #adminButton svg {
-        width: 13px;
-    }
-
-    body .adminSettingsUl {
+    body .userSettingsUl {
         top: calc(100% + 51px);
     }
 
-    body .adminSettingsUl li {
+    body .userSettingsUl li {
         font-size: 16px;
     }
 
@@ -272,10 +268,6 @@
         font-size: 15px;
     }
 
-    body #transactionFiltersCont svg {
-        width: 13px;
-    }
-
     body #staffListCont input#staffFilterInput,
     body #patientsListCont input#patientsFilterInput {
         width: 300px;
@@ -416,11 +408,13 @@
         margin-top: 1px;
     }
 
-    body .selectorBtnCont .btnSelector {
+    body .selectorBtnCont .btnSelector,
+    body #transactionFiltersCont #lastOperationsButton {
         font-size: 15px;
     }
 
-    body .selectorBtnCont .btnSelector svg {
+    body .selectorBtnCont .btnSelector svg,
+    body #transactionFiltersCont svg {
         width: 14px;
         padding-bottom: 4px;
     }
@@ -432,7 +426,7 @@
 }
 
 /* For desktop mode */
-@media (min-width: 1200px) {
+@media (min-width: 1200px) and (pointer: fine) {
     body.noInteraction {
         overflow: auto;
     }
@@ -468,12 +462,12 @@
         pointer-events: auto;
         box-shadow: none;
         transition: background-color 0.7s ease;
-        border-right: 1px solid var(--adminBorder);
+        border-right: 1px solid var(--userBorder);
         width: 235px;
     }
 
     body #headerContainer {
-        border-right: 1px solid var(--adminBorder);
+        border-right: 1px solid var(--userBorder);
     }
 
     body header {
@@ -491,8 +485,8 @@
         margin-top: 100px;
     }
 
-    body #adminButton {
-        border: 1px solid var(--adminBorder);
+    body #userButton {
+        border: 1px solid var(--userBorder);
         position: fixed;
         right: max(15px, calc((100vw - 2100px) / 2 + 15px));
         top: 15px;
@@ -502,11 +496,11 @@
         transition: border-color 0.7s ease, border-radius 0.7s ease;
     }
 
-    body .adminSettingsUl {
+    body .userSettingsUl {
         top: calc(100% + 72px);
     }
 
-    body #adminWrapper {
+    body #userWrapper {
         position: fixed;
         right: max(15px, calc((100vw - 2100px) / 2 + 15px));
         top: 15px;
@@ -554,6 +548,10 @@
 
     body #patientsListCont .tableWrapper {
         height: 522px;
+    }
+
+    body #patientsListCont {
+        min-height: 691px;
     }
 
     body .confirmMessageCont {

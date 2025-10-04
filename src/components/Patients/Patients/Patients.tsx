@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import type { PatientsListType } from "../PatientsList/PatientsList.tsx";
 import PatientsList from "../PatientsList/PatientsList.tsx";
 import PatientDetails from "../PatientDetails/PatientDetails.tsx";
@@ -40,11 +40,6 @@ function Patients() {
         setConfirmMessage,
         setInputListValue
     }
-
-    // Scroll to top on component mount
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, []);
 
     return (
         <>

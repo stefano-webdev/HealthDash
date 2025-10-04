@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
-import "./AdminDropdown.css";
+import "./UserDropdown.css";
 
-type AdminDropdownProps = {
+type UserDropdownProps = {
     open: boolean;
     onToggle: () => void;
-    setAdminOpen: (open: boolean) => void;
+    setUserOpen: (open: boolean) => void;
 };
 
-function AdminDropdown({ open, onToggle, setAdminOpen }: AdminDropdownProps) {
+function UserDropdown({ open, onToggle, setUserOpen }: UserDropdownProps) {
     const [infoMessage, setInfoMessage] = useState<{ message: string, type: "info" } | null>(null);
 
     useEffect(() => {
@@ -19,19 +19,19 @@ function AdminDropdown({ open, onToggle, setAdminOpen }: AdminDropdownProps) {
 
     // Clicking outside of the filters dropdown closes it
     function handleClickOutside(e: MouseEvent) {
-        if (!(e.target as HTMLElement).closest('#adminButton')) {
-            setAdminOpen(false);
+        if (!(e.target as HTMLElement).closest('#userButton')) {
+            setUserOpen(false);
         }
     }
 
     // Focus out closes the dropdown if focus is outside of it
     function handleKeyOutside(e: React.FocusEvent<HTMLUListElement>) {
         if (!e.currentTarget.contains(e.relatedTarget)) {
-            setAdminOpen(false);
+            setUserOpen(false);
         }
     }
 
-    // Handle admin options (Profile, Settings, Logout)
+    // Handle user options (Profile, Settings, Logout)
     // Currently shows an info message
     function handleInfo() {
         onToggle();
@@ -43,8 +43,8 @@ function AdminDropdown({ open, onToggle, setAdminOpen }: AdminDropdownProps) {
 
     return (
         <>
-            <div id="adminWrapper">
-                <button onClick={onToggle} id="adminButton" aria-expanded={open} aria-controls="adminMenu">
+            <div id="userWrapper">
+                <button onClick={onToggle} id="userButton" aria-expanded={open} aria-controls="userMenu">
                     {/* User icon */}
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
                         <path d="M320 312C386.3 312 440 258.3 440 192C440 125.7 386.3 72 
@@ -61,7 +61,7 @@ function AdminDropdown({ open, onToggle, setAdminOpen }: AdminDropdownProps) {
                     </svg>
                 </button>
 
-                <ul id="adminMenu" className={`adminSettingsUl ${open ? 'fadeDownAdmin' : ''}`} onBlur={handleKeyOutside}>
+                <ul id="userMenu" className={`userSettingsUl ${open ? 'fadeDownUser' : ''}`} onBlur={handleKeyOutside}>
                     <li>
                         <button type="button" onClick={handleInfo} tabIndex={open ? 0 : -1}>Profilo</button>
                     </li>
@@ -95,4 +95,4 @@ function AdminDropdown({ open, onToggle, setAdminOpen }: AdminDropdownProps) {
     );
 }
 
-export default AdminDropdown;
+export default UserDropdown;

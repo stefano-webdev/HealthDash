@@ -43,7 +43,7 @@
 }
 
 #transactionFiltersCont svg {
-    width: 11px;
+    width: 12px;
     stroke: var(--textColor);
     padding-bottom: 3px;
     transition: transform 0.25s ease;
@@ -68,9 +68,9 @@
     width: 258px;
     border-radius: var(--borderRadius);
     border: 1px solid rgba(0, 0, 0, 0.5);
-    background-color: #504d4df9;
+    background-color: #504d4d;
     pointer-events: none;
-    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
 }
 
 .dropdownFiltersCont.fadeDownFilters {

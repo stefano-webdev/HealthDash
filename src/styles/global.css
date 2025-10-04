@@ -17,10 +17,10 @@
 
 html.light {
     --fadingWhite: rgb(255, 255, 255);
-    --adminBorder: #ffffff;
-    --mainRed: #AE3626;
-    --mainRedHover: #ca3e2b;
-    --mainRedActive: rgb(148, 45, 31);
+    --userBorder: #ffffff;
+    --mainRed: #ae2626;
+    --mainRedHover: #c72b2b;
+    --mainRedActive: #8c1e1e;
     --secondaryRed: #c2241f;
     --pressSecondaryRed: #a31f1a;
     --hoverSecondaryRed: #d12629;
@@ -46,9 +46,9 @@ html.light {
 
 html.dark {
     --fadingWhite: var(--textColor);
-    --adminBorder: #405d7c;
+    --userBorder: #405d7c;
     --mainRed: #68170d;
-    --mainRedHover: #80271b;
+    --mainRedHover: #742318;
     --mainRedActive: #4f130d;
     --secondaryRed: #9f1e1a;
     --pressSecondaryRed: #7a1913;

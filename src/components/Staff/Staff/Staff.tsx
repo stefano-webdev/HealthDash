@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import StaffList from '../StaffList/StaffList.tsx';
 import StaffDetails from '../StaffDetails/StaffDetails.tsx';
 import StaffSchedule from '../StaffSchedule/StaffSchedule.tsx';
@@ -42,11 +42,6 @@ function Staff() {
         setConfirmMessage,
         setInputListValue
     };
-
-    // Scroll to top on component mount
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, []);
 
     return (
         <>
