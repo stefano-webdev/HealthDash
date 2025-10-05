@@ -9,14 +9,19 @@ import ScrollToTop from "./components/App/ScrollToTop.tsx";
 import Footer from "./components/App/Footer/Footer.tsx";
 
 function App() {
+  // Avoid the flash of unstyled content by removing the 'preload' class when everything is loaded
+  // Also adding the 'smoothSettingsSelectors' class to enable smooth background-color transitions for settings selectors
   useEffect(() => {
     function handleLoad() {
       document.body.classList.remove("preload");
       document.body.classList.add("smoothSettingsSelectors");
     }
-    window.addEventListener("load", handleLoad);
-
-    return () => window.removeEventListener("load", handleLoad);
+    if (document.readyState === "complete") {
+      handleLoad();
+    } else {
+      window.addEventListener("load", handleLoad);
+      return () => window.removeEventListener("load", handleLoad);
+    }
   }, []);
 
   const unknownData: string | null = localStorage.getItem("hospitalData");
