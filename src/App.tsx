@@ -1,18 +1,22 @@
+import "./styles/global.css";
+import "./styles/responsive.css";
 import { useEffect } from "react";
 import type { hospitalShape } from "./components/Home/PatientsToday.tsx";
 import Header from "./components/App/Header/Header/Header.tsx";
 import HealthDashLogo from "./components/App/HeatlhDashLogo/HealthDashLogo.tsx";
 import { Outlet } from "react-router-dom";
 import ScrollToTop from "./components/App/ScrollToTop.tsx";
-import "./styles/global.css";
-import "./styles/responsive.css";
 import Footer from "./components/App/Footer/Footer.tsx";
 
 function App() {
   useEffect(() => {
-    setTimeout(() => {
+    function handleLoad() {
+      document.body.classList.remove("preload");
       document.body.classList.add("smoothSettingsSelectors");
-    }, 400);
+    }
+    window.addEventListener("load", handleLoad);
+
+    return () => window.removeEventListener("load", handleLoad);
   }, []);
 
   const unknownData: string | null = localStorage.getItem("hospitalData");
@@ -49,15 +53,15 @@ function App() {
   return (
     <>
       <ScrollToTop />
-        <Header />
-        <main>
-          <a id="backPortfolio" href="https://stefanodev.it/">Torna al portfolio</a>
-          <HealthDashLogo />
-          <div id="mainContainer">
-            <Outlet />
-          </div>
-        </main>
-        <Footer />
+      <Header />
+      <main>
+        <a id="backPortfolio" href="https://stefanodev.it/">Torna al portfolio</a>
+        <HealthDashLogo />
+        <div id="mainContainer">
+          <Outlet />
+        </div>
+      </main>
+      <Footer />
     </>
   );
 }

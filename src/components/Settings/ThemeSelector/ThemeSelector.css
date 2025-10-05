@@ -72,7 +72,7 @@
     width: 12px;
     stroke: var(--textColor);
     padding-bottom: 3px;
-    transition: transform 0.25s ease;
+    transition: transform 0.25s ease, stroke 0.7s ease;
     will-change: transform;
 }
 

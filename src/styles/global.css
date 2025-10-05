@@ -1,5 +1,9 @@
 /* Global styles */
 
+.preload * {
+    transition: none !important;
+}
+
 * {
     box-sizing: border-box;
     font-family: 'Tahoma', 'Verdana', 'Arial', 'Helvetica', sans-serif;
