@@ -10,9 +10,9 @@ function ScrollToTop() {
             // Desktop devices, scroll instantly
             window.scrollTo(0, 0);
         } else {
-            // Mobile devices, scroll smoothly
+            // Mobile devices, scroll smoothly. Negative value for 'top' to avoid the address bar covering the UI
             window.scrollTo({
-                top: 0,
+                top: -50,
                 behavior: 'smooth'
             });
         }

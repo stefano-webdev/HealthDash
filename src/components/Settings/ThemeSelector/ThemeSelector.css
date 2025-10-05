@@ -11,7 +11,6 @@
     top: calc(100% + 8px);
     left: -1px;
     opacity: 0;
-    transition: opacity 0.25s ease;
     z-index: 1;
     width: 158px;
     border-radius: var(--borderRadius);
