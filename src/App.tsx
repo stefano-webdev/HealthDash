@@ -13,8 +13,12 @@ function App() {
   // Also adding the 'smoothSettingsSelectors' class to enable smooth background-color transitions for settings selectors
   useEffect(() => {
     function handleLoad() {
-      document.body.classList.remove("preload");
-      document.body.classList.add("smoothSettingsSelectors");
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          document.body.classList.remove("preload");
+          document.body.classList.add("smoothSettingsSelectors");
+        });
+      });
     }
     if (document.readyState === "complete") {
       handleLoad();
