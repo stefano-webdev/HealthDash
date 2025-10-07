@@ -49,3 +49,7 @@ div#recoveryInfoCont button {
     border: none;
     background-color: transparent;
 }
+
+div#recoveryInfoCont button:active {
+    transform: scale(var(--scaleBtn));
+}

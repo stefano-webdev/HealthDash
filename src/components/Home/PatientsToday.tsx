@@ -94,7 +94,7 @@ function PatientsToday() {
                     <small className="smallBlack">24 ore</small>
                 </div>
             </div>
-            <p>{patients}</p>
+            <p className={patients ? '' : 'preText'}>{patients ? patients : 'xxx'}</p>
         </div>
     );
 }

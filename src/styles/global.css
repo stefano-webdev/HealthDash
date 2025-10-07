@@ -4,6 +4,10 @@
     transition: none !important;
 }
 
+.preText {
+    visibility: hidden;
+}
+
 * {
     box-sizing: border-box;
     font-family: 'Tahoma', 'Verdana', 'Arial', 'Helvetica', sans-serif;
@@ -302,7 +306,6 @@ div.contentBox {
     gap: 17px;
     align-items: center;
     padding: 15px 0px;
-    min-height: 119px;
     width: 100%;
 }
 

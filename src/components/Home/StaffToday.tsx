@@ -71,7 +71,7 @@ function StaffToday() {
                     <small className="smallBlack">08-16-00</small>
                 </div>
             </div>
-            <p>{staff}</p>
+            <p className={staff ? '' : 'preText'}>{staff ? staff : 'xxx'}</p>
         </div>
     );
 }

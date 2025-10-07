@@ -167,12 +167,10 @@
     }
 
     body #patientsTodayCont {
-        min-height: 146px;
         max-width: 240px;
     }
 
     body #staffTodayCont {
-        min-height: 146px;
         max-width: 300px;
     }
 
@@ -246,6 +244,10 @@
 
     body #staffListCont {
         min-height: 454px;
+    }
+
+    body #staffDetailsCont {
+        min-height: 290px;
     }
 
     body #staffScheduleCont {
